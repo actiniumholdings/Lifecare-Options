@@ -2,10 +2,13 @@
 // bundled babel-eslint-parser whose scope manager is missing the
 // `scopeManager.addGlobals` API that ESLint 10 requires. We register
 // @next/eslint-plugin-next directly and rely on typescript-eslint's parser.
+// See: https://github.com/vercel/next.js/issues (track upstream fix)
 import js from "@eslint/js";
 import tseslint from "typescript-eslint";
 import nextPlugin from "@next/eslint-plugin-next";
 import reactHooks from "eslint-plugin-react-hooks";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import prettierConfig from "eslint-config-prettier";
 
 export default [
   js.configs.recommended,
@@ -22,11 +25,12 @@ export default [
     rules: reactHooks.configs.recommended.rules,
   },
   {
-    ignores: [
-      ".next/**",
-      "node_modules/**",
-      "public/**",
-      "next-env.d.ts",
-    ],
+    plugins: { "jsx-a11y": jsxA11y },
+    rules: jsxA11y.configs.recommended.rules,
+  },
+  // Must come last — disables ESLint rules that conflict with Prettier formatting
+  prettierConfig,
+  {
+    ignores: [".next/**", "node_modules/**", "public/**", "next-env.d.ts"],
   },
 ];
