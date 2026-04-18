@@ -1,6 +1,7 @@
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { TrustBadge } from "@/components/TrustBadge";
+import { LeadForm } from "@/components/LeadForm";
 import { siteConfig, services } from "@/lib/site-config";
 
 export default function HomePage() {
@@ -117,13 +118,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 5. Contact / Lead form — placeholder; replaced in Task 15 */}
+      {/* 5. Contact / Lead form */}
       <section id="contact" className="bg-white px-4 py-20 md:px-6 md:py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-4xl">Get in touch</h2>
-          <p className="text-slate mt-3">
-            Form goes here — added in Task 15.
-          </p>
+        <div className="mx-auto max-w-7xl">
+          <div className="mx-auto mb-8 max-w-2xl text-center">
+            <h2 className="text-4xl">Get in touch</h2>
+            <p className="text-slate mt-3">
+              Fill out the form below and our team will reach out within 1
+              business day.
+            </p>
+          </div>
+          <LeadForm />
         </div>
       </section>
     </>
