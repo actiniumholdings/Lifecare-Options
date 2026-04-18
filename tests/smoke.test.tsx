@@ -17,6 +17,9 @@ describe("Homepage smoke", () => {
   it("has no axe-detected a11y violations on initial render", async () => {
     const { container } = render(<HomePage />);
     const results = await axe(container);
-    expect(results).toHaveNoViolations();
+    // Using direct violations check instead of vitest-axe's toHaveNoViolations
+    // matcher — Vitest 4 changed the namespace that custom matchers augment,
+    // and vitest-axe's types haven't caught up yet.
+    expect(results.violations).toEqual([]);
   });
 });

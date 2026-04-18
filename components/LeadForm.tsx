@@ -210,17 +210,35 @@ function ServicesFormFields({
       <fieldset>
         <legend className={labelClass}>Who is the care for? *</legend>
         <div className="mt-2 space-y-2">
-          <label className="flex items-center gap-2 text-sm">
-            <input type="radio" value="self" {...register("careFor")} /> Myself
-          </label>
-          <label className="flex items-center gap-2 text-sm">
-            <input type="radio" value="family" {...register("careFor")} />{" "}
-            Family member
-          </label>
-          <label className="flex items-center gap-2 text-sm">
-            <input type="radio" value="referring" {...register("careFor")} />{" "}
-            Patient I&apos;m referring
-          </label>
+          <div className="flex items-center gap-2 text-sm">
+            <input
+              id="svc-careFor-self"
+              type="radio"
+              value="self"
+              {...register("careFor")}
+            />
+            <label htmlFor="svc-careFor-self">Myself</label>
+          </div>
+          <div className="flex items-center gap-2 text-sm">
+            <input
+              id="svc-careFor-family"
+              type="radio"
+              value="family"
+              {...register("careFor")}
+            />
+            <label htmlFor="svc-careFor-family">Family member</label>
+          </div>
+          <div className="flex items-center gap-2 text-sm">
+            <input
+              id="svc-careFor-referring"
+              type="radio"
+              value="referring"
+              {...register("careFor")}
+            />
+            <label htmlFor="svc-careFor-referring">
+              Patient I&apos;m referring
+            </label>
+          </div>
         </div>
         {errors.careFor && (
           <p className={errorClass}>{errors.careFor.message}</p>
@@ -230,16 +248,20 @@ function ServicesFormFields({
       <fieldset>
         <legend className={labelClass}>Services of interest</legend>
         <div className="mt-2 grid gap-2 md:grid-cols-2">
-          {SERVICE_OPTIONS.map((s) => (
-            <label key={s.value} className="flex items-center gap-2 text-sm">
-              <input
-                type="checkbox"
-                value={s.value}
-                {...register("servicesInterested")}
-              />{" "}
-              {s.label}
-            </label>
-          ))}
+          {SERVICE_OPTIONS.map((s) => {
+            const id = `svc-interest-${s.value}`;
+            return (
+              <div key={s.value} className="flex items-center gap-2 text-sm">
+                <input
+                  id={id}
+                  type="checkbox"
+                  value={s.value}
+                  {...register("servicesInterested")}
+                />
+                <label htmlFor={id}>{s.label}</label>
+              </div>
+            );
+          })}
         </div>
       </fieldset>
 
@@ -292,7 +314,7 @@ function ServicesFormFields({
         />
       </div>
 
-      <Button size="lg">
+      <Button type="submit" disabled={isSubmitting} size="lg">
         {isSubmitting ? "Sending…" : "Request info →"}
       </Button>
     </form>
@@ -454,7 +476,7 @@ function EmploymentFormFields({
         />
       </div>
 
-      <Button size="lg">
+      <Button type="submit" disabled={isSubmitting} size="lg">
         {isSubmitting ? "Sending…" : "Submit inquiry →"}
       </Button>
     </form>
