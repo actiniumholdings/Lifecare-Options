@@ -4,41 +4,73 @@ import { siteConfig } from "@/lib/site-config";
 
 type LogoProps = {
   size?: "sm" | "md" | "lg";
-  /** If true, renders just the icon portion (square crop) — Phase 1+. */
   iconOnly?: boolean;
-  /** For use on dark backgrounds (Footer). Currently unused since the PNG
-   * has its own navy-on-navy contrast, but kept for API compatibility. */
   inverse?: boolean;
 };
 
-// Aspect ratio of the full lockup PNG: 3686 × 1152 ≈ 3.2:1
-const LOCKUP_ASPECT = 3686 / 1152;
-
+// Icon size (in px) and wordmark text sizes per logo size.
+// Icon and text are sized independently so we can fine-tune each.
 const SIZES = {
-  sm: 32, // height in px
-  md: 44,
-  lg: 64,
+  sm: {
+    icon: 28,
+    title: "text-sm",
+    tagline: "text-[9px]",
+    gap: "gap-2",
+    tagMargin: "mt-0.5",
+  },
+  md: {
+    icon: 48,
+    title: "text-base",
+    tagline: "text-[10px]",
+    gap: "gap-3",
+    tagMargin: "mt-0.5",
+  },
+  lg: {
+    icon: 56,
+    title: "text-3xl",
+    tagline: "text-sm",
+    gap: "gap-4",
+    tagMargin: "mt-1",
+  },
 } as const;
 
-export function Logo({ size = "md" }: LogoProps) {
-  const h = SIZES[size];
-  const w = Math.round(h * LOCKUP_ASPECT);
+export function Logo({
+  size = "md",
+  iconOnly = false,
+  inverse = false,
+}: LogoProps) {
+  const s = SIZES[size];
+  const titleColor = inverse ? "text-white" : "text-navy";
+  const taglineColor = inverse ? "text-peach-cream" : "text-slate";
 
   return (
     <Link
       href="/"
-      className="inline-flex items-center no-underline"
+      className={`inline-flex items-center ${s.gap} no-underline`}
       aria-label={`${siteConfig.name} home`}
     >
       <Image
-        src="/images/logo-icon.png"
-        alt={`${siteConfig.name} — ${siteConfig.tagline}`}
-        width={w}
-        height={h}
+        src="/images/logo-square.png"
+        alt=""
+        width={s.icon}
+        height={s.icon}
         priority
-        className="h-auto w-auto"
-        style={{ height: `${h}px`, width: `${w}px` }}
+        className="rounded-lg"
       />
+      {!iconOnly && (
+        <span className="flex flex-col justify-center leading-[1.1]">
+          <span
+            className={`font-display font-medium ${s.title} ${titleColor}`}
+          >
+            {siteConfig.name}
+          </span>
+          <span
+            className={`${s.tagMargin} font-sans uppercase tracking-[0.15em] font-medium ${s.tagline} ${taglineColor}`}
+          >
+            {siteConfig.tagline}
+          </span>
+        </span>
+      )}
     </Link>
   );
 }
