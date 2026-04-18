@@ -10,6 +10,31 @@
 
 ---
 
+## Version reconciliation (added 2026-04-17 post-Task-1)
+
+`npx create-next-app@latest` resolved to newer versions than the plan anticipated. Actually installed:
+
+| Package | Plan | Installed | Notes |
+|---|---|---|---|
+| next | 15.x | **16.2.4** | Some API differences — see AGENTS.md at project root |
+| react | 19 | 19.2.x | Fine |
+| zod | 3.x | **4.3.6** | Breaking: `.errors` → `.issues`, some `.email()`/`.url()` helpers moved — adapt schemas in Task 14 |
+| vitest | 2.x | **4.1.4** | Breaking: some config keys renamed — verify Task 6 config |
+| eslint | 9.x | **10.2.1** | `eslint-plugin-react` peer-range is stale → installs required `--legacy-peer-deps` |
+| tailwindcss | 4.x | 4.2.2 | Matches plan |
+
+**Impact on remaining tasks:**
+- **Task 2 (tsconfig):** preserve Next 16-specific `.next/dev/types/**/*.ts` include
+- **Task 6 (Vitest):** check `vitest-axe` compatibility with Vitest 4; config syntax unchanged but verify
+- **Task 14 (Zod schemas):** use Zod 4 idiom — `z.email()` top-level, `.safeParse().error.flatten()` still works but error fields differ
+- **All other tasks:** no material changes
+
+This plan's task code blocks remain correct except where noted above. The executor adapts at task-time.
+
+---
+
+---
+
 ## Prerequisites (done by user before Task 1)
 
 - [ ] **Save approved logo icon** at `public/images/logo-icon.png` (from Nano Banana, 2026-04-17). PNG, ~1024×1024, transparent background not required — the rounded navy square is part of the icon.
@@ -126,6 +151,8 @@ git commit -m "feat: initialize Next.js 15 with core dependencies"
 
 - [ ] **Step 1: Overwrite tsconfig.json**
 
+Note: includes Next 16-specific `.next/dev/types/**/*.ts` path (from scaffold).
+
 ```json
 {
   "compilerOptions": {
@@ -147,7 +174,13 @@ git commit -m "feat: initialize Next.js 15 with core dependencies"
     "plugins": [{ "name": "next" }],
     "paths": { "@/*": ["./*"] }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }
 ```
