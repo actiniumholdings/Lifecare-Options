@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Lifecare Options">
+  <!-- Rounded navy square background -->
+  <rect width="200" height="200" rx="32" ry="32" fill="#0F2B47"/>
+
+  <!-- Cream house silhouette with pitched roof -->
+  <path
+    d="M 44 108
+       L 100 58
+       L 156 108
+       L 156 160
+       Q 156 164 152 164
+       L 48 164
+       Q 44 164 44 160
+       Z"
+    fill="#FDEEDD"
+    stroke="#FDEEDD"
+    stroke-width="1"
+    stroke-linejoin="round"
+  />
+
+  <!-- Chimney (navy — reads as cut into the roof) -->
+  <rect x="124" y="50" width="10" height="32" rx="1.5" fill="#0F2B47"/>
+
+  <!-- Small care-blue medical plus, floating above the chimney -->
+  <g fill="#5A8BB8">
+    <rect x="126" y="36" width="6" height="10" rx="1"/>
+    <rect x="124" y="38" width="10" height="6" rx="1"/>
+  </g>
+
+  <!-- Care-blue heart centered in the house body -->
+  <path
+    d="M 100 145
+       C 100 145 68 127 68 108
+       C 68 97 78 91 88 97
+       C 94 100 100 105 100 105
+       C 100 105 106 100 112 97
+       C 122 91 132 97 132 108
+       C 132 127 100 145 100 145 Z"
+    fill="#5A8BB8"
+  />
+</svg>
