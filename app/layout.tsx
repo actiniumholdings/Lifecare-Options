@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Lifecare Options — Home Health in Katy, TX",
+  title: "Lifecare Options: Home Health in Katy, TX",
   description:
     "Medicare-certified home health in Katy, Fort Bend, and Harris counties. Skilled nursing, therapy, and personal care delivered at home since 2008.",
   metadataBase: new URL("https://www.mylifecareoptions.com"),
