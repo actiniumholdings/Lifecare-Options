@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Lifecare Options">
+  <!-- Rounded navy square background -->
+  <rect width="200" height="200" rx="32" ry="32" fill="#0F2B47"/>
+
+  <!-- House outline with integrated chimney on the left roof slope.
+       Path: bottom-left → up left wall → up roof slope → chimney detour
+       (up, across, down) → continue up roof to peak → down roof → down
+       right wall → close. -->
+  <path
+    d="M 50 160
+       L 50 108
+       L 62 96.5
+       L 62 60
+       L 72 60
+       L 72 86.9
+       L 100 60
+       L 150 108
+       L 150 160
+       Z"
+    fill="none"
+    stroke="#FDEEDD"
+    stroke-width="5.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+
+  <!-- Heart outline centered inside the house body -->
+  <path
+    d="M 100 142
+       C 100 142 70 120 70 104
+       C 70 92 82 86 92 94
+       C 96 97 100 102 100 102
+       C 100 102 104 97 108 94
+       C 118 86 130 92 130 104
+       C 130 120 100 142 100 142 Z"
+    fill="none"
+    stroke="#FDEEDD"
+    stroke-width="5.5"
+    stroke-linejoin="round"
+    stroke-linecap="round"
+  />
+
+  <!-- Small medical plus in the top-right corner -->
+  <g
+    stroke="#FDEEDD"
+    stroke-width="5"
+    stroke-linecap="round"
+  >
+    <line x1="166" y1="26" x2="166" y2="46"/>
+    <line x1="156" y1="36" x2="176" y2="36"/>
+  </g>
+</svg>

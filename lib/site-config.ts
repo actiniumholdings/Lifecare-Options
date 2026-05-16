@@ -38,7 +38,7 @@ export const services = [
   {
     name: "Occupational Therapy",
     description:
-      "Daily-living skills — dressing, cooking, bathing, safety.",
+      "Cognitive and physical recovery — post-stroke, post-injury, returning to daily routines safely.",
     iconName: "HandHeart",
   },
   {
@@ -57,6 +57,12 @@ export const services = [
     description:
       "Personal care — bathing, grooming, meal prep, companionship.",
     iconName: "House",
+  },
+  {
+    name: "Remote Patient Monitoring",
+    description:
+      "Daily vital signs via connected home devices — early intervention, peace of mind.",
+    iconName: "Heartbeat",
   },
 ] as const;
 

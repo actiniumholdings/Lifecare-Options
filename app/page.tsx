@@ -20,6 +20,7 @@ import {
   HandHeart,
   ChatCircleDots,
   UsersThree,
+  Heartbeat,
 } from "@phosphor-icons/react";
 import type { Icon } from "@phosphor-icons/react";
 import type { ServiceIconName } from "@/lib/site-config";
@@ -105,6 +106,7 @@ const SERVICE_ICONS: Record<ServiceIconName, Icon> = {
   ChatCircleDots,
   UsersThree,
   House,
+  Heartbeat,
 };
 
 export default function HomePage() {
@@ -195,7 +197,7 @@ export default function HomePage() {
               <StaggerWords
                 as="h2"
                 className="mt-2 text-4xl leading-[1.1]"
-                text="Six disciplines, one coordinated plan"
+                text="Seven disciplines, one coordinated plan"
               />
               <p className="text-slate mt-3 text-base">
                 Physician-ordered home health covered by Medicare. Our team works
@@ -203,30 +205,73 @@ export default function HomePage() {
               </p>
             </div>
           </FadeUp>
-          <Stagger className="grid gap-3 md:grid-cols-3">
-            {services.map((s, i) => {
-              const variant =
-                i % 3 === 0 ? "peach" : i % 3 === 1 ? "white" : "mist";
-              const IconComponent = SERVICE_ICONS[s.iconName];
-              return (
-                <StaggerItem key={s.name}>
-                  <HoverLift className="h-full">
-                    <Card variant={variant} className="h-full">
-                      <IconComponent
-                        size={36}
-                        weight="duotone"
-                        className="text-navy"
-                      />
-                      <div className="font-display mt-3 text-xl">{s.name}</div>
-                      <div className="text-slate mt-2 text-sm">
-                        {s.description}
-                      </div>
-                    </Card>
-                  </HoverLift>
-                </StaggerItem>
-              );
-            })}
-          </Stagger>
+          {(() => {
+            const featured = services.find(
+              (s) => s.name === "Remote Patient Monitoring",
+            );
+            const standard = services.filter(
+              (s) => s.name !== "Remote Patient Monitoring",
+            );
+            const FeaturedIcon = featured
+              ? SERVICE_ICONS[featured.iconName]
+              : null;
+            return (
+              <>
+                {featured && FeaturedIcon && (
+                  <FadeUp delay={120} className="mb-3">
+                    <HoverLift>
+                      <Card variant="peach" className="p-7 md:p-8">
+                        <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-7">
+                          <FeaturedIcon
+                            size={56}
+                            weight="duotone"
+                            className="text-navy shrink-0"
+                          />
+                          <div className="flex-1">
+                            <div className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase">
+                              Now offering
+                            </div>
+                            <div className="font-display mt-1 text-2xl md:text-3xl">
+                              {featured.name}
+                            </div>
+                            <div className="text-slate mt-2 text-sm md:text-base">
+                              {featured.description}
+                            </div>
+                          </div>
+                        </div>
+                      </Card>
+                    </HoverLift>
+                  </FadeUp>
+                )}
+                <Stagger className="grid gap-3 md:grid-cols-3">
+                  {standard.map((s, i) => {
+                    const variant =
+                      i % 3 === 0 ? "white" : i % 3 === 1 ? "mist" : "peach";
+                    const IconComponent = SERVICE_ICONS[s.iconName];
+                    return (
+                      <StaggerItem key={s.name}>
+                        <HoverLift className="h-full">
+                          <Card variant={variant} className="h-full">
+                            <IconComponent
+                              size={36}
+                              weight="duotone"
+                              className="text-navy"
+                            />
+                            <div className="font-display mt-3 text-xl">
+                              {s.name}
+                            </div>
+                            <div className="text-slate mt-2 text-sm">
+                              {s.description}
+                            </div>
+                          </Card>
+                        </HoverLift>
+                      </StaggerItem>
+                    );
+                  })}
+                </Stagger>
+              </>
+            );
+          })()}
         </div>
       </section>
 

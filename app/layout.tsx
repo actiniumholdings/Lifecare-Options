@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { inter, playfair } from "@/lib/fonts";
+import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import "./globals.css";
@@ -19,6 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
       <body className="text-navy flex min-h-screen flex-col bg-white">
+        <AnnouncementBar />
         <Nav />
         <main className="flex-1">{children}</main>
         <Footer />
