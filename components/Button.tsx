@@ -46,7 +46,7 @@ const SIZE_STYLES: Record<ButtonSize, string> = {
   lg: "px-6 py-3.5 text-base",
 };
 
-const MotionLink = motion(Link);
+const MotionLink = motion.create(Link);
 
 export function Button(props: ButtonProps) {
   const {
