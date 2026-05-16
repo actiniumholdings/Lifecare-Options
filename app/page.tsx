@@ -7,6 +7,7 @@ import { TrustBadge } from "@/components/TrustBadge";
 import { LeadForm } from "@/components/LeadForm";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { FadeUp } from "@/components/motion/FadeUp";
+import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { easeOut, softSpring } from "@/lib/motion";
 import { ShieldCheck, House, PhoneCall } from "@phosphor-icons/react";
 import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
@@ -130,25 +131,37 @@ export default function HomePage() {
       <section className="px-4 py-20 md:px-6 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <div>
-            <h2 className="text-4xl leading-[1.1]">
-              Serving Katy families since 2008.
-            </h2>
-            <p className="text-slate mt-5 text-base leading-relaxed">
-              Lifecare Options has served Katy families since 2008. We&apos;re
-              a CHAP-accredited, Medicare-certified home health agency, locally
-              owned and small enough to know your name. Our clinicians bring
-              skilled care into the home — where healing is most natural — and
-              we&apos;re on-call 24/7 for whatever comes next.
-            </p>
+            <FadeUp>
+              <h2 className="text-4xl leading-[1.1]">
+                Serving Katy families since 2008.
+              </h2>
+            </FadeUp>
+            <FadeUp delay={120}>
+              <p className="text-slate mt-5 text-base leading-relaxed">
+                Lifecare Options has served Katy families since 2008. We&apos;re
+                a CHAP-accredited, Medicare-certified home health agency, locally
+                owned and small enough to know your name. Our clinicians bring
+                skilled care into the home — where healing is most natural — and
+                we&apos;re on-call 24/7 for whatever comes next.
+              </p>
+            </FadeUp>
           </div>
-          <div className="flex flex-wrap gap-2">
-            <TrustBadge>Medicare-certified</TrustBadge>
-            <TrustBadge>{siteConfig.accreditation}</TrustBadge>
-            <TrustBadge>
-              Serving Katy since {siteConfig.foundedYear}
-            </TrustBadge>
-            <TrustBadge>24/7 on-call</TrustBadge>
-          </div>
+          <Stagger className="flex flex-wrap gap-2">
+            <StaggerItem>
+              <TrustBadge>Medicare-certified</TrustBadge>
+            </StaggerItem>
+            <StaggerItem>
+              <TrustBadge>{siteConfig.accreditation}</TrustBadge>
+            </StaggerItem>
+            <StaggerItem>
+              <TrustBadge>
+                Serving Katy since {siteConfig.foundedYear}
+              </TrustBadge>
+            </StaggerItem>
+            <StaggerItem>
+              <TrustBadge>24/7 on-call</TrustBadge>
+            </StaggerItem>
+          </Stagger>
         </div>
       </section>
 
