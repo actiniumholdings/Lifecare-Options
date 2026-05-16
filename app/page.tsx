@@ -9,6 +9,7 @@ import { HeroIllustration } from "@/components/HeroIllustration";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 import { HoverLift } from "@/components/motion/HoverLift";
+import { StaggerWords } from "@/components/motion/StaggerWords";
 import { easeOut, softSpring } from "@/lib/motion";
 import {
   ShieldCheck,
@@ -42,16 +43,14 @@ function Hero() {
             Home Health · Katy, TX
           </motion.div>
 
-          <motion.h1
+          <StaggerWords
+            as="h1"
             className="mt-3 text-5xl leading-[1.05] md:text-6xl"
-            initial={ifMotion({ opacity: 0, y: 16 }, { opacity: 1, y: 0 })}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ ...easeOut, duration: 0.6, delay: 0.1 }}
-          >
-            Quality care,
-            <br />
-            felt at home.
-          </motion.h1>
+            text={["Quality care,", "felt at home."]}
+            trigger="load"
+            delay={100}
+          />
+
 
           <motion.p
             className="text-slate mt-5 max-w-xl text-lg leading-relaxed"
@@ -151,11 +150,11 @@ export default function HomePage() {
       <section className="px-4 py-20 md:px-6 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <div>
-            <FadeUp>
-              <h2 className="text-4xl leading-[1.1]">
-                Serving Katy families since 2008.
-              </h2>
-            </FadeUp>
+            <StaggerWords
+              as="h2"
+              className="text-4xl leading-[1.1]"
+              text="Serving Katy families since 2008."
+            />
             <FadeUp delay={120}>
               <p className="text-slate mt-5 text-base leading-relaxed">
                 Lifecare Options has served Katy families since 2008. We&apos;re
@@ -193,9 +192,11 @@ export default function HomePage() {
               <div className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase">
                 Our services
               </div>
-              <h2 className="mt-2 text-4xl leading-[1.1]">
-                Six disciplines, one coordinated plan
-              </h2>
+              <StaggerWords
+                as="h2"
+                className="mt-2 text-4xl leading-[1.1]"
+                text="Six disciplines, one coordinated plan"
+              />
               <p className="text-slate mt-3 text-base">
                 Physician-ordered home health covered by Medicare. Our team works
                 together around your care plan — no handoff gaps.
@@ -233,7 +234,7 @@ export default function HomePage() {
       <section id="contact" className="bg-white px-4 py-20 md:px-6 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-8 max-w-2xl text-center">
-            <h2 className="text-4xl">Get in touch</h2>
+            <StaggerWords as="h2" className="text-4xl" text="Get in touch" />
             <p className="text-slate mt-3">
               Fill out the form below and our team will reach out within 1
               business day.
