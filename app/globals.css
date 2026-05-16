@@ -1,26 +1,27 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette (from spec §6) */
+  /* Palette — Committed warm peach-cream brand */
   --color-navy: #0f2b47;
   --color-care-blue: #5a8bb8;
-  --color-peach-cream: #fdeedd;
-  --color-mist: #f7fafc;
-  --color-slate: #6b7d92;
+  --color-cream: #fdeedd;
+  --color-cream-deep: #f0dcb8;
+  --color-cream-edge: #ead8b6;
+  --color-slate: #5a6b7e;
   --color-success-green: #2d6a4f;
-  --color-alert-red: #c0392b;
-  --color-borderline: #e4ecf3;
+  --color-alert-red: #9a2f24;
+  --color-footer-muted: rgba(253, 238, 221, 0.65);
 
   /* Typography */
-  --font-display: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-spectral), Georgia, serif;
+  --font-sans: var(--font-albert), system-ui, -apple-system, sans-serif;
 
-  /* Spacing rhythm — 4px base grid */
-  --spacing-section-y-desktop: 6rem; /* 96px */
-  --spacing-section-y-mobile: 3.5rem; /* 56px */
+  /* Spacing rhythm — varied per section, see app/page.tsx */
+  --spacing-section-y-desktop: 6rem;
+  --spacing-section-y-mobile: 3.5rem;
 
   /* Radius */
-  --radius-card: 0.75rem; /* 12px */
+  --radius-card: 0.5rem;
   --radius-pill: 9999px;
 }
 
@@ -32,26 +33,32 @@ html {
 }
 
 body {
-  background: #ffffff;
+  background: var(--color-cream);
   color: var(--color-navy);
   font-family: var(--font-sans);
-  font-size: 1.0625rem; /* 17px body */
+  font-size: 1.0625rem;
   line-height: 1.65;
 }
 
-h1,
-h2,
-h3,
-h4 {
+h1, h2, h3, h4 {
   font-family: var(--font-display);
   color: var(--color-navy);
   font-weight: 500;
-  line-height: 1.1;
+  line-height: 1.05;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
+h3 { font-size: 1.5rem; }
+
+/* Anchored sections clear the sticky nav on hash navigation */
+section[id] {
+  scroll-margin-top: 5rem;
 }
 
 /* Focus ring — accessible and on-brand */
 :focus-visible {
-  outline: 2px solid var(--color-care-blue);
+  outline: 2px solid var(--color-navy);
   outline-offset: 2px;
   border-radius: 4px;
 }

@@ -19,8 +19,8 @@ export const siteConfig = {
   onCall: "24/7 on-call nursing",
   foundedYear: 2008,
   accreditation: "CHAP-accredited",
-  medicareCcn: "[TBD — fill before launch]",
-  stateLicense: "[TBD — fill before launch]",
+  medicareCcn: null as string | null, // Fill with real CCN before launch
+  stateLicense: null as string | null, // Fill with real Texas state license number before launch
 } as const;
 
 export const services = [
@@ -32,36 +32,36 @@ export const services = [
   },
   {
     name: "Physical Therapy",
-    description: "Mobility, strength, balance — post-surgery or progressive.",
+    description: "Mobility, strength, and balance after surgery or progressive conditions.",
     iconName: "PersonSimpleWalk",
   },
   {
     name: "Occupational Therapy",
     description:
-      "Recovery and rehab — cognitive, physical, after stroke or injury.",
+      "Recovery and rehab, cognitive and physical, after stroke or injury.",
     iconName: "HandHeart",
   },
   {
     name: "Speech Therapy",
     description:
-      "Communication and swallowing — post-stroke and neurological.",
+      "Communication and swallowing recovery, post-stroke and neurological.",
     iconName: "ChatCircleDots",
   },
   {
     name: "Medical Social Work",
-    description: "Benefits navigation, resources, family support.",
+    description: "Benefits navigation, community resources, and family support.",
     iconName: "UsersThree",
   },
   {
     name: "Home Health Aide",
     description:
-      "Personal care — bathing, grooming, meal prep, companionship.",
+      "Personal care, bathing, grooming, meal prep, and companionship.",
     iconName: "House",
   },
   {
     name: "Remote Patient Monitoring",
     description:
-      "Daily vital signs via connected home devices — early intervention, peace of mind.",
+      "Daily vital signs via connected home devices, for early intervention and peace of mind.",
     iconName: "Heartbeat",
   },
 ] as const;

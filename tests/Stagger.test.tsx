@@ -4,25 +4,25 @@ import "@testing-library/jest-dom/vitest";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
 
 describe("Stagger", () => {
-  it("renders all StaggerItem children", () => {
+  it("renders its children", () => {
     render(
       <Stagger>
         <StaggerItem>One</StaggerItem>
         <StaggerItem>Two</StaggerItem>
-        <StaggerItem>Three</StaggerItem>
       </Stagger>
     );
     expect(screen.getByText("One")).toBeInTheDocument();
     expect(screen.getByText("Two")).toBeInTheDocument();
-    expect(screen.getByText("Three")).toBeInTheDocument();
   });
 
-  it("forwards an optional className to the parent wrapper", () => {
+  it("renders items at opacity 1 even when not yet in view", () => {
     const { container } = render(
-      <Stagger className="custom-grid">
-        <StaggerItem>A</StaggerItem>
+      <Stagger>
+        <StaggerItem>Always</StaggerItem>
       </Stagger>
     );
-    expect(container.firstChild).toHaveClass("custom-grid");
+    const wrapper = container.firstElementChild as HTMLElement;
+    const opacity = wrapper.style.opacity;
+    expect(opacity === "" || opacity === "1").toBe(true);
   });
 });

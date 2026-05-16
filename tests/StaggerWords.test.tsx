@@ -33,4 +33,18 @@ describe("StaggerWords", () => {
     const h2 = screen.getByRole("heading", { level: 2 });
     expect(h2).toHaveClass("text-lg", "custom");
   });
+
+  it("renders words at opacity 1 even when not yet in view", () => {
+    const { container } = render(
+      <StaggerWords as="h2" text="Hello world" />
+    );
+    const heading = container.querySelector("h2");
+    expect(heading).toBeInTheDocument();
+    const wordSpans = heading?.querySelectorAll("span") ?? [];
+    expect(wordSpans.length).toBeGreaterThan(0);
+    wordSpans.forEach((span) => {
+      const opacity = (span as HTMLElement).style.opacity;
+      expect(opacity === "" || opacity === "1").toBe(true);
+    });
+  });
 });

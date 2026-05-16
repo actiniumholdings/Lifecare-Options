@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { siteConfig } from "@/lib/site-config";
@@ -12,7 +12,6 @@ const SCROLL_THRESHOLD = 8;
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(
-    // Initialize from current scroll position (handles mid-page hot reload).
     () => typeof window !== "undefined" && window.scrollY > SCROLL_THRESHOLD
   );
 
@@ -32,18 +31,32 @@ export function Nav() {
     };
   }, []);
 
-  // Mobile-menu-open forces "scrolled" styling regardless of position.
+  // Escape-to-close + body-scroll-lock while mobile menu is open
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open]);
+
   const scrolledStyling = isScrolled || open;
 
   const headerClasses = [
-    "sticky top-0 z-50 border-b border-borderline transition-all duration-200 ease-out motion-reduce:transition-none",
+    "sticky top-0 z-50 border-b border-cream-edge transition-all duration-200 ease-out motion-reduce:transition-none",
     scrolledStyling
-      ? "bg-white/98 backdrop-blur shadow-sm"
-      : "bg-white/95 backdrop-blur",
+      ? "bg-cream/98 backdrop-blur shadow-sm"
+      : "bg-cream/95 backdrop-blur",
   ].join(" ");
 
   const containerClasses = [
-    "mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 md:px-6 transition-all duration-200 ease-out motion-reduce:transition-none",
+    "mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 md:px-6 transition-all duration-200 ease-out motion-reduce:transition-none",
     scrolledStyling ? "py-3" : "py-4",
   ].join(" ");
 
@@ -52,11 +65,23 @@ export function Nav() {
       <div className={containerClasses}>
         <Logo size="md" />
 
+        {/* Always-visible phone chip — both desktop and mobile see it */}
+        <Link
+          data-testid="mobile-phone-chip"
+          href={siteConfig.phoneHref}
+          className="inline-flex items-center gap-1.5 rounded-full bg-navy px-3 py-2 text-xs font-semibold text-cream hover:bg-navy/90 md:hidden"
+          aria-label={`Call ${siteConfig.phone}`}
+        >
+          <Phone size={14} />
+          <span className="whitespace-nowrap">{siteConfig.phone}</span>
+        </Link>
+
         <div className="hidden items-center gap-4 md:flex">
           <Link
             href={siteConfig.phoneHref}
-            className="text-sm text-navy hover:text-care-blue"
+            className="inline-flex items-center gap-1.5 text-sm text-navy hover:text-care-blue"
           >
+            <Phone size={14} />
             {siteConfig.phone}
           </Link>
           <Button href="#contact">Request info →</Button>
@@ -66,7 +91,8 @@ export function Nav() {
           type="button"
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? "Close menu" : "Open menu"}
-          className="p-2 md:hidden"
+          aria-expanded={open}
+          className="p-2 text-navy md:hidden"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -75,16 +101,9 @@ export function Nav() {
       {open && (
         <div
           data-testid="mobile-menu"
-          className="border-t border-borderline bg-white md:hidden"
+          className="border-t border-cream-edge bg-cream md:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-            <Link
-              href={siteConfig.phoneHref}
-              onClick={() => setOpen(false)}
-              className="py-2 text-base text-navy"
-            >
-              Call {siteConfig.phone}
-            </Link>
             <Button href="#contact" size="lg">
               Request info →
             </Button>

@@ -8,7 +8,7 @@ export function TrustBadge({ children }: { children: React.ReactNode }) {
   const reduced = useReducedMotionSafe();
 
   const base =
-    "inline-flex items-center gap-1.5 rounded-full bg-[#e8f3ec] px-3 py-1.5 text-xs font-medium text-success-green";
+    "inline-flex items-center gap-1.5 rounded-full bg-[#e1efe5] px-3 py-1.5 text-xs font-medium text-success-green";
 
   if (reduced) {
     return (
@@ -22,7 +22,7 @@ export function TrustBadge({ children }: { children: React.ReactNode }) {
   return (
     <motion.span
       className={base}
-      whileHover={{ scale: 1.04, backgroundColor: "#d9ebde" }}
+      whileHover={{ scale: 1.04, backgroundColor: "#d3e7d8" }}
       transition={softSpring}
     >
       <span aria-hidden>✓</span>

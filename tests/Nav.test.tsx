@@ -38,3 +38,12 @@ describe("Nav", () => {
     expect(screen.getByLabelText(/lifecare options home/i)).toBeInTheDocument();
   });
 });
+
+describe("Nav mobile phone chip", () => {
+  it("renders a visible phone tel: link without opening the hamburger", () => {
+    render(<Nav />);
+    const chip = screen.getByTestId("mobile-phone-chip");
+    expect(chip).toHaveAttribute("href", "tel:+12816469546");
+    expect(chip).toHaveTextContent(/281.*9546/i);
+  });
+});
