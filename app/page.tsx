@@ -87,13 +87,12 @@ function Hero() {
         </div>
 
         <motion.div
-          className="aspect-[4/3] overflow-hidden rounded-2xl"
-          initial={ifMotion({ opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1 })}
-          animate={{ opacity: 1, scale: 1 }}
+          className="aspect-[1024/572] overflow-hidden rounded-2xl"
+          initial={ifMotion({ opacity: 0 }, { opacity: 1 })}
+          animate={{ opacity: 1 }}
           transition={{ ...easeOut, duration: 0.8, delay: 0.2 }}
-          whileHover={reduced ? undefined : { scale: 1.02 }}
         >
-          <HeroIllustration className="h-full w-full" />
+          <HeroIllustration className="h-full w-full object-cover" />
         </motion.div>
       </div>
     </section>
