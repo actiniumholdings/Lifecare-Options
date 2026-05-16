@@ -41,7 +41,7 @@ export function Logo({
 }: LogoProps) {
   const s = SIZES[size];
   const titleColor = inverse ? "text-white" : "text-navy";
-  const taglineColor = inverse ? "text-peach-cream" : "text-slate";
+  const taglineColor = inverse ? "text-cream" : "text-slate";
 
   return (
     <Link

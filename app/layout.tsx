@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${albert.variable} ${spectral.variable}`}>
-      <body className="text-navy flex min-h-screen flex-col bg-white">
+      <body className="text-navy flex min-h-screen flex-col">
         <AnnouncementBar />
         <Nav />
         <main className="flex-1">{children}</main>
