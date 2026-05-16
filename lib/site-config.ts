@@ -28,28 +28,36 @@ export const services = [
     name: "Skilled Nursing",
     description:
       "Wound care, medication management, chronic disease support.",
+    iconName: "Stethoscope",
   },
   {
     name: "Physical Therapy",
     description: "Mobility, strength, balance — post-surgery or progressive.",
+    iconName: "PersonSimpleWalk",
   },
   {
     name: "Occupational Therapy",
     description:
       "Daily-living skills — dressing, cooking, bathing, safety.",
+    iconName: "HandHeart",
   },
   {
     name: "Speech Therapy",
     description:
       "Communication and swallowing — post-stroke and neurological.",
+    iconName: "ChatCircleDots",
   },
   {
     name: "Medical Social Work",
     description: "Benefits navigation, resources, family support.",
+    iconName: "UsersThree",
   },
   {
     name: "Home Health Aide",
     description:
       "Personal care — bathing, grooming, meal prep, companionship.",
+    iconName: "House",
   },
 ] as const;
+
+export type ServiceIconName = (typeof services)[number]["iconName"];
