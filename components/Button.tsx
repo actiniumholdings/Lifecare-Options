@@ -1,6 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { ReactNode } from "react";
+import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
+import { quickTap } from "@/lib/motion";
 
 type ButtonVariant = "primary" | "secondary" | "tertiary";
 type ButtonSize = "md" | "lg";
@@ -42,6 +46,8 @@ const SIZE_STYLES: Record<ButtonSize, string> = {
   lg: "px-6 py-3.5 text-base",
 };
 
+const MotionLink = motion(Link);
+
 export function Button(props: ButtonProps) {
   const {
     children,
@@ -58,23 +64,34 @@ export function Button(props: ButtonProps) {
     className
   );
 
+  // Tertiary is a text link — tap-scale would look wrong on inline text.
+  const tapScale = variant === "tertiary" ? undefined : { scale: 0.97 };
+
   if ("href" in props && props.href) {
     return (
-      <Link href={props.href} className={classes} aria-label={ariaLabel}>
+      <MotionLink
+        href={props.href}
+        className={classes}
+        aria-label={ariaLabel}
+        whileTap={tapScale}
+        transition={quickTap}
+      >
         {children}
-      </Link>
+      </MotionLink>
     );
   }
 
   return (
-    <button
+    <motion.button
       type={props.type ?? "button"}
       onClick={props.onClick}
       disabled={props.disabled}
       className={classes}
       aria-label={ariaLabel}
+      whileTap={tapScale}
+      transition={quickTap}
     >
       {children}
-    </button>
+    </motion.button>
   );
 }
