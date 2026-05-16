@@ -1,42 +1,30 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Phone } from "lucide-react";
 import { Button } from "@/components/Button";
-import { Card } from "@/components/Card";
 import { TrustBadge } from "@/components/TrustBadge";
+import { TrustSentence } from "@/components/TrustSentence";
+import { ServicesList } from "@/components/ServicesList";
 import { LeadForm } from "@/components/LeadForm";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
-import { HoverLift } from "@/components/motion/HoverLift";
 import { StaggerWords } from "@/components/motion/StaggerWords";
 import { easeOut, softSpring } from "@/lib/motion";
-import {
-  ShieldCheck,
-  House,
-  PhoneCall,
-  Stethoscope,
-  PersonSimpleWalk,
-  HandHeart,
-  ChatCircleDots,
-  UsersThree,
-  Heartbeat,
-} from "@phosphor-icons/react";
-import type { Icon } from "@phosphor-icons/react";
-import type { ServiceIconName } from "@/lib/site-config";
 import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
-import { siteConfig, services } from "@/lib/site-config";
+import { siteConfig } from "@/lib/site-config";
 
 function Hero() {
   const reduced = useReducedMotionSafe();
   const ifMotion = <T,>(animated: T, still: T): T => (reduced ? still : animated);
 
   return (
-    <section className="px-4 py-16 md:px-6 md:py-24">
+    <section className="px-4 py-12 md:px-6 md:py-28">
       <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-[1.1fr_1fr]">
         <div>
           <motion.div
-            className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase"
+            className="text-[10px] font-semibold tracking-[0.18em] uppercase text-navy/65"
             initial={ifMotion({ opacity: 0 }, { opacity: 1 })}
             animate={{ opacity: 1 }}
             transition={{ ...easeOut, duration: 0.4, delay: 0 }}
@@ -46,12 +34,11 @@ function Hero() {
 
           <StaggerWords
             as="h1"
-            className="mt-3 text-5xl leading-[1.05] md:text-6xl"
+            className="mt-3"
             text={["Quality care,", "felt at home."]}
             trigger="load"
             delay={100}
           />
-
 
           <motion.p
             className="text-slate mt-5 max-w-xl text-lg leading-relaxed"
@@ -70,8 +57,9 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...softSpring, delay: 0.4 }}
             >
-              <Button href="#contact" size="lg">
-                Request info →
+              <Button href={siteConfig.phoneHref} size="lg">
+                <Phone size={16} />
+                Call {siteConfig.phone}
               </Button>
             </motion.div>
             <motion.div
@@ -79,15 +67,15 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ ...softSpring, delay: 0.48 }}
             >
-              <Button variant="secondary" size="lg" href={siteConfig.phoneHref}>
-                Call {siteConfig.phone}
+              <Button variant="secondary" size="lg" href="#contact">
+                Request info ↓
               </Button>
             </motion.div>
           </div>
         </div>
 
         <motion.div
-          className="aspect-[1024/572] overflow-hidden rounded-2xl"
+          className="aspect-[1024/572] overflow-hidden rounded-lg"
           initial={ifMotion({ opacity: 0 }, { opacity: 1 })}
           animate={{ opacity: 1 }}
           transition={{ ...easeOut, duration: 0.8, delay: 0.2 }}
@@ -99,71 +87,31 @@ function Hero() {
   );
 }
 
-const SERVICE_ICONS: Record<ServiceIconName, Icon> = {
-  Stethoscope,
-  PersonSimpleWalk,
-  HandHeart,
-  ChatCircleDots,
-  UsersThree,
-  House,
-  Heartbeat,
-};
-
 export default function HomePage() {
   return (
     <>
       {/* 1. Hero */}
       <Hero />
 
-      {/* 2. Trust strip */}
-      <FadeUp>
-        <section className="border-borderline bg-mist border-y px-4 py-10 md:px-6">
-          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-8 text-center">
-            <div className="flex flex-col items-center gap-2">
-              <ShieldCheck size={32} weight="duotone" className="text-navy" />
-              <div>
-                <div className="font-display text-xl">Medicare-certified</div>
-                <div className="text-slate text-xs">
-                  + {siteConfig.accreditation}
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <House size={32} weight="duotone" className="text-navy" />
-              <div>
-                <div className="font-display text-xl">
-                  Serving Katy since {siteConfig.foundedYear}
-                </div>
-                <div className="text-slate text-xs">Locally owned</div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-2">
-              <PhoneCall size={32} weight="duotone" className="text-navy" />
-              <div>
-                <div className="font-display text-xl">24/7 on-call nursing</div>
-                <div className="text-slate text-xs">Always reachable</div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </FadeUp>
+      {/* 2. Editorial trust pull-quote (replaces former trust strip) */}
+      <TrustSentence />
 
       {/* 3. About band */}
-      <section className="px-4 py-20 md:px-6 md:py-24">
+      <section className="px-4 py-16 md:px-6 md:py-32">
         <div className="mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2">
           <div>
             <StaggerWords
               as="h2"
-              className="text-4xl leading-[1.1]"
+              className=""
               text="Serving Katy families since 2008."
             />
             <FadeUp delay={120}>
               <p className="text-slate mt-5 text-base leading-relaxed">
                 Lifecare Options has served Katy families since 2008. We&apos;re
-                a CHAP-accredited, Medicare-certified home health agency, locally
-                owned and small enough to know your name. Our clinicians bring
-                skilled care into the home, where healing is most natural, and
-                we&apos;re on-call 24/7 for whatever comes next.
+                a CHAP-accredited, Medicare-certified home health agency,
+                locally owned and small enough to know your name. Our clinicians
+                bring skilled care into the home, where healing is most natural,
+                and we&apos;re on-call 24/7 for whatever comes next.
               </p>
             </FadeUp>
           </div>
@@ -186,103 +134,23 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Services at a glance */}
-      <section className="bg-mist px-4 py-20 md:px-6 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <FadeUp>
-            <div className="mx-auto mb-10 max-w-2xl text-center">
-              <div className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase">
-                Our services
-              </div>
-              <StaggerWords
-                as="h2"
-                className="mt-2 text-4xl leading-[1.1]"
-                text="Seven disciplines, one coordinated plan"
-              />
-              <p className="text-slate mt-3 text-base">
-                Physician-ordered home health covered by Medicare. Our team works
-                together around your care plan, with no handoff gaps.
-              </p>
-            </div>
-          </FadeUp>
-          {(() => {
-            const featured = services.find(
-              (s) => s.name === "Remote Patient Monitoring",
-            );
-            const standard = services.filter(
-              (s) => s.name !== "Remote Patient Monitoring",
-            );
-            const FeaturedIcon = featured
-              ? SERVICE_ICONS[featured.iconName]
-              : null;
-            return (
-              <>
-                {featured && FeaturedIcon && (
-                  <FadeUp delay={120} className="mb-3">
-                    <HoverLift>
-                      <Card variant="peach" className="p-7 md:p-8">
-                        <div className="flex flex-col items-start gap-5 md:flex-row md:items-center md:gap-7">
-                          <FeaturedIcon
-                            size={56}
-                            weight="duotone"
-                            className="text-navy shrink-0"
-                          />
-                          <div className="flex-1">
-                            <div className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase">
-                              Now offering
-                            </div>
-                            <div className="font-display mt-1 text-2xl md:text-3xl">
-                              {featured.name}
-                            </div>
-                            <div className="text-slate mt-2 text-sm md:text-base">
-                              {featured.description}
-                            </div>
-                          </div>
-                        </div>
-                      </Card>
-                    </HoverLift>
-                  </FadeUp>
-                )}
-                <Stagger className="grid gap-3 md:grid-cols-3">
-                  {standard.map((s, i) => {
-                    const variant =
-                      i % 3 === 0 ? "white" : i % 3 === 1 ? "mist" : "peach";
-                    const IconComponent = SERVICE_ICONS[s.iconName];
-                    return (
-                      <StaggerItem key={s.name}>
-                        <HoverLift className="h-full">
-                          <Card variant={variant} className="h-full">
-                            <IconComponent
-                              size={36}
-                              weight="duotone"
-                              className="text-navy"
-                            />
-                            <div className="font-display mt-3 text-xl">
-                              {s.name}
-                            </div>
-                            <div className="text-slate mt-2 text-sm">
-                              {s.description}
-                            </div>
-                          </Card>
-                        </HoverLift>
-                      </StaggerItem>
-                    );
-                  })}
-                </Stagger>
-              </>
-            );
-          })()}
-        </div>
-      </section>
+      {/* 4. Services — numbered editorial list */}
+      <ServicesList />
 
       {/* 5. Contact / Lead form */}
-      <section id="contact" className="bg-white px-4 py-20 md:px-6 md:py-24">
+      <section id="contact" className="px-4 py-16 md:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto mb-8 max-w-2xl text-center">
-            <StaggerWords as="h2" className="text-4xl" text="Get in touch" />
+            <StaggerWords as="h2" className="" text="Get in touch." />
             <p className="text-slate mt-3">
-              Fill out the form below and our team will reach out within 1
-              business day.
+              Or call us directly:{" "}
+              <a
+                href={siteConfig.phoneHref}
+                className="font-semibold text-navy hover:text-care-blue"
+              >
+                {siteConfig.phone}
+              </a>
+              , answered 24/7.
             </p>
           </div>
           <LeadForm />
