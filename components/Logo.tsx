@@ -19,9 +19,9 @@ const SIZES = {
     tagMargin: "mt-0.5",
   },
   md: {
-    icon: 48,
-    title: "text-base",
-    tagline: "text-[10px]",
+    icon: 56,
+    title: "text-lg",
+    tagline: "text-[11px]",
     gap: "gap-3",
     tagMargin: "mt-0.5",
   },
