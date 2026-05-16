@@ -8,8 +8,20 @@ import { LeadForm } from "@/components/LeadForm";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger, StaggerItem } from "@/components/motion/Stagger";
+import { HoverLift } from "@/components/motion/HoverLift";
 import { easeOut, softSpring } from "@/lib/motion";
-import { ShieldCheck, House, PhoneCall } from "@phosphor-icons/react";
+import {
+  ShieldCheck,
+  House,
+  PhoneCall,
+  Stethoscope,
+  PersonSimpleWalk,
+  HandHeart,
+  ChatCircleDots,
+  UsersThree,
+} from "@phosphor-icons/react";
+import type { Icon } from "@phosphor-icons/react";
+import type { ServiceIconName } from "@/lib/site-config";
 import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
 import { siteConfig, services } from "@/lib/site-config";
 
@@ -87,6 +99,15 @@ function Hero() {
     </section>
   );
 }
+
+const SERVICE_ICONS: Record<ServiceIconName, Icon> = {
+  Stethoscope,
+  PersonSimpleWalk,
+  HandHeart,
+  ChatCircleDots,
+  UsersThree,
+  House,
+};
 
 export default function HomePage() {
   return (
@@ -168,30 +189,44 @@ export default function HomePage() {
       {/* 4. Services at a glance */}
       <section className="bg-mist px-4 py-20 md:px-6 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="mx-auto mb-10 max-w-2xl text-center">
-            <div className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase">
-              Our services
+          <FadeUp>
+            <div className="mx-auto mb-10 max-w-2xl text-center">
+              <div className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase">
+                Our services
+              </div>
+              <h2 className="mt-2 text-4xl leading-[1.1]">
+                Six disciplines, one coordinated plan
+              </h2>
+              <p className="text-slate mt-3 text-base">
+                Physician-ordered home health covered by Medicare. Our team works
+                together around your care plan — no handoff gaps.
+              </p>
             </div>
-            <h2 className="mt-2 text-4xl leading-[1.1]">
-              Six disciplines, one coordinated plan
-            </h2>
-            <p className="text-slate mt-3 text-base">
-              Physician-ordered home health covered by Medicare. Our team works
-              together around your care plan — no handoff gaps.
-            </p>
-          </div>
-          <div className="grid gap-3 md:grid-cols-3">
+          </FadeUp>
+          <Stagger className="grid gap-3 md:grid-cols-3">
             {services.map((s, i) => {
               const variant =
                 i % 3 === 0 ? "peach" : i % 3 === 1 ? "white" : "mist";
+              const IconComponent = SERVICE_ICONS[s.iconName];
               return (
-                <Card key={s.name} variant={variant}>
-                  <div className="font-display text-xl">{s.name}</div>
-                  <div className="text-slate mt-2 text-sm">{s.description}</div>
-                </Card>
+                <StaggerItem key={s.name}>
+                  <HoverLift className="h-full">
+                    <Card variant={variant} className="h-full">
+                      <IconComponent
+                        size={36}
+                        weight="duotone"
+                        className="text-navy"
+                      />
+                      <div className="font-display mt-3 text-xl">{s.name}</div>
+                      <div className="text-slate mt-2 text-sm">
+                        {s.description}
+                      </div>
+                    </Card>
+                  </HoverLift>
+                </StaggerItem>
               );
             })}
-          </div>
+          </Stagger>
         </div>
       </section>
 
