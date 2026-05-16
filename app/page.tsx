@@ -59,7 +59,7 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...easeOut, duration: 0.5, delay: 0.25 }}
           >
-            Medicare-certified skilled nursing, therapy, and personal care —
+            Medicare-certified skilled nursing, therapy, and personal care,
             delivered across Katy, Fort Bend, and Harris counties since{" "}
             {siteConfig.foundedYear}.
           </motion.p>
@@ -162,7 +162,7 @@ export default function HomePage() {
                 Lifecare Options has served Katy families since 2008. We&apos;re
                 a CHAP-accredited, Medicare-certified home health agency, locally
                 owned and small enough to know your name. Our clinicians bring
-                skilled care into the home — where healing is most natural — and
+                skilled care into the home, where healing is most natural, and
                 we&apos;re on-call 24/7 for whatever comes next.
               </p>
             </FadeUp>
@@ -201,7 +201,7 @@ export default function HomePage() {
               />
               <p className="text-slate mt-3 text-base">
                 Physician-ordered home health covered by Medicare. Our team works
-                together around your care plan — no handoff gaps.
+                together around your care plan, with no handoff gaps.
               </p>
             </div>
           </FadeUp>
