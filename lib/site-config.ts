@@ -38,7 +38,7 @@ export const services = [
   {
     name: "Occupational Therapy",
     description:
-      "Cognitive and physical recovery — post-stroke, post-injury, returning to daily routines safely.",
+      "Recovery and rehab — cognitive, physical, after stroke or injury.",
     iconName: "HandHeart",
   },
   {
