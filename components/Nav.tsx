@@ -11,7 +11,10 @@ const SCROLL_THRESHOLD = 8;
 
 export function Nav() {
   const [open, setOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(
+    // Initialize from current scroll position (handles mid-page hot reload).
+    () => typeof window !== "undefined" && window.scrollY > SCROLL_THRESHOLD
+  );
 
   useEffect(() => {
     let frame = 0;
@@ -22,8 +25,6 @@ export function Nav() {
         frame = 0;
       });
     };
-    // Initialize from current scroll (handles mid-page hot reload).
-    setIsScrolled(window.scrollY > SCROLL_THRESHOLD);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);
