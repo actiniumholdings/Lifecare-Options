@@ -25,8 +25,8 @@ function Hero() {
         <div>
           <motion.div
             className="text-[10px] font-semibold tracking-[0.18em] uppercase text-navy/65"
-            initial={ifMotion({ opacity: 0 }, { opacity: 1 })}
-            animate={{ opacity: 1 }}
+            initial={ifMotion({ y: -4 }, { y: 0 })}
+            animate={{ y: 0 }}
             transition={{ ...easeOut, duration: 0.4, delay: 0 }}
           >
             Home Health · Katy, TX
@@ -42,8 +42,8 @@ function Hero() {
 
           <motion.p
             className="text-slate mt-5 max-w-xl text-lg leading-relaxed"
-            initial={ifMotion({ opacity: 0, y: 12 }, { opacity: 1, y: 0 })}
-            animate={{ opacity: 1, y: 0 }}
+            initial={ifMotion({ y: 12 }, { y: 0 })}
+            animate={{ y: 0 }}
             transition={{ ...easeOut, duration: 0.5, delay: 0.25 }}
           >
             Medicare-certified skilled nursing, therapy, and personal care,
@@ -53,8 +53,8 @@ function Hero() {
 
           <div className="mt-7 flex flex-wrap gap-3">
             <motion.div
-              initial={ifMotion({ opacity: 0, y: 8 }, { opacity: 1, y: 0 })}
-              animate={{ opacity: 1, y: 0 }}
+              initial={ifMotion({ y: 8 }, { y: 0 })}
+              animate={{ y: 0 }}
               transition={{ ...softSpring, delay: 0.4 }}
             >
               <Button href={siteConfig.phoneHref} size="lg">
@@ -63,8 +63,8 @@ function Hero() {
               </Button>
             </motion.div>
             <motion.div
-              initial={ifMotion({ opacity: 0, y: 8 }, { opacity: 1, y: 0 })}
-              animate={{ opacity: 1, y: 0 }}
+              initial={ifMotion({ y: 8 }, { y: 0 })}
+              animate={{ y: 0 }}
               transition={{ ...softSpring, delay: 0.48 }}
             >
               <Button variant="secondary" size="lg" href="#contact">
@@ -76,8 +76,8 @@ function Hero() {
 
         <motion.div
           className="aspect-[1024/572] overflow-hidden rounded-lg"
-          initial={ifMotion({ opacity: 0 }, { opacity: 1 })}
-          animate={{ opacity: 1 }}
+          initial={ifMotion({ scale: 0.98 }, { scale: 1 })}
+          animate={{ scale: 1 }}
           transition={{ ...easeOut, duration: 0.8, delay: 0.2 }}
         >
           <HeroIllustration className="h-full w-full object-cover" />

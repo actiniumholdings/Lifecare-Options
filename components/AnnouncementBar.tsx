@@ -18,8 +18,8 @@ export function AnnouncementBar() {
       role="region"
       aria-label="Announcement"
       className="bg-navy text-cream"
-      initial={reduced ? { opacity: 1 } : { opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={reduced ? { y: 0 } : { y: -4 }}
+      animate={{ y: 0 }}
       transition={{ ...easeOut, duration: 0.4 }}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-2 text-sm md:px-6">
