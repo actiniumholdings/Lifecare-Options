@@ -19,8 +19,8 @@ export const siteConfig = {
   onCall: "24/7 on-call nursing",
   foundedYear: 2008,
   accreditation: "CHAP-accredited",
-  medicareCcn: "[TBD — fill before launch]",
-  stateLicense: "[TBD — fill before launch]",
+  medicareCcn: null as string | null, // Fill with real CCN before launch
+  stateLicense: null as string | null, // Fill with real Texas state license number before launch
 } as const;
 
 export const services = [
