@@ -31,8 +31,8 @@ const SERVICE_OPTIONS = [
 ] as const;
 
 const inputClass =
-  "w-full rounded-lg border border-borderline bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-care-blue/40";
-const labelClass = "block text-sm font-medium text-navy";
+  "w-full rounded-lg border border-cream-edge bg-cream/60 px-4 py-3 text-base text-navy placeholder:text-slate/60 focus:outline-none focus:border-navy focus:bg-cream";
+const labelClass = "block text-sm font-semibold text-navy mb-1.5";
 const errorClass = "mt-1 text-xs text-alert-red";
 
 export function LeadForm() {
@@ -43,71 +43,75 @@ export function LeadForm() {
 
   if (submitState === "ok") {
     return (
-      <div className="bg-peach-cream mx-auto max-w-xl rounded-xl p-8 text-center">
-        <h3 className="font-display text-2xl">Thanks — we got it.</h3>
-        <p className="text-slate mt-3 text-sm">
-          {tab === "services"
-            ? "Our intake team will reach out within 1 business day."
-            : "Please email your resume to jobs@mylifecareoptions.com — we'll be in touch within 2 business days."}
-        </p>
+      <div className="mx-auto max-w-3xl">
+        <div className="rounded-lg bg-white p-8 text-center shadow-[0_1px_0_rgba(15,43,71,0.08),_0_4px_16px_rgba(15,43,71,0.06)] md:p-12">
+          <h3 className="text-2xl">Thanks. We got it.</h3>
+          <p className="text-slate mt-3 text-sm">
+            {tab === "services"
+              ? "Our intake team will reach out within 1 business day."
+              : "Please email your resume to jobs@mylifecareoptions.com. We'll be in touch within 2 business days."}
+          </p>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="mx-auto max-w-2xl">
-      <div
-        role="tablist"
-        aria-label="Form type"
-        className="border-borderline flex gap-2 border-b"
-      >
-        <button
-          role="tab"
-          aria-selected={tab === "services"}
-          onClick={() => setTab("services")}
-          className={`px-4 py-3 text-sm font-medium ${
-            tab === "services"
-              ? "border-care-blue text-navy border-b-2"
-              : "text-slate hover:text-navy"
-          }`}
+    <div className="mx-auto max-w-3xl">
+      <div className="rounded-lg bg-white p-6 shadow-[0_1px_0_rgba(15,43,71,0.08),_0_4px_16px_rgba(15,43,71,0.06)] md:p-8">
+        <div
+          role="tablist"
+          aria-label="Form type"
+          className="inline-flex rounded-full bg-cream-deep p-1 mb-6"
         >
-          Services inquiry
-        </button>
-        <button
-          role="tab"
-          aria-selected={tab === "employment"}
-          onClick={() => setTab("employment")}
-          className={`px-4 py-3 text-sm font-medium ${
-            tab === "employment"
-              ? "border-care-blue text-navy border-b-2"
-              : "text-slate hover:text-navy"
-          }`}
-        >
-          Work with us
-        </button>
-      </div>
+          <button
+            role="tab"
+            aria-selected={tab === "services"}
+            onClick={() => setTab("services")}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+              tab === "services"
+                ? "bg-navy text-cream"
+                : "bg-transparent text-navy/70 hover:text-navy"
+            }`}
+          >
+            Services inquiry
+          </button>
+          <button
+            role="tab"
+            aria-selected={tab === "employment"}
+            onClick={() => setTab("employment")}
+            className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+              tab === "employment"
+                ? "bg-navy text-cream"
+                : "bg-transparent text-navy/70 hover:text-navy"
+            }`}
+          >
+            Work with us
+          </button>
+        </div>
 
-      <div className="mt-6">
-        {tab === "services" ? (
-          <ServicesFormFields
-            onSuccess={() => setSubmitState("ok")}
-            onError={() => setSubmitState("error")}
-            onSubmitting={() => setSubmitState("submitting")}
-            isSubmitting={submitState === "submitting"}
-          />
-        ) : (
-          <EmploymentFormFields
-            onSuccess={() => setSubmitState("ok")}
-            onError={() => setSubmitState("error")}
-            onSubmitting={() => setSubmitState("submitting")}
-            isSubmitting={submitState === "submitting"}
-          />
-        )}
-        {submitState === "error" && (
-          <p className="text-alert-red mt-3 text-sm">
-            Something went wrong. Please try again or call (281) 646-9546.
-          </p>
-        )}
+        <div>
+          {tab === "services" ? (
+            <ServicesFormFields
+              onSuccess={() => setSubmitState("ok")}
+              onError={() => setSubmitState("error")}
+              onSubmitting={() => setSubmitState("submitting")}
+              isSubmitting={submitState === "submitting"}
+            />
+          ) : (
+            <EmploymentFormFields
+              onSuccess={() => setSubmitState("ok")}
+              onError={() => setSubmitState("error")}
+              onSubmitting={() => setSubmitState("submitting")}
+              isSubmitting={submitState === "submitting"}
+            />
+          )}
+          {submitState === "error" && (
+            <p className="text-alert-red mt-3 text-sm">
+              Something went wrong. Please try again or call (281) 646-9546.
+            </p>
+          )}
+        </div>
       </div>
     </div>
   );
