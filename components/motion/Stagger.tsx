@@ -10,6 +10,8 @@ type StaggerProps = {
   className?: string;
 };
 
+// Variants animate only `y`. Opacity is never gated on inView so content
+// stays visible to non-scrolling viewers.
 const parentVariants: Variants = {
   hidden: {},
   visible: {
@@ -18,8 +20,8 @@ const parentVariants: Variants = {
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 8 },
-  visible: { opacity: 1, y: 0, transition: softSpring },
+  hidden: { y: 8 },
+  visible: { y: 0, transition: softSpring },
 };
 
 export function Stagger({ children, className }: StaggerProps) {

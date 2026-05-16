@@ -19,6 +19,11 @@ type StaggerWordsProps = {
   className?: string;
 };
 
+/**
+ * Word-by-word entrance. Words are ALWAYS opacity:1 in the rendered output;
+ * only `y` translates. Guarantees crawlers, link previews, print, and
+ * reduced-motion-before-hydration all see the content.
+ */
 export function StaggerWords({
   text,
   as = "h1",
@@ -34,8 +39,6 @@ export function StaggerWords({
   const lines = Array.isArray(text) ? text : [text];
   const shouldAnimate = !reduced && (trigger === "load" || inView);
 
-  // Build a flat list of word tokens with their global index, preserving
-  // line breaks between array entries.
   let wordIndex = 0;
   const children = lines.flatMap((line, lineIdx) => {
     const words = line.split(/\s+/).filter(Boolean);
@@ -46,14 +49,8 @@ export function StaggerWords({
         <Fragment key={`l${lineIdx}w${i}`}>
           <motion.span
             style={{ display: "inline-block" }}
-            initial={shouldAnimate ? { opacity: 0, y: 8 } : false}
-            animate={
-              shouldAnimate
-                ? { opacity: 1, y: 0 }
-                : reduced
-                  ? { opacity: 1, y: 0 }
-                  : { opacity: 0, y: 8 }
-            }
+            initial={shouldAnimate ? { y: 8 } : false}
+            animate={shouldAnimate ? { y: 0 } : { y: 0 }}
             transition={{
               ...softSpring,
               delay: (delay + idx * stagger) / 1000,
@@ -70,8 +67,6 @@ export function StaggerWords({
       : lineNodes;
   });
 
-  // Switch on `as` to keep ref typing tight; passing refs through
-  // createElement triggers react-hooks/refs.
   if (as === "h2") {
     return <h2 ref={ref} className={className}>{children}</h2>;
   }

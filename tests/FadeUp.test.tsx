@@ -21,4 +21,15 @@ describe("FadeUp", () => {
     );
     expect(screen.getByText("Delayed")).toBeInTheDocument();
   });
+
+  it("renders content at opacity 1 even when not yet in view", () => {
+    const { container } = render(
+      <FadeUp>
+        <p>VisibleAlways</p>
+      </FadeUp>
+    );
+    const wrapper = container.firstElementChild as HTMLElement;
+    const opacity = wrapper.style.opacity;
+    expect(opacity === "" || opacity === "1").toBe(true);
+  });
 });
