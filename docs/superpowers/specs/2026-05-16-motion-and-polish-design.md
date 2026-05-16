@@ -110,15 +110,17 @@ All motion primitives require `"use client"` directive. Page sections that consu
 
 ## 5. Hero (§2)
 
-### 5.1 Photo
+### 5.1 Hero illustration (amended 2026-05-16)
 
-- Direction: **Caring Hands** — close-up of caregiver + patient hands meeting, warm tungsten light, no faces visible
-- Source: Unsplash, queried during implementation against the "Caring Hands" brief. License-free, attribution not required but optional.
-- Format: served via `next/image` with `priority` flag
-- Sizing: `sizes="(max-width: 768px) 100vw, 50vw"`
-- Aspect ratio: 4:3 (matches current placeholder container)
-- Alt text: descriptive — e.g., "A caregiver's hands holding a patient's hands in warm light." Not decorative — informs visually-impaired users of the emotional context.
-- Replaces the current `<div className="from-borderline to-peach-cream aspect-[4/3] rounded-2xl bg-gradient-to-br" aria-hidden />`
+**Pivot:** Originally specified a Caring Hands Unsplash photograph. After multiple photo surveys, the user explicitly chose illustration over photography (see memory: `feedback-hero-illustration`). Replaced with a custom inline SVG.
+
+- Direction: **Connection** — two abstract figures (caregiver in navy, patient in care-blue) with a heart suspended between them, atop a warm peach-cream background with soft care-blue concentric circles behind. Communicates human relationship without stocky people-imagery.
+- Implementation: `components/HeroIllustration.tsx` — a hand-drawn React SVG component using the existing design tokens (navy `#0f2b47`, care-blue `#5a8bb8`, peach-cream `#fdeedd`).
+- Rendered inline (not via `next/image`) so the surrounding motion wrapper can animate scale/fade cleanly and colors stay in sync with the design system. No new asset request, smaller bundle.
+- Aspect ratio: 4:3 via SVG viewBox `0 0 600 450`; the wrapper enforces `aspect-[4/3]` and `rounded-2xl` to match the original container shape.
+- Alt text: descriptive — set via `role="img"` + `aria-label` inside the SVG component.
+- Replaces the current `<div className="from-borderline to-peach-cream aspect-[4/3] rounded-2xl bg-gradient-to-br" aria-hidden />`.
+- Out of scope for this spec: bespoke per-figure motion (e.g. heart pulsing). The whole illustration animates as one unit via the hero's entrance choreography.
 
 ### 5.2 Entrance choreography
 
@@ -128,20 +130,20 @@ Runs on mount (no scroll trigger — above the fold). Timings are cumulative fro
 |---|---|---|---|
 | 0ms | Kicker label ("Home Health · Katy, TX") | Fade in (400ms) | `easeOut` |
 | 100ms | Headline ("Quality care, felt at home.") | Fade + slide up 16px (600ms) | `easeOut` |
-| 200ms | Photo | Fade + scale 0.97→1.0 (800ms) | `easeOut` |
+| 200ms | Illustration | Fade + scale 0.97→1.0 (800ms) | `easeOut` |
 | 250ms | Paragraph | Fade + slide up 12px (500ms) | `easeOut` |
 | 400ms | Button row | Stagger, each fades + slides up 8px (80ms apart) | `softSpring` |
 
 ### 5.3 Hover states
 
-- Photo: slow scale to 1.02 over 1200ms (very subtle "breath")
+- Illustration: slow scale to 1.02 over 1200ms (very subtle "breath")
 - Primary button: `whileTap` scale to 0.97 (`quickTap`)
 - Secondary button: same tap scale
 
 ### 5.4 Reduced motion
 
 - Entire entrance sequence skipped — renders at final state on mount
-- Photo hover scale: skipped (decorative)
+- Illustration hover scale: skipped (decorative)
 - Button tap scale: kept (interaction feedback)
 
 ---

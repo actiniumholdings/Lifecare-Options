@@ -21,4 +21,10 @@ describe("Button", () => {
     const link = screen.getByRole("link", { name: /jump/i });
     expect(link).toHaveAttribute("href", "#contact");
   });
+
+  it("preserves type='submit' when wrapping with motion (regression guard)", () => {
+    render(<Button type="submit">Send</Button>);
+    const btn = screen.getByRole("button", { name: /send/i }) as HTMLButtonElement;
+    expect(btn.type).toBe("submit");
+  });
 });
