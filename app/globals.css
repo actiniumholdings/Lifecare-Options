@@ -12,8 +12,8 @@
   --color-borderline: #e4ecf3;
 
   /* Typography */
-  --font-display: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-spectral), Georgia, serif;
+  --font-sans: var(--font-albert), system-ui, -apple-system, sans-serif;
 
   /* Spacing rhythm — 4px base grid */
   --spacing-section-y-desktop: 6rem; /* 96px */
