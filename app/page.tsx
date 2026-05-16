@@ -6,7 +6,9 @@ import { Card } from "@/components/Card";
 import { TrustBadge } from "@/components/TrustBadge";
 import { LeadForm } from "@/components/LeadForm";
 import { HeroIllustration } from "@/components/HeroIllustration";
+import { FadeUp } from "@/components/motion/FadeUp";
 import { easeOut, softSpring } from "@/lib/motion";
+import { ShieldCheck, House, PhoneCall } from "@phosphor-icons/react";
 import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
 import { siteConfig, services } from "@/lib/site-config";
 
@@ -92,26 +94,37 @@ export default function HomePage() {
       <Hero />
 
       {/* 2. Trust strip */}
-      <section className="border-borderline bg-mist border-y px-4 py-8 md:px-6">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-6 text-center">
-          <div>
-            <div className="font-display text-xl">Medicare-certified</div>
-            <div className="text-slate text-xs">
-              + {siteConfig.accreditation}
+      <FadeUp>
+        <section className="border-borderline bg-mist border-y px-4 py-10 md:px-6">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-around gap-8 text-center">
+            <div className="flex flex-col items-center gap-2">
+              <ShieldCheck size={32} weight="duotone" className="text-navy" />
+              <div>
+                <div className="font-display text-xl">Medicare-certified</div>
+                <div className="text-slate text-xs">
+                  + {siteConfig.accreditation}
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <House size={32} weight="duotone" className="text-navy" />
+              <div>
+                <div className="font-display text-xl">
+                  Serving Katy since {siteConfig.foundedYear}
+                </div>
+                <div className="text-slate text-xs">Locally owned</div>
+              </div>
+            </div>
+            <div className="flex flex-col items-center gap-2">
+              <PhoneCall size={32} weight="duotone" className="text-navy" />
+              <div>
+                <div className="font-display text-xl">24/7 on-call nursing</div>
+                <div className="text-slate text-xs">Always reachable</div>
+              </div>
             </div>
           </div>
-          <div>
-            <div className="font-display text-xl">
-              Serving Katy since {siteConfig.foundedYear}
-            </div>
-            <div className="text-slate text-xs">Locally owned</div>
-          </div>
-          <div>
-            <div className="font-display text-xl">24/7 on-call nursing</div>
-            <div className="text-slate text-xs">Always reachable</div>
-          </div>
-        </div>
-      </section>
+        </section>
+      </FadeUp>
 
       {/* 3. About band */}
       <section className="px-4 py-20 md:px-6 md:py-24">
