@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { inter, playfair } from "@/lib/fonts";
+import { albert, spectral } from "@/lib/fonts";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="en" className={`${albert.variable} ${spectral.variable}`}>
       <body className="text-navy flex min-h-screen flex-col bg-white">
         <AnnouncementBar />
         <Nav />
