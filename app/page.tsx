@@ -1,44 +1,95 @@
+"use client";
+
+import { motion } from "motion/react";
 import { Button } from "@/components/Button";
 import { Card } from "@/components/Card";
 import { TrustBadge } from "@/components/TrustBadge";
 import { LeadForm } from "@/components/LeadForm";
+import { HeroIllustration } from "@/components/HeroIllustration";
+import { easeOut, softSpring } from "@/lib/motion";
+import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
 import { siteConfig, services } from "@/lib/site-config";
+
+function Hero() {
+  const reduced = useReducedMotionSafe();
+  const ifMotion = <T,>(animated: T, still: T): T => (reduced ? still : animated);
+
+  return (
+    <section className="px-4 py-16 md:px-6 md:py-24">
+      <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-[1.1fr_1fr]">
+        <div>
+          <motion.div
+            className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase"
+            initial={ifMotion({ opacity: 0 }, { opacity: 1 })}
+            animate={{ opacity: 1 }}
+            transition={{ ...easeOut, duration: 0.4, delay: 0 }}
+          >
+            Home Health · Katy, TX
+          </motion.div>
+
+          <motion.h1
+            className="mt-3 text-5xl leading-[1.05] md:text-6xl"
+            initial={ifMotion({ opacity: 0, y: 16 }, { opacity: 1, y: 0 })}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...easeOut, duration: 0.6, delay: 0.1 }}
+          >
+            Quality care,
+            <br />
+            felt at home.
+          </motion.h1>
+
+          <motion.p
+            className="text-slate mt-5 max-w-xl text-lg leading-relaxed"
+            initial={ifMotion({ opacity: 0, y: 12 }, { opacity: 1, y: 0 })}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...easeOut, duration: 0.5, delay: 0.25 }}
+          >
+            Medicare-certified skilled nursing, therapy, and personal care —
+            delivered across Katy, Fort Bend, and Harris counties since{" "}
+            {siteConfig.foundedYear}.
+          </motion.p>
+
+          <div className="mt-7 flex flex-wrap gap-3">
+            <motion.div
+              initial={ifMotion({ opacity: 0, y: 8 }, { opacity: 1, y: 0 })}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...softSpring, delay: 0.4 }}
+            >
+              <Button href="#contact" size="lg">
+                Request info →
+              </Button>
+            </motion.div>
+            <motion.div
+              initial={ifMotion({ opacity: 0, y: 8 }, { opacity: 1, y: 0 })}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...softSpring, delay: 0.48 }}
+            >
+              <Button variant="secondary" size="lg" href={siteConfig.phoneHref}>
+                Call {siteConfig.phone}
+              </Button>
+            </motion.div>
+          </div>
+        </div>
+
+        <motion.div
+          className="aspect-[4/3] overflow-hidden rounded-2xl"
+          initial={ifMotion({ opacity: 0, scale: 0.97 }, { opacity: 1, scale: 1 })}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ ...easeOut, duration: 0.8, delay: 0.2 }}
+          whileHover={reduced ? undefined : { scale: 1.02 }}
+        >
+          <HeroIllustration className="h-full w-full" />
+        </motion.div>
+      </div>
+    </section>
+  );
+}
 
 export default function HomePage() {
   return (
     <>
       {/* 1. Hero */}
-      <section className="px-4 py-16 md:px-6 md:py-24">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-[1.1fr_1fr]">
-          <div>
-            <div className="text-care-blue text-xs font-semibold tracking-[0.1em] uppercase">
-              Home Health · Katy, TX
-            </div>
-            <h1 className="mt-3 text-5xl leading-[1.05] md:text-6xl">
-              Quality care,
-              <br />
-              felt at home.
-            </h1>
-            <p className="text-slate mt-5 max-w-xl text-lg leading-relaxed">
-              Medicare-certified skilled nursing, therapy, and personal care —
-              delivered across Katy, Fort Bend, and Harris counties since{" "}
-              {siteConfig.foundedYear}.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Button href="#contact" size="lg">
-                Request info →
-              </Button>
-              <Button variant="secondary" size="lg" href={siteConfig.phoneHref}>
-                Call {siteConfig.phone}
-              </Button>
-            </div>
-          </div>
-          <div
-            className="from-borderline to-peach-cream aspect-[4/3] rounded-2xl bg-gradient-to-br"
-            aria-hidden
-          />
-        </div>
-      </section>
+      <Hero />
 
       {/* 2. Trust strip */}
       <section className="border-borderline bg-mist border-y px-4 py-8 md:px-6">
