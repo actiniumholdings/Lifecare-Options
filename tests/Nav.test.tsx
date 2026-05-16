@@ -30,4 +30,11 @@ describe("Nav", () => {
     await user.click(toggle);
     expect(screen.getByTestId("mobile-menu")).toBeInTheDocument();
   });
+
+  it("renders without crashing at scrollY=0 (default state)", () => {
+    // Reset scroll position before render
+    Object.defineProperty(window, "scrollY", { value: 0, writable: true });
+    render(<Nav />);
+    expect(screen.getByLabelText(/lifecare options home/i)).toBeInTheDocument();
+  });
 });
