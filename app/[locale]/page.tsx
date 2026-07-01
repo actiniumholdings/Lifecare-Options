@@ -162,7 +162,7 @@ export default function Home() {
                 <blockquote>
                   <p className="text-navy">&ldquo;{item.quote}&rdquo;</p>
                   <footer className="mt-3 text-sm text-slate">
-                    — {item.attribution}
+                    {item.attribution}
                   </footer>
                 </blockquote>
               </Card>

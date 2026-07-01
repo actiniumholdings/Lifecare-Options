@@ -44,7 +44,7 @@
       "ChatCircleDots": "Speech therapists address communication and swallowing difficulties following stroke, neurological changes, or injury.",
       "UsersThree": "Our social workers help families navigate benefits, find community resources, and coordinate the non-clinical side of a care plan.",
       "House": "Certified home health aides assist with bathing, grooming, meal preparation, and the daily routines that matter most.",
-      "Heartbeat": "Connected home devices track your vital signs daily. Your nurse reviews the data and responds before a small change becomes a problem."
+      "Heartbeat": "Connected home devices track your vital signs daily. Your nurse reviews the data and can respond quickly if something changes."
     },
     "specialties": {
       "eyebrow": "Conditions we support",
@@ -95,7 +95,7 @@
     "credentials": {
       "eyebrow": "Credentials",
       "title": "Licensed and accountable.",
-      "intro": "Every credential below is public record and current.",
+      "intro": "Every credential below is public record.",
       "chapTitle": "CHAP-accredited",
       "chapBody": "Accredited by the Community Health Accreditation Partner (CHAP), the independent standard-setting body for home health and hospice.",
       "medicareTitle": "Medicare-certified",
@@ -167,7 +167,7 @@
     "bilingual": {
       "eyebrow": "Bilingual welcome",
       "title": "We care for patients in English and Spanish.",
-      "body": "Bilingual caregivers are a valued part of our team. If you speak Spanish and want to serve your community, we want to hear from you. Cuidadores bilingues son bienvenidos."
+      "body": "Bilingual caregivers are a valued part of our team. If you speak Spanish and want to serve your community, we want to hear from you. Cuidadores bilingües son bienvenidos."
     },
     "cta": {
       "headline": "Ready to bring your skills home?"
@@ -246,7 +246,7 @@
       "eyebrow": "Remote Patient Monitoring",
       "badge": "New",
       "headline": "Daily check-ins, without leaving home.",
-      "intro": "Connected home devices track your vital signs every day. A nurse reviews the data and responds before a small change becomes a bigger problem.",
+      "intro": "Connected home devices track your vital signs every day. A nurse reviews the data and can respond quickly if something changes.",
       "primary": "Request info"
     },
     "advantages": {
