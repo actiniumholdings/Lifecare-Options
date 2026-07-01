@@ -42,6 +42,54 @@
       "chapLabel": "accredited",
       "oncallValue": "24/7",
       "oncallLabel": "on-call nursing"
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Care at home starts with a conversation.",
+      "step1Title": "You reach out",
+      "step1Body": "Call us or fill out the form below. A nurse will speak with you — usually the same day.",
+      "step2Title": "We coordinate with your doctor",
+      "step2Body": "We contact your physician, confirm orders, and verify your insurance. You handle nothing.",
+      "step3Title": "Care begins at home",
+      "step3Body": "A skilled nurse visits on a schedule that fits your recovery. We adjust as you improve."
+    },
+    "why": {
+      "eyebrow": "Why Lifecare Options",
+      "title": "Skilled care you can rely on — close to home.",
+      "card1Title": "Medicare-certified & CHAP-accredited",
+      "card1Body": "We meet federal Medicare standards and the independent quality standards set by the Community Health Accreditation Partner.",
+      "card2Title": "Locally owned in Katy since 2008",
+      "card2Body": "We are not a national franchise. Our staff, our nurses, and our leadership have been rooted in this community for more than 15 years.",
+      "card3Title": "24/7 on-call nursing",
+      "card3Body": "A nurse is available by phone around the clock. When a question comes up at 2 a.m., you will reach a person — not a recording.",
+      "card4Title": "Coordinated with your physician",
+      "card4Body": "We communicate directly with your doctor's office. Every visit is documented and shared so your care team stays aligned."
+    },
+    "band": {
+      "eyebrow": "Our approach",
+      "headline": "Recovery goes better at home. We make sure home is ready for it."
+    },
+    "area": {
+      "eyebrow": "Service area",
+      "title": "Serving the greater Katy region",
+      "body": "Our nurses and therapists travel to patients across Fort Bend and Harris counties. If you are not sure whether we cover your address, call us — we will check.",
+      "cta": "See our full service area"
+    },
+    "testimonials": {
+      "eyebrow": "From families we serve",
+      "title": "What families say",
+      "empty": "Reviews from families are coming soon."
+    },
+    "careers": {
+      "eyebrow": "Join us",
+      "title": "Work where your care makes a difference",
+      "body": "We are a small team, and every nurse, therapist, and aide shapes the patient experience directly. If you want to do real home health work in your own community, we want to hear from you.",
+      "cta": "See open positions"
+    },
+    "cta": {
+      "eyebrow": "Ready to start?",
+      "headline": "Let us bring skilled care to your door.",
+      "primary": "Request info"
     }
   }
 }
