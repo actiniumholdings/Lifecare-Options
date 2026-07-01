@@ -92,7 +92,7 @@ export function Nav() {
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? t("closeMenu") : t("openMenu")}
           aria-expanded={open}
           className="p-2 text-navy md:hidden"
         >

@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Heartbeat } from "@phosphor-icons/react";
+import { useTranslations } from "next-intl";
 import { easeOut } from "@/lib/motion";
 import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
 
@@ -12,6 +13,7 @@ import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
  */
 export function AnnouncementBar() {
   const reduced = useReducedMotionSafe();
+  const t = useTranslations("common");
 
   return (
     <motion.div
@@ -30,7 +32,7 @@ export function AnnouncementBar() {
           aria-hidden
         />
         <span className="font-medium">
-          Now offering Remote Patient Monitoring.
+          {t("announcement")}
         </span>
       </div>
     </motion.div>

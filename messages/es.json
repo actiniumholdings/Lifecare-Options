@@ -6,7 +6,16 @@
     "callUs": "Call",
     "requestInfo": "Request info",
     "toggleMenu": "Toggle menu",
-    "close": "Close"
+    "close": "Close",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "announcement": "Now offering Remote Patient Monitoring."
+  },
+  "footer": {
+    "alwaysAnswered": "Always answered",
+    "hours": "Hours",
+    "accreditation": "Accreditation",
+    "medicareCertified": "Medicare-certified"
   },
   "nav": {
     "services": "Services",

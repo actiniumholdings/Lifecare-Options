@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   const t = useTranslations("common");
+  const tf = useTranslations("footer");
 
   return (
     <footer className="bg-navy text-cream/65">
@@ -21,7 +22,7 @@ export function Footer() {
                 {siteConfig.phone}
               </Link>
               <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-cream/65">
-                Always answered
+                {tf("alwaysAnswered")}
               </div>
             </div>
             <div className="mt-5 space-y-1 text-sm leading-relaxed">
@@ -37,7 +38,7 @@ export function Footer() {
           {/* Hours */}
           <div>
             <div className="mb-3 text-xs font-semibold tracking-wider text-cream uppercase">
-              Hours
+              {tf("hours")}
             </div>
             <ul className="space-y-1 text-sm">
               {siteConfig.hours.map((h) => (
@@ -55,10 +56,10 @@ export function Footer() {
           {/* Accreditation */}
           <div>
             <div className="mb-3 text-xs font-semibold tracking-wider text-cream uppercase">
-              Accreditation
+              {tf("accreditation")}
             </div>
             <div className="space-y-1 text-sm">
-              <div>Medicare-certified</div>
+              <div>{tf("medicareCertified")}</div>
               <div>{siteConfig.accreditation}</div>
               {siteConfig.medicareCcn && (
                 <div className="text-cream/65">
