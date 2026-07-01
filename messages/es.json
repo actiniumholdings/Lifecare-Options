@@ -29,9 +29,8 @@
     "hero": {
       "eyebrow": "Our Services",
       "headline": "Skilled care, brought home.",
-      "intro": "Our nurses, therapists, and aides come to you — so you can recover where you are most comfortable, surrounded by family.",
-      "primary": "Request info",
-      "secondary": "Call {phone}"
+      "intro": "Our nurses, therapists, and aides come to you, so you can recover where you are most comfortable, surrounded by family.",
+      "primary": "Request info"
     },
     "pillar": {
       "eyebrow": "Skilled Home Health",
@@ -41,7 +40,7 @@
     "detail": {
       "Stethoscope": "Our RNs and LVNs assess wounds, manage medications, and support chronic disease management between your doctor visits.",
       "PersonSimpleWalk": "Physical therapists help you regain strength, mobility, and balance after surgery, injury, or a progressive condition.",
-      "HandHeart": "Occupational therapists work on the everyday tasks — dressing, bathing, cooking — that keep you safe and independent at home.",
+      "HandHeart": "Occupational therapists work on the everyday tasks that keep you safe and independent at home, like dressing, bathing, and cooking.",
       "ChatCircleDots": "Speech therapists address communication and swallowing difficulties following stroke, neurological changes, or injury.",
       "UsersThree": "Our social workers help families navigate benefits, find community resources, and coordinate the non-clinical side of a care plan.",
       "House": "Certified home health aides assist with bathing, grooming, meal preparation, and the daily routines that matter most.",
@@ -54,7 +53,7 @@
     "insurance": {
       "eyebrow": "Insurance & coverage",
       "title": "We work with your plan.",
-      "body": "Most plans and Medicare are accepted, and we verify your benefits at no cost before care begins. Coverage depends on your specific plan and clinical eligibility — our intake team will walk you through what applies to you."
+      "body": "Most plans and Medicare are accepted, and we verify your benefits at no cost before care begins. Coverage depends on your specific plan and clinical eligibility. Our intake team will walk you through what applies to you."
     },
     "cta": {
       "headline": "Ready to bring care home?",
@@ -125,7 +124,7 @@
       "eyebrow": "Cities we serve",
       "title": "Familiar streets, nearby clinicians.",
       "ariaLabel": "Cities served by Lifecare Options",
-      "note": "Don't see your city? Call us — we will check your address."
+      "note": "Don’t see your city? Call us and we will check your address."
     },
     "map": {
       "eyebrow": "Coverage map",
@@ -140,14 +139,13 @@
       "eyebrow": "Careers",
       "headline": "Care for people, close to home.",
       "intro": "RN · LVN · Home Health Aide",
-      "primary": "Apply now",
-      "secondary": "Call {phone}"
+      "primary": "Apply now"
     },
     "why": {
       "eyebrow": "Why work here",
       "title": "A team worth joining.",
       "card1Title": "Small team, real relationships",
-      "card1Body": "You will know your patients and your colleagues. There are no hand-offs to strangers — the same nurses and aides follow their patients through recovery.",
+      "card1Body": "You will know your patients and your colleagues. There are no hand-offs to strangers. The same nurses and aides follow their patients through recovery.",
       "card2Title": "One-on-one patient care",
       "card2Body": "Home health is not floor nursing. You go to the patient, spend focused time, and make decisions. The work is clinical and direct.",
       "card3Title": "Nurse-led culture",
@@ -179,11 +177,11 @@
     "hero": {
       "eyebrow": "For providers",
       "headline": "Refer a patient in minutes.",
-      "intro": "Our intake team handles the details. Call or fax to get a referral started — we take it from there."
+      "intro": "Our intake team handles the details. Call or fax to get a referral started, and we take it from there."
     },
     "ways": {
       "eyebrow": "Two ways to refer",
-      "title": "Phone or fax — whichever fits your workflow.",
+      "title": "Phone or fax, whichever fits your workflow.",
       "callTitle": "Call intake",
       "callBody": "Speak directly with our intake team. We will confirm receipt, answer questions, and begin the coordination process right away.",
       "faxTitle": "Fax referral orders",
@@ -192,7 +190,7 @@
     "next": {
       "eyebrow": "What happens next",
       "title": "What to expect after you refer.",
-      "step1": "We reach out to the patient or family — usually within one business day of receiving the referral.",
+      "step1": "We reach out to the patient or family, usually within one business day of receiving the referral.",
       "step2": "We verify insurance benefits and eligibility at no cost.",
       "step3": "We work with the patient's physician to build an individualized plan of care.",
       "step4": "A skilled clinician completes the initial home visit.",
@@ -211,7 +209,7 @@
       "card4Body": "Family members may initiate a referral inquiry. We will confirm clinical eligibility and coordinate with the treating physician."
     },
     "cta": {
-      "headline": "Ready to refer? We are here to make it straightforward."
+      "headline": "Ready to refer? Call or fax our intake team."
     }
   },
   "contact": {
@@ -219,8 +217,7 @@
       "eyebrow": "Contact",
       "headline": "We're glad to hear from you.",
       "intro": "Call us, send a message, or stop by. Our intake team is here to answer your questions and help you get started.",
-      "primary": "Send a message",
-      "secondary": "Call {phone}"
+      "primary": "Send a message"
     },
     "details": {
       "eyebrow": "Find us",
@@ -241,7 +238,7 @@
       "body": "Fill out the form and our team will follow up as soon as we can."
     },
     "cta": {
-      "headline": "Have questions? We are happy to help."
+      "headline": "Have a question? Call us or send a message."
     }
   },
   "rpm": {
@@ -260,7 +257,7 @@
       "card2Title": "Problems caught earlier",
       "card2Body": "When changes are caught early, many issues can be handled at home. That may reduce emergency visits and hospital stays.",
       "card3Title": "Stay safely at home",
-      "card3Body": "Ongoing clinical oversight lets you keep living independently in familiar surroundings, with a professional safety net always present.",
+      "card3Body": "Ongoing clinical oversight lets you keep living independently in familiar surroundings, with a professional team keeping watch between visits.",
       "card4Title": "Your care team watches daily",
       "card4Body": "Readings flow directly to our nurses. If something looks off, we reach out. You are never watching alone.",
       "card5Title": "Peace of mind for family",
@@ -282,7 +279,7 @@
     },
     "coverage": {
       "eyebrow": "Coverage & Cost",
-      "title": "Often covered — we find out for you.",
+      "title": "Often covered. We find out for you.",
       "body": "Remote patient monitoring is often covered by Medicare. It may also be available through Texas Medicaid and certain plans. We verify your benefits at no cost and no obligation before anything begins.",
       "note": "Eligibility is determined individually. Call us and we will walk you through your options."
     },
@@ -300,7 +297,7 @@
     "commitment": {
       "eyebrow": "Our Commitment",
       "title": "We aim to meet WCAG 2.1 AA.",
-      "body": "We work to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA — the widely used standard for accessible web design and the benchmark referenced under the Americans with Disabilities Act. Conformance is an ongoing process, not a one-time certification."
+      "body": "We work to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA, the widely used standard for accessible web design and the benchmark referenced under the Americans with Disabilities Act. Conformance is an ongoing process, not a one-time certification."
     },
     "done": {
       "eyebrow": "What We Have Done",
@@ -325,7 +322,7 @@
       "phoneLabel": "Phone"
     },
     "cta": {
-      "headline": "Ready to get started? We are here to help."
+      "headline": "Ready to get started? Request info or call us today."
     }
   },
   "home": {
@@ -350,7 +347,7 @@
       "eyebrow": "How it works",
       "title": "Care at home starts with a conversation.",
       "step1Title": "You reach out",
-      "step1Body": "Call us or fill out the form below. A nurse will speak with you — usually the same day.",
+      "step1Body": "Call us or fill out the form below. A nurse will speak with you, usually the same day.",
       "step2Title": "We coordinate with your doctor",
       "step2Body": "We contact your physician, confirm orders, and verify your insurance. You handle nothing.",
       "step3Title": "Care begins at home",
@@ -358,13 +355,13 @@
     },
     "why": {
       "eyebrow": "Why Lifecare Options",
-      "title": "Skilled care you can rely on — close to home.",
+      "title": "Skilled care you can rely on, close to home.",
       "card1Title": "Medicare-certified & CHAP-accredited",
       "card1Body": "We meet federal Medicare standards and the independent quality standards set by the Community Health Accreditation Partner.",
       "card2Title": "Locally owned in Katy since 2008",
       "card2Body": "We are not a national franchise. Our nurses and leadership live and work in the same community we serve.",
       "card3Title": "24/7 on-call nursing",
-      "card3Body": "A nurse is available by phone around the clock. When a question comes up at 2 a.m., you will reach a person — not a recording.",
+      "card3Body": "A nurse is available by phone around the clock. When a question comes up at 2 a.m., you will reach a person, not a recording.",
       "card4Title": "Coordinated with your physician",
       "card4Body": "We communicate directly with your doctor's office. Every visit is documented and shared so your care team stays aligned."
     },
@@ -375,7 +372,7 @@
     "area": {
       "eyebrow": "Service area",
       "title": "Serving the greater Katy region",
-      "body": "Our nurses and therapists travel to patients across Fort Bend and Harris counties. If you are not sure whether we cover your address, call us — we will check.",
+      "body": "Our nurses and therapists travel to patients across Fort Bend and Harris counties. If you are not sure whether we cover your address, call us and we will check.",
       "cta": "See our full service area"
     },
     "testimonials": {
