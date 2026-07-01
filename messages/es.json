@@ -175,6 +175,45 @@
       "headline": "Ready to bring your skills home?"
     }
   },
+  "refer": {
+    "hero": {
+      "eyebrow": "For providers",
+      "headline": "Refer a patient in minutes.",
+      "intro": "Our intake team handles the details. Call or fax to get a referral started — we take it from there."
+    },
+    "ways": {
+      "eyebrow": "Two ways to refer",
+      "title": "Phone or fax — whichever fits your workflow.",
+      "callTitle": "Call intake",
+      "callBody": "Speak directly with our intake team. We will confirm receipt, answer questions, and begin the coordination process right away.",
+      "faxTitle": "Fax referral orders",
+      "faxBody": "Send orders, face sheets, or clinical notes to our secure fax line. We confirm receipt and follow up the same business day."
+    },
+    "next": {
+      "eyebrow": "What happens next",
+      "title": "What to expect after you refer.",
+      "step1": "We reach out to the patient or family — usually within one business day of receiving the referral.",
+      "step2": "We verify insurance benefits and eligibility at no cost.",
+      "step3": "We work with the patient's physician to build an individualized plan of care.",
+      "step4": "A skilled clinician completes the initial home visit.",
+      "step5": "We share progress notes with the referring provider to keep your team informed."
+    },
+    "who": {
+      "eyebrow": "Who can refer",
+      "title": "We work with the whole care team.",
+      "card1Title": "Physicians",
+      "card1Body": "Primary care physicians and specialists can initiate a referral by phone or fax. We handle prior authorization and benefit verification.",
+      "card2Title": "Discharge planners",
+      "card2Body": "Hospital discharge planners can coordinate directly with our intake team to arrange home care before the patient leaves the facility.",
+      "card3Title": "Case managers",
+      "card3Body": "Insurance and community case managers can refer patients and receive regular updates on progress and plan-of-care changes.",
+      "card4Title": "Families and caregivers",
+      "card4Body": "Family members may initiate a referral inquiry. We will confirm clinical eligibility and coordinate with the treating physician."
+    },
+    "cta": {
+      "headline": "Ready to refer? We are here to make it straightforward."
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
