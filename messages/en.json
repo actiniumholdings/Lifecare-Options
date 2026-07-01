@@ -291,6 +291,43 @@
       "primary": "Request info"
     }
   },
+  "accessibility": {
+    "hero": {
+      "eyebrow": "Accessibility",
+      "headline": "Care that's open to everyone.",
+      "intro": "Every patient, family member, and referring provider should be able to use this site, whatever tools they rely on. We build with that in mind and keep improving."
+    },
+    "commitment": {
+      "eyebrow": "Our Commitment",
+      "title": "We aim to meet WCAG 2.1 AA.",
+      "body": "We work to conform to the Web Content Accessibility Guidelines (WCAG) 2.1, Level AA — the widely used standard for accessible web design and the benchmark referenced under the Americans with Disabilities Act. Conformance is an ongoing process, not a one-time certification."
+    },
+    "done": {
+      "eyebrow": "What We Have Done",
+      "title": "Accessibility measures in this site.",
+      "item1": "A skip-to-content link at the top of every page lets keyboard users bypass navigation.",
+      "item2": "Semantic HTML landmarks and a clear heading structure help screen readers orient users.",
+      "item3": "All interactive elements are keyboard operable, with a visible focus outline.",
+      "item4": "Animations respect the system \"reduce motion\" preference.",
+      "item5": "Meaningful images include descriptive text alternatives.",
+      "item6": "Colors are chosen with readable contrast in mind."
+    },
+    "ongoing": {
+      "eyebrow": "Ongoing Work",
+      "title": "Accessibility is never finished.",
+      "body": "We continue to review and improve as we build. If any part of this site is hard to use, tell us and we will work with you to get you what you need."
+    },
+    "contact": {
+      "eyebrow": "Contact Us About Access",
+      "title": "Hit a barrier? We want to help.",
+      "body": "Reach our team directly. Let us know the page and what got in your way, and we will respond as quickly as we can.",
+      "emailLabel": "Email",
+      "phoneLabel": "Phone"
+    },
+    "cta": {
+      "headline": "Ready to get started? We are here to help."
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
