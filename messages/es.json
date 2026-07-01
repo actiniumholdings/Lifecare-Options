@@ -1,0 +1,38 @@
+{
+  "common": {
+    "siteName": "Lifecare Options",
+    "tagline": "Home Health",
+    "skipToContent": "Skip to main content",
+    "callUs": "Call",
+    "requestInfo": "Request info",
+    "toggleMenu": "Toggle menu",
+    "close": "Close"
+  },
+  "nav": {
+    "services": "Services",
+    "serviceArea": "Service Area",
+    "about": "About",
+    "careers": "Careers",
+    "refer": "Refer a Patient",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Home Health · Katy, TX",
+      "headline1": "Quality care,",
+      "headline2": "felt at home.",
+      "intro": "Medicare-certified skilled nursing, therapy, and personal care across Katy, Fort Bend, and Harris counties since 2008.",
+      "ctaCall": "Call {phone}",
+      "ctaRequest": "Request info"
+    },
+    "trust": {
+      "since": "Serving Katy since",
+      "medicareValue": "Medicare",
+      "medicareLabel": "certified",
+      "chapValue": "CHAP",
+      "chapLabel": "accredited",
+      "oncallValue": "24/7",
+      "oncallLabel": "on-call nursing"
+    }
+  }
+}

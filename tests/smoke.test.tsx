@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import { render } from "@testing-library/react";
 import { axe } from "vitest-axe";
-import HomePage from "@/app/page";
+import HomePage from "@/app/[locale]/page";
 
 describe("Homepage smoke", () => {
   it("renders hero, trust strip, about, services, and contact form", () => {

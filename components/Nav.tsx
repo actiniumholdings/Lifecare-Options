@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { siteConfig } from "@/lib/site-config";
@@ -10,6 +11,7 @@ import { siteConfig } from "@/lib/site-config";
 const SCROLL_THRESHOLD = 8;
 
 export function Nav() {
+  const t = useTranslations("common");
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(
     () => typeof window !== "undefined" && window.scrollY > SCROLL_THRESHOLD
@@ -84,7 +86,7 @@ export function Nav() {
             <Phone size={14} />
             {siteConfig.phone}
           </Link>
-          <Button href="#contact">Request info →</Button>
+          <Button href="#contact">{t("requestInfo")} →</Button>
         </div>
 
         <button
@@ -105,7 +107,7 @@ export function Nav() {
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
             <Button href="#contact" size="lg">
-              Request info →
+              {t("requestInfo")} →
             </Button>
           </div>
         </div>

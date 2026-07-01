@@ -13,7 +13,7 @@ vi.mock("motion/react", async (importOriginal) => {
 });
 
 // Import after the mock is registered.
-import HomePage from "@/app/page";
+import HomePage from "@/app/[locale]/page";
 import { services } from "@/lib/site-config";
 
 describe("Homepage with prefers-reduced-motion: reduce", () => {

@@ -1,8 +1,11 @@
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Logo } from "./Logo";
 import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
+  const t = useTranslations("common");
+
   return (
     <footer className="bg-navy text-cream/65">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-14">
@@ -13,7 +16,7 @@ export function Footer() {
             <div className="mt-5 text-cream">
               <Link
                 href={siteConfig.phoneHref}
-                className="font-display text-3xl font-medium leading-none hover:text-cream md:text-4xl"
+                className="font-display text-3xl font-medium leading-none hover:text-white md:text-4xl"
               >
                 {siteConfig.phone}
               </Link>
@@ -73,7 +76,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-cream/10 pt-6 text-center text-xs uppercase tracking-[0.08em]">
-          © {new Date().getFullYear()} {siteConfig.name} Home Health Services
+          © {new Date().getFullYear()} {t("siteName")} Home Health Services
           · Equal opportunity employer
         </div>
       </div>
