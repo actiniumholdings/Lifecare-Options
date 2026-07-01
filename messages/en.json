@@ -61,6 +61,56 @@
       "primary": "Request info"
     }
   },
+  "about": {
+    "hero": {
+      "eyebrow": "About",
+      "headline": "Caring for Katy families since 2008.",
+      "intro": "Lifecare Options is a locally owned skilled home health agency based in Katy, TX. Nurse-led and physician-coordinated, we have been bringing Medicare-certified care into patients' homes since 2008.",
+      "primary": "Request info"
+    },
+    "story": {
+      "eyebrow": "Our Story",
+      "title": "Locally owned and nurse-led since 2008.",
+      "p1": "Lifecare Options started in Katy in 2008 with a straightforward idea: skilled nurses and therapists should be able to follow patients home after discharge and keep their recovery on track.",
+      "p2": "Today our team includes registered nurses, licensed vocational nurses, physical and occupational therapists, speech therapists, medical social workers, and home health aides. Every care plan is coordinated directly with the patient's physician.",
+      "p3": "We are not a national franchise. The clinicians who answer your call are the same ones who come to your door.",
+      "missionLabel": "Our Mission",
+      "mission": "To provide expert, compassionate home health care in Katy and the surrounding communities, so that every patient can recover safely and live with dignity."
+    },
+    "band": {
+      "eyebrow": "Why it matters",
+      "headline": "People heal best at home. We make sure the care follows them there."
+    },
+    "values": {
+      "eyebrow": "Our Commitments",
+      "title": "How we show up for every patient.",
+      "card1Title": "Clinical quality",
+      "card1Body": "Our nurses and therapists meet Medicare and CHAP standards, and every visit is documented and shared with your physician. Quality is built into our workflow, not added on top.",
+      "card2Title": "Dignity and independence",
+      "card2Body": "Home health works best when patients stay in control of their routine. Our clinicians work around your schedule and preferences, not the other way around.",
+      "card3Title": "Coordinated care",
+      "card3Body": "We communicate directly with your physician and specialist offices. If your care plan changes, everyone on your team knows before your next visit.",
+      "card4Title": "Bilingual care",
+      "card4Body": "Our team provides care in English and Spanish. No patient should have to navigate their health in a language that is not their own.",
+      "citiesAriaLabel": "Cities served by Lifecare Options"
+    },
+    "credentials": {
+      "eyebrow": "Credentials",
+      "title": "Licensed and accountable.",
+      "intro": "Lifecare Options operates under state and federal oversight and meets all required standards for a Medicare-certified home health agency in Texas.",
+      "chapTitle": "CHAP-accredited",
+      "chapBody": "Accredited by the Community Health Accreditation Partner (CHAP), the independent standard-setting body for home health and hospice.",
+      "medicareTitle": "Medicare-certified",
+      "medicareBody": "Certified by Medicare to deliver skilled nursing, therapy, and home health aide services. Provider CCN: 747061.",
+      "licenseTitle": "Texas-licensed",
+      "licenseBody": "Licensed by the Texas Health and Human Services Commission. Texas Home Health Agency License: 011908.",
+      "since2008Title": "Serving since 2008",
+      "since2008Body": "More than 15 years serving patients and families across Katy, Fort Bend County, and Harris County."
+    },
+    "cta": {
+      "headline": "Ready to bring skilled care home?"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
