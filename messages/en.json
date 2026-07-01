@@ -244,6 +244,53 @@
       "headline": "Have questions? We are happy to help."
     }
   },
+  "rpm": {
+    "hero": {
+      "eyebrow": "Remote Patient Monitoring",
+      "badge": "New",
+      "headline": "Daily check-ins, without leaving home.",
+      "intro": "Connected home devices track your vital signs every day. A nurse reviews the data and responds before a small change becomes a bigger problem.",
+      "primary": "Request info"
+    },
+    "advantages": {
+      "eyebrow": "The Advantages",
+      "title": "Why monitor from home.",
+      "card1Title": "Catch changes early",
+      "card1Body": "Daily readings let our nurses spot a shift in your blood pressure, oxygen level, or weight before it becomes a crisis.",
+      "card2Title": "Fewer ER trips and hospital stays",
+      "card2Body": "Catching problems early means many issues can be handled calmly at home, with fewer emergency visits and fewer nights in the hospital.",
+      "card3Title": "Stay safely at home",
+      "card3Body": "Ongoing clinical oversight lets you keep living independently in familiar surroundings, with a professional safety net always present.",
+      "card4Title": "Your care team watches daily",
+      "card4Body": "Readings flow directly to our nurses. If something looks off, we reach out — you are never watching alone.",
+      "card5Title": "Peace of mind for family",
+      "card5Body": "Loved ones can rest easier knowing a professional team is keeping watch between visits.",
+      "card6Title": "Steadier control of chronic conditions",
+      "card6Body": "For heart, lung, and diabetic conditions, daily data helps fine-tune your care and keep things stable over time."
+    },
+    "who": {
+      "eyebrow": "Who It Helps",
+      "title": "People who benefit from closer watching.",
+      "card1Title": "Living with a chronic condition",
+      "card1Body": "Heart failure, COPD, diabetes, and high blood pressure all benefit from steady, day-to-day oversight.",
+      "card2Title": "Recently home from the hospital",
+      "card2Body": "The weeks after a discharge carry the highest risk of readmission. Monitoring bridges that fragile gap.",
+      "card3Title": "Living alone or aging in place",
+      "card3Body": "When no one is nearby to notice a change, connected monitoring becomes a constant, watchful presence.",
+      "card4Title": "Post-surgery recovery",
+      "card4Body": "Track recovery vitals at home and flag complications early, without repeated trips back to the clinic."
+    },
+    "coverage": {
+      "eyebrow": "Coverage & Cost",
+      "title": "Often covered — we find out for you.",
+      "body": "Remote patient monitoring is often covered by Medicare. It may also be available through Texas Medicaid and certain plans. We verify your benefits at no cost and no obligation before anything begins.",
+      "note": "Eligibility is determined individually. Call us and we will walk you through your options."
+    },
+    "cta": {
+      "headline": "Ready to bring your care team home?",
+      "primary": "Request info"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
