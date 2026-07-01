@@ -25,6 +25,42 @@
     "refer": "Refer a Patient",
     "contact": "Contact"
   },
+  "services": {
+    "hero": {
+      "eyebrow": "Our Services",
+      "headline": "Skilled care, brought home.",
+      "intro": "Our nurses, therapists, and aides come to you — so you can recover where you are most comfortable, surrounded by family.",
+      "primary": "Request info",
+      "secondary": "Call {phone}"
+    },
+    "pillar": {
+      "eyebrow": "Skilled Home Health",
+      "title": "One skilled team, seven disciplines.",
+      "body": "Your care plan may draw on any combination of these services. Our nurses coordinate with your physician so the right clinician is at your door on the right day."
+    },
+    "detail": {
+      "Stethoscope": "Our RNs and LVNs assess wounds, manage medications, and support chronic disease management between your doctor visits.",
+      "PersonSimpleWalk": "Physical therapists help you regain strength, mobility, and balance after surgery, injury, or a progressive condition.",
+      "HandHeart": "Occupational therapists work on the everyday tasks — dressing, bathing, cooking — that keep you safe and independent at home.",
+      "ChatCircleDots": "Speech therapists address communication and swallowing difficulties following stroke, neurological changes, or injury.",
+      "UsersThree": "Our social workers help families navigate benefits, find community resources, and coordinate the non-clinical side of a care plan.",
+      "House": "Certified home health aides assist with bathing, grooming, meal preparation, and the daily routines that matter most.",
+      "Heartbeat": "Connected home devices track your vital signs daily. Your nurse reviews the data and responds before a small change becomes a problem."
+    },
+    "specialties": {
+      "eyebrow": "Conditions we support",
+      "title": "Clinical experience across a wide range of diagnoses."
+    },
+    "insurance": {
+      "eyebrow": "Insurance & coverage",
+      "title": "We work with your plan.",
+      "body": "Most plans and Medicare are accepted, and we verify your benefits at no cost before care begins. Coverage depends on your specific plan and clinical eligibility — our intake team will walk you through what applies to you."
+    },
+    "cta": {
+      "headline": "Ready to bring care home?",
+      "primary": "Request info"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
