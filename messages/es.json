@@ -135,6 +135,46 @@
       "headline": "Ready to bring skilled care home?"
     }
   },
+  "careers": {
+    "hero": {
+      "eyebrow": "Careers",
+      "headline": "Care for people, close to home.",
+      "intro": "RN · LVN · Home Health Aide",
+      "primary": "Apply now",
+      "secondary": "Call {phone}"
+    },
+    "why": {
+      "eyebrow": "Why work here",
+      "title": "A team worth joining.",
+      "card1Title": "Small team, real relationships",
+      "card1Body": "You will know your patients and your colleagues. There are no hand-offs to strangers — the same nurses and aides follow their patients through recovery.",
+      "card2Title": "One-on-one patient care",
+      "card2Body": "Home health is not floor nursing. You go to the patient, spend focused time, and make decisions. The work is clinical and direct.",
+      "card3Title": "Nurse-led culture",
+      "card3Body": "Clinical decisions stay with clinicians. Our nurses and therapists set the standard for care, and leadership listens when something needs to change.",
+      "card4Title": "Flexible scheduling",
+      "card4Body": "We work around the realities of caregiving. Schedules are built collaboratively so you can do your best work without burning out."
+    },
+    "openRoles": {
+      "eyebrow": "Open roles",
+      "title": "Current openings",
+      "emptyTitle": "No specific openings posted right now.",
+      "emptyBody": "We are not listing specific roles at the moment, but we are always glad to meet good caregivers. Send us your information and we will reach out when something fits."
+    },
+    "apply": {
+      "eyebrow": "How to apply",
+      "title": "Tell us about yourself.",
+      "body": "Use the form below and select the \"Work with us\" tab. We review every submission and respond within two business days."
+    },
+    "bilingual": {
+      "eyebrow": "Bilingual welcome",
+      "title": "We care for patients in English and Spanish.",
+      "body": "Bilingual caregivers are a valued part of our team. If you speak Spanish and want to serve your community, we want to hear from you. Cuidadores bilingues son bienvenidos."
+    },
+    "cta": {
+      "headline": "Ready to bring your skills home?"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
