@@ -8,9 +8,9 @@ type CardProps = {
 };
 
 const VARIANT: Record<NonNullable<CardProps["variant"]>, string> = {
-  peach: "bg-cream-deep border border-cream-edge",
-  mist: "bg-white border border-cream-edge",
-  white: "bg-white border border-cream-edge",
+  peach: "bg-cream border border-border",
+  mist: "bg-white border border-border",
+  white: "bg-white border border-border",
 };
 
 export function Card({ variant = "white", children, className }: CardProps) {

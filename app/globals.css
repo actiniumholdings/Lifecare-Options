@@ -1,62 +1,49 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette — Committed warm peach-cream brand */
+  /* Palette — template identity */
   --color-navy: #0f2b47;
   --color-care-blue: #5a8bb8;
   --color-cream: #fdeedd;
-  --color-cream-deep: #f0dcb8;
-  --color-cream-edge: #ead8b6;
-  --color-slate: #5a6b7e;
-  --color-success-green: #2d6a4f;
-  --color-alert-red: #9a2f24;
-  --color-footer-muted: rgba(253, 238, 221, 0.65);
+  --color-mist: #f7fafc;
+  --color-slate: #6b7d92;
+  --color-success: #2d6a4f;
+  --color-alert: #c0392b;
+  --color-border: #e4ecf3;
 
   /* Typography */
-  --font-display: var(--font-spectral), Georgia, serif;
-  --font-sans: var(--font-albert), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 
-  /* Spacing rhythm — varied per section, see app/page.tsx */
+  /* Rhythm & shape */
   --spacing-section-y-desktop: 6rem;
   --spacing-section-y-mobile: 3.5rem;
-
-  /* Radius */
   --radius-card: 0.5rem;
   --radius-pill: 9999px;
 }
 
-/* Base element styling */
 html {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   scroll-behavior: smooth;
 }
-
 body {
-  background: var(--color-cream);
+  background: var(--color-mist);
   color: var(--color-navy);
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   line-height: 1.65;
 }
-
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   color: var(--color-navy);
   font-weight: 500;
   line-height: 1.05;
 }
-
 h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
 h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
 h3 { font-size: 1.5rem; }
-
-/* Anchored sections clear the sticky nav on hash navigation */
-section[id] {
-  scroll-margin-top: 5rem;
-}
-
-/* Focus ring — accessible and on-brand */
+section[id] { scroll-margin-top: 5rem; }
 :focus-visible {
   outline: 2px solid var(--color-navy);
   outline-offset: 2px;

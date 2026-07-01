@@ -8,7 +8,7 @@ export function TrustBadge({ children }: { children: React.ReactNode }) {
   const reduced = useReducedMotionSafe();
 
   const base =
-    "inline-flex items-center gap-1.5 rounded-full bg-[#e1efe5] px-3 py-1.5 text-xs font-medium text-success-green";
+    "inline-flex items-center gap-1.5 rounded-full bg-[#e1efe5] px-3 py-1.5 text-xs font-medium text-success";
 
   if (reduced) {
     return (

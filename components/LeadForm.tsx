@@ -31,9 +31,9 @@ const SERVICE_OPTIONS = [
 ] as const;
 
 const inputClass =
-  "w-full rounded-lg border border-cream-edge bg-cream/60 px-4 py-3 text-base text-navy placeholder:text-slate/60 focus:outline-none focus:border-navy focus:bg-cream";
+  "w-full rounded-lg border border-border bg-cream/60 px-4 py-3 text-base text-navy placeholder:text-slate/60 focus:outline-none focus:border-navy focus:bg-cream";
 const labelClass = "block text-sm font-semibold text-navy mb-1.5";
-const errorClass = "mt-1 text-xs text-alert-red";
+const errorClass = "mt-1 text-xs text-alert";
 
 export function LeadForm() {
   const [tab, setTab] = useState<Tab>("services");
@@ -62,7 +62,7 @@ export function LeadForm() {
         <div
           role="tablist"
           aria-label="Form type"
-          className="inline-flex rounded-full bg-cream-deep p-1 mb-6"
+          className="inline-flex rounded-full bg-cream p-1 mb-6"
         >
           <button
             role="tab"
@@ -107,7 +107,7 @@ export function LeadForm() {
             />
           )}
           {submitState === "error" && (
-            <p className="text-alert-red mt-3 text-sm">
+            <p className="text-alert mt-3 text-sm">
               Something went wrong. Please try again or call (281) 646-9546.
             </p>
           )}

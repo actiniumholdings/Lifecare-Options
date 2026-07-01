@@ -49,7 +49,7 @@ export function Nav() {
   const scrolledStyling = isScrolled || open;
 
   const headerClasses = [
-    "sticky top-0 z-50 border-b border-cream-edge transition-all duration-200 ease-out motion-reduce:transition-none",
+    "sticky top-0 z-50 border-b border-border transition-all duration-200 ease-out motion-reduce:transition-none",
     scrolledStyling
       ? "bg-cream/98 backdrop-blur shadow-sm"
       : "bg-cream/95 backdrop-blur",
@@ -101,7 +101,7 @@ export function Nav() {
       {open && (
         <div
           data-testid="mobile-menu"
-          className="border-t border-cream-edge bg-cream md:hidden"
+          className="border-t border-border bg-cream md:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
             <Button href="#contact" size="lg">

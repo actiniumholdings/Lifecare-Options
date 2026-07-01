@@ -4,7 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
   return (
-    <footer className="bg-navy text-[var(--color-footer-muted)]">
+    <footer className="bg-navy text-cream/65">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Contact — phone gets visual weight */}
@@ -13,11 +13,11 @@ export function Footer() {
             <div className="mt-5 text-cream">
               <Link
                 href={siteConfig.phoneHref}
-                className="font-display text-3xl font-medium leading-none hover:text-cream-deep md:text-4xl"
+                className="font-display text-3xl font-medium leading-none hover:text-cream md:text-4xl"
               >
                 {siteConfig.phone}
               </Link>
-              <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-[var(--color-footer-muted)]">
+              <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-cream/65">
                 Always answered
               </div>
             </div>
@@ -44,7 +44,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-3 text-sm text-cream-deep">
+            <div className="mt-3 text-sm text-cream">
               {siteConfig.onCall}
             </div>
           </div>
@@ -58,12 +58,12 @@ export function Footer() {
               <div>Medicare-certified</div>
               <div>{siteConfig.accreditation}</div>
               {siteConfig.medicareCcn && (
-                <div className="text-[var(--color-footer-muted)]">
+                <div className="text-cream/65">
                   CCN: {siteConfig.medicareCcn}
                 </div>
               )}
               {siteConfig.stateLicense && (
-                <div className="text-[var(--color-footer-muted)]">
+                <div className="text-cream/65">
                   TX License: {siteConfig.stateLicense}
                 </div>
               )}

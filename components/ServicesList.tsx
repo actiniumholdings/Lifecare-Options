@@ -29,9 +29,9 @@ export function ServicesList() {
         </div>
 
         {featured && (
-          <div className="mb-10 rounded-lg border border-cream-edge bg-white p-6 md:p-8">
+          <div className="mb-10 rounded-lg border border-border bg-white p-6 md:p-8">
             <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
-              <div className="text-[10px] font-semibold tracking-[0.18em] uppercase text-alert-red">
+              <div className="text-[10px] font-semibold tracking-[0.18em] uppercase text-alert">
                 Now offering
               </div>
               <div className="flex-1">
