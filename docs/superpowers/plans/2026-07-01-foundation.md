@@ -397,6 +397,15 @@ Create `messages/en.json`:
       "intro": "Medicare-certified skilled nursing, therapy, and personal care across Katy, Fort Bend, and Harris counties since 2008.",
       "ctaCall": "Call {phone}",
       "ctaRequest": "Request info"
+    },
+    "trust": {
+      "since": "Serving Katy since",
+      "medicareValue": "Medicare",
+      "medicareLabel": "certified",
+      "chapValue": "CHAP",
+      "chapLabel": "accredited",
+      "oncallValue": "24/7",
+      "oncallLabel": "on-call nursing"
     }
   }
 }
@@ -430,6 +439,15 @@ Create `messages/es.json` as a same-shape stub (English values are fine for now 
       "intro": "Medicare-certified skilled nursing, therapy, and personal care across Katy, Fort Bend, and Harris counties since 2008.",
       "ctaCall": "Call {phone}",
       "ctaRequest": "Request info"
+    },
+    "trust": {
+      "since": "Serving Katy since",
+      "medicareValue": "Medicare",
+      "medicareLabel": "certified",
+      "chapValue": "CHAP",
+      "chapLabel": "accredited",
+      "oncallValue": "24/7",
+      "oncallLabel": "on-call nursing"
     }
   }
 }
@@ -968,10 +986,10 @@ export default function Home() {
 
       <Section tone="light" id="trust" className="!py-10">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
-          <Stat value={String(siteConfig.foundedYear)} label="Serving Katy since" />
-          <Stat value="Medicare" label="certified" />
-          <Stat value="CHAP" label="accredited" />
-          <Stat value="24/7" label="on-call nursing" />
+          <Stat value={String(siteConfig.foundedYear)} label={t("trust.since")} />
+          <Stat value={t("trust.medicareValue")} label={t("trust.medicareLabel")} />
+          <Stat value={t("trust.chapValue")} label={t("trust.chapLabel")} />
+          <Stat value={t("trust.oncallValue")} label={t("trust.oncallLabel")} />
         </div>
       </Section>
 
