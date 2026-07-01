@@ -91,13 +91,12 @@
       "card3Title": "Coordinated care",
       "card3Body": "We communicate directly with your physician and specialist offices. If your care plan changes, everyone on your team knows before your next visit.",
       "card4Title": "Bilingual care",
-      "card4Body": "Our team provides care in English and Spanish. No patient should have to navigate their health in a language that is not their own.",
-      "citiesAriaLabel": "Cities served by Lifecare Options"
+      "card4Body": "Our team provides care in English and Spanish. No patient should have to navigate their health in a language that is not their own."
     },
     "credentials": {
       "eyebrow": "Credentials",
       "title": "Licensed and accountable.",
-      "intro": "Lifecare Options operates under state and federal oversight and meets all required standards for a Medicare-certified home health agency in Texas.",
+      "intro": "Every credential below is public record and current.",
       "chapTitle": "CHAP-accredited",
       "chapBody": "Accredited by the Community Health Accreditation Partner (CHAP), the independent standard-setting body for home health and hospice.",
       "medicareTitle": "Medicare-certified",
@@ -105,7 +104,7 @@
       "licenseTitle": "Texas-licensed",
       "licenseBody": "Licensed by the Texas Health and Human Services Commission. Texas Home Health Agency License: 011908.",
       "since2008Title": "Serving since 2008",
-      "since2008Body": "More than 15 years serving patients and families across Katy, Fort Bend County, and Harris County."
+      "since2008Body": "In continuous operation since 2008, serving Katy, Fort Bend, and Harris counties."
     },
     "cta": {
       "headline": "Ready to bring skilled care home?"
