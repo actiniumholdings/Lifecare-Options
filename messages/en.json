@@ -214,6 +214,36 @@
       "headline": "Ready to refer? We are here to make it straightforward."
     }
   },
+  "contact": {
+    "hero": {
+      "eyebrow": "Contact",
+      "headline": "We're glad to hear from you.",
+      "intro": "Call us, send a message, or stop by. Our intake team is here to answer your questions and help you get started.",
+      "primary": "Send a message",
+      "secondary": "Call {phone}"
+    },
+    "details": {
+      "eyebrow": "Find us",
+      "title": "Get in touch.",
+      "phone": "Phone",
+      "fax": "Fax",
+      "email": "Email",
+      "address": "Address",
+      "hours": "Hours",
+      "onCall": "Plus 24/7 on-call nursing"
+    },
+    "map": {
+      "title": "Map of the Lifecare Options office at 434 Park Grove Dr, Katy, TX"
+    },
+    "form": {
+      "eyebrow": "Contact us",
+      "title": "Send us a message.",
+      "body": "Fill out the form and our team will follow up as soon as we can."
+    },
+    "cta": {
+      "headline": "Have questions? We are happy to help."
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
