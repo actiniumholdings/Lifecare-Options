@@ -34,7 +34,7 @@ type ButtonAsLink = BaseProps & {
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
-  primary: "bg-navy text-cream hover:bg-navy/90 rounded-full",
+  primary: "bg-care-blue text-navy hover:bg-care-blue/90 rounded-full",
   secondary:
     "bg-transparent text-navy border-[1.5px] border-navy hover:bg-navy/5 rounded-full",
   tertiary:
