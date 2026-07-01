@@ -110,6 +110,31 @@
       "headline": "Ready to bring skilled care home?"
     }
   },
+  "serviceArea": {
+    "hero": {
+      "eyebrow": "Where we serve",
+      "headline": "Serving Katy and the surrounding communities.",
+      "intro": "Our nurses and therapists come to your door across Harris and Fort Bend counties. If you live in the Katy area, chances are we cover your address.",
+      "primary": "Request info"
+    },
+    "counties": {
+      "eyebrow": "Counties covered",
+      "title": "Two counties, one care team."
+    },
+    "cities": {
+      "eyebrow": "Cities we serve",
+      "title": "Familiar streets, nearby clinicians.",
+      "ariaLabel": "Cities served by Lifecare Options",
+      "note": "Don't see your city? Call us — we will check your address."
+    },
+    "map": {
+      "eyebrow": "Coverage map",
+      "callout": "Don't see your city? Call us."
+    },
+    "cta": {
+      "headline": "Ready to bring skilled care home?"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
