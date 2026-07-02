@@ -5,15 +5,15 @@ import { describe, expect, it, vi } from "vitest";
 // Mock the constructors so the test verifies the contract: correct font
 // variable strings are wired to the exported objects.
 vi.mock("next/font/google", () => ({
-  Playfair_Display: (o: { variable: string }) => ({ variable: o.variable }),
+  Plus_Jakarta_Sans: (o: { variable: string }) => ({ variable: o.variable }),
   Inter: (o: { variable: string }) => ({ variable: o.variable }),
 }));
 
-import { playfair, inter } from "@/lib/fonts";
+import { plusJakarta, inter } from "@/lib/fonts";
 
 describe("fonts", () => {
-  it("exposes CSS variables for Playfair Display and Inter", () => {
-    expect(playfair.variable).toBe("--font-playfair");
+  it("exposes CSS variables for Plus Jakarta Sans and Inter", () => {
+    expect(plusJakarta.variable).toBe("--font-plus-jakarta");
     expect(inter.variable).toBe("--font-inter");
   });
 });

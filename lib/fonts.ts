@@ -1,11 +1,10 @@
-import { Playfair_Display, Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 
-export const playfair = Playfair_Display({
+export const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-plus-jakarta",
 });
 
 export const inter = Inter({
