@@ -67,6 +67,58 @@
       "primary": "Request info"
     }
   },
+  "skilled": {
+    "meta": {
+      "title": "Skilled Home Health",
+      "description": "Skilled nursing, physical, occupational, and speech therapy, medical social work, home health aide, and remote patient monitoring at home."
+    },
+    "hero": {
+      "eyebrow": "Skilled Home Health",
+      "headline": "Skilled care, brought home.",
+      "intro": "Our nurses, therapists, and aides come to you, so you can recover where you are most comfortable, surrounded by family.",
+      "primary": "Request info"
+    },
+    "pillar": {
+      "eyebrow": "One Skilled Team",
+      "title": "One skilled team, seven disciplines.",
+      "body": "Your care plan may draw on any combination of these services. Our nurses coordinate with your physician so the right clinician is at your door on the right day."
+    },
+    "detail": {
+      "Stethoscope": "Our RNs and LVNs assess wounds, manage medications, and support chronic disease management between your doctor visits.",
+      "PersonSimpleWalk": "Physical therapists help you regain strength, mobility, and balance after surgery, injury, or a progressive condition.",
+      "HandHeart": "Occupational therapists work on the everyday tasks that keep you safe and independent at home, like dressing, bathing, and cooking.",
+      "ChatCircleDots": "Speech therapists address communication and swallowing difficulties following stroke, neurological changes, or injury.",
+      "UsersThree": "Our social workers help families navigate benefits, find community resources, and coordinate the non-clinical side of a care plan.",
+      "House": "Certified home health aides assist with bathing, grooming, meal preparation, and the daily routines that matter most.",
+      "Heartbeat": "Connected home devices track your vital signs daily. Your nurse reviews the data and can respond quickly if something changes."
+    },
+    "conditions": {
+      "eyebrow": "Conditions we support",
+      "title": "Clinical experience across a wide range of diagnoses."
+    },
+    "start": {
+      "eyebrow": "How Care Starts",
+      "title": "When you call, here's what happens",
+      "intro": "Reaching out shouldn't feel daunting. The first call is simple, human, and pressure-free.",
+      "step1": {
+        "title": "We listen",
+        "body": "A care coordinator answers, learns your situation, and helps you understand which skilled service fits."
+      },
+      "step2": {
+        "title": "We coordinate",
+        "body": "We connect with your physician, arrange an in-home assessment, and handle the paperwork so your family doesn't have to."
+      },
+      "step3": {
+        "title": "Care begins at home",
+        "body": "The right clinician starts a personalized plan of care, with ongoing oversight and a team you can reach whenever you need us."
+      }
+    },
+    "cta": {
+      "headline": "Ready to bring care home?",
+      "primary": "Request info",
+      "note": "Call us and we'll walk you through coverage."
+    }
+  },
   "about": {
     "meta": {
       "title": "About Lifecare Options",
