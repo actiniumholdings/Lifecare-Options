@@ -32,6 +32,8 @@ export function CareersContent() {
           label: tCommon("callUs") + " " + siteConfig.phone,
           href: siteConfig.phoneHref,
         }}
+        photoSrc="/images/therapy.jpg"
+        photoAlt={t("hero.photoAlt")}
       />
 
       {/* 2. Why work here — light */}

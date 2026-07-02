@@ -24,6 +24,8 @@ export function ServiceAreaContent() {
           label: tCommon("callUs") + " " + siteConfig.phone,
           href: siteConfig.phoneHref,
         }}
+        photoSrc="/images/arrival.jpg"
+        photoAlt={t("hero.photoAlt")}
       />
 
       {/* 2. Counties strip — light */}

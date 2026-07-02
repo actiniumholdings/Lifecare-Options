@@ -39,6 +39,8 @@ export function ReferContent() {
           href: siteConfig.phoneHref,
         }}
         secondaryCta={{ label: tCommon("requestInfo"), href: "/contact" }}
+        photoSrc="/images/arrival.jpg"
+        photoAlt={t("hero.photoAlt")}
       />
 
       {/* 2. Two ways to refer — light */}

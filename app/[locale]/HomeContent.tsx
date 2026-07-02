@@ -35,6 +35,9 @@ export function HomeContent() {
           label: t("hero.ctaCall", { phone: siteConfig.phone }),
           href: siteConfig.phoneHref,
         }}
+        photoSrc="/images/hero-care.jpg"
+        photoAlt={t("hero.photoAlt")}
+        badges={[{ label: t("hero.badge1") }, { label: t("hero.badge2") }]}
       />
 
       {/* 2. Trust stats strip */}

@@ -47,6 +47,8 @@ export function RpmContent() {
           label: tCommon("callUs") + " " + siteConfig.phone,
           href: siteConfig.phoneHref,
         }}
+        photoSrc="/images/vitals.jpg"
+        photoAlt={t("hero.photoAlt")}
       />
 
       {/* 2. Advantages — light, 6 cards */}

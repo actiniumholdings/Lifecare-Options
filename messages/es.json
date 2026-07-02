@@ -73,7 +73,8 @@
       "eyebrow": "About",
       "headline": "Caring for Katy families since 2008.",
       "intro": "Lifecare Options is a locally owned skilled home health agency based in Katy, TX. Nurse-led and physician-coordinated, we have been bringing Medicare-certified care into patients' homes since 2008.",
-      "primary": "Request info"
+      "primary": "Request info",
+      "photoAlt": "A nurse checking an older adult's blood pressure at home."
     },
     "story": {
       "eyebrow": "Our Story",
@@ -126,7 +127,8 @@
       "eyebrow": "Where we serve",
       "headline": "Serving Katy and the surrounding communities.",
       "intro": "Our nurses and therapists come to your door across Harris and Fort Bend counties. If you live in the Katy area, chances are we cover your address.",
-      "primary": "Request info"
+      "primary": "Request info",
+      "photoAlt": "A home-health nurse arriving at a client's front door."
     },
     "counties": {
       "eyebrow": "Counties covered",
@@ -155,7 +157,8 @@
       "eyebrow": "Careers",
       "headline": "Care for people, close to home.",
       "intro": "RN · LVN · Home Health Aide",
-      "primary": "Apply now"
+      "primary": "Apply now",
+      "photoAlt": "A therapist helping an older man walk with a walker at home."
     },
     "why": {
       "eyebrow": "Why work here",
@@ -197,7 +200,8 @@
     "hero": {
       "eyebrow": "For providers",
       "headline": "Refer a patient in minutes.",
-      "intro": "Our intake team handles the details. Call or fax to get a referral started, and we take it from there."
+      "intro": "Our intake team handles the details. Call or fax to get a referral started, and we take it from there.",
+      "photoAlt": "A home-health nurse arriving at a patient's home."
     },
     "ways": {
       "eyebrow": "Two ways to refer",
@@ -241,7 +245,8 @@
       "eyebrow": "Contact",
       "headline": "We're glad to hear from you.",
       "intro": "Call us, send a message, or stop by. Our intake team is here to answer your questions and help you get started.",
-      "primary": "Send a message"
+      "primary": "Send a message",
+      "photoAlt": "A Lifecare Options intake coordinator wearing a headset."
     },
     "details": {
       "eyebrow": "Find us",
@@ -275,7 +280,8 @@
       "badge": "New",
       "headline": "Daily check-ins, without leaving home.",
       "intro": "Connected home devices track your vital signs every day. A nurse reviews the data and can respond quickly if something changes.",
-      "primary": "Request info"
+      "primary": "Request info",
+      "photoAlt": "A nurse checking an older adult's vital signs at home."
     },
     "advantages": {
       "eyebrow": "The Advantages",
@@ -368,7 +374,10 @@
       "headline2": "felt at home.",
       "intro": "Medicare-certified skilled nursing, therapy, and personal care across Katy, Fort Bend, and Harris counties since 2008.",
       "ctaCall": "Call {phone}",
-      "ctaRequest": "Request info"
+      "ctaRequest": "Request info",
+      "photoAlt": "A home-health nurse sitting with a smiling older woman in a sunlit living room.",
+      "badge1": "Serving Katy since 2008",
+      "badge2": "24/7 on-call nursing"
     },
     "trust": {
       "since": "Serving Katy since",

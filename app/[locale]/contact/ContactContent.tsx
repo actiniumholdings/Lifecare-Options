@@ -27,6 +27,8 @@ export function ContactContent() {
           label: tCommon("callUs") + " " + siteConfig.phone,
           href: siteConfig.phoneHref,
         }}
+        photoSrc="/images/coordinator.jpg"
+        photoAlt={t("hero.photoAlt")}
       />
 
       {/* 2. Details + map — 2-col */}

@@ -39,6 +39,8 @@ export function AboutContent() {
           label: tCommon("callUs") + " " + siteConfig.phone,
           href: siteConfig.phoneHref,
         }}
+        photoSrc="/images/vitals.jpg"
+        photoAlt={t("hero.photoAlt")}
       />
 
       {/* 2. Story & Mission — light, 2-col */}
