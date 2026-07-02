@@ -2,7 +2,7 @@ import { describe, it, expect } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/en.json";
-import HomePage from "@/app/[locale]/page";
+import { HomeContent as HomePage } from "@/app/[locale]/HomeContent";
 
 function renderHome() {
   return render(

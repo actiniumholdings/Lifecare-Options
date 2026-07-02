@@ -26,6 +26,10 @@
     "contact": "Contact"
   },
   "services": {
+    "meta": {
+      "title": "Home Health Services",
+      "description": "Skilled nursing, physical, occupational, and speech therapy, medical social work, home health aide, and remote patient monitoring at home."
+    },
     "hero": {
       "eyebrow": "Our Services",
       "headline": "Skilled care, brought home.",
@@ -61,6 +65,10 @@
     }
   },
   "about": {
+    "meta": {
+      "title": "About Lifecare Options",
+      "description": "Medicare-certified home health agency serving greater Houston since 2008. CHAP-accredited, bilingual, and committed to care at home."
+    },
     "hero": {
       "eyebrow": "About",
       "headline": "Caring for Katy families since 2008.",
@@ -110,6 +118,10 @@
     }
   },
   "serviceArea": {
+    "meta": {
+      "title": "Service Area",
+      "description": "We serve Katy, Sugar Land, Missouri City, and surrounding Fort Bend and Harris County communities. Call to confirm your address."
+    },
     "hero": {
       "eyebrow": "Where we serve",
       "headline": "Serving Katy and the surrounding communities.",
@@ -135,6 +147,10 @@
     }
   },
   "careers": {
+    "meta": {
+      "title": "Careers at Lifecare Options",
+      "description": "Join our team of nurses, therapists, and aides serving families in greater Houston. Bilingual staff welcome. Explore open positions."
+    },
     "hero": {
       "eyebrow": "Careers",
       "headline": "Care for people, close to home.",
@@ -174,6 +190,10 @@
     }
   },
   "refer": {
+    "meta": {
+      "title": "Refer a Patient",
+      "description": "Physicians and discharge planners can refer patients by phone or fax. Our intake team responds quickly to coordinate care orders."
+    },
     "hero": {
       "eyebrow": "For providers",
       "headline": "Refer a patient in minutes.",
@@ -213,6 +233,10 @@
     }
   },
   "contact": {
+    "meta": {
+      "title": "Contact Lifecare Options",
+      "description": "Reach our Katy, TX office by phone, fax, or email. Request information about home health services for yourself or a family member."
+    },
     "hero": {
       "eyebrow": "Contact",
       "headline": "We're glad to hear from you.",
@@ -242,6 +266,10 @@
     }
   },
   "rpm": {
+    "meta": {
+      "title": "Remote Patient Monitoring",
+      "description": "Daily vital-sign tracking from home with nurse review. Available to eligible home health patients in our service area."
+    },
     "hero": {
       "eyebrow": "Remote Patient Monitoring",
       "badge": "New",
@@ -289,6 +317,10 @@
     }
   },
   "accessibility": {
+    "meta": {
+      "title": "Accessibility",
+      "description": "Lifecare Options is committed to making this website accessible. Contact us if you need assistance or have an accessibility concern."
+    },
     "hero": {
       "eyebrow": "Accessibility",
       "headline": "Care that's open to everyone.",
@@ -326,6 +358,10 @@
     }
   },
   "home": {
+    "meta": {
+      "title": "Skilled Home Health in Katy, TX",
+      "description": "Medicare-certified nursing, therapy, and personal care at home across Katy, Fort Bend, and Harris counties. Serving families since 2008."
+    },
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
       "headline1": "Quality care,",

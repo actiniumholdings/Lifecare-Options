@@ -15,7 +15,7 @@ vi.mock("motion/react", async (importOriginal) => {
 });
 
 // Import after the mock is registered.
-import HomePage from "@/app/[locale]/page";
+import { HomeContent as HomePage } from "@/app/[locale]/HomeContent";
 import { services } from "@/lib/site-config";
 
 function renderHome() {
