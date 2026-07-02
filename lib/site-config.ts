@@ -48,13 +48,6 @@ export const siteConfig = {
     "Fall prevention",
     "Medication management",
   ],
-  insurancePlans: [
-    "Medicare",
-    "Medicare Advantage",
-    "Medicaid",
-    "Most private / commercial plans",
-    "Private pay",
-  ],
   positions: [] as readonly { title: string; type?: string }[],
   testimonials: [] as readonly { quote: string; attribution: string }[],
 } as const;

@@ -14,7 +14,8 @@ export interface PillarCardProps {
 
 /**
  * One of the two service-line pillars (spec §6 Home / Services hub).
- * White card, hairline border, blue top rule, check-list, payer caption.
+ * White card, hairline border, blue top rule, check-list, and an optional
+ * payer caption (omitted on the marketing cards per client direction).
  */
 export function PillarCard({
   eyebrow,

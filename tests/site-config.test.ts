@@ -11,9 +11,8 @@ describe("service area data", () => {
     expect(siteConfig.serviceArea.cities).toContain("Katy");
     expect(siteConfig.serviceArea.cities.length).toBeGreaterThanOrEqual(8);
   });
-  it("exposes specialties and insurance plans", () => {
+  it("exposes specialties", () => {
     expect(siteConfig.specialties.length).toBeGreaterThanOrEqual(6);
-    expect(siteConfig.insurancePlans.length).toBeGreaterThanOrEqual(3);
   });
   it("starts with honest-empty positions and testimonials", () => {
     expect(siteConfig.positions).toEqual([]);

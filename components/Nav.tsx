@@ -107,7 +107,7 @@ function ServicesDropdown({
         ref={buttonRef}
         type="button"
         aria-expanded={open}
-        aria-haspopup="menu"
+        aria-haspopup="true"
         aria-controls={menuId}
         aria-label={`${label} submenu`}
         onClick={() => setOpen((o) => !o)}
