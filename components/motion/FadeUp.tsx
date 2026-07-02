@@ -1,44 +1,80 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
-import { motion, useInView } from "motion/react";
-import { easeOut } from "@/lib/motion";
-import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
+import type { ReactNode } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { useInStagger } from "./StaggerContext";
 
-type FadeUpProps = {
-  children: ReactNode;
-  delay?: number; // milliseconds
+export interface FadeUpProps {
+  children?: ReactNode;
   className?: string;
-};
+  /** Stagger delay (seconds) when used as a standalone manual sequence. */
+  delay?: number;
+  /** Travel distance in px before settling (default 24). */
+  distance?: number;
+  /** Render element (default "div"). */
+  as?: "div" | "section" | "li" | "article" | "span";
+}
+
+/** Shared variants so the key names match between Stagger parent and FadeUp children. */
+export const fadeUpVariants = (distance: number) => ({
+  hidden: { opacity: 0, y: distance },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
+  },
+});
 
 /**
- * Enhances a fade-up entrance from a baseline that is ALWAYS visible.
- * Opacity is locked at 1; only `y` translates from 16 → 0 when the element
- * enters view. This guarantees content is visible to non-scrolling viewers
- * (crawlers, link previews, print, screenshot APIs).
+ * Fades + slides its children up as they scroll into view, once.
+ *
+ * Standalone usage: manages its own viewport trigger via `whileInView`.
+ * Inside `<Stagger>`: inherits the parent's cascade via shared `variants` keys
+ * — omits its own initial/whileInView so the parent drives the sequence.
+ *
+ * Honors prefers-reduced-motion: when reduced, renders a plain element with
+ * NO transform and no animation (and no IntersectionObserver dependency).
  */
-export function FadeUp({ children, delay = 0, className }: FadeUpProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
-  const reduced = useReducedMotionSafe();
+export function FadeUp({
+  children,
+  className,
+  delay = 0,
+  distance = 24,
+  as = "div",
+}: FadeUpProps) {
+  const reduced = useReducedMotion();
+  const inStagger = useInStagger();
 
   if (reduced) {
+    const Tag = as;
+    return <Tag className={className}>{children}</Tag>;
+  }
+
+  const MotionTag = motion[as];
+  const variants = fadeUpVariants(distance);
+
+  if (inStagger) {
+    // Participate in parent's staggerChildren cascade: share variants, no own trigger.
     return (
-      <div ref={ref} className={className}>
+      <MotionTag className={className} variants={variants}>
         {children}
-      </div>
+      </MotionTag>
     );
   }
 
+  // Standalone: self-managed viewport trigger.
   return (
-    <motion.div
-      ref={ref}
+    <MotionTag
       className={className}
-      initial={{ y: 16 }}
-      animate={inView ? { y: 0 } : { y: 16 }}
-      transition={{ ...easeOut, delay: delay / 1000 }}
+      variants={variants}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
-    </motion.div>
+    </MotionTag>
   );
 }
+
+export default FadeUp;

@@ -1,35 +1,54 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette — Kharazmi structure, logo-blue identity */
-  --color-navy: #0f2b47;
-  --color-navy-deep: #0a1f35;
-  --color-care-blue: #5a8bb8;
-  --color-blue-deep: #2f5f8a; /* AA: white text on it, and it as text on white */
-  --color-sky-soft: #dce7f1;
-  --color-mist: #f2f7fb;
-  --color-amber: #e5a94e;
-  --color-amber-deep: #c98a2e;
-  --color-surface: #ffffff;
-  --color-surface-warm: #f7f6f2;
-  --color-slate: #5a6b7e;
-  --color-success: #2d6a4f;
-  --color-alert: #c0392b;
-  --color-border: #e1e8f0;
-  --font-display: var(--font-plus-jakarta), system-ui, sans-serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  /* Central's palette — Lifecare blue accent replaces Central's gold. */
+  --color-navy: #0D2B49;
+  --color-navy-deep: #081D33;
+  --color-canvas: #FBFAF7;
+  --color-card: #FFFFFF;
+  --color-slate: #5A6B7B;
 
-  --spacing-section-y-desktop: 6rem;
-  --spacing-section-y-mobile: 3.5rem;
-  --radius-card: 1rem;
-  --radius-pill: 9999px;
+  /* Accent — the Lifecare logo's blue. AA discipline:
+     care-blue  = light-value POP (decorative fills, hairlines, icon tiles) — NEVER small text
+     blue-deep  = accent TEXT on light (6.4:1 on ivory) + signature CTA fill w/ white text (6.7:1)
+     blue-light = accent TEXT on dark navy (5.6:1 on navy) */
+  --color-care-blue: #5A8BB8;
+  --color-blue-deep: #2F5F8A;
+  --color-blue-light: #7AA6CF;
+
+  /* Retained during the interim so shared/legacy chrome keeps styling. */
+  --color-mist: #F2F7FB;
+  --color-amber: #E5A94E;
+
+  --radius: 8px;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
 }
 
-html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; scroll-behavior: smooth; }
-body { background: var(--color-mist); color: var(--color-navy-deep); font-family: var(--font-sans); font-size: 1.0625rem; line-height: 1.65; }
-h1, h2, h3, h4 { font-family: var(--font-display); color: var(--color-navy); font-weight: 700; line-height: 1.1; }
-h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
-h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
-h3 { font-size: 1.5rem; }
-section[id] { scroll-margin-top: 5rem; }
-:focus-visible { outline: 2px solid var(--color-blue-deep); outline-offset: 2px; border-radius: 4px; }
+/* Guard against horizontal overflow from full-bleed photos / decorative glows.
+   `clip` blocks overflow WITHOUT creating a scroll container, so the sticky
+   header keeps working (matches Central). */
+html,
+body {
+  overflow-x: clip;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-navy);
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  color: var(--color-navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue-deep);
+  outline-offset: 2px;
+}

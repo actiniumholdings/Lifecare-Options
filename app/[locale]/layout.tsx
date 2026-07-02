@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { plusJakarta, inter } from "@/lib/fonts";
+import { fraunces, inter } from "@/lib/fonts";
 import {
   SITE_NAME,
   SITE_URL,
@@ -49,7 +49,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
+      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
     >
       <head>
         <JsonLd data={medicalBusinessJsonLd()} />
