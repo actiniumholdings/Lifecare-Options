@@ -78,7 +78,7 @@ export function ReferContent() {
 
       {/* 3. What happens next — dark */}
       <Section tone="dark">
-        <Eyebrow className="!text-care-blue/80">{t("next.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-sky-soft">{t("next.eyebrow")}</Eyebrow>
         <h2 className="mt-4 max-w-2xl text-mist">{t("next.title")}</h2>
         <ol
           className="mt-10 space-y-5"

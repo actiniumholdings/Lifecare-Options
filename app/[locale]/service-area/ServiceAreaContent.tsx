@@ -72,7 +72,7 @@ export function ServiceAreaContent() {
 
       {/* 4. Map — dark */}
       <Section tone="dark">
-        <Eyebrow className="!text-care-blue/80">{t("map.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-sky-soft">{t("map.eyebrow")}</Eyebrow>
         <div className="mt-8 grid gap-10 md:grid-cols-2 md:items-start">
           <ServiceMap />
           <div className="flex flex-col justify-center">

@@ -54,7 +54,7 @@ export function CareersContent() {
 
       {/* 3. Open roles — dark */}
       <Section tone="dark">
-        <Eyebrow className="!text-care-blue/80">{t("openRoles.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-sky-soft">{t("openRoles.eyebrow")}</Eyebrow>
         <h2 className="mt-4 text-mist">{t("openRoles.title")}</h2>
         {siteConfig.positions.length === 0 ? (
           <div className="mt-8 max-w-xl">
@@ -88,7 +88,7 @@ export function CareersContent() {
       {/* 5. Bilingual welcome — dark */}
       <Section tone="dark">
         <div className="max-w-2xl mx-auto text-center">
-          <Eyebrow className="!text-care-blue/80">{t("bilingual.eyebrow")}</Eyebrow>
+          <Eyebrow className="!text-sky-soft">{t("bilingual.eyebrow")}</Eyebrow>
           <h2 className="mt-4 text-mist">{t("bilingual.title")}</h2>
           <p className="mt-4 text-slate/80 leading-relaxed">{t("bilingual.body")}</p>
         </div>
