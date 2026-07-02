@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Section } from "@/components/ui/Section";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/Button";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger } from "@/components/motion/Stagger";
 import { siteConfig } from "@/lib/site-config";

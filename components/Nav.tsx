@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Logo } from "./Logo";
-import { Button } from "./ui/Button";
+import { Button } from "./Button";
 import { Container } from "./ui/Container";
 import { siteConfig } from "@/lib/site-config";
 
@@ -105,7 +105,7 @@ export function Nav() {
               <Phone size={15} aria-hidden="true" />
               {siteConfig.phone}
             </Link>
-            <Button variant="accent" href="/refer">
+            <Button variant="primary" href="/refer">
               {t("refer")}
             </Button>
           </div>
@@ -148,7 +148,7 @@ export function Nav() {
                 <Phone size={18} aria-hidden="true" />
                 {siteConfig.phone}
               </Link>
-              <Button variant="accent" size="lg" href="/refer" className="w-full">
+              <Button variant="primary" size="lg" href="/refer" className="w-full">
                 {t("refer")}
               </Button>
             </div>

@@ -1,5 +1,5 @@
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FadeUp } from "@/components/motion/FadeUp";
 
@@ -29,7 +29,7 @@ export function CareersTeaser() {
               </p>
             </div>
             <div className="shrink-0">
-              <Button variant="accent" size="lg" href="/careers">
+              <Button variant="primary" size="lg" href="/careers">
                 Explore careers
               </Button>
             </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Container } from "@/components/ui/Container";
-import { Button } from "@/components/ui/Button";
+import { Button } from "@/components/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PhoneIcon } from "@/components/ui/icons";
 import { FadeUp } from "@/components/motion/FadeUp";
@@ -49,10 +49,10 @@ export function Hero() {
 
           <FadeUp delay={0.15}>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button variant="accent" size="lg" href="/refer">
+              <Button variant="primary" size="lg" href="/refer">
                 Refer a Patient
               </Button>
-              <Button variant="outline" size="lg" href={siteConfig.phoneHref}>
+              <Button variant="secondary" size="lg" href={siteConfig.phoneHref}>
                 <PhoneIcon className="h-4 w-4" />
                 Call {siteConfig.phone}
               </Button>
