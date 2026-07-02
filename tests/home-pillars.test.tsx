@@ -21,11 +21,14 @@ describe("Home Pillars — two service lines", () => {
     );
   });
 
-  it("shows attendant payers without claiming Medicare for attendant care", () => {
-    render(<Pillars />);
-    // The attendant payer hint names Medicaid programs + private pay, never Medicare.
-    const attendantPayers = screen.getByText(/PHC.*CAS.*FC/i);
-    expect(attendantPayers).toBeInTheDocument();
-    expect(attendantPayers.textContent).not.toMatch(/medicare/i);
+  it("keeps payer/funding info off the pillar cards (per client direction)", () => {
+    const { container } = render(<Pillars />);
+    // No payer/funding captions on the cards: no Medicaid/STAR+PLUS/private-pay
+    // on attendant, no Medicare/commercial-plans line on skilled.
+    expect(container.textContent).not.toMatch(/PHC|CAS|STAR\+PLUS/i);
+    expect(container.textContent).not.toMatch(/private pay/i);
+    expect(container.textContent).not.toMatch(/medicare advantage|commercial plans/i);
+    // The attendant eyebrow no longer reads "Medicaid · Private pay".
+    expect(container.textContent).not.toMatch(/medicaid/i);
   });
 });

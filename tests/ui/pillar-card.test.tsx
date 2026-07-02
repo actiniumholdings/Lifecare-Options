@@ -20,12 +20,23 @@ describe("PillarCard", () => {
     for (const s of props.services) expect(screen.getByText(s)).toBeInTheDocument();
   });
 
-  it("links to the pillar page and shows the payer hint", () => {
+  it("links to the pillar page and shows the payer hint when provided", () => {
     render(<PillarCard {...props} />);
     expect(screen.getByRole("link", { name: /explore skilled care/i })).toHaveAttribute(
       "href",
       "/services/skilled"
     );
     expect(screen.getByText(props.payerHint)).toBeInTheDocument();
+  });
+
+  it("omits the payer caption entirely when payerHint is not provided", () => {
+    const { payerHint, ...noPayer } = props;
+    render(<PillarCard {...noPayer} />);
+    // the specific payer caption line is gone (the "Medicare-certified" eyebrow,
+    // a certification, legitimately remains).
+    expect(screen.queryByText(payerHint)).not.toBeInTheDocument();
+    expect(screen.queryByText(/commercial plans/i)).not.toBeInTheDocument();
+    // card still renders its title + link
+    expect(screen.getByRole("heading", { name: "Skilled Home Health" })).toBeInTheDocument();
   });
 });

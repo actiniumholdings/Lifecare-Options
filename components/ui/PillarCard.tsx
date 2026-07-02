@@ -6,7 +6,8 @@ export interface PillarCardProps {
   title: string;
   description: string;
   services: string[];
-  payerHint: string;
+  /** Optional payer/funding caption. Omit to keep the card free of payer info. */
+  payerHint?: string;
   href: string;
   cta: string;
 }
@@ -43,12 +44,14 @@ export function PillarCard({
           </li>
         ))}
       </ul>
-      <p className="mt-6 border-t border-navy/10 pt-4 text-caption font-medium uppercase tracking-wide text-slate">
-        {payerHint}
-      </p>
+      {payerHint && (
+        <p className="mt-6 border-t border-navy/10 pt-4 text-caption font-medium uppercase tracking-wide text-slate">
+          {payerHint}
+        </p>
+      )}
       <Link
         href={href}
-        className="group mt-4 inline-flex items-center gap-1.5 font-medium text-blue-deep hover:text-navy"
+        className="group mt-6 inline-flex items-center gap-1.5 font-medium text-blue-deep hover:text-navy"
       >
         {cta}
         <span aria-hidden className="transition-transform group-hover:translate-x-0.5">

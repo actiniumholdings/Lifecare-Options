@@ -5,9 +5,9 @@ import { FadeUp } from "@/components/motion/FadeUp";
 
 /**
  * Lifecare's two service lines, presented as equal pillars (spec §6 Home).
- * Skilled Home Health = the Medicare-certified clinical benefit; Provider
- * Attendant Services = the Medicaid/private-pay daily-living line. Each links
- * to its dedicated page (built in Plan 3).
+ * Skilled Home Health = the clinical benefit; Provider Attendant Services =
+ * the daily-living support line. Each links to its dedicated page. Payer/
+ * funding info is intentionally kept off the cards (per client direction).
  */
 const PILLARS = [
   {
@@ -22,12 +22,11 @@ const PILLARS = [
       "Home Health Aide",
       "Remote Patient Monitoring",
     ],
-    payerHint: "Medicare · Medicare Advantage · commercial plans",
     href: "/services/skilled",
     cta: "Explore skilled care",
   },
   {
-    eyebrow: "Medicaid · Private pay",
+    eyebrow: "In-home support",
     title: "Provider Attendant Services",
     description:
       "Trained attendants help with the everyday tasks that keep daily life safe, dignified, and independent at home.",
@@ -37,7 +36,6 @@ const PILLARS = [
       "Light housekeeping & laundry",
       "Errands & escort to appointments",
     ],
-    payerHint: "Medicaid (PHC · CAS · FC) · STAR+PLUS · private pay",
     href: "/services/attendant",
     cta: "Explore attendant care",
   },
