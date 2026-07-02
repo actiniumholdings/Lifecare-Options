@@ -35,7 +35,7 @@ export function RpmContent() {
         eyebrow={
           <>
             {t("hero.eyebrow")}{" "}
-            <span className="ml-1.5 inline-flex items-center rounded-full bg-care-blue px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-white">
+            <span className="ml-1.5 inline-flex items-center rounded-full bg-amber px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-navy-deep">
               {t("hero.badge")}
             </span>
           </>

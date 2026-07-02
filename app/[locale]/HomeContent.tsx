@@ -82,7 +82,7 @@ export function HomeContent() {
             <li key={n} className="flex gap-4">
               <div
                 aria-hidden
-                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-care-blue text-sm font-semibold text-white"
+                className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-blue-deep text-sm font-semibold text-white"
               >
                 {n}
               </div>
@@ -97,7 +97,7 @@ export function HomeContent() {
 
       {/* 5. Why Lifecare — dark */}
       <Section tone="dark" id="why-lifecare">
-        <Eyebrow>{t("why.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-sky-soft">{t("why.eyebrow")}</Eyebrow>
         <h2 className="mt-3 max-w-2xl text-mist">{t("why.title")}</h2>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {(

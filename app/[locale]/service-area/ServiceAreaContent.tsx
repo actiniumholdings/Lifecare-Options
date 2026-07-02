@@ -79,7 +79,7 @@ export function ServiceAreaContent() {
             <p className="text-lg font-semibold text-mist">{t("map.callout")}</p>
             <a
               href={siteConfig.phoneHref}
-              className="mt-3 text-care-blue hover:underline"
+              className="mt-3 text-sky-soft hover:underline"
             >
               {siteConfig.phone}
             </a>

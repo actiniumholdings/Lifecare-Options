@@ -46,7 +46,7 @@ export function ServicesContent() {
 
       {/* 3. Specialties grid */}
       <Section tone="dark" id="specialties">
-        <Eyebrow>{t("specialties.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-sky-soft">{t("specialties.eyebrow")}</Eyebrow>
         <h2 className="mt-3 max-w-2xl text-mist">{t("specialties.title")}</h2>
         <ul
           aria-label="Conditions we support"

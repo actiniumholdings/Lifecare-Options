@@ -8,7 +8,7 @@ import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
 
 /**
  * Thin announcement band above the Nav. Navy surface gives architectural
- * contrast against the peach-cream brand below (and bookends with the
+ * contrast against the navy/sky-soft palette below (and bookends with the
  * navy footer). Single short message — keep the copy tight. Not sticky.
  */
 export function AnnouncementBar() {

@@ -88,7 +88,7 @@ export function ReferContent() {
             <li key={i} className="flex gap-4 items-start">
               <span
                 aria-hidden
-                className="flex-shrink-0 w-7 h-7 rounded-full bg-care-blue/20 text-care-blue text-sm font-bold flex items-center justify-center"
+                className="flex-shrink-0 w-7 h-7 rounded-full bg-white/10 text-sky-soft text-sm font-bold flex items-center justify-center"
               >
                 {i + 1}
               </span>
