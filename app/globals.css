@@ -20,6 +20,9 @@
   --color-mist: #F2F7FB;
   --color-amber: #E5A94E;
 
+  /* Alternating light-section background (spec §5 Color). */
+  --color-sky-soft: #EAF2F9;
+
   --radius: 8px;
 
   --font-display: var(--font-fraunces);
@@ -40,12 +43,43 @@ body {
   font-family: var(--font-sans);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-display);
-  color: var(--color-navy);
+/* ——— Type scale (spec §5 Type) ———
+   Components opt in via these utilities; the @layer base rules below are
+   the safety net that makes a bare heading readable, so the 16px-h1
+   regression class of bug is structurally impossible. */
+@utility text-display-xl {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+@utility text-display {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+@utility text-title {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+@utility text-caption {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy);
+  }
+
+  h1 { font-size: clamp(2.25rem, 4.5vw, 3.5rem); line-height: 1.08; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.12; letter-spacing: -0.015em; }
+  h3 { font-size: 1.375rem; line-height: 1.25; }
+  h4 { font-size: 1.125rem; line-height: 1.3; }
 }
 
 :focus-visible {
