@@ -15,6 +15,8 @@ import { SkipLink } from "@/components/a11y/SkipLink";
 import { AnnouncementBar } from "@/components/AnnouncementBar";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { medicalBusinessJsonLd } from "@/lib/seo";
 import "../globals.css";
 
 export const metadata: Metadata = {
@@ -49,6 +51,9 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${playfair.variable} ${inter.variable} h-full antialiased`}
     >
+      <head>
+        <JsonLd data={medicalBusinessJsonLd()} />
+      </head>
       <body className="text-navy min-h-full flex flex-col">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SkipLink />
