@@ -15,7 +15,7 @@ export const TITLE_TEMPLATE = `%s | ${SITE_NAME}`;
  */
 export const DEFAULT_DESCRIPTION =
   "Medicare-certified skilled home health. Nursing, therapy, and personal care " +
-  "at home across Katy, Fort Bend, and Harris counties since 2008.";
+  "at home across Katy, Fort Bend, and Harris counties since 2012.";
 
 interface BuildMetadataOptions {
   /** Short page title — inherits the "%s | Lifecare Options" template from root layout. */

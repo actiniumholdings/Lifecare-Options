@@ -14,6 +14,6 @@ describe("TrustSentence", () => {
     expect(screen.getByText(/medicare-certified/i)).toBeInTheDocument();
     expect(screen.getByText(/CHAP-accredited/i)).toBeInTheDocument();
     expect(screen.getByText(/katy/i)).toBeInTheDocument();
-    expect(screen.getByText(/2008/i)).toBeInTheDocument();
+    expect(screen.getByText(/2012/i)).toBeInTheDocument();
   });
 });

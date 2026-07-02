@@ -67,19 +67,19 @@
   "about": {
     "meta": {
       "title": "About Lifecare Options",
-      "description": "Medicare-certified home health agency serving greater Houston since 2008. CHAP-accredited, bilingual, locally owned, and nurse-led."
+      "description": "Medicare-certified home health agency serving greater Houston since 2012. CHAP-accredited, bilingual, locally owned, and nurse-led."
     },
     "hero": {
       "eyebrow": "About",
-      "headline": "Caring for Katy families since 2008.",
-      "intro": "Lifecare Options is a locally owned skilled home health agency based in Katy, TX. Nurse-led and physician-coordinated, we have been bringing Medicare-certified care into patients' homes since 2008.",
+      "headline": "Caring for Katy families since 2012.",
+      "intro": "Lifecare Options is a locally owned skilled home health agency based in Katy, TX. Nurse-led and physician-coordinated, we have been bringing Medicare-certified care into patients' homes since 2012.",
       "primary": "Request info",
       "photoAlt": "A nurse checking an older adult's blood pressure at home."
     },
     "story": {
       "eyebrow": "Our Story",
-      "title": "Locally owned and nurse-led since 2008.",
-      "p1": "Lifecare Options started in Katy in 2008 with a straightforward idea: skilled nurses and therapists should be able to follow patients home after discharge and keep their recovery on track.",
+      "title": "Locally owned and nurse-led since 2012.",
+      "p1": "Lifecare Options started in Katy in 2012 with a straightforward idea: skilled nurses and therapists should be able to follow patients home after discharge and keep their recovery on track.",
       "p2": "Today our team includes registered nurses, licensed vocational nurses, physical and occupational therapists, speech therapists, medical social workers, and home health aides. Every care plan is coordinated directly with the patient's physician.",
       "p3": "We are not a national franchise. The clinicians who answer your call are the same ones who come to your door.",
       "missionLabel": "Our Mission",
@@ -111,8 +111,8 @@
       "medicareBody": "Certified by Medicare to deliver skilled nursing, therapy, and home health aide services. Provider CCN: 747061.",
       "licenseTitle": "Texas-licensed",
       "licenseBody": "Licensed by the Texas Health and Human Services Commission. Texas Home Health Agency License: 011908.",
-      "since2008Title": "Serving since 2008",
-      "since2008Body": "In continuous operation since 2008, serving Katy, Fort Bend, and Harris counties."
+      "sinceFoundedTitle": "Serving since 2012",
+      "sinceFoundedBody": "In continuous operation since 2012, serving Katy, Fort Bend, and Harris counties."
     },
     "cta": {
       "headline": "Ready to bring skilled care home?"
@@ -366,17 +366,17 @@
   "home": {
     "meta": {
       "title": "Skilled Home Health in Katy, TX",
-      "description": "Medicare-certified nursing, therapy, and personal care at home across Katy, Fort Bend, and Harris counties. Serving families since 2008."
+      "description": "Medicare-certified nursing, therapy, and personal care at home across Katy, Fort Bend, and Harris counties. Serving families since 2012."
     },
     "hero": {
       "eyebrow": "Home Health · Katy, TX",
       "headline1": "Quality care,",
       "headline2": "felt at home.",
-      "intro": "Medicare-certified skilled nursing, therapy, and personal care across Katy, Fort Bend, and Harris counties since 2008.",
+      "intro": "Medicare-certified skilled nursing, therapy, and personal care across Katy, Fort Bend, and Harris counties since 2012.",
       "ctaCall": "Call {phone}",
       "ctaRequest": "Request info",
       "photoAlt": "A home-health nurse sitting with a smiling older woman in a sunlit living room.",
-      "badge1": "Serving Katy since 2008",
+      "badge1": "Serving Katy since 2012",
       "badge2": "24/7 on-call nursing"
     },
     "trust": {
@@ -403,7 +403,7 @@
       "title": "Skilled care you can rely on, close to home.",
       "card1Title": "Medicare-certified & CHAP-accredited",
       "card1Body": "We meet federal Medicare standards and the independent quality standards set by the Community Health Accreditation Partner.",
-      "card2Title": "Locally owned in Katy since 2008",
+      "card2Title": "Locally owned in Katy since 2012",
       "card2Body": "We are not a national franchise. Our nurses and leadership live and work in the same community we serve.",
       "card3Title": "24/7 on-call nursing",
       "card3Body": "A nurse is available by phone around the clock. When a question comes up at 2 a.m., you will reach a person, not a recording.",

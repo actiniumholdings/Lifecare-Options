@@ -13,9 +13,9 @@ function renderAbout() {
 }
 
 describe("About page", () => {
-  it("renders an h1 containing '2008'", () => {
+  it("renders an h1 containing '2012'", () => {
     renderAbout();
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/2008/);
+    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(/2012/);
   });
 
   it("renders 'CHAP' in the credentials section", () => {
@@ -24,9 +24,9 @@ describe("About page", () => {
     expect(chapMatches.length).toBeGreaterThan(0);
   });
 
-  it("renders '2008' on the page", () => {
+  it("renders '2012' on the page", () => {
     renderAbout();
-    const matches = screen.getAllByText(/2008/);
+    const matches = screen.getAllByText(/2012/);
     expect(matches.length).toBeGreaterThan(0);
   });
 });

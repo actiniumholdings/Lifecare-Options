@@ -17,7 +17,7 @@ export const siteConfig = {
     { days: "Fri", time: "8:00 AM – 4:00 PM" },
   ],
   onCall: "24/7 on-call nursing",
-  foundedYear: 2008,
+  foundedYear: 2012,
   accreditation: "CHAP-accredited",
   medicareCcn: "747061" as string | null, // verify before launch
   stateLicense: "011908" as string | null, // verify before launch

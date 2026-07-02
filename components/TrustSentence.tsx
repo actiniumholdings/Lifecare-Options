@@ -14,7 +14,7 @@ export function TrustSentence() {
           <em className="not-italic font-semibold">Medicare-certified.</em>{" "}
           <em>CHAP-accredited.</em>{" "}
           Serving <em className="not-italic font-semibold">Katy</em> families
-          since <em className="not-italic font-semibold">2008</em>.
+          since <em className="not-italic font-semibold">2012</em>.
         </p>
       </div>
     </section>

@@ -24,7 +24,7 @@ export function AboutContent() {
     { titleKey: "credentials.chapTitle", bodyKey: "credentials.chapBody" },
     { titleKey: "credentials.medicareTitle", bodyKey: "credentials.medicareBody" },
     { titleKey: "credentials.licenseTitle", bodyKey: "credentials.licenseBody" },
-    { titleKey: "credentials.since2008Title", bodyKey: "credentials.since2008Body" },
+    { titleKey: "credentials.sinceFoundedTitle", bodyKey: "credentials.sinceFoundedBody" },
   ] as const;
 
   return (
