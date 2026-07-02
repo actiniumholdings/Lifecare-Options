@@ -20,4 +20,15 @@ describe("FinalCTA (flagship, navy band)", () => {
     expect(refer.className).toContain("bg-white");
     expect(refer.className).toContain("text-navy");
   });
+
+  it("FinalCTA secondary ghost stays white in BOTH rest and hover on the navy band", () => {
+    renderFinalCTA();
+    const contact = screen.getByRole("link", { name: /contact us/i });
+    // Rest: white text on navy. The override must also force hover:text-white so
+    // twMerge drops the canonical secondary's hover:text-blue-deep, which would
+    // render ~1.4:1 (invisible) on navy.
+    expect(contact.className).toContain("text-white");
+    expect(contact.className).toContain("hover:text-white");
+    expect(contact.className).not.toContain("hover:text-blue-deep");
+  });
 });

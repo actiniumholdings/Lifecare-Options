@@ -38,7 +38,7 @@ export function FinalCTA() {
                 variant="secondary"
                 size="lg"
                 href="/contact"
-                className="bg-transparent border-white/30 text-white hover:border-white/50 hover:bg-white/[0.06]"
+                className="bg-transparent border-white/30 text-white hover:border-white/50 hover:bg-white/[0.06] hover:text-white"
               >
                 Contact Us
               </Button>
