@@ -24,8 +24,9 @@ export function CareersTeaser() {
                 Build a career where your care is felt
               </h2>
               <p className="mt-4 text-base leading-relaxed text-slate">
-                Nurses, therapists, home health aides, and social workers: if you
-                believe great care belongs at home, we&rsquo;d love to meet you.
+                Nurses, therapists, and attendants across the Katy area: if
+                you believe great care belongs at home, we&rsquo;d love to
+                meet you.
               </p>
             </div>
             <div className="shrink-0">
