@@ -14,7 +14,7 @@
 ## Global Constraints
 
 - Branch `feat/two-pillar-redesign` in `~/Documents/Claude/Projects/lifecare-full-site`. Never touch the phase-0 checkout.
-- **PAS payer/claims discipline (spec §3, HARD):** attendant services claim ONLY Medicaid PHC/CAS/FC + STAR+PLUS + private pay. NEVER Medicare for attendant care. NO LTC-insurance/VA claims. NO outcome guarantees ("we help you navigate qualification", not "you will qualify"). No invented statistics.
+- **NO payer/coverage info on Services pages (client direction 2026-07-02, OVERRIDES spec §6 payer content):** none of `/services`, `/services/skilled`, `/services/attendant` may name ANY payer or program — no Medicare, Medicare Advantage, commercial plans, Medicaid, PHC, CAS, FC, STAR+PLUS, "private pay", or an insurance list, or a two-path eligibility section. Instead, where coverage would be discussed, use a single soft line like "Call us and we'll walk you through coverage." No outcome guarantees, no invented statistics.
 - **English-only (user decision):** new copy goes in `en.json`; mirror the same English into `es.json` to preserve key parity (real translation deferred). Do NOT hand-write Spanish.
 - New pages use the established inner-page shape: server `page.tsx` (`generateMetadata` via `buildMetadata` with `path` + `locale`) + client `*Content.tsx` (`useTranslations`). Match `app/[locale]/about/` as the reference implementation.
 - Every task ends green: `npm run typecheck && npm run lint && npm test` pass. Suite is 159 at plan start.
@@ -46,7 +46,7 @@ Turn the flat "Services" nav item into a dropdown (Skilled Home Health / Attenda
 
 ### Task 2: Create `/services/skilled` from the existing skilled detail
 
-Move the current skilled-focused `/services` content into a dedicated `/services/skilled` route (spec §6 /services/skilled): interior hero (clinical imagery) → seven discipline cards → Conditions We Support (readable, on navy via `PayerList` tone="dark" or chips) → insurance list → how-care-starts `StepList` → `CtaBand`.
+Move the current skilled-focused `/services` content into a dedicated `/services/skilled` route (spec §6 /services/skilled, MINUS payer content): interior hero (clinical imagery) → seven discipline cards → Conditions We Support (readable, on navy via chips) → how-care-starts `StepList` → a soft "Call us and we'll walk you through coverage" line → `CtaBand`. **NO insurance list, NO payer/program names.**
 
 **Files:**
 - Create: `app/[locale]/services/skilled/page.tsx` (server shell), `app/[locale]/services/skilled/SkilledContent.tsx`
@@ -57,9 +57,9 @@ Move the current skilled-focused `/services` content into a dedicated `/services
 **Interfaces:**
 - Consumes: `services` data (7 disciplines) from `lib/site-config`; `Hero`, `StepList`, `PayerList`/chips, `CtaBand`.
 
-- [ ] **Step 1: Write failing test** — `/services/skilled` renders one `<h1>`, the 7 discipline names, a readable "Conditions We Support" section (assert a condition chip's text is present AND on a dark section it uses white-on-navy, not the old invisible treatment), and an insurance list including Medicare + Medicaid.
+- [ ] **Step 1: Write failing test** — `/services/skilled` renders one `<h1>`, the 7 discipline names, a readable "Conditions We Support" section (assert a condition chip's text is present AND on a dark section it uses white-on-navy, not the old invisible treatment). ALSO assert the page text contains NO payer/program names: `expect(text).not.toMatch(/medicare|medicaid|insurance|commercial plan|private pay/i)`.
 - [ ] **Step 2: Run → fail** (route doesn't exist).
-- [ ] **Step 3: Implement** the server shell (`generateMetadata` path `/services/skilled`) + `SkilledContent` using `useTranslations("skilled")`. Port the skilled sections from the current `ServicesContent`. Rebuild "Conditions We Support" with `PayerList tone="dark"` (readable chips). Add `skilled.*` keys to en+es.
+- [ ] **Step 3: Implement** the server shell (`generateMetadata` path `/services/skilled`) + `SkilledContent` using `useTranslations("skilled")`. Port the skilled sections from the current `ServicesContent` EXCEPT the insurance list (drop it). Rebuild "Conditions We Support" as readable chips on navy (white-on-navy; may reuse the chip styling but NOT as payer content). Add a soft "Call us and we'll walk you through coverage" line near the CTA. Add `skilled.*` keys to en+es. Note: the `PayerList` primitive is NOT used here.
 - [ ] **Step 4: Green.**
 - [ ] **Step 5: Commit** `feat(services): add /services/skilled pillar page`.
 
@@ -67,16 +67,16 @@ Move the current skilled-focused `/services` content into a dedicated `/services
 
 ### Task 3: Rebuild `/services` as a two-pillar hub
 
-Replace the skilled-only `/services` with a short router (spec §6 Services hub): hero → two expanded `PillarCard`s (link to skilled + attendant) → "not sure which you need?" plain-language explainer → `PayerList` (both lines' payers) → `CtaBand`.
+Replace the skilled-only `/services` with a short router (spec §6 Services hub, MINUS payer content): hero → two expanded `PillarCard`s (NO `payerHint` — link to skilled + attendant) → "not sure which you need?" plain-language explainer → `CtaBand`. **NO payers strip, NO program names.**
 
 **Files:**
 - Rewrite: `app/[locale]/services/ServicesContent.tsx`
 - Message keys: rework `services.*` to the hub copy in en+es
 - Test: `tests/pages/services.test.tsx` (rework existing)
 
-- [ ] **Step 1: Write failing test** — `/services` shows both pillar headings linking to `/services/skilled` and `/services/attendant`, an explainer strip ("recovering from something" → skilled; "help with everyday tasks" → attendant), and a payers strip. Attendant payer text must not contain "Medicare".
+- [ ] **Step 1: Write failing test** — `/services` shows both pillar headings linking to `/services/skilled` and `/services/attendant`, and an explainer strip ("recovering from something" → skilled; "help with everyday tasks" → attendant). Assert NO payer/program names anywhere: `expect(text).not.toMatch(/medicare|medicaid|star\+plus|phc|cas|private pay|insurance/i)`.
 - [ ] **Step 2: Run → fail.**
-- [ ] **Step 3: Implement** the hub using two `PillarCard`s (reuse the home pillar data shape), an explainer `Section`, and `PayerList`. Keep it short (router, not detail).
+- [ ] **Step 3: Implement** the hub using two `PillarCard`s (reuse the home pillar data shape, WITHOUT `payerHint`), and an explainer `Section`. Keep it short (router, not detail). No `PayerList`.
 - [ ] **Step 4: Green.**
 - [ ] **Step 5: Commit** `feat(services): rebuild /services as two-pillar hub`.
 
@@ -84,7 +84,7 @@ Replace the skilled-only `/services` with a short router (spec §6 Services hub)
 
 ### Task 4: Create `/services/attendant` (net-new PAS page)
 
-Spec §6 /services/attendant: interior hero (daily-living imagery `attendant-daily.jpg`) → "what an attendant helps with" task grid → two-path eligibility explainer (Medicaid path: PHC/CAS/FC + STAR+PLUS, "we help you navigate qualification"; private-pay path: start right away, flexible hours) → what-to-expect (care plan, supervisory visits, consistent attendant) → attendant-careers cross-link band → `CtaBand`.
+Spec §6 /services/attendant (MINUS payer/eligibility content): interior hero (daily-living imagery `attendant-daily.jpg`) → "what an attendant helps with" task grid → what-to-expect (care plan, supervisory visits, a consistent attendant) → a soft "Call us and we'll walk you through coverage and how to get started" line → attendant-careers cross-link band → `CtaBand`. **NO two-path eligibility section, NO Medicaid/STAR+PLUS/private-pay/program names.**
 
 **Files:**
 - Create: `app/[locale]/services/attendant/page.tsx`, `app/[locale]/services/attendant/AttendantContent.tsx`
@@ -92,11 +92,11 @@ Spec §6 /services/attendant: interior hero (daily-living imagery `attendant-dai
 - Test: `tests/pages/attendant.test.tsx`
 
 **Interfaces:**
-- Consumes: `Hero` (photoSrc `/images/attendant-daily.jpg`), `Section`, `StepList` (eligibility/what-to-expect), `PayerList`, `Band`/`CtaBand`.
+- Consumes: `Hero` (photoSrc `/images/attendant-daily.jpg`), `Section`, `StepList` (what-to-expect), `Card` (task grid), `Band`/`CtaBand`.
 
-- [ ] **Step 1: Write failing test** — `/services/attendant` renders one `<h1>`, a task grid including "Bathing", "Meal preparation", "Light housekeeping"; a two-path eligibility section naming Medicaid PHC/CAS/FC + STAR+PLUS AND private pay; a careers cross-link to `/careers`. **Compliance asserts:** the page text does NOT contain "Medicare", does NOT contain guarantee language (`/guarantee|will qualify|approved/i`).
+- [ ] **Step 1: Write failing test** — `/services/attendant` renders one `<h1>`, a task grid including "Bathing", "Meal preparation", "Light housekeeping"; a what-to-expect section; a careers cross-link to `/careers`. **Compliance asserts (hard):** the page text does NOT match `/medicare|medicaid|star\+plus|phc|cas|private pay|insurance|guarantee|will qualify|approved/i`.
 - [ ] **Step 2: Run → fail** (route doesn't exist).
-- [ ] **Step 3: Implement** server shell (`generateMetadata` path `/services/attendant`) + `AttendantContent` using `useTranslations("attendant")`. Task grid from `Card`s; eligibility as two `Section`/cards or a `StepList`; payers via `PayerList`; careers cross-link `Band`. All copy in en+es. Honor the compliance rules exactly.
+- [ ] **Step 3: Implement** server shell (`generateMetadata` path `/services/attendant`) + `AttendantContent` using `useTranslations("attendant")`. Task grid from `Card`s; what-to-expect as a `StepList` or cards; a soft coverage line ("Call us and we'll walk you through coverage and how to get started"); careers cross-link `Band`. NO eligibility/payer section, NO `PayerList`. All copy in en+es. Honor the compliance rule exactly.
 - [ ] **Step 4: Green.**
 - [ ] **Step 5: Commit** `feat(services): add /services/attendant PAS page`.
 
@@ -119,16 +119,16 @@ Spec §6 /services/attendant: interior hero (daily-living imagery `attendant-dai
 ### Task 6: Green gate + visual review
 
 - [ ] **Step 1: Full gate** — `npm run typecheck && npm run lint && npm test && npm run build` all pass.
-- [ ] **Step 2: Visual** — screenshot `/services`, `/services/skilled`, `/services/attendant` at 1440 + 390. Confirm: hub shows two pillars; skilled page conditions chips are readable (no navy-void); attendant page shows task grid + two-path eligibility + daily-living photo; nav Services dropdown opens with three items; home pillar deep-links now resolve (no 404).
+- [ ] **Step 2: Visual** — screenshot `/services`, `/services/skilled`, `/services/attendant` at 1440 + 390. Confirm: hub shows two pillars (no payer captions); skilled page conditions chips are readable (no navy-void), no insurance list; attendant page shows task grid + what-to-expect + daily-living photo, no eligibility/payer section; nav Services dropdown opens with three items; home pillar deep-links now resolve (no 404).
 - [ ] **Step 3: Commit** the gate (empty commit).
 
 ---
 
 ## Compliance checklist (verify at gate)
 
-- [ ] Attendant pages/sections never say "Medicare"; never claim LTC/VA.
-- [ ] No guarantee/outcome language on attendant eligibility ("help you navigate", not "you will qualify").
-- [ ] Payer lines exactly: skilled = Medicare · Medicare Advantage · Medicaid · commercial · private; attendant = Medicaid (PHC · CAS · FC) · STAR+PLUS · private pay.
+- [ ] NO payer/program names anywhere in `/services`, `/services/skilled`, `/services/attendant`: grep the three rendered pages for `medicare|medicaid|star\+plus|phc|cas|\bfc\b|private pay|commercial plan|insurance` → ZERO matches (outside the word "certified" in a "Medicare-certified" eyebrow if one is kept — decide per card copy; the plan currently keeps NO payer text on these pages).
+- [ ] Coverage is addressed only by a soft "Call us and we'll walk you through coverage" line — no lists, no eligibility paths, no guarantees.
+- [ ] No guarantee/outcome language (`guarantee|will qualify|approved`).
 - [ ] en/es key parity for every new namespace (`skilled.*`, `attendant.*`, reworked `services.*`, `nav.*`).
 
 ## Follow-on
