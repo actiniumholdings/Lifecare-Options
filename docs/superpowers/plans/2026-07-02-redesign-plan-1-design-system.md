@@ -212,6 +212,103 @@ Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"
 
 ---
 
+### Task 2B: Consolidate to one Button (delete the divergent flagship Button)
+
+**Discovered during execution:** the manual flagship commit `4085487` added a
+SECOND Button — `components/ui/Button.tsx` (variants `primary`=navy fill /
+`accent`=blue-deep / `outline`=hairline; NO motion) — and wired the 4 flagship
+home section components to it, while the rest of the site uses the canonical
+`components/Button.tsx`. Spec §5 mandates ONE canonical component set. Migrate
+the 4 consumers onto the canonical Button (now `primary|secondary|onDark|
+tertiary` after Task 2) and delete the duplicate.
+
+**Files:**
+- Modify: `components/home/CareersTeaser.tsx`, `components/home/FinalCTA.tsx`, `components/home/Hero.tsx`, `components/home/ServiceAreaTeaser.tsx`
+- Delete: `components/ui/Button.tsx`
+- Test: `tests/home-sections.test.tsx` (existing — extend), plus full suite
+
+**Interfaces:**
+- Consumes: canonical `Button` from `@/components/Button` with variants
+  `primary` (blue-deep fill), `secondary` (outlined, light-band), `onDark`
+  (white fill, navy text — for navy bands), `tertiary` (text link) from Task 2.
+
+**Variant migration map** (band tone drives the choice — this is the point):
+
+| Component | Band | Old variant | New variant | Notes |
+|-----------|------|-------------|-------------|-------|
+| CareersTeaser | white card | `accent` | `primary` | blue-deep fill |
+| Hero (flagship) | light (canvas) | `accent` | `primary` | signature Refer CTA |
+| Hero (flagship) | light (canvas) | `outline` | `secondary` | outlined navy, on light |
+| ServiceAreaTeaser | light (Section) | `primary` (navy) | `primary` | navy→blue-deep, on-spec single primary |
+| FinalCTA | **navy** | `accent` (/refer) | `onDark` | white fill for max contrast on navy |
+| FinalCTA | **navy** | `outline` (+inline white override) | `secondary` | KEEP its existing `className` white-border override so it reads as a ghost button on navy |
+
+- [ ] **Step 1: Add a regression test for the navy-band FinalCTA buttons**
+
+Append to `tests/home-sections.test.tsx` (match its existing render/i18n setup):
+
+```tsx
+it("FinalCTA primary CTA uses the onDark (white-fill) variant on the navy band", () => {
+  renderFinalCTA(); // use the file's existing helper/pattern
+  const refer = screen.getByRole("link", { name: /refer a patient/i });
+  // onDark = inverted white button, legible on navy
+  expect(refer.className).toContain("bg-white");
+  expect(refer.className).toContain("text-navy");
+});
+```
+
+If `tests/home-sections.test.tsx` has no FinalCTA render helper, render
+`<FinalCTA/>` inside the same `NextIntlClientProvider` wrapper the other
+cases use.
+
+- [ ] **Step 2: Run test to verify it fails**
+
+Run: `npx vitest run tests/home-sections.test.tsx`
+Expected: FAIL — FinalCTA still imports `@/components/ui/Button`, `accent` renders `bg-blue-deep`, not `bg-white`.
+
+- [ ] **Step 3: Migrate the 4 components**
+
+In each of the 4 files, change the import to `import { Button } from "@/components/Button";` and update every `variant=` per the map above. Specifics:
+- `CareersTeaser.tsx`: `variant="accent"` → `variant="primary"`.
+- `Hero.tsx`: `variant="accent"` → `variant="primary"`; `variant="outline"` → `variant="secondary"`.
+- `ServiceAreaTeaser.tsx`: `variant="primary"` stays `variant="primary"` (semantics now blue-deep fill).
+- `FinalCTA.tsx`: the `/refer` `accent` button → `variant="onDark"`; the `outline` button → `variant="secondary"` and KEEP its existing `className="border-white/30 text-white hover:border-white/50 hover:bg-white/[0.06]"` override (it makes the ghost readable on navy). Since canonical `secondary` sets `bg-white text-navy`, ALSO add `bg-transparent` to that override so it stays a ghost, not a solid white block: `className="bg-transparent border-white/30 text-white hover:border-white/50 hover:bg-white/[0.06]"`.
+
+Note: the canonical Button is polymorphic via `href` and accepts `className` (twMerge) and `size` — all four call sites already pass only `href`, `size`, `variant`, `className`, so no prop-shape changes are needed. The canonical Button does NOT spread arbitrary native anchor attributes; confirm none of the 4 pass extras beyond those (they don't).
+
+- [ ] **Step 4: Delete the duplicate**
+
+```bash
+git rm components/ui/Button.tsx
+```
+
+Run: `grep -rn "components/ui/Button" app components tests` → expect NO matches.
+
+- [ ] **Step 5: Run tests + typecheck + build**
+
+Run: `npx vitest run tests/home-sections.test.tsx && npm run typecheck && npm run lint`
+Expected: PASS / clean (the intentional `section.test` sky item is the only known-red until Task 3).
+
+- [ ] **Step 6: Visual check**
+
+Open `http://localhost:3000/` — confirm: Hero Refer button = blue-deep fill; the navy FinalCTA band shows a white "Refer a Patient" button + a readable white-outline ghost button (neither invisible).
+
+- [ ] **Step 7: Commit**
+
+```bash
+git add components/home tests/home-sections.test.tsx
+git commit -m "refactor(ds): consolidate to one canonical Button; delete flagship duplicate
+
+Migrates the 4 flagship home components off components/ui/Button onto the
+canonical components/Button (accent→primary, outline→secondary, navy-band
+FinalCTA→onDark) and deletes the divergent duplicate. One canonical Button
+per spec §5.
+
+Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>"
+```
+
+---
+
 ### Task 3: Section — add sky tone
 
 **Files:**
