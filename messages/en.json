@@ -30,37 +30,53 @@
   },
   "services": {
     "meta": {
-      "title": "Home Health Services",
-      "description": "Skilled nursing, physical, occupational, and speech therapy, medical social work, home health aide, and remote patient monitoring at home."
+      "title": "Our Services",
+      "description": "Lifecare brings two kinds of care home: Skilled Home Health for clinical recovery, and Provider Attendant Services for everyday support."
     },
     "hero": {
       "eyebrow": "Our Services",
-      "headline": "Skilled care, brought home.",
-      "intro": "Our nurses, therapists, and aides come to you, so you can recover where you are most comfortable, surrounded by family.",
+      "headline": "Two ways we bring care home.",
+      "intro": "Whether the need is clinical recovery or everyday support, Lifecare meets it at home, with the right professional for the job.",
       "primary": "Request info"
     },
-    "pillar": {
-      "eyebrow": "Skilled Home Health",
-      "title": "One skilled team, seven disciplines.",
-      "body": "Your care plan may draw on any combination of these services. Our nurses coordinate with your physician so the right clinician is at your door on the right day."
+    "pillars": {
+      "skilled": {
+        "eyebrow": "Medicare-certified",
+        "title": "Skilled Home Health",
+        "description": "Licensed clinicians bring hospital-grade skill into the home — nursing, therapy, and medical social work coordinated with your physician.",
+        "services": [
+          "Skilled Nursing",
+          "Physical, Occupational & Speech Therapy",
+          "Medical Social Work",
+          "Home Health Aide",
+          "Remote Patient Monitoring"
+        ],
+        "cta": "Explore skilled care"
+      },
+      "attendant": {
+        "eyebrow": "In-home support",
+        "title": "Provider Attendant Services",
+        "description": "Trained attendants help with the everyday tasks that keep daily life safe, dignified, and independent at home.",
+        "services": [
+          "Bathing, dressing & grooming",
+          "Meal preparation",
+          "Light housekeeping & laundry",
+          "Errands & escort to appointments"
+        ],
+        "cta": "Explore attendant care"
+      }
     },
-    "detail": {
-      "Stethoscope": "Our RNs and LVNs assess wounds, manage medications, and support chronic disease management between your doctor visits.",
-      "PersonSimpleWalk": "Physical therapists help you regain strength, mobility, and balance after surgery, injury, or a progressive condition.",
-      "HandHeart": "Occupational therapists work on the everyday tasks that keep you safe and independent at home, like dressing, bathing, and cooking.",
-      "ChatCircleDots": "Speech therapists address communication and swallowing difficulties following stroke, neurological changes, or injury.",
-      "UsersThree": "Our social workers help families navigate benefits, find community resources, and coordinate the non-clinical side of a care plan.",
-      "House": "Certified home health aides assist with bathing, grooming, meal preparation, and the daily routines that matter most.",
-      "Heartbeat": "Connected home devices track your vital signs daily. Your nurse reviews the data and can respond quickly if something changes."
-    },
-    "specialties": {
-      "eyebrow": "Conditions we support",
-      "title": "Clinical experience across a wide range of diagnoses."
-    },
-    "insurance": {
-      "eyebrow": "Insurance & coverage",
-      "title": "We work with your plan.",
-      "body": "Most plans and Medicare are accepted, and we verify your benefits at no cost before care begins. Coverage depends on your specific plan and clinical eligibility. Our intake team will walk you through what applies to you."
+    "explainer": {
+      "eyebrow": "How to choose",
+      "title": "Not sure which you need?",
+      "skilled": {
+        "title": "Recovering from something?",
+        "body": "If you're recovering from an illness, surgery, or a hospital stay, Skilled Home Health brings licensed clinicians to your door to manage that recovery."
+      },
+      "attendant": {
+        "title": "Need a hand with daily life?",
+        "body": "If the need is help with everyday tasks like bathing, meals, and errands, Provider Attendant Services brings a trained, consistent attendant into your home."
+      }
     },
     "cta": {
       "headline": "Ready to bring care home?",

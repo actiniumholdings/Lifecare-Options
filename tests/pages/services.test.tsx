@@ -12,21 +12,35 @@ function renderServices() {
   );
 }
 
-describe("Services page sections", () => {
-  it("renders h1 containing 'Skilled care, brought home'", () => {
+describe("Services hub page", () => {
+  it("renders a Skilled Home Health pillar heading linking to /services/skilled", () => {
     renderServices();
-    expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent(
-      /skilled care, brought home/i,
+    const heading = screen.getByRole("heading", { name: /skilled home health/i });
+    expect(heading).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /explore skilled care/i });
+    expect(link).toHaveAttribute("href", "/services/skilled");
+  });
+
+  it("renders a Provider Attendant Services pillar heading linking to /services/attendant", () => {
+    renderServices();
+    const heading = screen.getByRole("heading", { name: /provider attendant services/i });
+    expect(heading).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /explore attendant care/i });
+    expect(link).toHaveAttribute("href", "/services/attendant");
+  });
+
+  it("renders a 'not sure which you need?' explainer strip", () => {
+    renderServices();
+    expect(screen.getByText(/not sure which you need/i)).toBeInTheDocument();
+    expect(screen.getByText(/recovering from an illness, surgery/i)).toBeInTheDocument();
+    expect(screen.getByText(/help with everyday tasks/i)).toBeInTheDocument();
+  });
+
+  it("contains no payer or program names anywhere on the page", () => {
+    const { container } = renderServices();
+    expect(container.textContent).not.toMatch(
+      /medicaid|star\+plus|phc|\bcas\b|private pay|insurance|commercial plan/i,
     );
-  });
-
-  it("renders a service card for Skilled Nursing", () => {
-    renderServices();
-    expect(screen.getByText("Skilled Nursing")).toBeInTheDocument();
-  });
-
-  it("renders a specialty chip for Wound care", () => {
-    renderServices();
-    expect(screen.getByText("Wound care")).toBeInTheDocument();
+    expect(container.textContent).not.toMatch(/medicare advantage/i);
   });
 });
