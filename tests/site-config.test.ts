@@ -25,4 +25,8 @@ describe("service area data", () => {
       "Fort Bend County",
     ]);
   });
+  it("carries the recovered CCN and state license", () => {
+    expect(siteConfig.medicareCcn).toBe("747061");
+    expect(siteConfig.stateLicense).toBe("011908");
+  });
 });

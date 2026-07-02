@@ -19,8 +19,8 @@ export const siteConfig = {
   onCall: "24/7 on-call nursing",
   foundedYear: 2008,
   accreditation: "CHAP-accredited",
-  medicareCcn: null as string | null, // Fill with real CCN before launch
-  stateLicense: null as string | null, // Fill with real Texas state license number before launch
+  medicareCcn: "747061" as string | null, // verify before launch
+  stateLicense: "011908" as string | null, // verify before launch
   serviceArea: {
     counties: [
       { name: "Harris County", color: "#5a8bb8" },
