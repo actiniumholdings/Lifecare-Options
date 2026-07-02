@@ -17,14 +17,14 @@ export default async function OpengraphImage() {
     ),
   );
 
-  let playfairData: ArrayBuffer | null = null;
+  let plusJakartaData: ArrayBuffer | null = null;
   try {
     const res = await fetch(
-      "https://fonts.gstatic.com/s/playfairdisplay/v37/nuFvD-vYSZviVYUb_rj3ij__anPXJzDwcbmjWBN2PKdFvUDQ.woff",
+      "https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TA.ttf",
       { cache: "force-cache" },
     );
     if (res.ok) {
-      playfairData = await res.arrayBuffer();
+      plusJakartaData = await res.arrayBuffer();
     }
   } catch {
     // Network unavailable in build sandbox — Geist will cover the layout.
@@ -39,20 +39,20 @@ export default async function OpengraphImage() {
 
   const fonts: FontConfig[] = [
     { name: "Geist", data: geistData, weight: 400, style: "normal" },
-    ...(playfairData
+    ...(plusJakartaData
       ? [
           {
-            name: "Playfair Display",
-            data: playfairData,
-            weight: 600 as const,
+            name: "Plus Jakarta Sans",
+            data: plusJakartaData,
+            weight: 700 as const,
             style: "normal" as const,
           },
         ]
       : []),
   ];
 
-  const titleFont = playfairData
-    ? '"Playfair Display", Geist, sans-serif'
+  const titleFont = plusJakartaData
+    ? '"Plus Jakarta Sans", Geist, sans-serif'
     : "Geist, sans-serif";
 
   return new ImageResponse(
@@ -81,7 +81,7 @@ export default async function OpengraphImage() {
           }}
         />
 
-        {/* Peach-cream decorative strip at the bottom */}
+        {/* Amber decorative strip at the bottom */}
         <div
           style={{
             position: "absolute",
@@ -89,7 +89,7 @@ export default async function OpengraphImage() {
             left: 0,
             right: 0,
             height: 8,
-            background: "#FDEEDD",
+            background: "#E5A94E",
           }}
         />
 
@@ -101,24 +101,48 @@ export default async function OpengraphImage() {
             alignItems: "center",
           }}
         >
-          {/* Care-blue accent bar above title */}
+          {/* Accent rule: care-blue bar + amber dot */}
           <div
             style={{
-              width: 64,
-              height: 4,
-              borderRadius: 2,
-              background: "#5A8BB8",
+              display: "flex",
+              alignItems: "center",
+              gap: 10,
               marginBottom: 32,
             }}
-          />
+          >
+            <div
+              style={{
+                width: 56,
+                height: 4,
+                borderRadius: 2,
+                background: "#5A8BB8",
+              }}
+            />
+            <div
+              style={{
+                width: 10,
+                height: 10,
+                borderRadius: 5,
+                background: "#E5A94E",
+              }}
+            />
+            <div
+              style={{
+                width: 56,
+                height: 4,
+                borderRadius: 2,
+                background: "#5A8BB8",
+              }}
+            />
+          </div>
 
           {/* Title */}
           <div
             style={{
               fontSize: 72,
-              fontWeight: 600,
+              fontWeight: 700,
               fontFamily: titleFont,
-              color: "#FDEEDD",
+              color: "#FFFFFF",
               letterSpacing: "-0.01em",
               lineHeight: 1,
               textAlign: "center",
