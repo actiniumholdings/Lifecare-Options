@@ -8,7 +8,7 @@ export const contentType = "image/png";
 
 export default async function OpengraphImage() {
   // Always load the bundled Geist font so ImageResponse always has ≥1 font.
-  // Playfair Display is attempted from Google Fonts; if unavailable (offline
+  // Plus Jakarta Sans is attempted from Google Fonts; if unavailable (offline
   // build sandbox), Geist is the fallback and the build stays green.
   const geistData = await readFile(
     join(

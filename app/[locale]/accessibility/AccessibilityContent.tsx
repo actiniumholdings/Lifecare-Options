@@ -66,7 +66,7 @@ export function AccessibilityContent() {
             <span className="font-semibold">{t("contact.emailLabel")}: </span>
             <a
               href={`mailto:${siteConfig.intakeEmail}`}
-              className="text-care-blue underline underline-offset-2 hover:text-navy"
+              className="text-blue-deep underline underline-offset-2 hover:text-navy"
             >
               {siteConfig.intakeEmail}
             </a>
@@ -75,7 +75,7 @@ export function AccessibilityContent() {
             <span className="font-semibold">{t("contact.phoneLabel")}: </span>
             <a
               href={siteConfig.phoneHref}
-              className="text-care-blue underline underline-offset-2 hover:text-navy"
+              className="text-blue-deep underline underline-offset-2 hover:text-navy"
             >
               {siteConfig.phone}
             </a>

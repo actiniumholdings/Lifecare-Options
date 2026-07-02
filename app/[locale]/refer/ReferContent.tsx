@@ -58,7 +58,7 @@ export function ReferContent() {
             </p>
             <a
               href={siteConfig.phoneHref}
-              className="mt-4 block text-care-blue font-semibold hover:underline"
+              className="mt-4 block text-blue-deep font-semibold hover:underline"
               aria-label={tCommon("callUs") + " " + siteConfig.phone}
             >
               {siteConfig.phone}
@@ -71,7 +71,7 @@ export function ReferContent() {
             <p className="mt-2 text-slate text-sm leading-relaxed">
               {t("ways.faxBody")}
             </p>
-            <p className="mt-4 text-care-blue font-semibold">{siteConfig.fax}</p>
+            <p className="mt-4 text-blue-deep font-semibold">{siteConfig.fax}</p>
           </Card>
         </div>
       </Section>

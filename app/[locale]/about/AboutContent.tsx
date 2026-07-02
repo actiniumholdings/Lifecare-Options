@@ -61,7 +61,7 @@ export function AboutContent() {
 
           {/* Right — mission card */}
           <Card variant="care-blue" className="border-care-blue/20">
-            <p className="text-xs font-semibold uppercase tracking-widest text-care-blue">
+            <p className="text-xs font-semibold uppercase tracking-widest text-blue-deep">
               {t("story.missionLabel")}
             </p>
             <blockquote className="mt-4 font-display text-xl leading-snug text-navy sm:text-2xl font-semibold">

@@ -16,10 +16,6 @@
   --color-success: #2d6a4f;
   --color-alert: #c0392b;
   --color-border: #e1e8f0;
-  /* legacy (removed in Task 9 once unreferenced): */
-  --color-care-blue-deep: #6895be;
-  --color-cream: #fdeedd;
-
   --font-display: var(--font-plus-jakarta), system-ui, sans-serif;
   --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 

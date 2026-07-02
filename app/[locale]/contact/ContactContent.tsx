@@ -46,7 +46,7 @@ export function ContactContent() {
               </p>
               <a
                 href={siteConfig.phoneHref}
-                className="mt-1 block text-lg font-semibold text-navy hover:text-care-blue"
+                className="mt-1 block text-lg font-semibold text-navy hover:text-blue-deep"
               >
                 {siteConfig.phone}
               </a>
@@ -67,7 +67,7 @@ export function ContactContent() {
               </p>
               <a
                 href={`mailto:${siteConfig.intakeEmail}`}
-                className="mt-1 block text-base font-semibold text-navy hover:text-care-blue break-all"
+                className="mt-1 block text-base font-semibold text-navy hover:text-blue-deep break-all"
               >
                 {siteConfig.intakeEmail}
               </a>

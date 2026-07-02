@@ -31,7 +31,7 @@ const SERVICE_OPTIONS = [
 ] as const;
 
 const inputClass =
-  "w-full rounded-lg border border-border bg-cream/60 px-4 py-3 text-base text-navy placeholder:text-slate/60 focus:outline-none focus:border-navy focus:bg-cream";
+  "w-full rounded-lg border border-border bg-surface-warm/60 px-4 py-3 text-base text-navy placeholder:text-slate/60 focus:outline-none focus:border-navy focus:bg-surface-warm";
 const labelClass = "block text-sm font-semibold text-navy mb-1.5";
 const errorClass = "mt-1 text-xs text-alert";
 
@@ -62,7 +62,7 @@ export function LeadForm() {
         <div
           role="tablist"
           aria-label="Form type"
-          className="inline-flex rounded-full bg-cream p-1 mb-6"
+          className="inline-flex rounded-full bg-surface-warm p-1 mb-6"
         >
           <button
             role="tab"
@@ -70,7 +70,7 @@ export function LeadForm() {
             onClick={() => setTab("services")}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
               tab === "services"
-                ? "bg-navy text-cream"
+                ? "bg-navy text-mist"
                 : "bg-transparent text-navy/70 hover:text-navy"
             }`}
           >
@@ -82,7 +82,7 @@ export function LeadForm() {
             onClick={() => setTab("employment")}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
               tab === "employment"
-                ? "bg-navy text-cream"
+                ? "bg-navy text-mist"
                 : "bg-transparent text-navy/70 hover:text-navy"
             }`}
           >
