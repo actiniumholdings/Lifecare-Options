@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/en.json";
-import ReferPage from "@/app/[locale]/refer/page";
+import { ReferContent as ReferPage } from "@/app/[locale]/refer/ReferContent";
 
 function renderRefer() {
   return render(

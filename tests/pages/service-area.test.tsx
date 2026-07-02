@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { NextIntlClientProvider } from "next-intl";
 import messages from "@/messages/en.json";
-import ServiceAreaPage from "@/app/[locale]/service-area/page";
+import { ServiceAreaContent as ServiceAreaPage } from "@/app/[locale]/service-area/ServiceAreaContent";
 
 function renderPage() {
   return render(
