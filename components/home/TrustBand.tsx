@@ -129,7 +129,8 @@ export function TrustBand() {
               {siteConfig.stateLicense
                 ? `, Texas License Number ${siteConfig.stateLicense}. `
                 : ". "}
-              Coordinated with your physician and your family, every step of the way.
+              Skilled home health and attendant care, coordinated with your
+              physician and your family, every step of the way.
             </p>
           </div>
 
