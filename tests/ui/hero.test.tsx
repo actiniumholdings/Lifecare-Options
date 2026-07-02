@@ -20,4 +20,28 @@ describe("Hero", () => {
     );
     expect(screen.getByRole("link", { name: "Request info" })).toHaveAttribute("href", "#contact");
   });
+
+  it("renders an image with alt text when photoSrc is provided", () => {
+    render(
+      <Hero
+        eyebrow="e"
+        headline="h"
+        photoSrc="/x.jpg"
+        photoAlt="Caregiver helping a patient"
+      />,
+    );
+    expect(screen.getByAltText("Caregiver helping a patient")).toBeInTheDocument();
+  });
+
+  it("renders badge labels when badges are provided", () => {
+    render(
+      <Hero
+        eyebrow="e"
+        headline="h"
+        badges={[{ label: "Since 2008" }, { label: "Medicare Certified" }]}
+      />,
+    );
+    expect(screen.getByText("Since 2008")).toBeInTheDocument();
+    expect(screen.getByText("Medicare Certified")).toBeInTheDocument();
+  });
 });
