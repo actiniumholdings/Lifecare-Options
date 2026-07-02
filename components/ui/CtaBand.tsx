@@ -23,7 +23,7 @@ export function CtaBand({
             </Button>
           )}
           {secondary && (
-            <Button href={secondary.href} variant="secondary" size="lg" className="!border-mist !text-mist hover:!bg-mist/10">
+            <Button href={secondary.href} variant="secondary" size="lg" className="!bg-transparent !border-mist !text-mist hover:!bg-mist/10">
               {secondary.label}
             </Button>
           )}

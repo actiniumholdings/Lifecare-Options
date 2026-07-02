@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
 import { quickTap } from "@/lib/motion";
 
-type ButtonVariant = "primary" | "secondary" | "tertiary";
+type ButtonVariant = "primary" | "secondary" | "onDark" | "tertiary";
 type ButtonSize = "md" | "lg";
 
 type BaseProps = {
@@ -35,8 +35,11 @@ type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
   primary: "bg-blue-deep text-white hover:bg-navy rounded-xl",
-  secondary: "bg-amber text-navy-deep hover:bg-amber-deep rounded-xl",
-  tertiary: "bg-transparent text-blue-deep hover:text-navy underline-offset-4 hover:underline",
+  secondary:
+    "border border-navy/25 bg-white text-navy hover:border-blue-deep hover:text-blue-deep rounded-xl",
+  onDark: "bg-white text-navy hover:bg-blue-light hover:text-navy-deep rounded-xl",
+  tertiary:
+    "bg-transparent text-blue-deep hover:text-navy underline-offset-4 hover:underline",
 };
 
 const SIZE_STYLES: Record<ButtonSize, string> = {
