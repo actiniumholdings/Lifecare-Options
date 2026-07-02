@@ -31,4 +31,15 @@ describe("Hero", () => {
     expect(container.querySelector("section")!.className).toContain("bg-sky-soft");
     expect(container.querySelector("section")!.className).not.toContain("mist");
   });
+
+  it("renders the primary CTA as a link with the correct href", () => {
+    render(<Hero {...baseProps} primaryCta={{ label: "Refer a Patient", href: "/refer" }} />);
+    const link = screen.getByRole("link", { name: /refer a patient/i });
+    expect(link).toHaveAttribute("href", "/refer");
+  });
+
+  it("renders badge labels", () => {
+    render(<Hero {...baseProps} badges={[{ label: "Since 2008" }]} />);
+    expect(screen.getByText("Since 2008")).toBeInTheDocument();
+  });
 });
