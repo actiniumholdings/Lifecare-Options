@@ -10,4 +10,18 @@ describe("medicalBusinessJsonLd", () => {
     expect((d.address as Record<string, unknown>).addressLocality).toBe("Katy");
     expect(JSON.stringify(d)).toContain("747061"); // CCN present
   });
+
+  it("lists both service lines in availableService, honestly typed", () => {
+    const d = medicalBusinessJsonLd();
+    const services = d.availableService as Array<Record<string, unknown>>;
+    expect(Array.isArray(services)).toBe(true);
+
+    const names = services.map((s) => s.name);
+    expect(names).toContain("Skilled Home Health");
+    expect(names).toContain("Provider Attendant Services");
+
+    // Compliance: no payer/program names in the structured data.
+    const json = JSON.stringify(services);
+    expect(json).not.toMatch(/medicare|medicaid|star\+plus|phc|\bcas\b|\bfc\b|private pay|commercial plan|insurance/i);
+  });
 });

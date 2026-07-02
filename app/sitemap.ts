@@ -4,6 +4,8 @@ import { SITE_URL } from "@/lib/metadata";
 const routes = [
   "",
   "/services",
+  "/services/skilled",
+  "/services/attendant",
   "/about",
   "/service-area",
   "/careers",

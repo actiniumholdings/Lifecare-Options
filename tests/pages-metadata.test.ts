@@ -18,6 +18,8 @@ vi.mock("next-intl/server", async (importOriginal) => {
 // ---------- imports (after mock) ----------
 import { generateMetadata as homeMeta } from "@/app/[locale]/page";
 import { generateMetadata as servicesMeta } from "@/app/[locale]/services/page";
+import { generateMetadata as skilledMeta } from "@/app/[locale]/services/skilled/page";
+import { generateMetadata as attendantMeta } from "@/app/[locale]/services/attendant/page";
 import { generateMetadata as aboutMeta } from "@/app/[locale]/about/page";
 import { generateMetadata as serviceAreaMeta } from "@/app/[locale]/service-area/page";
 import { generateMetadata as careersMeta } from "@/app/[locale]/careers/page";
@@ -64,6 +66,50 @@ describe("services metadata", () => {
   it("es.json has services meta keys", () => {
     expect(esMessages.services.meta.title).toBeTruthy();
     expect(esMessages.services.meta.description).toBeTruthy();
+  });
+});
+
+// ---------- services/skilled ----------
+describe("skilled metadata", () => {
+  it("returns a title and canonical", async () => {
+    const m = await skilledMeta({ params: makeParams("en") });
+    expect(typeof m.title).toBe("string");
+    expect(m.alternates?.canonical).toBe(`${SITE_URL}/services/skilled`);
+  });
+  it("returns a description within 155 chars", async () => {
+    const m = await skilledMeta({ params: makeParams("en") });
+    expect((m.description as string).length).toBeLessThanOrEqual(155);
+  });
+  it("has en + es hreflang alternates", async () => {
+    const m = await skilledMeta({ params: makeParams("en") });
+    expect(m.alternates?.languages?.en).toBe(`${SITE_URL}/services/skilled`);
+    expect(m.alternates?.languages?.es).toBe(`${SITE_URL}/es/services/skilled`);
+  });
+  it("es.json has skilled meta keys", () => {
+    expect(esMessages.skilled.meta.title).toBeTruthy();
+    expect(esMessages.skilled.meta.description).toBeTruthy();
+  });
+});
+
+// ---------- services/attendant ----------
+describe("attendant metadata", () => {
+  it("returns a title and canonical", async () => {
+    const m = await attendantMeta({ params: makeParams("en") });
+    expect(typeof m.title).toBe("string");
+    expect(m.alternates?.canonical).toBe(`${SITE_URL}/services/attendant`);
+  });
+  it("returns a description within 155 chars", async () => {
+    const m = await attendantMeta({ params: makeParams("en") });
+    expect((m.description as string).length).toBeLessThanOrEqual(155);
+  });
+  it("has en + es hreflang alternates", async () => {
+    const m = await attendantMeta({ params: makeParams("en") });
+    expect(m.alternates?.languages?.en).toBe(`${SITE_URL}/services/attendant`);
+    expect(m.alternates?.languages?.es).toBe(`${SITE_URL}/es/services/attendant`);
+  });
+  it("es.json has attendant meta keys", () => {
+    expect(esMessages.attendant.meta.title).toBeTruthy();
+    expect(esMessages.attendant.meta.description).toBeTruthy();
   });
 });
 

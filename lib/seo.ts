@@ -47,5 +47,21 @@ export function medicalBusinessJsonLd(): Record<string, unknown> {
     })),
     openingHours: ["Mo-Th 08:00-17:00", "Fr 08:00-16:00"],
     identifier: identifiers,
+    availableService: [
+      {
+        "@type": "Service",
+        name: "Skilled Home Health",
+        description:
+          "Licensed clinicians bring hospital-grade skill into the home — nursing, therapy, and medical social work coordinated with your physician.",
+        url: `${SITE_URL}/services/skilled`,
+      },
+      {
+        "@type": "Service",
+        name: "Provider Attendant Services",
+        description:
+          "Trained attendants help with the everyday tasks that keep daily life safe, dignified, and independent at home.",
+        url: `${SITE_URL}/services/attendant`,
+      },
+    ],
   };
 }
