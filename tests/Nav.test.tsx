@@ -67,3 +67,50 @@ describe("Nav mobile phone chip", () => {
     expect(chip).toHaveTextContent(/281.*9546/i);
   });
 });
+
+describe("Nav Services dropdown", () => {
+  it("keeps the top-level Services link pointing at /services", () => {
+    renderNav();
+    const servicesLinks = screen.getAllByRole("link", { name: /^services$/i });
+    expect(servicesLinks.some((l) => l.getAttribute("href") === "/services")).toBe(
+      true
+    );
+  });
+
+  it("has a Skilled Home Health link to /services/skilled", () => {
+    renderNav();
+    const link = screen.getByRole("link", { name: /skilled home health/i });
+    expect(link).toHaveAttribute("href", "/services/skilled");
+  });
+
+  it("has an Attendant Services link to /services/attendant", () => {
+    renderNav();
+    const link = screen.getByRole("link", { name: /attendant services/i });
+    expect(link).toHaveAttribute("href", "/services/attendant");
+  });
+
+  it("has a Remote Patient Monitoring link to /remote-patient-monitoring", () => {
+    renderNav();
+    const link = screen.getByRole("link", { name: /remote patient monitoring/i });
+    expect(link).toHaveAttribute("href", "/remote-patient-monitoring");
+  });
+
+  it("exposes the desktop dropdown trigger as a button with aria-expanded", async () => {
+    const user = userEvent.setup();
+    renderNav();
+    const trigger = screen.getByRole("button", { name: /^services$/i });
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    await user.click(trigger);
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+  });
+
+  it("closes the desktop dropdown on Escape", async () => {
+    const user = userEvent.setup();
+    renderNav();
+    const trigger = screen.getByRole("button", { name: /^services$/i });
+    await user.click(trigger);
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+    await user.keyboard("{Escape}");
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+  });
+});

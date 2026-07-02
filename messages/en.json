@@ -19,6 +19,9 @@
   },
   "nav": {
     "services": "Services",
+    "skilled": "Skilled Home Health",
+    "attendant": "Attendant Services",
+    "rpm": "Remote Patient Monitoring",
     "serviceArea": "Service Area",
     "about": "About",
     "careers": "Careers",

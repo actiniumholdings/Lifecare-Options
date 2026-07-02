@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
+import type { FocusEvent } from "react";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
@@ -10,6 +11,8 @@ import { Container } from "./ui/Container";
 import { siteConfig } from "@/lib/site-config";
 
 const SCROLL_THRESHOLD = 12;
+
+type SubLink = { href: string; label: string };
 
 /** A desktop nav link with a refined blue underline that grows on hover/focus. */
 function NavLink({
@@ -33,6 +36,105 @@ function NavLink({
         className="pointer-events-none absolute -bottom-0.5 left-1 right-1 h-px origin-left scale-x-0 bg-blue-deep transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"
       />
     </Link>
+  );
+}
+
+/**
+ * Accessible disclosure for the desktop "Services" nav entry: the label is a
+ * real link to /services, and an adjacent button toggles a submenu of the
+ * two pillars + RPM. Opens on hover, focus, or click; closes on Escape,
+ * blur-outside, or an outside click.
+ */
+function ServicesDropdown({
+  label,
+  href,
+  items,
+}: {
+  label: string;
+  href: string;
+  items: SubLink[];
+}) {
+  const [open, setOpen] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const menuId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        buttonRef.current?.focus();
+      }
+    };
+    const onClickOutside = (e: MouseEvent) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onClickOutside);
+    };
+  }, [open]);
+
+  const handleBlur = (e: FocusEvent<HTMLDivElement>) => {
+    if (!wrapperRef.current?.contains(e.relatedTarget as Node)) {
+      setOpen(false);
+    }
+  };
+
+  return (
+    <div
+      ref={wrapperRef}
+      className="relative flex items-center"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+      onBlur={handleBlur}
+    >
+      <NavLink href={href} label={label} />
+      <button
+        ref={buttonRef}
+        type="button"
+        aria-expanded={open}
+        aria-controls={menuId}
+        aria-label={label}
+        onClick={() => setOpen(true)}
+        onFocus={() => setOpen(true)}
+        className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm text-navy/50 outline-none transition-colors hover:text-navy focus-visible:text-navy focus-visible:ring-2 focus-visible:ring-blue-deep focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
+      >
+        <ChevronDown
+          size={14}
+          aria-hidden="true"
+          className={`transition-transform duration-200 motion-reduce:transition-none ${
+            open ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+      <ul
+        id={menuId}
+        className={`absolute left-0 top-full z-10 mt-3 min-w-60 rounded-[var(--radius)] border border-navy/10 bg-canvas py-2 shadow-[0_12px_32px_-12px_rgba(8,29,51,0.25)] transition-all duration-150 ease-out before:absolute before:inset-x-0 before:-top-3 before:h-3 before:content-[''] motion-reduce:transition-none ${
+          open
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-1 opacity-0"
+        }`}
+      >
+        {items.map((sub) => (
+          <li key={sub.href}>
+            <Link
+              href={sub.href}
+              tabIndex={open ? 0 : -1}
+              onClick={() => setOpen(false)}
+              className="block px-4 py-2 font-sans text-sm text-navy/80 outline-none transition-colors hover:bg-navy/[0.04] hover:text-navy focus-visible:bg-navy/[0.04] focus-visible:text-navy"
+            >
+              {sub.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -64,8 +166,16 @@ export function Nav() {
     };
   }, [open]);
 
-  const links = [
-    { href: "/services", label: t("services") },
+  const links: { href: string; label: string; children?: SubLink[] }[] = [
+    {
+      href: "/services",
+      label: t("services"),
+      children: [
+        { href: "/services/skilled", label: t("skilled") },
+        { href: "/services/attendant", label: t("attendant") },
+        { href: "/remote-patient-monitoring", label: t("rpm") },
+      ],
+    },
     { href: "/service-area", label: t("serviceArea") },
     { href: "/about", label: t("about") },
     { href: "/careers", label: t("careers") },
@@ -92,9 +202,18 @@ export function Nav() {
         {/* Desktop nav + actions */}
         <div className="hidden items-center gap-7 md:flex">
           <nav aria-label="Primary" className="flex items-center gap-6">
-            {links.map((item) => (
-              <NavLink key={item.href} {...item} />
-            ))}
+            {links.map((item) =>
+              item.children ? (
+                <ServicesDropdown
+                  key={item.href}
+                  href={item.href}
+                  label={item.label}
+                  items={item.children}
+                />
+              ) : (
+                <NavLink key={item.href} {...item} />
+              )
+            )}
           </nav>
           <div className="flex items-center gap-4">
             <span className="h-6 w-px bg-navy/10" aria-hidden="true" />
@@ -129,14 +248,29 @@ export function Nav() {
           <Container className="flex flex-col py-4">
             <nav aria-label="Mobile" className="flex flex-col">
               {links.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={close}
-                  className="rounded-[var(--radius)] px-2 py-3 font-display text-xl text-navy transition-colors hover:bg-navy/[0.04] hover:text-blue-deep"
-                >
-                  {item.label}
-                </Link>
+                <div key={item.href} className="flex flex-col">
+                  <Link
+                    href={item.href}
+                    onClick={close}
+                    className="rounded-[var(--radius)] px-2 py-3 font-display text-xl text-navy transition-colors hover:bg-navy/[0.04] hover:text-blue-deep"
+                  >
+                    {item.label}
+                  </Link>
+                  {item.children && (
+                    <div className="ml-3 flex flex-col border-l border-navy/10 pl-3">
+                      {item.children.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          href={sub.href}
+                          onClick={close}
+                          className="rounded-[var(--radius)] px-2 py-2 font-sans text-base text-navy/70 transition-colors hover:bg-navy/[0.04] hover:text-blue-deep"
+                        >
+                          {sub.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
               ))}
             </nav>
             <div className="mt-4 flex flex-col gap-4 border-t border-navy/10 pt-5">
