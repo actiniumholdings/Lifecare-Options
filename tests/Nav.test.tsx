@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom/vitest";
 import { NextIntlClientProvider } from "next-intl";
@@ -95,22 +95,48 @@ describe("Nav Services dropdown", () => {
     expect(link).toHaveAttribute("href", "/remote-patient-monitoring");
   });
 
-  it("exposes the desktop dropdown trigger as a button with aria-expanded", async () => {
-    const user = userEvent.setup();
+  it("exposes the desktop dropdown trigger as a button with aria-expanded", () => {
     renderNav();
-    const trigger = screen.getByRole("button", { name: /^services$/i });
+    const trigger = screen.getByRole("button", { name: /services submenu/i });
     expect(trigger).toHaveAttribute("aria-expanded", "false");
-    await user.click(trigger);
+    // fireEvent.click models a touch tap (click WITHOUT a preceding hover, so
+    // the wrapper's hover-open doesn't pre-open and let the toggle re-close it).
+    fireEvent.click(trigger);
     expect(trigger).toHaveAttribute("aria-expanded", "true");
   });
 
   it("closes the desktop dropdown on Escape", async () => {
     const user = userEvent.setup();
     renderNav();
-    const trigger = screen.getByRole("button", { name: /^services$/i });
-    await user.click(trigger);
+    const trigger = screen.getByRole("button", { name: /services submenu/i });
+    fireEvent.click(trigger);
     expect(trigger).toHaveAttribute("aria-expanded", "true");
     await user.keyboard("{Escape}");
     expect(trigger).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("does not reopen when Escape returns focus to the trigger after focus was inside a submenu link (regression)", async () => {
+    const user = userEvent.setup();
+    renderNav();
+    const trigger = screen.getByRole("button", { name: /services submenu/i });
+
+    // Open the menu, then move focus into a submenu link — the scenario
+    // that used to race: refocusing the trigger on Escape fired the old
+    // onFocus={() => setOpen(true)} handler and reopened the menu.
+    fireEvent.click(trigger);
+    expect(trigger).toHaveAttribute("aria-expanded", "true");
+
+    const skilledLink = screen.getByRole("link", { name: /skilled home health/i });
+    skilledLink.focus();
+    expect(skilledLink).toHaveFocus();
+
+    await user.keyboard("{Escape}");
+
+    // The menu must stay closed: the trigger regains focus without its
+    // onFocus reopening the menu, and the submenu link is no longer
+    // keyboard-reachable (tabIndex reverts to -1).
+    expect(trigger).toHaveAttribute("aria-expanded", "false");
+    expect(trigger).toHaveFocus();
+    expect(skilledLink).toHaveAttribute("tabindex", "-1");
   });
 });

@@ -42,8 +42,10 @@ function NavLink({
 /**
  * Accessible disclosure for the desktop "Services" nav entry: the label is a
  * real link to /services, and an adjacent button toggles a submenu of the
- * two pillars + RPM. Opens on hover, focus, or click; closes on Escape,
- * blur-outside, or an outside click.
+ * two pillars + RPM. Opens on hover, on trigger click (toggle), or via
+ * ArrowDown/Enter/Space on the focused trigger. Deliberately does NOT open
+ * on mere button focus — that raced with Escape's programmatic refocus and
+ * reopened the menu. Closes on Escape, blur-outside, or an outside click.
  */
 function ServicesDropdown({
   label,
@@ -91,7 +93,13 @@ function ServicesDropdown({
       ref={wrapperRef}
       className="relative flex items-center"
       onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseLeave={() => {
+        // Don't steal keyboard focus: if focus is currently inside the
+        // menu (e.g. a submenu link), the pointer leaving the wrapper
+        // shouldn't close it out from under the keyboard user.
+        if (wrapperRef.current?.contains(document.activeElement)) return;
+        setOpen(false);
+      }}
       onBlur={handleBlur}
     >
       <NavLink href={href} label={label} />
@@ -99,10 +107,20 @@ function ServicesDropdown({
         ref={buttonRef}
         type="button"
         aria-expanded={open}
+        aria-haspopup="menu"
         aria-controls={menuId}
-        aria-label={label}
-        onClick={() => setOpen(true)}
-        onFocus={() => setOpen(true)}
+        aria-label={`${label} submenu`}
+        onClick={() => setOpen((o) => !o)}
+        onKeyDown={(e) => {
+          // ArrowDown opens the menu from the focused trigger. Enter/Space
+          // already toggle via the native button click event above — no
+          // separate handling needed, and critically, focus alone must
+          // never open the menu (that's what let Escape's refocus reopen it).
+          if (e.key === "ArrowDown") {
+            e.preventDefault();
+            setOpen(true);
+          }
+        }}
         className="flex h-6 w-6 shrink-0 items-center justify-center rounded-sm text-navy/50 outline-none transition-colors hover:text-navy focus-visible:text-navy focus-visible:ring-2 focus-visible:ring-blue-deep focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
       >
         <ChevronDown
