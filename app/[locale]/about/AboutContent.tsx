@@ -58,7 +58,7 @@ export function AboutContent() {
           </div>
 
           {/* Right — mission card */}
-          <Card variant="peach" className="border-care-blue/20">
+          <Card variant="care-blue" className="border-care-blue/20">
             <p className="text-xs font-semibold uppercase tracking-widest text-care-blue">
               {t("story.missionLabel")}
             </p>

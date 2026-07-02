@@ -4,10 +4,10 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Stat } from "@/components/ui/Stat";
 
 describe("Eyebrow", () => {
-  it("renders its label uppercase-styled in care-blue", () => {
+  it("renders its label uppercase-styled in blue-deep", () => {
     const { container } = render(<Eyebrow>Our Services</Eyebrow>);
     const el = container.firstElementChild as HTMLElement;
-    expect(el.className).toContain("text-care-blue");
+    expect(el.className).toContain("text-blue-deep");
     expect(el.className).toContain("uppercase");
     expect(screen.getByText("Our Services")).toBeInTheDocument();
   });

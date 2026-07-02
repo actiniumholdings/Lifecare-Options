@@ -152,7 +152,7 @@ export function HomeContent() {
         <Eyebrow>{t("testimonials.eyebrow")}</Eyebrow>
         <h2 className="mt-3">{t("testimonials.title")}</h2>
         {siteConfig.testimonials.length === 0 ? (
-          <Card variant="mist" className="mt-8 max-w-md">
+          <Card variant="white" className="mt-8 max-w-md">
             <p className="text-slate">{t("testimonials.empty")}</p>
           </Card>
         ) : (

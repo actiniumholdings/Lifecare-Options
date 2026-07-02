@@ -14,4 +14,9 @@ describe("Section", () => {
     const { container } = render(<Section tone="dark">x</Section>);
     expect(container.querySelector("section")?.className).toContain("bg-navy");
   });
+
+  it("applies the sky tone background", () => {
+    const { container } = render(<Section tone="sky">x</Section>);
+    expect(container.querySelector("section")?.className).toContain("bg-sky-soft");
+  });
 });
