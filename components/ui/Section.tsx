@@ -2,10 +2,10 @@ import type { ReactNode } from "react";
 import { Container } from "./Container";
 import { Eyebrow } from "./Eyebrow";
 
-export type SectionTone = "light" | "dark";
+export type SectionTone = "light" | "sky" | "dark";
 
 export interface SectionProps {
-  /** "light" = warm ivory; "dark" = premium navy with white text + blue accents. */
+  /** "light" = warm ivory; "sky" = soft blue wash (same navy text as light); "dark" = premium navy with white text + blue accents. */
   tone?: SectionTone;
   /** Optional blue uppercase eyebrow above the title. */
   eyebrow?: ReactNode;
@@ -23,9 +23,9 @@ export interface SectionProps {
 }
 
 /**
- * A full-width band with generous vertical rhythm. Alternate light (ivory)
- * and dark (navy) tones for editorial drama. Renders the eyebrow → Fraunces
- * title → intro header when those props are supplied.
+ * A full-width band with generous vertical rhythm. Alternate light (ivory),
+ * sky (soft blue), and dark (navy) tones for editorial drama. Renders the
+ * eyebrow → Fraunces title → intro header when those props are supplied.
  */
 export function Section({
   tone = "light",
@@ -38,8 +38,12 @@ export function Section({
   containerClassName,
   children,
 }: SectionProps) {
-  const toneClasses =
-    tone === "dark" ? "bg-navy text-white" : "bg-canvas text-navy";
+  const isDark = tone === "dark";
+  const toneClasses = isDark
+    ? "bg-navy text-white"
+    : tone === "sky"
+      ? "bg-sky-soft text-navy"
+      : "bg-canvas text-navy";
 
   const classes = ["py-20 sm:py-28 lg:py-32", toneClasses, className]
     .filter(Boolean)
@@ -53,11 +57,11 @@ export function Section({
       <Container className={containerClassName}>
         {hasHeader && (
           <header className={`flex flex-col gap-5 ${centered ? "items-center" : ""}`}>
-            {eyebrow && <Eyebrow tone={tone}>{eyebrow}</Eyebrow>}
+            {eyebrow && <Eyebrow tone={isDark ? "dark" : "light"}>{eyebrow}</Eyebrow>}
             {title && (
               <h2
-                className={`font-display text-3xl font-semibold leading-[1.1] tracking-tight text-balance sm:text-4xl lg:text-5xl ${
-                  tone === "dark" ? "text-white" : "text-navy"
+                className={`font-display text-display font-semibold text-balance ${
+                  isDark ? "text-white" : "text-navy"
                 } ${centered ? "max-w-3xl" : "max-w-2xl"} ${align}`}
               >
                 {title}
@@ -66,7 +70,7 @@ export function Section({
             {intro && (
               <p
                 className={`max-w-2xl text-lg leading-relaxed ${
-                  tone === "dark" ? "text-white/75" : "text-slate"
+                  isDark ? "text-white/75" : "text-slate"
                 } ${align}`}
               >
                 {intro}

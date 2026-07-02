@@ -19,4 +19,15 @@ describe("Section", () => {
     const { container } = render(<Section tone="sky">x</Section>);
     expect(container.querySelector("section")?.className).toContain("bg-sky-soft");
   });
+
+  it("sky tone renders the sky-soft background with navy text", () => {
+    const { container } = render(
+      <Section tone="sky" eyebrow="Eyebrow" title="Title" intro="Intro" />
+    );
+    const section = container.querySelector("section")!;
+    expect(section.className).toContain("bg-sky-soft");
+    expect(section.className).toContain("text-navy");
+    // heading stays navy (light-tone treatment), never white
+    expect(container.querySelector("h2")!.className).toContain("text-navy");
+  });
 });
