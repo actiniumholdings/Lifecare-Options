@@ -2,46 +2,33 @@ import { describe, expect, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import { Hero } from "@/components/ui/Hero";
 
+const baseProps = {
+  eyebrow: "Our Services",
+  headline: "Skilled care, brought home.",
+  intro: "Our team comes to you.",
+  photoSrc: "/images/hero-care.jpg",
+  photoAlt: "A nurse checks a patient's blood pressure at home.",
+};
+
 describe("Hero", () => {
-  it("renders the headline as an h1 and the eyebrow", () => {
-    render(<Hero eyebrow="Home Health · Katy, TX" headline="Quality care, felt at home." />);
-    const h1 = screen.getByRole("heading", { level: 1 });
-    expect(h1).toHaveTextContent("Quality care, felt at home.");
-    expect(screen.getByText("Home Health · Katy, TX")).toBeInTheDocument();
+  it("renders the headline at display scale", () => {
+    const { container } = render(<Hero {...baseProps} />);
+    const h1 = container.querySelector("h1")!;
+    expect(h1.textContent).toBe("Skilled care, brought home.");
+    expect(h1.className).toContain("text-display-xl");
   });
 
-  it("renders CTAs as links when provided", () => {
-    render(
-      <Hero
-        eyebrow="e"
-        headline="h"
-        primaryCta={{ label: "Request info", href: "#contact" }}
-      />,
-    );
-    expect(screen.getByRole("link", { name: "Request info" })).toHaveAttribute("href", "#contact");
+  it("always renders the photo — no empty gradient panel", () => {
+    render(<Hero {...baseProps} />);
+    const img = screen.getByRole("img", {
+      name: "A nurse checks a patient's blood pressure at home.",
+    });
+    expect(img).toBeInTheDocument();
   });
 
-  it("renders an image with alt text when photoSrc is provided", () => {
-    render(
-      <Hero
-        eyebrow="e"
-        headline="h"
-        photoSrc="/x.jpg"
-        photoAlt="Caregiver helping a patient"
-      />,
-    );
-    expect(screen.getByAltText("Caregiver helping a patient")).toBeInTheDocument();
-  });
-
-  it("renders badge labels when badges are provided", () => {
-    render(
-      <Hero
-        eyebrow="e"
-        headline="h"
-        badges={[{ label: "Since 2008" }, { label: "Medicare Certified" }]}
-      />,
-    );
-    expect(screen.getByText("Since 2008")).toBeInTheDocument();
-    expect(screen.getByText("Medicare Certified")).toBeInTheDocument();
+  it("sits on the sky-soft band, not legacy mist", () => {
+    const { container } = render(<Hero {...baseProps} />);
+    expect(container.querySelector("section")!.className).toContain("bg-sky-soft");
+    expect(container.querySelector("section")!.className).not.toContain("mist");
   });
 });

@@ -25,6 +25,8 @@ export function ServicesContent() {
           label: tCommon("callUs") + " " + siteConfig.phone,
           href: siteConfig.phoneHref,
         }}
+        photoSrc="/images/hero-care.jpg"
+        photoAlt="A Lifecare nurse smiles with an elderly patient during a home visit."
       />
 
       {/* 2. Skilled Home Health pillar */}

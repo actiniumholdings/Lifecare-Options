@@ -18,6 +18,8 @@ export function AccessibilityContent() {
         eyebrow={t("hero.eyebrow")}
         headline={t("hero.headline")}
         intro={t("hero.intro")}
+        photoSrc="/images/coordinator.jpg"
+        photoAlt="A smiling Lifecare care coordinator wearing a headset, ready to help."
       />
 
       {/* 2. Our commitment — light */}
