@@ -4,11 +4,11 @@ import "@testing-library/jest-dom/vitest";
 import { Button } from "@/components/Button";
 
 describe("Button", () => {
-  it("renders primary variant by default with care-blue background", () => {
+  it("renders primary variant by default with care-blue-deep background", () => {
     render(<Button>Request info</Button>);
     const btn = screen.getByRole("button", { name: /request info/i });
     expect(btn).toBeInTheDocument();
-    expect(btn.className).toMatch(/bg-care-blue/);
+    expect(btn.className).toMatch(/bg-care-blue-deep/);
   });
 
   it("renders secondary variant as outlined", () => {
