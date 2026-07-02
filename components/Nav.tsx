@@ -53,8 +53,8 @@ export function Nav() {
   const headerClasses = [
     "sticky top-0 z-50 border-b border-border transition-all duration-200 ease-out motion-reduce:transition-none",
     scrolledStyling
-      ? "bg-cream/98 backdrop-blur shadow-sm"
-      : "bg-cream/95 backdrop-blur",
+      ? "bg-white/98 backdrop-blur shadow-sm"
+      : "bg-white/95 backdrop-blur",
   ].join(" ");
 
   const containerClasses = [
@@ -71,7 +71,7 @@ export function Nav() {
         <Link
           data-testid="mobile-phone-chip"
           href={siteConfig.phoneHref}
-          className="inline-flex items-center gap-1.5 rounded-full bg-navy px-3 py-2 text-xs font-semibold text-cream hover:bg-navy/90 md:hidden"
+          className="inline-flex items-center gap-1.5 rounded-full bg-navy px-3 py-2 text-xs font-semibold text-mist hover:bg-navy/90 md:hidden"
           aria-label={`Call ${siteConfig.phone}`}
         >
           <Phone size={14} />
@@ -81,7 +81,7 @@ export function Nav() {
         <div className="hidden items-center gap-4 md:flex">
           <Link
             href={siteConfig.phoneHref}
-            className="inline-flex items-center gap-1.5 text-sm text-navy hover:text-care-blue"
+            className="inline-flex items-center gap-1.5 text-sm text-navy hover:text-blue-deep"
           >
             <Phone size={14} />
             {siteConfig.phone}
@@ -103,7 +103,7 @@ export function Nav() {
       {open && (
         <div
           data-testid="mobile-menu"
-          className="border-t border-border bg-cream md:hidden"
+          className="border-t border-border bg-white md:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
             <Button href="#contact" size="lg">

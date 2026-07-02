@@ -8,20 +8,20 @@ export function Footer() {
   const tf = useTranslations("footer");
 
   return (
-    <footer className="bg-navy text-cream/65">
+    <footer className="bg-navy text-mist/65">
       <div className="mx-auto max-w-7xl px-4 py-12 md:px-6 md:py-14">
         <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           {/* Contact — phone gets visual weight */}
           <div>
             <Logo size="md" inverse />
-            <div className="mt-5 text-cream">
+            <div className="mt-5 text-mist">
               <Link
                 href={siteConfig.phoneHref}
                 className="font-display text-3xl font-medium leading-none hover:text-white md:text-4xl"
               >
                 {siteConfig.phone}
               </Link>
-              <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-cream/65">
+              <div className="mt-1 text-[10px] uppercase tracking-[0.12em] text-mist/65">
                 {tf("alwaysAnswered")}
               </div>
             </div>
@@ -37,37 +37,37 @@ export function Footer() {
 
           {/* Hours */}
           <div>
-            <div className="mb-3 text-xs font-semibold tracking-wider text-cream uppercase">
+            <div className="mb-3 text-xs font-semibold tracking-wider text-mist uppercase">
               {tf("hours")}
             </div>
             <ul className="space-y-1 text-sm">
               {siteConfig.hours.map((h) => (
                 <li key={h.days}>
-                  <span className="text-cream">{h.days}:</span>{" "}
+                  <span className="text-mist">{h.days}:</span>{" "}
                   <span className="italic">{h.time}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-3 text-sm text-cream">
+            <div className="mt-3 text-sm text-mist">
               {siteConfig.onCall}
             </div>
           </div>
 
           {/* Accreditation */}
           <div>
-            <div className="mb-3 text-xs font-semibold tracking-wider text-cream uppercase">
+            <div className="mb-3 text-xs font-semibold tracking-wider text-mist uppercase">
               {tf("accreditation")}
             </div>
             <div className="space-y-1 text-sm">
               <div>{tf("medicareCertified")}</div>
               <div>{siteConfig.accreditation}</div>
               {siteConfig.medicareCcn && (
-                <div className="text-cream/65">
+                <div className="text-mist/65">
                   CCN: {siteConfig.medicareCcn}
                 </div>
               )}
               {siteConfig.stateLicense && (
-                <div className="text-cream/65">
+                <div className="text-mist/65">
                   TX License: {siteConfig.stateLicense}
                 </div>
               )}
@@ -76,7 +76,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-cream/10 pt-6 text-center text-xs uppercase tracking-[0.08em]">
+        <div className="mt-10 border-t border-mist/10 pt-6 text-center text-xs uppercase tracking-[0.08em]">
           © {new Date().getFullYear()} {t("siteName")} Home Health Services
           · Equal opportunity employer
         </div>
