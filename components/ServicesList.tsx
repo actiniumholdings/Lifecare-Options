@@ -1,17 +1,33 @@
+import {
+  Stethoscope,
+  PersonSimpleWalk,
+  HandHeart,
+  ChatCircleDots,
+  UsersThree,
+  House,
+  Heartbeat,
+} from "@phosphor-icons/react/dist/ssr";
+import type { Icon } from "@phosphor-icons/react";
 import { services } from "@/lib/site-config";
+import type { ServiceIconName } from "@/lib/site-config";
+
+const iconMap: Record<ServiceIconName, Icon> = {
+  Stethoscope,
+  PersonSimpleWalk,
+  HandHeart,
+  ChatCircleDots,
+  UsersThree,
+  House,
+  Heartbeat,
+};
 
 /**
- * Numbered editorial list of disciplines. RPM sits on top as a small
- * "Now offering" ribbon; the six standard disciplines render as a
- * two-column numbered list with hairline rules between rows. Replaces
- * the previous icon-card grid.
+ * Kharazmi-style service cards — amber icon tile, name, description,
+ * and a subtle "Learn more" affordance. All 7 disciplines render in a
+ * responsive grid; RPM keeps no special "Now offering" treatment here
+ * (the hero section handles that callout).
  */
 export function ServicesList() {
-  const featured = services.find((s) => s.name === "Remote Patient Monitoring");
-  const standard = services.filter(
-    (s) => s.name !== "Remote Patient Monitoring",
-  );
-
   return (
     <section className="px-4 py-16 md:px-6 md:py-24">
       <div className="mx-auto max-w-7xl">
@@ -28,42 +44,25 @@ export function ServicesList() {
           </p>
         </div>
 
-        {featured && (
-          <div className="mb-10 rounded-lg border border-border bg-white p-6 md:p-8">
-            <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:gap-6">
-              <div className="text-[10px] font-semibold tracking-[0.18em] uppercase text-alert">
-                Now offering
-              </div>
-              <div className="flex-1">
-                <div className="font-display text-2xl italic md:text-3xl">
-                  {featured.name}
-                </div>
-                <div className="mt-2 text-base text-slate md:text-lg">
-                  {featured.description}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <div className="grid gap-x-12 gap-y-0 md:grid-cols-2">
-          {standard.map((service, idx) => {
-            const numeral = String(idx + 1).padStart(2, "0");
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map((service) => {
+            const IconComponent = iconMap[service.iconName];
             return (
               <div
                 key={service.name}
-                className="flex items-baseline gap-5 border-b border-navy/[0.12] py-5"
+                className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-12px_rgba(15,43,71,0.15)]"
               >
-                <span className="font-display text-3xl font-medium text-care-blue tabular-nums">
-                  {numeral}
-                </span>
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-amber/15 text-amber-deep">
+                  <IconComponent size={24} weight="duotone" />
+                </div>
                 <div>
-                  <div className="font-display text-xl font-medium">
+                  <div className="font-display text-lg font-semibold text-navy">
                     {service.name}
                   </div>
-                  <div className="mt-1 text-sm text-slate">
-                    {service.description}
-                  </div>
+                  <p className="mt-1 text-sm text-slate">{service.description}</p>
+                </div>
+                <div className="mt-auto text-sm font-medium text-blue-deep">
+                  Learn more →
                 </div>
               </div>
             );

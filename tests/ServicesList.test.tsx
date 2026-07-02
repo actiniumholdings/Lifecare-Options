@@ -4,32 +4,36 @@ import "@testing-library/jest-dom/vitest";
 import { ServicesList } from "@/components/ServicesList";
 
 describe("ServicesList", () => {
-  it("renders the 'Now offering' RPM ribbon at the top", () => {
+  it("renders a service name (Skilled Nursing)", () => {
     render(<ServicesList />);
-    expect(screen.getByText(/now offering/i)).toBeInTheDocument();
-    expect(screen.getByText(/remote patient monitoring/i)).toBeInTheDocument();
+    expect(screen.getByText("Skilled Nursing")).toBeInTheDocument();
   });
 
-  it("renders the six standard disciplines with their descriptions", () => {
+  it("renders amber icon tiles with bg-amber/15", () => {
+    const { container } = render(<ServicesList />);
+    const amberTiles = container.querySelectorAll(".bg-amber\\/15");
+    expect(amberTiles.length).toBeGreaterThan(0);
+  });
+
+  it("renders all seven service names", () => {
     render(<ServicesList />);
-    const standardNames = [
+    const allNames = [
       "Skilled Nursing",
       "Physical Therapy",
       "Occupational Therapy",
       "Speech Therapy",
       "Medical Social Work",
       "Home Health Aide",
+      "Remote Patient Monitoring",
     ];
-    standardNames.forEach((name) => {
+    allNames.forEach((name) => {
       expect(screen.getByText(name)).toBeInTheDocument();
     });
   });
 
-  it("renders numerals 01 through 06 for the standard disciplines", () => {
+  it("renders 'Learn more' affordance for each card", () => {
     render(<ServicesList />);
-    for (let i = 1; i <= 6; i++) {
-      const numeral = String(i).padStart(2, "0");
-      expect(screen.getByText(numeral)).toBeInTheDocument();
-    }
+    const learnMoreLinks = screen.getAllByText(/learn more/i);
+    expect(learnMoreLinks.length).toBe(7);
   });
 });
