@@ -26,19 +26,24 @@ describe("Nav", () => {
     expect(phones[0]).toHaveAttribute("href", "tel:+12816469546");
   });
 
-  it("has a Request info CTA anchoring to #contact", () => {
+  it("has a Refer a Patient CTA anchoring to /refer", () => {
     renderNav();
-    const ctas = screen.getAllByRole("link", { name: /request info/i });
-    expect(ctas[0]).toHaveAttribute("href", "#contact");
+    const ctas = screen.getAllByRole("link", { name: /refer a patient/i });
+    expect(ctas[0]).toHaveAttribute("href", "/refer");
   });
 
   it("toggles mobile menu on button click", async () => {
     const user = userEvent.setup();
     renderNav();
     const toggle = screen.getByRole("button", { name: /open menu/i });
-    expect(screen.queryByTestId("mobile-menu")).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("navigation", { name: /mobile/i })
+    ).not.toBeInTheDocument();
     await user.click(toggle);
-    expect(screen.getByTestId("mobile-menu")).toBeInTheDocument();
+    expect(
+      screen.getByRole("navigation", { name: /mobile/i })
+    ).toBeInTheDocument();
+    expect(toggle).toHaveAttribute("aria-expanded", "true");
   });
 
   it("renders without crashing at scrollY=0 (default state)", () => {
@@ -52,7 +57,12 @@ describe("Nav", () => {
 describe("Nav mobile phone chip", () => {
   it("renders a visible phone tel: link without opening the hamburger", () => {
     renderNav();
-    const chip = screen.getByTestId("mobile-phone-chip");
+    // The mobile menu is closed by default — the mobile-only phone link
+    // (in the dropdown panel) does not exist yet.
+    expect(
+      screen.queryByRole("navigation", { name: /mobile/i })
+    ).not.toBeInTheDocument();
+    const chip = screen.getAllByRole("link", { name: /281.*9546/i })[0];
     expect(chip).toHaveAttribute("href", "tel:+12816469546");
     expect(chip).toHaveTextContent(/281.*9546/i);
   });

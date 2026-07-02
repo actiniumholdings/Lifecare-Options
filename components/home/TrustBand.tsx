@@ -21,9 +21,9 @@ export interface StatPlan {
  */
 export function parseStat(value: string): StatPlan | null {
   let m = value.match(/^(\D*)(\d+)([%+]?)$/);
-  if (m) return { prefix: m[1], target: parseInt(m[2], 10), suffix: m[3], tail: "" };
+  if (m) return { prefix: m[1] ?? "", target: parseInt(m[2] ?? "0", 10), suffix: m[3] ?? "", tail: "" };
   m = value.match(/^(\D*)(\d+)(\D.*)$/);
-  if (m) return { prefix: m[1], target: parseInt(m[2], 10), suffix: "", tail: m[3] };
+  if (m) return { prefix: m[1] ?? "", target: parseInt(m[2] ?? "0", 10), suffix: "", tail: m[3] ?? "" };
   return null;
 }
 
