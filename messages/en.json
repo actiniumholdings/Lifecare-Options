@@ -135,6 +135,76 @@
       "note": "Call us and we'll walk you through coverage."
     }
   },
+  "attendant": {
+    "meta": {
+      "title": "Provider Attendant Services",
+      "description": "Trained attendants help with bathing, meals, light housekeeping, errands, and companionship, so your loved one can stay safe and comfortable at home."
+    },
+    "hero": {
+      "eyebrow": "Provider Attendant Services",
+      "headline": "A steady hand with everyday life, at home.",
+      "intro": "When the need is help with daily routines rather than clinical care, a trained attendant brings consistency, patience, and an extra set of hands into the home.",
+      "primary": "Request info"
+    },
+    "tasks": {
+      "eyebrow": "Everyday Support",
+      "title": "What an attendant helps with",
+      "body": "Every attendant assignment is built around the person, not a checklist. Here is the kind of everyday help families ask for most.",
+      "bathing": {
+        "title": "Bathing, dressing & grooming",
+        "body": "Help with the personal care routines that keep someone clean, comfortable, and dressed for the day."
+      },
+      "meals": {
+        "title": "Meal preparation",
+        "body": "Planning and preparing meals that fit personal tastes and dietary needs."
+      },
+      "housekeeping": {
+        "title": "Light housekeeping & laundry",
+        "body": "Keeping the home tidy, dishes done, and laundry washed and put away."
+      },
+      "errands": {
+        "title": "Errands & escort to appointments",
+        "body": "Grocery runs, pharmacy pickups, and a steady arm to and from appointments."
+      },
+      "companionship": {
+        "title": "Companionship & a safe routine",
+        "body": "Conversation, shared activities, and a familiar face that helps the day feel normal."
+      },
+      "mobility": {
+        "title": "Mobility & transfer support",
+        "body": "Help moving safely around the home, in and out of a chair or bed."
+      }
+    },
+    "expect": {
+      "eyebrow": "What to Expect",
+      "title": "What to expect",
+      "intro": "Bringing an attendant into your home is a big decision. Here is how we make it a comfortable one.",
+      "step1": {
+        "title": "A personalized care plan",
+        "body": "We start by learning the routines, preferences, and needs that matter to your family, and build the plan around them."
+      },
+      "step2": {
+        "title": "A consistent attendant",
+        "body": "The same attendant returns visit after visit, so your loved one is cared for by someone who knows their routine."
+      },
+      "step3": {
+        "title": "Regular oversight",
+        "body": "A supervisor checks in with regular visits to make sure the plan is working and adjust it when things change."
+      }
+    },
+    "coverage": {
+      "line": "Call us and we'll walk you through coverage and how to get started."
+    },
+    "careers": {
+      "eyebrow": "We're Hiring",
+      "headline": "We're hiring attendants who bring patience and heart to everyday care.",
+      "cta": "Explore careers"
+    },
+    "cta": {
+      "headline": "Ready to bring care home?",
+      "primary": "Request info"
+    }
+  },
   "about": {
     "meta": {
       "title": "About Lifecare Options",
