@@ -70,7 +70,7 @@ export function LeadForm() {
             onClick={() => setTab("services")}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
               tab === "services"
-                ? "bg-navy text-mist"
+                ? "bg-navy text-white"
                 : "bg-transparent text-navy/70 hover:text-navy"
             }`}
           >
@@ -82,7 +82,7 @@ export function LeadForm() {
             onClick={() => setTab("employment")}
             className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
               tab === "employment"
-                ? "bg-navy text-mist"
+                ? "bg-navy text-white"
                 : "bg-transparent text-navy/70 hover:text-navy"
             }`}
           >

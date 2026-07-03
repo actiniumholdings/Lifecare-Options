@@ -77,7 +77,7 @@ export function AboutContent() {
       {/* 4. Values / Commitments — dark, 4 cards */}
       <Section tone="dark">
         <Eyebrow className="!text-sky-soft">{t("values.eyebrow")}</Eyebrow>
-        <h2 className="mt-4 max-w-2xl text-mist">{t("values.title")}</h2>
+        <h2 className="mt-4 max-w-2xl text-white">{t("values.title")}</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {valueCards.map(({ titleKey, bodyKey }) => (
             <Card key={titleKey} variant="white" className="text-navy">

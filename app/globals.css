@@ -16,10 +16,6 @@
   --color-blue-deep: #2F5F8A;
   --color-blue-light: #7AA6CF;
 
-  /* Retained during the interim so shared/legacy chrome keeps styling. */
-  --color-mist: #F2F7FB;
-  --color-amber: #E5A94E;
-
   /* Alternating light-section background (spec §5 Color). */
   --color-sky-soft: #EAF2F9;
 

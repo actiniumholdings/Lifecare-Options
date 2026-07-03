@@ -9,10 +9,10 @@ describe("ServicesList", () => {
     expect(screen.getByText("Skilled Nursing")).toBeInTheDocument();
   });
 
-  it("renders amber icon tiles with bg-amber/15", () => {
+  it("renders care-blue icon tiles with bg-care-blue/15", () => {
     const { container } = render(<ServicesList />);
-    const amberTiles = container.querySelectorAll(".bg-amber\\/15");
-    expect(amberTiles.length).toBeGreaterThan(0);
+    const careBlueTiles = container.querySelectorAll(".bg-care-blue\\/15");
+    expect(careBlueTiles.length).toBeGreaterThan(0);
   });
 
   it("renders all seven service names", () => {

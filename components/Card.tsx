@@ -2,14 +2,13 @@ import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
 
 type CardProps = {
-  variant?: "care-blue" | "amber" | "white";
+  variant?: "care-blue" | "white";
   children: ReactNode;
   className?: string;
 };
 
 const VARIANT: Record<NonNullable<CardProps["variant"]>, string> = {
   "care-blue": "bg-white border border-care-blue/20",
-  amber: "bg-white border border-amber/20",
   white: "bg-white border border-border",
 };
 

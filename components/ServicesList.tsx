@@ -22,7 +22,7 @@ const iconMap: Record<ServiceIconName, Icon> = {
 };
 
 /**
- * Kharazmi-style service cards — amber icon tile, name, description,
+ * Kharazmi-style service cards — care-blue icon tile, name, description,
  * and a subtle "Learn more" affordance. All 7 disciplines render in a
  * responsive grid; RPM keeps no special "Now offering" treatment here
  * (the hero section handles that callout).
@@ -52,7 +52,7 @@ export function ServicesList() {
                 key={service.name}
                 className="flex flex-col gap-4 rounded-2xl bg-white p-6 shadow-[0_10px_30px_-12px_rgba(15,43,71,0.15)]"
               >
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-amber/15 text-amber-deep">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-care-blue/15 text-blue-deep">
                   <IconComponent size={24} weight="duotone" />
                 </div>
                 <div>

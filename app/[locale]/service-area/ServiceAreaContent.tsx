@@ -76,7 +76,7 @@ export function ServiceAreaContent() {
         <div className="mt-8 grid gap-10 md:grid-cols-2 md:items-start">
           <ServiceMap />
           <div className="flex flex-col justify-center">
-            <p className="text-lg font-semibold text-mist">{t("map.callout")}</p>
+            <p className="text-lg font-semibold text-white">{t("map.callout")}</p>
             <a
               href={siteConfig.phoneHref}
               className="mt-3 text-sky-soft hover:underline"

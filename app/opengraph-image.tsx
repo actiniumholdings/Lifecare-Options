@@ -81,7 +81,7 @@ export default async function OpengraphImage() {
           }}
         />
 
-        {/* Amber decorative strip at the bottom */}
+        {/* Blue-deep decorative strip at the bottom */}
         <div
           style={{
             position: "absolute",
@@ -89,7 +89,7 @@ export default async function OpengraphImage() {
             left: 0,
             right: 0,
             height: 8,
-            background: "#E5A94E",
+            background: "#2F5F8A",
           }}
         />
 
@@ -101,7 +101,7 @@ export default async function OpengraphImage() {
             alignItems: "center",
           }}
         >
-          {/* Accent rule: care-blue bar + amber dot */}
+          {/* Accent rule: care-blue bar + blue-deep dot */}
           <div
             style={{
               display: "flex",
@@ -123,7 +123,7 @@ export default async function OpengraphImage() {
                 width: 10,
                 height: 10,
                 borderRadius: 5,
-                background: "#E5A94E",
+                background: "#2F5F8A",
               }}
             />
             <div

@@ -14,7 +14,7 @@ export function CtaBand({
 }) {
   return (
     <Section tone="dark" className="text-center">
-      <h2 className="mx-auto max-w-2xl text-mist">{headline}</h2>
+      <h2 className="mx-auto max-w-2xl text-white">{headline}</h2>
       {(primary || secondary) && (
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {primary && (
@@ -23,7 +23,7 @@ export function CtaBand({
             </Button>
           )}
           {secondary && (
-            <Button href={secondary.href} variant="secondary" size="lg" className="!bg-transparent !border-mist !text-mist hover:!bg-mist/10">
+            <Button href={secondary.href} variant="secondary" size="lg" className="!bg-transparent !border-white/60 !text-white hover:!bg-white/10">
               {secondary.label}
             </Button>
           )}

@@ -104,7 +104,7 @@ export function ReferContent() {
       {/* 4. What happens next — dark */}
       <Section tone="dark">
         <Eyebrow className="!text-sky-soft">{t("next.eyebrow")}</Eyebrow>
-        <h2 className="mt-4 max-w-2xl text-mist">{t("next.title")}</h2>
+        <h2 className="mt-4 max-w-2xl text-white">{t("next.title")}</h2>
         <ol
           className="mt-10 space-y-5"
           aria-label={t("next.eyebrow")}
@@ -117,7 +117,7 @@ export function ReferContent() {
               >
                 {i + 1}
               </span>
-              <p className="text-mist/90 leading-relaxed pt-0.5">{step}</p>
+              <p className="text-white/90 leading-relaxed pt-0.5">{step}</p>
             </li>
           ))}
         </ol>

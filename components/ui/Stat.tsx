@@ -7,7 +7,7 @@ export function Stat({
   label: string;
   tone?: "light" | "dark";
 }) {
-  const labelColor = tone === "dark" ? "text-mist/70" : "text-slate";
+  const labelColor = tone === "dark" ? "text-white/70" : "text-slate";
   return (
     <div>
       <div className="font-display text-navy text-3xl leading-none md:text-4xl">

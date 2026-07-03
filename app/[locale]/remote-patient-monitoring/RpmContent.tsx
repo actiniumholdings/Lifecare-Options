@@ -35,7 +35,7 @@ export function RpmContent() {
         eyebrow={
           <>
             {t("hero.eyebrow")}{" "}
-            <span className="ml-1.5 inline-flex items-center rounded-full bg-amber px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-navy-deep">
+            <span className="ml-1.5 inline-flex items-center rounded-full bg-blue-deep px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-white">
               {t("hero.badge")}
             </span>
           </>
@@ -68,7 +68,7 @@ export function RpmContent() {
       {/* 3. Who it helps — dark, 4 cards */}
       <Section tone="dark" id="who-it-helps">
         <Eyebrow className="!text-sky-soft">{t("who.eyebrow")}</Eyebrow>
-        <h2 className="mt-3 max-w-2xl text-mist">{t("who.title")}</h2>
+        <h2 className="mt-3 max-w-2xl text-white">{t("who.title")}</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {whoCards.map(({ titleKey, bodyKey }) => (
             <Card key={titleKey} variant="white" className="text-navy">
