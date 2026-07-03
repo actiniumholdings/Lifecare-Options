@@ -62,6 +62,7 @@ export function buildMetadata({
       languages: {
         en: abs("en", path),
         es: abs("es", path),
+        "x-default": abs("en", path),
       },
     },
     openGraph: {
