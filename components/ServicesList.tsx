@@ -39,7 +39,7 @@ export function ServicesList() {
             <em>Seven</em> disciplines, one coordinated plan.
           </h2>
           <p className="mt-3 text-slate">
-            Physician-ordered home health covered by Medicare. Our team works
+            Physician-ordered, Medicare-certified home health. Our team works
             together around your care plan, with no handoff gaps.
           </p>
         </div>

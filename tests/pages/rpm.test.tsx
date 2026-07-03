@@ -30,9 +30,10 @@ describe("Remote Patient Monitoring page", () => {
     expect(screen.getByText(/catch changes early/i)).toBeDefined();
   });
 
-  it("coverage copy contains a hedge word ('verify' or 'may')", () => {
+  it("coverage copy names no payer program and contains a hedge word ('verify' or 'varies')", () => {
     renderRpm();
-    const coverageEl = screen.getByText(/often covered by Medicare/i);
-    expect(coverageEl.textContent).toMatch(/verify|may/i);
+    const coverageEl = screen.getByText(/coverage varies by plan/i);
+    expect(coverageEl.textContent).toMatch(/verify|varies/i);
+    expect(coverageEl.textContent).not.toMatch(/medicare|medicaid/i);
   });
 });

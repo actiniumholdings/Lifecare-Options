@@ -8,7 +8,7 @@ const STEPS = [
   },
   {
     title: "We coordinate",
-    body: "We check coverage — Medicare, Medicaid, or private pay — connect with any physician involved, and arrange an in-home assessment, handling the paperwork so your family doesn't have to.",
+    body: "We check your coverage, connect with any physician involved, and arrange an in-home assessment, handling the paperwork so your family doesn't have to.",
   },
   {
     title: "Care begins at home",
