@@ -208,37 +208,37 @@
   "about": {
     "meta": {
       "title": "About Lifecare Options",
-      "description": "Medicare-certified home health agency serving greater Houston since 2012. CHAP-accredited, bilingual, locally owned, and nurse-led."
+      "description": "Skilled home health and Provider Attendant Services in Katy, TX since 2012. Medicare-certified, CHAP-accredited, bilingual, locally owned."
     },
     "hero": {
       "eyebrow": "About",
       "headline": "Caring for Katy families since 2012.",
-      "intro": "Lifecare Options is a locally owned skilled home health agency based in Katy, TX. Nurse-led and physician-coordinated, we have been bringing Medicare-certified care into patients' homes since 2012.",
+      "intro": "Lifecare Options is a locally owned home health company based in Katy, TX. Since 2012 we have brought two kinds of care into the home: Medicare-certified skilled nursing and therapy for clinical recovery, and Provider Attendant Services for everyday help with daily living.",
       "primary": "Request info",
       "photoAlt": "A nurse checking an older adult's blood pressure at home."
     },
     "story": {
       "eyebrow": "Our Story",
-      "title": "Locally owned and nurse-led since 2012.",
-      "p1": "Lifecare Options started in Katy in 2012 with a straightforward idea: skilled nurses and therapists should be able to follow patients home after discharge and keep their recovery on track.",
-      "p2": "Today our team includes registered nurses, licensed vocational nurses, physical and occupational therapists, speech therapists, medical social workers, and home health aides. Every care plan is coordinated directly with the patient's physician.",
-      "p3": "We are not a national franchise. The clinicians who answer your call are the same ones who come to your door.",
+      "title": "Locally owned, and built around the home, since 2012.",
+      "p1": "Lifecare Options started in Katy in 2012 with a straightforward idea: people recover and live better at home, with the right kind of help behind them. For some, that means skilled nurses and therapists following them home after a hospital stay. For others, it means a trained attendant showing up for bathing, meals, and the everyday tasks that keep daily life safe and steady.",
+      "p2": "Today our team includes registered nurses, licensed vocational nurses, physical and occupational therapists, speech therapists, medical social workers, home health aides, and attendants who provide long-term, everyday support. Every skilled care plan is coordinated directly with the patient's physician; every attendant assignment is built around the person, not a checklist.",
+      "p3": "We are not a national franchise. The people who answer your call are the same ones who come to your door, whether that is a nurse managing a recovery plan or an attendant who shows up, visit after visit, for the long run.",
       "missionLabel": "Our Mission",
-      "mission": "To provide expert, compassionate home health care in Katy and the surrounding communities, so that every patient can recover safely and live with dignity."
+      "mission": "To bring the right kind of care home, skilled clinical support for recovery and steady everyday help for daily living, so every person we serve can stay safe, comfortable, and as independent as possible."
     },
     "band": {
       "eyebrow": "Why it matters",
-      "headline": "People heal best at home. We make sure the care follows them there."
+      "headline": "People do better at home, whether they are recovering from a hospital stay or simply need a hand with daily life. We make sure the right care follows them there."
     },
     "values": {
       "eyebrow": "Our Commitments",
-      "title": "How we show up for every patient.",
+      "title": "How we show up, for every kind of care we provide.",
       "card1Title": "Clinical quality",
       "card1Body": "Our nurses and therapists meet Medicare and CHAP standards, and every visit is documented and shared with your physician. Quality is built into our workflow, not added on top.",
       "card2Title": "Dignity and independence",
-      "card2Body": "Home health works best when patients stay in control of their routine. Our clinicians work around your schedule and preferences, not the other way around.",
+      "card2Body": "Care works best when the person stays in control of their routine. Our care team, clinical and attendant alike, works around your schedule and preferences, not the other way around.",
       "card3Title": "Coordinated care",
-      "card3Body": "We communicate directly with your physician and specialist offices. If your care plan changes, everyone on your team knows before your next visit.",
+      "card3Body": "We communicate directly with your physician and specialist offices, and keep families in the loop on attendant care. If your care plan changes, everyone on your team knows before your next visit.",
       "card4Title": "Bilingual care",
       "card4Body": "Our team provides care in English and Spanish. No patient should have to navigate their health in a language that is not their own."
     },
@@ -256,7 +256,7 @@
       "sinceFoundedBody": "In continuous operation since 2012, serving Katy, Fort Bend, and Harris counties."
     },
     "cta": {
-      "headline": "Ready to bring skilled care home?"
+      "headline": "Ready to bring the right care home?"
     }
   },
   "serviceArea": {
