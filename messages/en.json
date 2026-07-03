@@ -301,6 +301,11 @@
       "primary": "Apply now",
       "photoAlt": "A therapist helping an older man walk with a walker at home."
     },
+    "nav": {
+      "ariaLabel": "Jump to a hiring track",
+      "clinicalLabel": "Clinical roles",
+      "attendantLabel": "Attendant roles"
+    },
     "why": {
       "eyebrow": "Why work here",
       "title": "A team worth joining.",
@@ -312,6 +317,35 @@
       "card3Body": "Clinical decisions stay with clinicians. Our nurses and therapists set the standard for care, and leadership listens when something needs to change.",
       "card4Title": "Flexible scheduling",
       "card4Body": "We work around the realities of caregiving. Schedules are built collaboratively so you can do your best work without burning out."
+    },
+    "clinical": {
+      "eyebrow": "For clinicians",
+      "title": "Clinical roles",
+      "intro": "Skilled care, one patient at a time. We hire RNs, LVNs, and therapists for one-on-one, in-home clinical work — not floor nursing.",
+      "role1Title": "RN / LVN",
+      "role1Body": "Skilled nursing visits, wound care, medication management, and care planning in the patient's home.",
+      "role2Title": "Physical Therapy",
+      "role2Body": "Help patients rebuild mobility, strength, and balance after surgery or a health setback.",
+      "role3Title": "Occupational Therapy",
+      "role3Body": "Support patients relearning the daily living skills that keep them independent at home.",
+      "role4Title": "Speech Therapy",
+      "role4Body": "Work with patients on communication and swallowing recovery, often after a stroke.",
+      "role5Title": "Medical Social Work",
+      "role5Body": "Connect patients and families to community resources and help them navigate what comes next.",
+      "cta": "Apply for a clinical role"
+    },
+    "attendant": {
+      "eyebrow": "For attendants",
+      "title": "Attendant roles",
+      "intro": "Everyday support that keeps people home. You do not need a nursing license or prior healthcare experience to make a real difference here. We provide training, and we build schedules around real life.",
+      "role1Title": "Personal care support",
+      "role1Body": "Help with bathing, dressing, grooming, and mobility — the hands-on care that makes daily life manageable.",
+      "role2Title": "Meals & light housekeeping",
+      "role2Body": "Meal preparation, light housekeeping, and errands that keep a household running.",
+      "role3Title": "Companionship",
+      "role3Body": "Conversation, presence, and a familiar face — for many clients, this matters as much as any task.",
+      "note": "No prior healthcare experience required. Training is provided, and we work to build steady, flexible hours.",
+      "cta": "Apply for an attendant role"
     },
     "openRoles": {
       "eyebrow": "Open roles",
