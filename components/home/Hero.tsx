@@ -60,7 +60,7 @@ export function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="mt-6 text-sm text-slate/90">
+            <p className="mt-6 text-sm text-slate">
               {siteConfig.accreditation}
               {siteConfig.stateLicense && (
                 <>

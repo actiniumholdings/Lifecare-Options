@@ -137,14 +137,14 @@ export function CareersContent() {
         {siteConfig.positions.length === 0 ? (
           <div className="mt-8 max-w-xl">
             <p className="text-lg font-semibold text-white">{t("openRoles.emptyTitle")}</p>
-            <p className="mt-3 text-slate/80 leading-relaxed">{t("openRoles.emptyBody")}</p>
+            <p className="mt-3 text-white/80 leading-relaxed">{t("openRoles.emptyBody")}</p>
           </div>
         ) : (
           <ul className="mt-8 space-y-4">
             {siteConfig.positions.map((pos) => (
               <li key={pos.title} className="text-white">
                 <span className="font-semibold">{pos.title}</span>
-                {pos.type && <span className="ml-2 text-sm text-slate/70">{pos.type}</span>}
+                {pos.type && <span className="ml-2 text-sm text-white/70">{pos.type}</span>}
               </li>
             ))}
           </ul>
@@ -168,7 +168,7 @@ export function CareersContent() {
         <div className="max-w-2xl mx-auto text-center">
           <Eyebrow className="!text-sky-soft">{t("bilingual.eyebrow")}</Eyebrow>
           <h2 className="mt-4 text-white">{t("bilingual.title")}</h2>
-          <p className="mt-4 text-slate/80 leading-relaxed">{t("bilingual.body")}</p>
+          <p className="mt-4 text-white/80 leading-relaxed">{t("bilingual.body")}</p>
         </div>
       </Section>
 

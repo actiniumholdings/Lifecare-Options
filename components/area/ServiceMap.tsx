@@ -30,7 +30,7 @@ export function ServiceMap() {
       </svg>
       <figcaption className="mt-4 flex flex-wrap gap-4">
         {coverageCounties.map((c) => (
-          <span key={c.name} className="inline-flex items-center gap-2 text-sm text-slate">
+          <span key={c.name} className="inline-flex items-center gap-2 text-sm text-white/70">
             <span className="h-3 w-3 rounded-sm" style={{ background: c.color }} aria-hidden />
             {c.name}
           </span>

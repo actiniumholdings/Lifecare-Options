@@ -28,6 +28,26 @@ export default [
     plugins: { "jsx-a11y": jsxA11y },
     rules: jsxA11y.configs.recommended.rules,
   },
+  {
+    // scripts/contrast-audit.mjs is a standalone Node CLI (not part of the
+    // app bundle) that also embeds a function shipped as a *string* and
+    // executed inside headless Chrome via CDP Runtime.evaluate — so the
+    // file legitimately references both Node globals and browser globals
+    // that never actually run in this Node process.
+    files: ["scripts/**/*.mjs"],
+    languageOptions: {
+      globals: {
+        process: "readonly",
+        console: "readonly",
+        setTimeout: "readonly",
+        fetch: "readonly",
+        WebSocket: "readonly",
+        document: "readonly",
+        window: "readonly",
+        getComputedStyle: "readonly",
+      },
+    },
+  },
   // Must come last — disables ESLint rules that conflict with Prettier formatting
   prettierConfig,
   {
