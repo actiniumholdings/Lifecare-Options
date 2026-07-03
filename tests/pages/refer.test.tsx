@@ -29,4 +29,24 @@ describe("Refer page", () => {
     const matches = screen.getAllByText(/business day/i);
     expect(matches.length).toBeGreaterThan(0);
   });
+
+  it("renders both a clinical/physician referral path and a community/family referral path", () => {
+    renderRefer();
+    const text = document.body.textContent ?? "";
+    expect(text).toMatch(/physician|discharge|hospital|clinician/i);
+    expect(text).toMatch(/family|families|community|case manager|anyone/i);
+  });
+
+  it("keeps response-time copy hedged, not a guaranteed same/second-day SLA", () => {
+    renderRefer();
+    const text = document.body.textContent ?? "";
+    expect(text).toMatch(/usually within one business day/i);
+    expect(text).not.toMatch(/guarantee[ds]?\s+(same|second)[\s-]day/i);
+  });
+
+  it("does not name any payer or program", () => {
+    renderRefer();
+    const text = document.body.textContent ?? "";
+    expect(text).not.toMatch(/medicare|medicaid|star\+plus|private pay|insurance/i);
+  });
 });

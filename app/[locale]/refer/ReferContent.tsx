@@ -43,7 +43,32 @@ export function ReferContent() {
         photoAlt={t("hero.photoAlt")}
       />
 
-      {/* 2. Two ways to refer — light */}
+      {/* 2. Two referral paths — light */}
+      <Section tone="light">
+        <Eyebrow>{t("paths.eyebrow")}</Eyebrow>
+        <h2 className="mt-4 text-2xl font-semibold text-navy sm:text-3xl">
+          {t("paths.title")}
+        </h2>
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {/* Clinical / physician path */}
+          <Card variant="white">
+            <p className="font-semibold text-navy">{t("paths.clinicalTitle")}</p>
+            <p className="mt-2 text-slate text-sm leading-relaxed">
+              {t("paths.clinicalBody")}
+            </p>
+          </Card>
+
+          {/* Community / family path */}
+          <Card variant="white">
+            <p className="font-semibold text-navy">{t("paths.communityTitle")}</p>
+            <p className="mt-2 text-slate text-sm leading-relaxed">
+              {t("paths.communityBody")}
+            </p>
+          </Card>
+        </div>
+      </Section>
+
+      {/* 3. Two ways to refer — light */}
       <Section tone="light">
         <Eyebrow>{t("ways.eyebrow")}</Eyebrow>
         <h2 className="mt-4 text-2xl font-semibold text-navy sm:text-3xl">
@@ -76,7 +101,7 @@ export function ReferContent() {
         </div>
       </Section>
 
-      {/* 3. What happens next — dark */}
+      {/* 4. What happens next — dark */}
       <Section tone="dark">
         <Eyebrow className="!text-sky-soft">{t("next.eyebrow")}</Eyebrow>
         <h2 className="mt-4 max-w-2xl text-mist">{t("next.title")}</h2>
@@ -98,7 +123,7 @@ export function ReferContent() {
         </ol>
       </Section>
 
-      {/* 4. Who can refer — light */}
+      {/* 5. Who can refer — light */}
       <Section tone="light">
         <Eyebrow>{t("who.eyebrow")}</Eyebrow>
         <h2 className="mt-4 text-2xl font-semibold text-navy sm:text-3xl">
@@ -116,7 +141,7 @@ export function ReferContent() {
         </div>
       </Section>
 
-      {/* 5. CtaBand */}
+      {/* 6. CtaBand */}
       <CtaBand
         headline={t("cta.headline")}
         primary={{

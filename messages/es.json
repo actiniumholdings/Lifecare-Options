@@ -370,12 +370,12 @@
   "refer": {
     "meta": {
       "title": "Refer a Patient",
-      "description": "Physicians and discharge planners can refer patients by phone or fax. Our intake team responds quickly to coordinate care orders."
+      "description": "Physicians and discharge planners refer for skilled home health. Families, case managers, and community partners can refer directly for attendant support."
     },
     "hero": {
-      "eyebrow": "For providers",
+      "eyebrow": "For providers and families",
       "headline": "Refer a patient in minutes.",
-      "intro": "Our intake team handles the details. Call or fax to get a referral started, and we take it from there.",
+      "intro": "Physicians and discharge planners can send clinical orders for skilled home health. Families, case managers, and community partners can call to start a conversation about attendant support directly, no physician order needed.",
       "photoAlt": "A home-health nurse arriving at a patient's home."
     },
     "ways": {
@@ -386,11 +386,19 @@
       "faxTitle": "Fax referral orders",
       "faxBody": "Send orders, face sheets, or clinical notes to our secure fax line. We confirm receipt and follow up the same business day."
     },
+    "paths": {
+      "eyebrow": "Two referral paths",
+      "title": "Skilled care and everyday support work a little differently.",
+      "clinicalTitle": "Physician or hospital referral",
+      "clinicalBody": "Skilled home health, such as nursing or therapy following a hospital stay, is typically ordered by a physician or arranged through a hospital discharge planner. We coordinate the plan of care with the treating physician.",
+      "communityTitle": "Family or community referral",
+      "communityBody": "Attendant and everyday support does not require a physician order first. Families, case managers, social workers, and community partners can call us directly to start that conversation."
+    },
     "next": {
       "eyebrow": "What happens next",
       "title": "What to expect after you refer.",
       "step1": "We reach out to the patient or family, usually within one business day of receiving the referral.",
-      "step2": "We verify insurance benefits and eligibility at no cost.",
+      "step2": "We review coverage details and eligibility with you at no cost.",
       "step3": "We work with the patient's physician to build an individualized plan of care.",
       "step4": "A skilled clinician completes the initial home visit.",
       "step5": "We share progress notes with the referring provider to keep your team informed."
@@ -403,9 +411,9 @@
       "card2Title": "Discharge planners",
       "card2Body": "Hospital discharge planners can coordinate directly with our intake team to arrange home care before the patient leaves the facility.",
       "card3Title": "Case managers",
-      "card3Body": "Insurance and community case managers can refer patients and receive regular updates on progress and plan-of-care changes.",
+      "card3Body": "Community and healthcare case managers can refer patients and receive regular updates on progress and plan-of-care changes.",
       "card4Title": "Families and caregivers",
-      "card4Body": "Family members may initiate a referral inquiry. We will confirm clinical eligibility and coordinate with the treating physician."
+      "card4Body": "Family members and caregivers can start a referral directly, especially for attendant and everyday support, no physician order required. For skilled home health, we will coordinate with the treating physician."
     },
     "cta": {
       "headline": "Ready to refer? Call or fax our intake team."
