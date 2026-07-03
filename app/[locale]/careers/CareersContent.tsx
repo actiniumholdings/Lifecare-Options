@@ -70,7 +70,7 @@ export function CareersContent() {
       </nav>
 
       {/* 3. Why work here — light */}
-      <Section tone="light">
+      <Section tone="sky">
         <Eyebrow>{t("why.eyebrow")}</Eyebrow>
         <h2 className="mt-4 max-w-2xl text-2xl font-semibold leading-snug text-navy sm:text-3xl">
           {t("why.title")}
