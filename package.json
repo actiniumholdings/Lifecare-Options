@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:contrast": "node scripts/contrast-audit.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

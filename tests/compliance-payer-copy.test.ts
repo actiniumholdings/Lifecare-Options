@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import messages from "@/messages/en.json";
 
@@ -16,9 +16,12 @@ import messages from "@/messages/en.json";
  *    which is a working form field, not marketing prose.
  */
 
-// Matches payer-names used as a coverage/marketing claim.
+// Matches payer-names used as a coverage/marketing claim — including
+// verb-based phrasings ("bill/accept Medicaid", "Medicare covers…") — while
+// deliberately NOT matching the "Medicare-certified" / "Certified by Medicare"
+// credential or "Medicare … standards" claims (see the sanity check below).
 const COVERAGE_MARKETING_PATTERN =
-  /covered by medicare|through (texas )?medicaid|medicaid,|, medicaid|\bprivate pay\b|medicare advantage/i;
+  /covered by medicare|medicare covers|through (texas )?medicaid|medicaid waiver|medicaid,|, medicaid|\bprivate pay\b|medicare advantage|(bill|accept)(s|ed|ing)? (medicare|medicaid)|(covered|coverage) (by|through|under) (medicare|medicaid)/i;
 
 // Credential/standards phrasings that are explicitly allowed and must NOT be
 // flagged by the pattern above (sanity-check the regex itself, since it's
@@ -67,12 +70,31 @@ describe("compliance: payer-name marketing copy", () => {
     expect(strings.some((s) => /medicare-certified/i.test(s))).toBe(true);
   });
 
-  it("home HowItWorks component names no payer program (Medicaid / private pay)", () => {
-    const source = readFileSync(
-      resolve(__dirname, "../components/home/HowItWorks.tsx"),
-      "utf-8",
-    );
-    expect(source).not.toMatch(/medicaid/i);
-    expect(source).not.toMatch(/private pay/i);
+  it("no hardcoded component/page copy uses a payer name as a coverage/marketing claim", () => {
+    // Scan all component + page source (the sweep hand-fixed hardcoded copy in
+    // HowItWorks, ServicesList, etc.) so a future regression anywhere is caught,
+    // not just in one file. LeadForm is the functional intake field (excluded).
+    const roots = [resolve(__dirname, "../components"), resolve(__dirname, "../app")];
+    const files: string[] = [];
+    const walk = (dir: string) => {
+      for (const entry of readdirSync(dir, { withFileTypes: true })) {
+        const full = resolve(dir, entry.name);
+        if (entry.isDirectory()) walk(full);
+        else if (
+          /\.tsx?$/.test(entry.name) &&
+          !/\.test\.tsx?$/.test(entry.name) &&
+          entry.name !== "LeadForm.tsx"
+        )
+          files.push(full);
+      }
+    };
+    for (const root of roots) walk(root);
+
+    const offenders: string[] = [];
+    for (const file of files) {
+      const source = readFileSync(file, "utf-8");
+      if (COVERAGE_MARKETING_PATTERN.test(source)) offenders.push(file);
+    }
+    expect(offenders).toEqual([]);
   });
 });
