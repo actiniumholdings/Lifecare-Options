@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Container } from "./Container";
 import { Eyebrow } from "./Eyebrow";
 import { Button } from "@/components/Button";
+import { FadeUp } from "@/components/motion/FadeUp";
 
 type Cta = { label: string; href: string };
 type Badge = { label: string; icon?: ReactNode };
@@ -38,30 +39,43 @@ export function Hero({
     <section className="bg-sky-soft px-4 py-14 md:px-8 md:py-20">
       <Container className="grid items-center gap-12 md:grid-cols-[1.1fr_1fr]">
         <div>
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-4 font-display text-display-xl font-semibold text-navy text-balance">
-            {headline}
-          </h1>
+          <FadeUp>
+            <Eyebrow>{eyebrow}</Eyebrow>
+          </FadeUp>
+          <FadeUp delay={0.05}>
+            <h1 className="mt-4 font-display text-display-xl font-semibold text-navy text-balance">
+              {headline}
+            </h1>
+          </FadeUp>
           {intro && (
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate">{intro}</p>
+            <FadeUp delay={0.1}>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-slate">{intro}</p>
+            </FadeUp>
           )}
           {(primaryCta || secondaryCta) && (
-            <div className="mt-8 flex flex-wrap gap-3">
-              {primaryCta && (
-                <Button href={primaryCta.href} size="lg">
-                  {primaryCta.label}
-                </Button>
-              )}
-              {secondaryCta && (
-                <Button href={secondaryCta.href} variant="secondary" size="lg">
-                  {secondaryCta.label}
-                </Button>
-              )}
-            </div>
+            <FadeUp delay={0.15}>
+              <div className="mt-8 flex flex-wrap gap-3">
+                {primaryCta && (
+                  <Button href={primaryCta.href} size="lg">
+                    {primaryCta.label}
+                  </Button>
+                )}
+                {secondaryCta && (
+                  <Button href={secondaryCta.href} variant="secondary" size="lg">
+                    {secondaryCta.label}
+                  </Button>
+                )}
+              </div>
+            </FadeUp>
           )}
         </div>
 
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg">
+        {/* Pure opacity fade (distance=0) so the photo fades in on load — mirrors
+            Central's interior-hero entrance without sliding the image. */}
+        <FadeUp
+          distance={0}
+          className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl shadow-lg"
+        >
           <Image
             src={photoSrc}
             alt={photoAlt}
@@ -83,7 +97,7 @@ export function Hero({
               ))}
             </div>
           )}
-        </div>
+        </FadeUp>
       </Container>
     </section>
   );
