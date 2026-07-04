@@ -26,10 +26,13 @@ describe("Hero", () => {
     expect(img).toBeInTheDocument();
   });
 
-  it("sits on the sky-soft band, not legacy mist", () => {
+  it("sits on the full-bleed navy band, not a legacy light card", () => {
     const { container } = render(<Hero {...baseProps} />);
-    expect(container.querySelector("section")!.className).toContain("bg-sky-soft");
-    expect(container.querySelector("section")!.className).not.toContain("mist");
+    const section = container.querySelector("section")!;
+    // Full-bleed photographic hero on navy (mirrors Central's interior hero).
+    expect(section.className).toContain("bg-navy-deep");
+    expect(section.className).not.toContain("bg-sky-soft");
+    expect(section.className).not.toContain("mist");
   });
 
   it("renders the primary CTA as a link with the correct href", () => {
