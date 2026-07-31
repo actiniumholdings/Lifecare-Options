@@ -1,27 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette — Committed warm peach-cream brand */
+  /* Palette — mirrors the design system's colors_and_type.css */
   --color-navy: #0f2b47;
+  /* Brand Care Blue. At 3.4:1 on cream it clears WCAG AA for *large* text
+     only, so it is reserved for the italic display accents. */
   --color-care-blue: #5a8bb8;
-  --color-cream: #fdeedd;
-  --color-cream-deep: #f0dcb8;
-  --color-cream-edge: #ead8b6;
-  --color-slate: #5a6b7e;
+  --color-care-blue-hover: #4a7aa3;
+  /* Darkened Care Blue for anything AA measures at 4.5:1 — small labels and
+     the white-on-blue primary button. The design system's #5A8BB8 fails there
+     (3.6:1 with white), and /accessibility commits us to WCAG 2.1 AA. */
+  --color-care-blue-deep: #3f6b92;
+  --color-cream: #fbf7f1;
+  --color-peach: #fdeedd;
+  --color-peach-deep: #e8b89a;
+  --color-mist: #f7fafc;
+  --color-borderline: #e4ecf3;
+  /* Darkened from the design system's #6B7D92, which lands at 3.7–4.2:1 on
+     our backgrounds. This clears 4.5:1 on cream, peach, mist, and white. */
+  --color-slate: #5a6c81;
   --color-success-green: #2d6a4f;
-  --color-alert-red: #9a2f24;
-  --color-footer-muted: rgba(253, 238, 221, 0.65);
+  --color-success-bg: #e8f3ec;
+  --color-alert-red: #c0392b;
+  --color-footer-muted: rgba(253, 238, 221, 0.72);
 
   /* Typography */
-  --font-display: var(--font-spectral), Georgia, serif;
-  --font-sans: var(--font-albert), system-ui, -apple-system, sans-serif;
+  --font-display: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
 
   /* Spacing rhythm — varied per section, see app/page.tsx */
-  --spacing-section-y-desktop: 6rem;
+  --spacing-section-y-desktop: 6.5rem;
   --spacing-section-y-mobile: 3.5rem;
 
   /* Radius */
-  --radius-card: 0.5rem;
+  --radius-card: 1rem;
   --radius-pill: 9999px;
 }
 
@@ -44,12 +56,13 @@ h1, h2, h3, h4 {
   font-family: var(--font-display);
   color: var(--color-navy);
   font-weight: 500;
-  line-height: 1.05;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 4rem); }
-h2 { font-size: clamp(2rem, 4.5vw, 3rem); }
-h3 { font-size: 1.5rem; }
+h1 { font-size: clamp(2.75rem, 6.2vw, 4.625rem); }
+h2 { font-size: clamp(2rem, 4.5vw, 2.875rem); }
+h3 { font-size: 1.375rem; }
 
 /* Anchored sections clear the sticky nav on hash navigation */
 section[id] {
@@ -58,7 +71,25 @@ section[id] {
 
 /* Focus ring — accessible and on-brand */
 :focus-visible {
-  outline: 2px solid var(--color-navy);
+  outline: 2px solid var(--color-care-blue);
   outline-offset: 2px;
   border-radius: 4px;
+}
+
+::selection {
+  background: var(--color-peach);
+  color: var(--color-navy);
+}
+
+/* Respect the OS reduce-motion setting globally, including the hover
+   transitions the design kit applies to cards and buttons. The accessibility
+   statement at /accessibility promises this — keep the two in sync. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

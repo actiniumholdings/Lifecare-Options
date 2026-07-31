@@ -9,6 +9,14 @@ import { siteConfig } from "@/lib/site-config";
 
 const SCROLL_THRESHOLD = 8;
 
+// Root-relative so they resolve from sub-pages like /accessibility, not just
+// from the home page.
+const SECTION_LINKS = [
+  { href: "/#services", label: "Services" },
+  { href: "/#about", label: "About" },
+  { href: "/#contact", label: "Contact" },
+] as const;
+
 export function Nav() {
   const [open, setOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(
@@ -49,7 +57,7 @@ export function Nav() {
   const scrolledStyling = isScrolled || open;
 
   const headerClasses = [
-    "sticky top-0 z-50 border-b border-cream-edge transition-all duration-200 ease-out motion-reduce:transition-none",
+    "sticky top-0 z-50 border-b border-borderline transition-all duration-200 ease-out motion-reduce:transition-none",
     scrolledStyling
       ? "bg-cream/98 backdrop-blur shadow-sm"
       : "bg-cream/95 backdrop-blur",
@@ -76,10 +84,19 @@ export function Nav() {
           <span className="whitespace-nowrap">{siteConfig.phone}</span>
         </Link>
 
-        <div className="hidden items-center gap-4 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
+          {SECTION_LINKS.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="text-navy hover:text-care-blue text-sm font-medium"
+            >
+              {item.label}
+            </Link>
+          ))}
           <Link
             href={siteConfig.phoneHref}
-            className="inline-flex items-center gap-1.5 text-sm text-navy hover:text-care-blue"
+            className="text-navy hover:text-care-blue inline-flex items-center gap-1.5 text-sm font-semibold"
           >
             <Phone size={14} />
             {siteConfig.phone}
@@ -101,10 +118,20 @@ export function Nav() {
       {open && (
         <div
           data-testid="mobile-menu"
-          className="border-t border-cream-edge bg-cream md:hidden"
+          className="border-t border-borderline bg-cream md:hidden"
         >
-          <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-            <Button href="/#contact" size="lg">
+          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-4 py-4">
+            {SECTION_LINKS.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="text-navy hover:text-care-blue py-2 text-base font-medium"
+              >
+                {item.label}
+              </Link>
+            ))}
+            <Button href="/#contact" size="lg" className="mt-2">
               Request info →
             </Button>
           </div>

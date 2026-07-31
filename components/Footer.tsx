@@ -13,7 +13,7 @@ export function Footer() {
             <div className="mt-5 text-cream">
               <Link
                 href={siteConfig.phoneHref}
-                className="font-display text-3xl font-medium leading-none hover:text-cream-deep md:text-4xl"
+                className="font-display text-3xl font-medium leading-none hover:text-peach md:text-4xl"
               >
                 {siteConfig.phone}
               </Link>
@@ -44,7 +44,7 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-            <div className="mt-3 text-sm text-cream-deep">
+            <div className="font-display text-peach mt-3 text-sm italic">
               {siteConfig.onCall}
             </div>
           </div>
@@ -73,7 +73,7 @@ export function Footer() {
             <div className="border-cream/10 mt-5 border-t pt-4">
               <Link
                 href="/accessibility"
-                className="text-cream hover:text-cream-deep text-sm underline underline-offset-4"
+                className="text-cream hover:text-peach text-sm underline underline-offset-4"
               >
                 Accessibility
               </Link>

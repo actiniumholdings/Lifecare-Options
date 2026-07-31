@@ -4,11 +4,13 @@ import { axe } from "vitest-axe";
 import HomePage from "@/app/page";
 
 describe("Homepage smoke", () => {
-  it("renders hero, trust strip, about, services, and contact form", () => {
+  it("renders hero, trust ticker, about, services, and contact form", () => {
     const { container } = render(<HomePage />);
     expect(container.textContent).toMatch(/quality care/i);
     expect(container.textContent).toMatch(/medicare-certified/i);
     expect(container.textContent).toMatch(/get in touch/i);
+    expect(container.textContent).toMatch(/seven disciplines/i);
+    expect(container.textContent).toMatch(/serving katy families/i);
     // LeadForm tabs should be present on initial render
     expect(container.textContent).toMatch(/services inquiry/i);
     expect(container.textContent).toMatch(/work with us/i);

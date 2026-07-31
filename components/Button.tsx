@@ -6,7 +6,7 @@ import { motion } from "motion/react";
 import { twMerge } from "tailwind-merge";
 import { quickTap } from "@/lib/motion";
 
-type ButtonVariant = "primary" | "secondary" | "tertiary";
+type ButtonVariant = "primary" | "secondary" | "ghost" | "tertiary";
 type ButtonSize = "md" | "lg";
 
 type BaseProps = {
@@ -33,10 +33,15 @@ type ButtonAsLink = BaseProps & {
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
+// Design system (SKILL.md): buttons are pills; primary is Care Blue on light
+// backgrounds, and the ghost outline is the primary on navy.
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
-  primary: "bg-navy text-cream hover:bg-navy/90 rounded-full",
+  primary:
+    "bg-care-blue-deep text-white hover:bg-navy rounded-full shadow-[0_6px_16px_-8px_rgba(63,107,146,0.5)] hover:shadow-[0_10px_24px_-10px_rgba(63,107,146,0.65)]",
   secondary:
-    "bg-transparent text-navy border-[1.5px] border-navy hover:bg-navy/5 rounded-full",
+    "bg-transparent text-navy border-[1.5px] border-navy hover:bg-navy hover:text-white rounded-full",
+  ghost:
+    "bg-transparent text-white border-[1.5px] border-white/50 hover:bg-white/15 rounded-full",
   tertiary:
     "bg-transparent text-navy hover:text-care-blue underline-offset-4 hover:underline",
 };
@@ -58,7 +63,7 @@ export function Button(props: ButtonProps) {
   } = props;
 
   const classes = twMerge(
-    "inline-flex items-center justify-center gap-1.5 font-medium transition-colors focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed",
+    "inline-flex items-center justify-center gap-2 font-medium transition-all duration-200 focus-visible:outline-none disabled:opacity-50 disabled:cursor-not-allowed",
     VARIANT_STYLES[variant],
     SIZE_STYLES[size],
     className

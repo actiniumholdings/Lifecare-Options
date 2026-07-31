@@ -42,7 +42,7 @@ export default function AccessibilityPage() {
           We are working toward conformance with the{" "}
           <Link
             href="https://www.w3.org/WAI/WCAG21/quickref/"
-            className="text-care-blue underline underline-offset-2 hover:text-navy"
+            className="text-care-blue-deep underline underline-offset-2 hover:text-navy"
           >
             Web Content Accessibility Guidelines (WCAG) 2.1, Level AA
           </Link>
@@ -128,7 +128,7 @@ export default function AccessibilityPage() {
           another way. We can take your information over the phone, by mail, or
           in person. You do not need to explain why, and there is no cost.
         </p>
-        <div className="border-cream-edge bg-white/60 mt-6 rounded-lg border p-6">
+        <div className="border-borderline bg-white/60 mt-6 rounded-lg border p-6">
           <div className="font-display text-2xl">
             <Link
               href={siteConfig.phoneHref}
@@ -152,7 +152,7 @@ export default function AccessibilityPage() {
             You can also use the{" "}
             <Link
               href="/#contact"
-              className="text-care-blue underline underline-offset-2 hover:text-navy"
+              className="text-care-blue-deep underline underline-offset-2 hover:text-navy"
             >
               contact form
             </Link>{" "}
@@ -253,7 +253,7 @@ export default function AccessibilityPage() {
         </p>
       </Section>
 
-      <div className="border-cream-edge text-slate mt-16 border-t pt-6 text-sm">
+      <div className="border-borderline text-slate mt-16 border-t pt-6 text-sm">
         <p>
           This statement was last reviewed on {LAST_REVIEWED}. We review it when
           we make significant changes to the site and at least once a year.

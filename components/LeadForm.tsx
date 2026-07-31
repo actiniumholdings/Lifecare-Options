@@ -11,6 +11,7 @@ import {
   type EmploymentLead,
 } from "@/lib/lead-schema";
 import { Button } from "./Button";
+import { siteConfig } from "@/lib/site-config";
 
 // Use input types (pre-default-applied) for useForm generics since
 // react-hook-form's resolver signature requires field alignment between
@@ -31,7 +32,7 @@ const SERVICE_OPTIONS = [
 ] as const;
 
 const inputClass =
-  "w-full rounded-lg border border-cream-edge bg-cream/60 px-4 py-3 text-base text-navy placeholder:text-slate/60 focus:outline-none focus:border-navy focus:bg-cream";
+  "w-full rounded-lg border border-borderline bg-white px-4 py-3 text-base text-navy placeholder:text-slate/60 focus:outline-none focus:border-care-blue";
 const labelClass = "block text-sm font-semibold text-navy mb-1.5";
 const errorClass = "mt-1 text-xs text-alert-red";
 
@@ -43,13 +44,27 @@ export function LeadForm() {
 
   if (submitState === "ok") {
     return (
-      <div className="mx-auto max-w-3xl">
-        <div className="rounded-lg bg-white p-8 text-center shadow-[0_1px_0_rgba(15,43,71,0.08),_0_4px_16px_rgba(15,43,71,0.06)] md:p-12">
+      <div className="mx-auto max-w-2xl">
+        <div className="border-borderline rounded-2xl border bg-white p-10 text-center shadow-[0_24px_56px_-24px_rgba(15,43,71,0.25)] md:p-12">
+          <span
+            aria-hidden
+            className="bg-success-bg text-success-green mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-full text-2xl"
+          >
+            ✓
+          </span>
           <h3 className="text-2xl">Thanks. We got it.</h3>
-          <p className="text-slate mt-3 text-sm">
+          {/* No turnaround promise here: the domain has no inbound mailbox, so
+              the phone is the only channel we can actually stand behind. */}
+          <p className="text-slate mt-3 text-sm leading-relaxed">
             {tab === "services"
-              ? "Our intake team will reach out within 1 business day."
-              : "Please email your resume to jobs@mylifecareoptions.com. We'll be in touch within 2 business days."}
+              ? "Our intake team will follow up soon. If your need is urgent, call us — the line is answered by a person."
+              : "Our team will review your information and follow up. You are welcome to call us with questions in the meantime."}{" "}
+            <a
+              href={siteConfig.phoneHref}
+              className="text-navy hover:text-care-blue font-semibold whitespace-nowrap"
+            >
+              {siteConfig.phone}
+            </a>
           </p>
         </div>
       </div>
@@ -58,20 +73,20 @@ export function LeadForm() {
 
   return (
     <div className="mx-auto max-w-3xl">
-      <div className="rounded-lg bg-white p-6 shadow-[0_1px_0_rgba(15,43,71,0.08),_0_4px_16px_rgba(15,43,71,0.06)] md:p-8">
+      <div className="border-borderline rounded-2xl border bg-white p-6 shadow-[0_30px_70px_-30px_rgba(15,43,71,0.3)] md:p-10">
         <div
           role="tablist"
           aria-label="Form type"
-          className="inline-flex rounded-full bg-cream-deep p-1 mb-6"
+          className="bg-mist mb-7 flex gap-1.5 rounded-full p-1.5"
         >
           <button
             role="tab"
             aria-selected={tab === "services"}
             onClick={() => setTab("services")}
-            className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+            className={`flex-1 rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
               tab === "services"
-                ? "bg-navy text-cream"
-                : "bg-transparent text-navy/70 hover:text-navy"
+                ? "text-navy bg-white shadow-[0_4px_14px_-6px_rgba(15,43,71,0.25)]"
+                : "text-slate hover:text-navy bg-transparent"
             }`}
           >
             Services inquiry
@@ -80,10 +95,10 @@ export function LeadForm() {
             role="tab"
             aria-selected={tab === "employment"}
             onClick={() => setTab("employment")}
-            className={`rounded-full px-5 py-2 text-sm font-semibold transition-colors ${
+            className={`flex-1 rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
               tab === "employment"
-                ? "bg-navy text-cream"
-                : "bg-transparent text-navy/70 hover:text-navy"
+                ? "text-navy bg-white shadow-[0_4px_14px_-6px_rgba(15,43,71,0.25)]"
+                : "text-slate hover:text-navy bg-transparent"
             }`}
           >
             Work with us
