@@ -19,7 +19,7 @@ describe("sendLeadEmail", () => {
     process.env.RESEND_API_KEY = "test-key";
   });
 
-  it("sends a Services email with [Services] subject prefix", async () => {
+  it("subjects a services lead 'Service Inquiry - {name}'", async () => {
     const lead: Lead = {
       type: "services",
       name: "Jane",
@@ -33,11 +33,10 @@ describe("sendLeadEmail", () => {
     await sendLeadEmail(lead);
     expect(mockSend).toHaveBeenCalledOnce();
     const args = mockSend.mock.calls[0]?.[0];
-    expect(args?.subject).toMatch(/^\[Services\]/);
-    expect(args?.subject).toContain("Jane");
+    expect(args?.subject).toBe("Service Inquiry - Jane");
   });
 
-  it("sends an Employment email with [Employment] subject prefix", async () => {
+  it("subjects an employment lead 'Job Request - {name}'", async () => {
     const lead: Lead = {
       type: "employment",
       name: "Maria",
@@ -51,7 +50,7 @@ describe("sendLeadEmail", () => {
     };
     await sendLeadEmail(lead);
     const args = mockSend.mock.calls[0]?.[0];
-    expect(args?.subject).toMatch(/^\[Employment\]/);
+    expect(args?.subject).toBe("Job Request - Maria");
   });
 
   it("includes the full payload in the email body", async () => {
@@ -75,7 +74,7 @@ describe("sendLeadEmail", () => {
     expect(body).toContain("Need help.");
   });
 
-  it("routes email to intake@mylifecareoptions.com with user's email as reply-to", async () => {
+  it("routes email to lc@actiniumholdings.com with user's email as reply-to", async () => {
     const lead: Lead = {
       type: "services",
       name: "Jane",
@@ -88,7 +87,7 @@ describe("sendLeadEmail", () => {
     };
     await sendLeadEmail(lead);
     const args = mockSend.mock.calls[0]?.[0];
-    expect(args?.to).toBe("intake@mylifecareoptions.com");
+    expect(args?.to).toBe("lc@actiniumholdings.com");
     expect(args?.replyTo).toBe("jane@example.com");
   });
 

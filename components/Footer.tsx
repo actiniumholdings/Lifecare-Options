@@ -69,6 +69,18 @@ export function Footer() {
               )}
               <div>Serving Katy since {siteConfig.foundedYear}</div>
             </div>
+
+            <div className="border-cream/10 mt-5 border-t pt-4">
+              <Link
+                href="/accessibility"
+                className="text-cream hover:text-cream-deep text-sm underline underline-offset-4"
+              >
+                Accessibility
+              </Link>
+              <div className="mt-1 text-xs">
+                Our commitment, and how to tell us about a barrier
+              </div>
+            </div>
           </div>
         </div>
 

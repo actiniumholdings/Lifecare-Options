@@ -84,7 +84,7 @@ export function Nav() {
             <Phone size={14} />
             {siteConfig.phone}
           </Link>
-          <Button href="#contact">Request info →</Button>
+          <Button href="/#contact">Request info →</Button>
         </div>
 
         <button
@@ -104,7 +104,7 @@ export function Nav() {
           className="border-t border-cream-edge bg-cream md:hidden"
         >
           <div className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-4">
-            <Button href="#contact" size="lg">
+            <Button href="/#contact" size="lg">
               Request info →
             </Button>
           </div>

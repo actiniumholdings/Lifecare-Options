@@ -16,10 +16,12 @@ describe("Nav", () => {
     expect(phones[0]).toHaveAttribute("href", "tel:+12816469546");
   });
 
-  it("has a Request info CTA anchoring to #contact", () => {
+  // Root-relative, not a bare "#contact": the nav renders on sub-pages like
+  // /accessibility, where a bare hash would resolve against the wrong page.
+  it("has a Request info CTA anchoring to the home page contact section", () => {
     render(<Nav />);
     const ctas = screen.getAllByRole("link", { name: /request info/i });
-    expect(ctas[0]).toHaveAttribute("href", "#contact");
+    expect(ctas[0]).toHaveAttribute("href", "/#contact");
   });
 
   it("toggles mobile menu on button click", async () => {

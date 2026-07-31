@@ -1,6 +1,5 @@
 import { Resend } from "resend";
 import type { Lead } from "./lead-schema";
-import { siteConfig } from "./site-config";
 
 // Default to Resend's sandbox sender until the production domain is DNS-verified.
 // After Resend domain verification (Task 19 Step 4), set RESEND_FROM in Vercel env
@@ -8,6 +7,10 @@ import { siteConfig } from "./site-config";
 const FROM_ADDRESS =
   process.env.RESEND_FROM ??
   "Lifecare Options <onboarding@resend.dev>";
+
+// Where submitted forms land. Not in site-config.ts on purpose: that file is
+// public-facing display copy, and this is internal routing to the parent company.
+const LEAD_DESTINATION = "lc@actiniumholdings.com";
 
 function formatBody(lead: Lead): string {
   const lines: string[] = [];
@@ -45,12 +48,12 @@ export async function sendLeadEmail(lead: Lead): Promise<void> {
   }
   const resend = new Resend(apiKey);
 
-  const prefix = lead.type === "services" ? "Services" : "Employment";
-  const subject = `[${prefix}] New inquiry from ${lead.name}`;
+  const label = lead.type === "services" ? "Service Inquiry" : "Job Request";
+  const subject = `${label} - ${lead.name}`;
 
   const { error } = await resend.emails.send({
     from: FROM_ADDRESS,
-    to: siteConfig.intakeEmail,
+    to: LEAD_DESTINATION,
     replyTo: lead.email,
     subject,
     text: formatBody(lead),
