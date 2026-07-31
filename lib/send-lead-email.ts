@@ -10,10 +10,15 @@ const FROM_ADDRESS =
 
 // Where submitted forms land. Not in site-config.ts on purpose: that file is
 // public-facing display copy, and this is internal routing to the parent company.
-// Both recipients are on the To line, so replies from either are visible to both.
+//
+// INTERIM: lc@actiniumholdings.com is commented out, not deleted. Resend only
+// lets an unverified account send to its own account address, so including lc@
+// fails the whole send and drops the lead. Restore it — and drop this note —
+// once mylifecareoptions.com shows Verified in Resend and RESEND_FROM is set to
+// an address on that domain.
 const LEAD_DESTINATION = [
-  "lc@actiniumholdings.com",
   "clint.ives@actiniumholdings.com",
+  // "lc@actiniumholdings.com",
 ];
 
 function formatBody(lead: Lead): string {
