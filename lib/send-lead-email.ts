@@ -1,24 +1,20 @@
 import { Resend } from "resend";
 import type { Lead } from "./lead-schema";
 
-// Default to Resend's sandbox sender until the production domain is DNS-verified.
-// After Resend domain verification (Task 19 Step 4), set RESEND_FROM in Vercel env
-// to "Lifecare Options <no-reply@mylifecareoptions.com>".
+// mylifecareoptions.com is verified in Resend, and RESEND_FROM is set in Vercel
+// production to "Lifecare Options <no-reply@mylifecareoptions.com>". The sandbox
+// sender remains as a local/preview fallback only — it can deliver to the Resend
+// account address and nowhere else, so it is not viable in production.
 const FROM_ADDRESS =
   process.env.RESEND_FROM ??
   "Lifecare Options <onboarding@resend.dev>";
 
 // Where submitted forms land. Not in site-config.ts on purpose: that file is
 // public-facing display copy, and this is internal routing to the parent company.
-//
-// INTERIM: lc@actiniumholdings.com is commented out, not deleted. Resend only
-// lets an unverified account send to its own account address, so including lc@
-// fails the whole send and drops the lead. Restore it — and drop this note —
-// once mylifecareoptions.com shows Verified in Resend and RESEND_FROM is set to
-// an address on that domain.
+// Both recipients are on the To line, so replies from either are visible to both.
 const LEAD_DESTINATION = [
+  "lc@actiniumholdings.com",
   "clint.ives@actiniumholdings.com",
-  // "lc@actiniumholdings.com",
 ];
 
 function formatBody(lead: Lead): string {
