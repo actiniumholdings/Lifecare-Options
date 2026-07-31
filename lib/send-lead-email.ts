@@ -10,7 +10,11 @@ const FROM_ADDRESS =
 
 // Where submitted forms land. Not in site-config.ts on purpose: that file is
 // public-facing display copy, and this is internal routing to the parent company.
-const LEAD_DESTINATION = "lc@actiniumholdings.com";
+// Both recipients are on the To line, so replies from either are visible to both.
+const LEAD_DESTINATION = [
+  "lc@actiniumholdings.com",
+  "clint.ives@actiniumholdings.com",
+];
 
 function formatBody(lead: Lead): string {
   const lines: string[] = [];

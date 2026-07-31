@@ -74,7 +74,7 @@ describe("sendLeadEmail", () => {
     expect(body).toContain("Need help.");
   });
 
-  it("routes email to lc@actiniumholdings.com with user's email as reply-to", async () => {
+  it("routes email to both Actinium recipients with user's email as reply-to", async () => {
     const lead: Lead = {
       type: "services",
       name: "Jane",
@@ -87,7 +87,10 @@ describe("sendLeadEmail", () => {
     };
     await sendLeadEmail(lead);
     const args = mockSend.mock.calls[0]?.[0];
-    expect(args?.to).toBe("lc@actiniumholdings.com");
+    expect(args?.to).toEqual([
+      "lc@actiniumholdings.com",
+      "clint.ives@actiniumholdings.com",
+    ]);
     expect(args?.replyTo).toBe("jane@example.com");
   });
 
