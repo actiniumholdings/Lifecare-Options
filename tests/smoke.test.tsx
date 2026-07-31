@@ -14,6 +14,9 @@ describe("Homepage smoke", () => {
     expect(container.textContent).toMatch(/work with us/i);
   });
 
+  // Longer timeout: the hero renders a <video> on the client, and axe's scan
+  // of media elements under jsdom is slow (~10s) — well past the default 5s.
+  // The assertion (zero violations) is unchanged; only the time budget is.
   it("has no axe-detected a11y violations on initial render", async () => {
     const { container } = render(<HomePage />);
     const results = await axe(container);
@@ -21,5 +24,5 @@ describe("Homepage smoke", () => {
     // matcher — Vitest 4 changed the namespace that custom matchers augment,
     // and vitest-axe's types haven't caught up yet.
     expect(results.violations).toEqual([]);
-  });
+  }, 20000);
 });
