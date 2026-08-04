@@ -68,7 +68,7 @@ describe("LeadForm", () => {
     await user.click(screen.getByRole("button", { name: /submit inquiry/i }));
 
     expect(
-      await screen.findByText(/email your resume/i)
+      await screen.findByText(/review your application/i)
     ).toBeInTheDocument();
 
     expect(global.fetch).toHaveBeenCalledWith(

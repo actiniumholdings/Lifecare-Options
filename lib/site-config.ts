@@ -4,8 +4,9 @@ export const siteConfig = {
   phone: "(281) 646-9546",
   phoneHref: "tel:+12816469546",
   fax: "(281) 646-9757",
-  intakeEmail: "intake@mylifecareoptions.com",
-  jobsEmail: "jobs@mylifecareoptions.com",
+  // No public email addresses: intake@/jobs@mylifecareoptions.com were never
+  // created as real mailboxes (confirmed 2026-08-04). Phone + lead form are
+  // the public channels; lead delivery routing lives in lib/send-lead-email.ts.
   address: {
     street: "434 Park Grove Dr",
     city: "Katy",

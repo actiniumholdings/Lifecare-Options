@@ -61,18 +61,8 @@ export function ContactContent() {
               </p>
             </Card>
 
-            <Card variant="white">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate">
-                {t("details.email")}
-              </p>
-              <a
-                href={`mailto:${siteConfig.intakeEmail}`}
-                className="mt-1 block text-base font-semibold text-navy hover:text-blue-deep break-all"
-              >
-                {siteConfig.intakeEmail}
-              </a>
-            </Card>
-
+            {/* No email card: there is no monitored public mailbox on this
+                domain. Phone and the lead form are the contact channels. */}
             <Card variant="white">
               <p className="text-xs font-semibold uppercase tracking-widest text-slate">
                 {t("details.address")}
