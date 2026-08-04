@@ -80,11 +80,9 @@ describe("skilled metadata", () => {
     const m = await skilledMeta({ params: makeParams("en") });
     expect((m.description as string).length).toBeLessThanOrEqual(155);
   });
-  it("has en + es + x-default hreflang alternates", async () => {
+  it("omits hreflang alternates while the es locale is disabled", async () => {
     const m = await skilledMeta({ params: makeParams("en") });
-    expect(m.alternates?.languages?.en).toBe(`${SITE_URL}/services/skilled`);
-    expect(m.alternates?.languages?.es).toBe(`${SITE_URL}/es/services/skilled`);
-    expect(m.alternates?.languages?.["x-default"]).toBe(`${SITE_URL}/services/skilled`);
+    expect(m.alternates?.languages).toBeUndefined();
   });
   it("es.json has skilled meta keys", () => {
     expect(esMessages.skilled.meta.title).toBeTruthy();
@@ -103,11 +101,9 @@ describe("attendant metadata", () => {
     const m = await attendantMeta({ params: makeParams("en") });
     expect((m.description as string).length).toBeLessThanOrEqual(155);
   });
-  it("has en + es + x-default hreflang alternates", async () => {
+  it("omits hreflang alternates while the es locale is disabled", async () => {
     const m = await attendantMeta({ params: makeParams("en") });
-    expect(m.alternates?.languages?.en).toBe(`${SITE_URL}/services/attendant`);
-    expect(m.alternates?.languages?.es).toBe(`${SITE_URL}/es/services/attendant`);
-    expect(m.alternates?.languages?.["x-default"]).toBe(`${SITE_URL}/services/attendant`);
+    expect(m.alternates?.languages).toBeUndefined();
   });
   it("es.json has attendant meta keys", () => {
     expect(esMessages.attendant.meta.title).toBeTruthy();

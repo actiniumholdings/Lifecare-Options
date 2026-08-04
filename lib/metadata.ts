@@ -59,11 +59,10 @@ export function buildMetadata({
     description,
     alternates: {
       canonical,
-      languages: {
-        en: abs("en", path),
-        es: abs("es", path),
-        "x-default": abs("en", path),
-      },
+      // hreflang alternates intentionally omitted while the "es" locale is
+      // disabled (see i18n/routing.ts) — a single-language site needs none.
+      // When Spanish re-enables, restore:
+      //   languages: { en: abs("en", path), es: abs("es", path), "x-default": abs("en", path) }
     },
     openGraph: {
       type: "website",
