@@ -49,7 +49,7 @@ export function LeadForm() {
           <p className="text-slate mt-3 text-sm">
             {tab === "services"
               ? "Our intake team will reach out within 1 business day."
-              : "Please email your resume to jobs@mylifecareoptions.com. We'll be in touch within 2 business days."}
+              : "We'll review your application and be in touch within 2 business days."}
           </p>
         </div>
       </div>

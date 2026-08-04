@@ -25,9 +25,12 @@ describe("Accessibility page", () => {
     expect(matches.length).toBeGreaterThan(0);
   });
 
-  it("shows the contact email", () => {
+  it("shows the phone and no dead email address", () => {
     renderAccessibility();
-    const matches = screen.getAllByText(/intake@mylifecareoptions\.com/);
-    expect(matches.length).toBeGreaterThan(0);
+    // intake@/jobs@mylifecareoptions.com are not real mailboxes — the page
+    // must offer phone contact and must not display any @mylifecareoptions
+    // address (guards against reintroducing a dead mailto).
+    expect(screen.getAllByText(/646-9546/).length).toBeGreaterThan(0);
+    expect(screen.queryByText(/@mylifecareoptions\.com/)).toBeNull();
   });
 });

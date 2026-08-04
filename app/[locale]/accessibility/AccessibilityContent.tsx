@@ -63,16 +63,8 @@ export function AccessibilityContent() {
           {t("contact.title")}
         </h2>
         <p className="mt-4 max-w-2xl text-slate">{t("contact.body")}</p>
+        {/* Phone only: there is no monitored public mailbox on this domain. */}
         <ul className="mt-6 space-y-2 text-navy">
-          <li>
-            <span className="font-semibold">{t("contact.emailLabel")}: </span>
-            <a
-              href={`mailto:${siteConfig.intakeEmail}`}
-              className="text-blue-deep underline underline-offset-2 hover:text-navy"
-            >
-              {siteConfig.intakeEmail}
-            </a>
-          </li>
           <li>
             <span className="font-semibold">{t("contact.phoneLabel")}: </span>
             <a
