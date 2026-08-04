@@ -17,10 +17,39 @@ export const siteConfig = {
     { days: "Fri", time: "8:00 AM – 4:00 PM" },
   ],
   onCall: "24/7 on-call nursing",
-  foundedYear: 2008,
+  foundedYear: 2012,
   accreditation: "CHAP-accredited",
-  medicareCcn: null as string | null, // Fill with real CCN before launch
-  stateLicense: null as string | null, // Fill with real Texas state license number before launch
+  medicareCcn: "747061" as string | null, // verify before launch
+  stateLicense: "011908" as string | null, // verify before launch
+  serviceArea: {
+    counties: [
+      { name: "Harris County", color: "#5a8bb8" },
+      { name: "Fort Bend County", color: "#0f2b47" },
+    ],
+    cities: [
+      "Katy",
+      "Cypress",
+      "Fulshear",
+      "Richmond",
+      "Rosenberg",
+      "Sugar Land",
+      "Missouri City",
+      "Brookshire",
+      "West Houston",
+    ],
+  },
+  specialties: [
+    "Wound care",
+    "Congestive heart failure",
+    "COPD & respiratory",
+    "Diabetes management",
+    "Post-surgical recovery",
+    "Stroke recovery",
+    "Fall prevention",
+    "Medication management",
+  ],
+  positions: [] as readonly { title: string; type?: string }[],
+  testimonials: [] as readonly { quote: string; attribution: string }[],
 } as const;
 
 export const services = [

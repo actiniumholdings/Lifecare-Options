@@ -1,95 +1,84 @@
 @import "tailwindcss";
 
 @theme {
-  /* Palette — mirrors the design system's colors_and_type.css */
-  --color-navy: #0f2b47;
-  /* Brand Care Blue. At 3.4:1 on cream it clears WCAG AA for *large* text
-     only, so it is reserved for the italic display accents. */
-  --color-care-blue: #5a8bb8;
-  --color-care-blue-hover: #4a7aa3;
-  /* Darkened Care Blue for anything AA measures at 4.5:1 — small labels and
-     the white-on-blue primary button. The design system's #5A8BB8 fails there
-     (3.6:1 with white), and /accessibility commits us to WCAG 2.1 AA. */
-  --color-care-blue-deep: #3f6b92;
-  --color-cream: #fbf7f1;
-  --color-peach: #fdeedd;
-  --color-peach-deep: #e8b89a;
-  --color-mist: #f7fafc;
-  --color-borderline: #e4ecf3;
-  /* Darkened from the design system's #6B7D92, which lands at 3.7–4.2:1 on
-     our backgrounds. This clears 4.5:1 on cream, peach, mist, and white. */
-  --color-slate: #5a6c81;
-  --color-success-green: #2d6a4f;
-  --color-success-bg: #e8f3ec;
-  --color-alert-red: #c0392b;
-  --color-footer-muted: rgba(253, 238, 221, 0.72);
+  /* Central's palette — Lifecare blue accent replaces Central's gold. */
+  --color-navy: #0D2B49;
+  --color-navy-deep: #081D33;
+  --color-canvas: #FBFAF7;
+  --color-card: #FFFFFF;
+  --color-slate: #5A6B7B;
 
-  /* Typography */
-  --font-display: var(--font-playfair), Georgia, serif;
-  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+  /* Accent — the Lifecare logo's blue. AA discipline:
+     care-blue  = light-value POP (decorative fills, hairlines, icon tiles) — NEVER small text
+     blue-deep  = accent TEXT on light (6.4:1 on ivory) + signature CTA fill w/ white text (6.7:1)
+     blue-light = accent TEXT on dark navy (5.6:1 on navy) */
+  --color-care-blue: #5A8BB8;
+  --color-blue-deep: #2F5F8A;
+  --color-blue-light: #7AA6CF;
 
-  /* Spacing rhythm — varied per section, see app/page.tsx */
-  --spacing-section-y-desktop: 6.5rem;
-  --spacing-section-y-mobile: 3.5rem;
+  /* Alternating light-section background (spec §5 Color). */
+  --color-sky-soft: #EAF2F9;
 
-  /* Radius */
-  --radius-card: 1rem;
-  --radius-pill: 9999px;
+  --radius: 8px;
+
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-inter);
 }
 
-/* Base element styling */
-html {
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  scroll-behavior: smooth;
+/* Guard against horizontal overflow from full-bleed photos / decorative glows.
+   `clip` blocks overflow WITHOUT creating a scroll container, so the sticky
+   header keeps working (matches Central). */
+html,
+body {
+  overflow-x: clip;
 }
 
 body {
-  background: var(--color-cream);
+  background: var(--color-canvas);
   color: var(--color-navy);
   font-family: var(--font-sans);
-  font-size: 1.0625rem;
-  line-height: 1.65;
 }
 
-h1, h2, h3, h4 {
-  font-family: var(--font-display);
-  color: var(--color-navy);
-  font-weight: 500;
-  line-height: 1.08;
+/* ——— Type scale (spec §5 Type) ———
+   Components opt in via these utilities; the @layer base rules below are
+   the safety net that makes a bare heading readable, so the 16px-h1
+   regression class of bug is structurally impossible. */
+@utility text-display-xl {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+@utility text-display {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+@utility text-title {
+  font-size: 1.75rem;
+  line-height: 1.2;
   letter-spacing: -0.01em;
 }
-
-h1 { font-size: clamp(2.75rem, 6.2vw, 4.625rem); }
-h2 { font-size: clamp(2rem, 4.5vw, 2.875rem); }
-h3 { font-size: 1.375rem; }
-
-/* Anchored sections clear the sticky nav on hash navigation */
-section[id] {
-  scroll-margin-top: 5rem;
+@utility text-caption {
+  font-size: 0.8125rem;
+  line-height: 1.4;
 }
 
-/* Focus ring — accessible and on-brand */
-:focus-visible {
-  outline: 2px solid var(--color-care-blue);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-
-::selection {
-  background: var(--color-peach);
-  color: var(--color-navy);
-}
-
-/* Respect the OS reduce-motion setting globally, including the hover
-   transitions the design kit applies to cards and buttons. The accessibility
-   statement at /accessibility promises this — keep the two in sync. */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    color: var(--color-navy);
   }
+
+  h1 { font-size: clamp(2.25rem, 4.5vw, 3.5rem); line-height: 1.08; letter-spacing: -0.02em; }
+  h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); line-height: 1.12; letter-spacing: -0.015em; }
+  h3 { font-size: 1.375rem; line-height: 1.25; }
+  h4 { font-size: 1.125rem; line-height: 1.3; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-blue-deep);
+  outline-offset: 2px;
 }

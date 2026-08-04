@@ -1,70 +1,60 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
-import { motion, useInView, Variants } from "motion/react";
-import { softSpring, staggerChildren } from "@/lib/motion";
-import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
+import { type ReactNode } from "react";
+import { motion, useReducedMotion } from "motion/react";
+import { StaggerContext } from "./StaggerContext";
 
-type StaggerProps = {
-  children: ReactNode;
+export interface StaggerProps {
+  children?: ReactNode;
   className?: string;
-};
+  /** Seconds between each child's reveal (default 0.1). */
+  stagger?: number;
+  /** Render element (default "div"). */
+  as?: "div" | "ul" | "section";
+}
 
-// Variants animate only `y`. Opacity is never gated on inView so content
-// stays visible to non-scrolling viewers.
-const parentVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren },
-  },
-};
-
-const itemVariants: Variants = {
-  hidden: { y: 8 },
-  visible: { y: 0, transition: softSpring },
-};
-
-export function Stagger({ children, className }: StaggerProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.2 });
-  const reduced = useReducedMotionSafe();
+/**
+ * Reveals direct children in sequence as the group scrolls into view.
+ *
+ * Renders ONE parent `motion` element that drives `staggerChildren`. Children
+ * must be `motion` elements (e.g. `<FadeUp>`) that share matching `variants`
+ * keys — they are rendered DIRECTLY (no extra wrapper) so grid/flex layouts
+ * and `<ul><li>` semantics are preserved.
+ *
+ * Honors prefers-reduced-motion: when reduced, renders a plain element with
+ * its children unwrapped — NO transforms, no motion, no IntersectionObserver.
+ */
+export function Stagger({
+  children,
+  className,
+  stagger = 0.1,
+  as = "div",
+}: StaggerProps) {
+  const reduced = useReducedMotion();
 
   if (reduced) {
-    return (
-      <div ref={ref} className={className}>
+    const Tag = as;
+    return <Tag className={className}>{children}</Tag>;
+  }
+
+  const MotionTag = motion[as];
+
+  return (
+    <StaggerContext.Provider value={true}>
+      <MotionTag
+        className={className}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, margin: "0px 0px -10% 0px" }}
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: stagger } },
+        }}
+      >
         {children}
-      </div>
-    );
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      className={className}
-      variants={parentVariants}
-      initial="hidden"
-      animate={inView ? "visible" : "hidden"}
-    >
-      {children}
-    </motion.div>
+      </MotionTag>
+    </StaggerContext.Provider>
   );
 }
 
-type StaggerItemProps = {
-  children: ReactNode;
-  className?: string;
-};
-
-export function StaggerItem({ children, className }: StaggerItemProps) {
-  const reduced = useReducedMotionSafe();
-
-  if (reduced) {
-    return <div className={className}>{children}</div>;
-  }
-
-  return (
-    <motion.div className={className} variants={itemVariants}>
-      {children}
-    </motion.div>
-  );
-}
+export default Stagger;

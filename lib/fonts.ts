@@ -1,15 +1,14 @@
-import { Playfair_Display, Inter } from "next/font/google";
+import { Fraunces, Inter } from "next/font/google";
 
-// Pairing is set by the Lifecare design system (SKILL.md): Playfair Display for
-// display copy and the italic pull-quote, Inter for body and UI.
-export const playfair = Playfair_Display({
+/** Display serif — Central's editorial typeface. */
+export const fraunces = Fraunces({
   subsets: ["latin"],
   display: "swap",
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+  weight: ["400", "600", "900"],
+  variable: "--font-fraunces",
 });
 
+/** Body sans. */
 export const inter = Inter({
   subsets: ["latin"],
   display: "swap",

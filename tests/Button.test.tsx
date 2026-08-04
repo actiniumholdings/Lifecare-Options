@@ -4,17 +4,26 @@ import "@testing-library/jest-dom/vitest";
 import { Button } from "@/components/Button";
 
 describe("Button", () => {
-  // Design system (SKILL.md): "Primary = Care Blue on white backgrounds."
-  it("renders primary variant by default with a care-blue background", () => {
+  it("renders primary variant by default with blue-deep background", () => {
     render(<Button>Request info</Button>);
     const btn = screen.getByRole("button", { name: /request info/i });
     expect(btn).toBeInTheDocument();
-    expect(btn.className).toMatch(/bg-care-blue/);
+    expect(btn.className).toMatch(/bg-blue-deep/);
   });
 
-  it("renders secondary variant as outlined", () => {
+  it("secondary variant is an outlined button, not amber", () => {
     render(<Button variant="secondary">Call</Button>);
-    expect(screen.getByRole("button").className).toMatch(/border/);
+    const btn = screen.getByRole("button", { name: "Call" });
+    expect(btn.className).toContain("border");
+    expect(btn.className).toContain("bg-white");
+    expect(btn.className).not.toContain("amber");
+  });
+
+  it("onDark variant renders an inverted white button for navy bands", () => {
+    render(<Button variant="onDark">Refer a Patient</Button>);
+    const btn = screen.getByRole("button", { name: "Refer a Patient" });
+    expect(btn.className).toContain("bg-white");
+    expect(btn.className).toContain("text-navy");
   });
 
   it("renders as an <a> when href is provided", () => {

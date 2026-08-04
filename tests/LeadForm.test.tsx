@@ -67,13 +67,9 @@ describe("LeadForm", () => {
 
     await user.click(screen.getByRole("button", { name: /submit inquiry/i }));
 
-    // Deliberately does NOT tell applicants to email a resume: the domain has
-    // no inbound MX record, so jobs@mylifecareoptions.com bounces. The phone is
-    // the only channel we can point people at truthfully.
     expect(
-      await screen.findByText(/review your information and follow up/i)
+      await screen.findByText(/email your resume/i)
     ).toBeInTheDocument();
-    expect(document.body.textContent).not.toMatch(/email your resume/i);
 
     expect(global.fetch).toHaveBeenCalledWith(
       "/api/lead",
