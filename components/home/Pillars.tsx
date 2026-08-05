@@ -14,7 +14,7 @@ const PILLARS = [
     eyebrow: "Medicare-certified",
     title: "Skilled Home Health",
     description:
-      "Licensed clinicians bring hospital-grade skill into the home — nursing, therapy, and medical social work coordinated with your physician.",
+      "Licensed clinicians bring hospital-grade skill into the home: nursing, therapy, and medical social work coordinated with your physician.",
     services: [
       "Skilled Nursing",
       "Physical, Occupational & Speech Therapy",
@@ -47,7 +47,7 @@ export function Pillars() {
       tone="light"
       eyebrow="What We Do"
       title="Two ways we bring care home"
-      intro="Whether the need is clinical recovery or everyday support, Lifecare meets it at home — with the right professional at the right time."
+      intro="Whether the need is clinical recovery or everyday support, Lifecare meets it at home, with the right professional at the right time."
     >
       <Stagger className="grid grid-cols-1 gap-8 md:grid-cols-2" stagger={0.12}>
         {PILLARS.map((p) => (

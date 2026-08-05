@@ -43,7 +43,7 @@ const REASONS: { title: string; body: string; icon: string }[] = [
   },
   {
     title: "Katy, through and through",
-    body: "A local team that knows Katy, Fort Bend, and West Houston — responsive and close to the families we serve.",
+    body: "A local team that knows Katy, Fort Bend, and West Houston, responsive and close to the families we serve.",
     icon: "M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z||M12 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6z",
   },
 ];

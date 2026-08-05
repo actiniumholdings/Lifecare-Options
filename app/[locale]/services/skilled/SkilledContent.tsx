@@ -13,7 +13,7 @@ import type { ServiceIconName } from "@/lib/site-config";
 /**
  * /services/skilled — Skilled Home Health pillar (spec §6, minus payer/
  * insurance content per client direction 2026-07-02). Where coverage would
- * be discussed, only a soft "we'll walk you through coverage" line is used.
+ * be discussed, only a soft "we’ll walk you through coverage" line is used.
  */
 export function SkilledContent() {
   const t = useTranslations("skilled");

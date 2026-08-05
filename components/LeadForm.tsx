@@ -13,8 +13,8 @@ import {
 import { Button } from "./Button";
 
 // Use input types (pre-default-applied) for useForm generics since
-// react-hook-form's resolver signature requires field alignment between
-// the form's internal values and the resolver's declared input.
+// react-hook-form’s resolver signature requires field alignment between
+// the form’s internal values and the resolver’s declared input.
 type ServicesLeadInput = z.input<typeof servicesLeadSchema>;
 type EmploymentLeadInput = z.input<typeof employmentLeadSchema>;
 
@@ -35,8 +35,13 @@ const inputClass =
 const labelClass = "block text-sm font-semibold text-navy mb-1.5";
 const errorClass = "mt-1 text-xs text-alert";
 
-export function LeadForm() {
-  const [tab, setTab] = useState<Tab>("services");
+export function LeadForm({
+  defaultTab = "services",
+}: {
+  /** Which tab opens first: services (contact page) or employment (careers). */
+  defaultTab?: Tab;
+} = {}) {
+  const [tab, setTab] = useState<Tab>(defaultTab);
   const [submitState, setSubmitState] = useState<
     "idle" | "submitting" | "ok" | "error"
   >("idle");
@@ -49,7 +54,7 @@ export function LeadForm() {
           <p className="text-slate mt-3 text-sm">
             {tab === "services"
               ? "Our intake team will reach out within 1 business day."
-              : "We'll review your application and be in touch within 2 business days."}
+              : "We’ll review your application and be in touch within 2 business days."}
           </p>
         </div>
       </div>
@@ -443,9 +448,9 @@ function EmploymentFormFields({
           >
             <option value="">Select…</option>
             <option value="lt1">Less than 1 year</option>
-            <option value="1-3">1–3 years</option>
-            <option value="3-5">3–5 years</option>
-            <option value="5-10">5–10 years</option>
+            <option value="1-3">1-3 years</option>
+            <option value="3-5">3-5 years</option>
+            <option value="5-10">5-10 years</option>
             <option value="10plus">10+ years</option>
           </select>
           {errors.yearsExperience && (

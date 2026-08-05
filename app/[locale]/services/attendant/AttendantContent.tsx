@@ -21,7 +21,7 @@ const TASK_KEYS = [
 /**
  * /services/attendant — Provider Attendant Services pillar (spec §6, minus
  * payer/eligibility content per client direction 2026-07-02). Coverage is
- * addressed only by a single soft "we'll walk you through coverage" line;
+ * addressed only by a single soft "we’ll walk you through coverage" line;
  * no payer names, no two-path eligibility section, no guarantees.
  */
 export function AttendantContent() {

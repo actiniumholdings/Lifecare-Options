@@ -3,5 +3,5 @@
 // can import it without crossing the RSC boundary.
 export const coverageCounties = [
   { name: "Harris County", color: "#5a8bb8" }, // care-blue — Katy/west Houston
-  { name: "Fort Bend County", color: "#0f2b47" }, // navy
+  { name: "Fort Bend County", color: "#2e3a50" }, // navy
 ] as const;

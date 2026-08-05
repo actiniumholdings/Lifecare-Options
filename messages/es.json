@@ -43,7 +43,7 @@
       "skilled": {
         "eyebrow": "Medicare-certified",
         "title": "Skilled Home Health",
-        "description": "Licensed clinicians bring hospital-grade skill into the home — nursing, therapy, and medical social work coordinated with your physician.",
+        "description": "Licensed clinicians bring hospital-grade skill into the home: nursing, therapy, and medical social work coordinated with your physician.",
         "services": [
           "Skilled Nursing",
           "Physical, Occupational & Speech Therapy",
@@ -71,7 +71,7 @@
       "title": "Not sure which you need?",
       "skilled": {
         "title": "Recovering from something?",
-        "body": "If you're recovering from an illness, surgery, or a hospital stay, Skilled Home Health brings licensed clinicians to your door to manage that recovery."
+        "body": "If you’re recovering from an illness, surgery, or a hospital stay, Skilled Home Health brings licensed clinicians to your door to manage that recovery."
       },
       "attendant": {
         "title": "Need a hand with daily life?",
@@ -114,15 +114,15 @@
     },
     "start": {
       "eyebrow": "How Care Starts",
-      "title": "When you call, here's what happens",
-      "intro": "Reaching out shouldn't feel daunting. The first call is simple, human, and pressure-free.",
+      "title": "When you call, here’s what happens",
+      "intro": "Reaching out shouldn’t feel daunting. The first call is simple, human, and pressure-free.",
       "step1": {
         "title": "We listen",
         "body": "A care coordinator answers, learns your situation, and helps you understand which skilled service fits."
       },
       "step2": {
         "title": "We coordinate",
-        "body": "We connect with your physician, arrange an in-home assessment, and handle the paperwork so your family doesn't have to."
+        "body": "We connect with your physician, arrange an in-home assessment, and handle the paperwork so your family doesn’t have to."
       },
       "step3": {
         "title": "Care begins at home",
@@ -132,7 +132,7 @@
     "cta": {
       "headline": "Ready to bring care home?",
       "primary": "Request info",
-      "note": "Call us and we'll walk you through coverage."
+      "note": "Call us and we’ll walk you through coverage."
     }
   },
   "attendant": {
@@ -193,11 +193,11 @@
       }
     },
     "coverage": {
-      "line": "Call us and we'll walk you through coverage and how to get started."
+      "line": "Call us and we’ll walk you through coverage and how to get started."
     },
     "careers": {
-      "eyebrow": "We're Hiring",
-      "headline": "We're hiring attendants who bring patience and heart to everyday care.",
+      "eyebrow": "We’re Hiring",
+      "headline": "We’re hiring attendants who bring patience and heart to everyday care.",
       "cta": "Explore careers"
     },
     "cta": {
@@ -215,13 +215,13 @@
       "headline": "Caring for Katy families since 2012.",
       "intro": "Lifecare Options is a locally owned home health company based in Katy, TX. Since 2012 we have brought two kinds of care into the home: Medicare-certified skilled nursing and therapy for clinical recovery, and Provider Attendant Services for everyday help with daily living.",
       "primary": "Request info",
-      "photoAlt": "A nurse checking an older adult's blood pressure at home."
+      "photoAlt": "A nurse checking an older adult’s blood pressure at home."
     },
     "story": {
       "eyebrow": "Our Story",
       "title": "Locally owned, and built around the home, since 2012.",
       "p1": "Lifecare Options started in Katy in 2012 with a straightforward idea: people recover and live better at home, with the right kind of help behind them. For some, that means skilled nurses and therapists following them home after a hospital stay. For others, it means a trained attendant showing up for bathing, meals, and the everyday tasks that keep daily life safe and steady.",
-      "p2": "Today our team includes registered nurses, licensed vocational nurses, physical and occupational therapists, speech therapists, medical social workers, home health aides, and attendants who provide long-term, everyday support. Every skilled care plan is coordinated directly with the patient's physician; every attendant assignment is built around the person, not a checklist.",
+      "p2": "Today our team includes registered nurses, licensed vocational nurses, physical and occupational therapists, speech therapists, medical social workers, home health aides, and attendants who provide long-term, everyday support. Every skilled care plan is coordinated directly with the patient’s physician; every attendant assignment is built around the person, not a checklist.",
       "p3": "We are not a national franchise. The people who answer your call are the same ones who come to your door, whether that is a nurse managing a recovery plan or an attendant who shows up, visit after visit, for the long run.",
       "missionLabel": "Our Mission",
       "mission": "To bring the right kind of care home, skilled clinical support for recovery and steady everyday help for daily living, so every person we serve can stay safe, comfortable, and as independent as possible."
@@ -269,7 +269,7 @@
       "headline": "Serving Katy and the surrounding communities.",
       "intro": "Our nurses and therapists come to your door across Harris and Fort Bend counties. If you live in the Katy area, chances are we cover your address.",
       "primary": "Request info",
-      "photoAlt": "A home-health nurse arriving at a client's front door."
+      "photoAlt": "A home-health nurse arriving at a client’s front door."
     },
     "counties": {
       "eyebrow": "Counties covered",
@@ -283,7 +283,7 @@
     },
     "map": {
       "eyebrow": "Coverage map",
-      "callout": "Don't see your city? Call us."
+      "callout": "Don’t see your city? Call us."
     },
     "cta": {
       "headline": "Ready to bring skilled care home?"
@@ -321,9 +321,9 @@
     "clinical": {
       "eyebrow": "For clinicians",
       "title": "Clinical roles",
-      "intro": "Skilled care, one patient at a time. We hire RNs, LVNs, and therapists for one-on-one, in-home clinical work — not floor nursing.",
+      "intro": "Skilled care, one patient at a time. We hire RNs, LVNs, and therapists for one-on-one, in-home clinical work, not floor nursing.",
       "role1Title": "RN / LVN",
-      "role1Body": "Skilled nursing visits, wound care, medication management, and care planning in the patient's home.",
+      "role1Body": "Skilled nursing visits, wound care, medication management, and care planning in the patient’s home.",
       "role2Title": "Physical Therapy",
       "role2Body": "Help patients rebuild mobility, strength, and balance after surgery or a health setback.",
       "role3Title": "Occupational Therapy",
@@ -339,11 +339,11 @@
       "title": "Attendant roles",
       "intro": "Everyday support that keeps people home. You do not need a nursing license or prior healthcare experience to make a real difference here. We provide training, and we build schedules around real life.",
       "role1Title": "Personal care support",
-      "role1Body": "Help with bathing, dressing, grooming, and mobility — the hands-on care that makes daily life manageable.",
+      "role1Body": "Help with bathing, dressing, grooming, and mobility: the hands-on care that makes daily life manageable.",
       "role2Title": "Meals & light housekeeping",
       "role2Body": "Meal preparation, light housekeeping, and errands that keep a household running.",
       "role3Title": "Companionship",
-      "role3Body": "Conversation, presence, and a familiar face — for many clients, this matters as much as any task.",
+      "role3Body": "Conversation, presence, and a familiar face. For many clients, this matters as much as any task.",
       "note": "No prior healthcare experience required. Training is provided, and we work to build steady, flexible hours.",
       "cta": "Apply for an attendant role"
     },
@@ -356,7 +356,7 @@
     "apply": {
       "eyebrow": "How to apply",
       "title": "Tell us about yourself.",
-      "body": "Use the form below and select the \"Work with us\" tab. We review every submission and are in touch as quickly as we can."
+      "body": "Use the form below. We review every submission and are in touch as quickly as we can."
     },
     "bilingual": {
       "eyebrow": "Bilingual welcome",
@@ -376,7 +376,7 @@
       "eyebrow": "For providers and families",
       "headline": "Refer a patient in minutes.",
       "intro": "Physicians and discharge planners can send clinical orders for skilled home health. Families, case managers, and community partners can call to start a conversation about attendant support directly, no physician order needed.",
-      "photoAlt": "A home-health nurse arriving at a patient's home."
+      "photoAlt": "A home-health nurse arriving at a patient’s home."
     },
     "ways": {
       "eyebrow": "Two ways to refer",
@@ -399,7 +399,7 @@
       "title": "What to expect after you refer.",
       "step1": "We reach out to the patient or family, usually within one business day of receiving the referral.",
       "step2": "We review coverage details and eligibility with you at no cost.",
-      "step3": "We work with the patient's physician to build an individualized plan of care.",
+      "step3": "We work with the patient’s physician to build an individualized plan of care.",
       "step4": "A skilled clinician completes the initial home visit.",
       "step5": "We share progress notes with the referring provider to keep your team informed."
     },
@@ -426,7 +426,7 @@
     },
     "hero": {
       "eyebrow": "Contact",
-      "headline": "We're glad to hear from you.",
+      "headline": "We’re glad to hear from you.",
       "intro": "Call us, send a message, or stop by. Our intake team is here to answer your questions and help you get started.",
       "primary": "Send a message",
       "photoAlt": "A Lifecare Options intake coordinator wearing a headset."
@@ -464,7 +464,7 @@
       "headline": "Daily check-ins, without leaving home.",
       "intro": "Connected home devices track your vital signs every day. A nurse reviews the data and can respond quickly if something changes.",
       "primary": "Request info",
-      "photoAlt": "A nurse checking an older adult's vital signs at home."
+      "photoAlt": "A nurse checking an older adult’s vital signs at home."
     },
     "advantages": {
       "eyebrow": "The Advantages",
@@ -512,7 +512,7 @@
     },
     "hero": {
       "eyebrow": "Accessibility",
-      "headline": "Care that's open to everyone.",
+      "headline": "Care that’s open to everyone.",
       "intro": "Every patient, family member, and referring provider should be able to use this site, whatever tools they rely on. We build with that in mind and keep improving."
     },
     "commitment": {
@@ -591,7 +591,7 @@
       "card3Title": "24/7 on-call nursing",
       "card3Body": "A nurse is available by phone around the clock. When a question comes up at 2 a.m., you will reach a person, not a recording.",
       "card4Title": "Coordinated with your physician",
-      "card4Body": "We communicate directly with your doctor's office. Every visit is documented and shared so your care team stays aligned."
+      "card4Body": "We communicate directly with your doctor’s office. Every visit is documented and shared so your care team stays aligned."
     },
     "band": {
       "eyebrow": "Our approach",
