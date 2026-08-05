@@ -38,6 +38,7 @@ export default function HomePage() {
         eyebrow="Dignity in Every Visit"
         headline="The small moments are the care. We're there for them."
         objectPosition="center"
+        align="center"
       />
       <ServiceAreaTeaser />
       <CareersTeaser />

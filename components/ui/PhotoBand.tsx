@@ -10,6 +10,8 @@ interface PhotoBandProps {
   headline?: ReactNode;
   /** CSS object-position for the photo (e.g. "center", "50% 35%"). */
   objectPosition?: string;
+  /** Caption placement: bottom-left (default) or centered. */
+  align?: "left" | "center";
   priority?: boolean;
 }
 
@@ -25,6 +27,7 @@ export function PhotoBand({
   eyebrow,
   headline,
   objectPosition = "center",
+  align = "left",
   priority = false,
 }: PhotoBandProps) {
   return (
@@ -46,7 +49,11 @@ export function PhotoBand({
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-care-blue/40" />
       {(eyebrow || headline) && (
         <Container className="relative py-10 sm:py-12">
-          <div className="max-w-2xl">
+          <div
+            className={
+              align === "center" ? "mx-auto max-w-2xl text-center" : "max-w-2xl"
+            }
+          >
             {eyebrow && <Eyebrow tone="dark">{eyebrow}</Eyebrow>}
             {headline && (
               <p className="mt-4 font-display text-2xl leading-snug text-balance text-white sm:text-3xl">
