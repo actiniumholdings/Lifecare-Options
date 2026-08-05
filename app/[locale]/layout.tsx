@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
-import { fraunces, inter } from "@/lib/fonts";
+import { youngSerif, nunitoSans } from "@/lib/fonts";
 import {
   SITE_NAME,
   SITE_URL,
@@ -49,12 +49,26 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${fraunces.variable} ${inter.variable} h-full antialiased`}
+      className={`${youngSerif.variable} ${nunitoSans.variable} h-full antialiased`}
     >
       <head>
         <JsonLd data={medicalBusinessJsonLd()} />
       </head>
       <body className="text-navy min-h-full flex flex-col">
+        {/* <!--
+        THESIS: Lifecare shares Central's layout skeleton but refuses its skin —
+        family-warm where Central is institutional-editorial. Same bones, different soul.
+        OWN-WORLD: warm cream canvas (#FBF5EE), peach (#F2C39B) strokes/fills and
+        peach-on-warm-indigo dark bands, Lifecare blue CTAs, Young Serif (single-
+        weight, size-led) + Nunito Sans, 16px radii, pill buttons, soft warm shadows.
+        STORY: a family in a discharge crisis feels warmth and competence, and calls.
+        FIRST VIEWPORT: eyebrow w/ peach stroke, Young Serif headline, lead, pill
+        CTAs (call primary), badge pills, rounded photo right with peach corner block.
+        FORM: pinned direction (Clint, 2026-08-05 brainstorm + approved live comp);
+        no concept roll — user-pinned world beats the roll per new-work.
+        FINISH: unreviewed and undocumented is unfinished; this build ends with the
+        finish review, the verdict, and DESIGN.md.
+        --> */}
         <NextIntlClientProvider locale={locale} messages={messages}>
           <SkipLink />
           <AnnouncementBar />

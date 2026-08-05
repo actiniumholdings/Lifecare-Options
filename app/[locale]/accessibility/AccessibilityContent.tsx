@@ -33,7 +33,7 @@ export function AccessibilityContent() {
 
       {/* 3. What we've done — dark */}
       <Section tone="dark">
-        <Eyebrow className="!text-sky-soft">{t("done.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-peach-tint">{t("done.eyebrow")}</Eyebrow>
         <h2 className="mt-4 text-2xl font-semibold text-white sm:text-3xl">
           {t("done.title")}
         </h2>

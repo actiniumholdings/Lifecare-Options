@@ -17,8 +17,8 @@ describe("theme utility classes (smoke)", () => {
 describe("design-system type scale and tokens", () => {
   const css = readFileSync(join(process.cwd(), "app/globals.css"), "utf8");
 
-  it("defines the sky-soft section background token", () => {
-    expect(css).toMatch(/--color-sky-soft:\s*#EAF2F9/i);
+  it("defines the peach-tint section background token", () => {
+    expect(css).toMatch(/--color-peach-tint:\s*#F9E9DB/i);
   });
 
   it("defines the four type-scale utilities", () => {

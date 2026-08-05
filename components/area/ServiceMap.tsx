@@ -8,7 +8,7 @@ export function ServiceMap() {
   const reduced = useReducedMotionSafe();
   return (
     <figure role="img" aria-label="Lifecare Options coverage map: Harris and Fort Bend counties" className="w-full">
-      <svg viewBox="0 0 320 220" className="w-full rounded-2xl bg-sky-soft" aria-hidden>
+      <svg viewBox="0 0 320 220" className="w-full rounded-2xl bg-peach-tint" aria-hidden>
         {/* Harris — top-right block */}
         <motion.rect
           x="150" y="20" width="150" height="120" rx="10"

@@ -20,7 +20,7 @@ Central (centraloftexas.com) and Lifecare currently share one design system; the
 | `--color-navy-deep` | #081D33 | **#253048** | deeper band variant |
 | `--color-canvas` | #FBFAF7 | **#FBF5EE** | warm cream |
 | `--color-card` | #FFFFFF | #FFFFFF | ink on card 11.4 |
-| `--color-slate` | #5A6B7B | **#62708A** | 4.6 on canvas ✓ |
+| `--color-slate` | #5A6B7B | **#5A6882** | 4.7 on peach-tint, 5.2 canvas ✓ (audit-corrected from #62708A, which hit 4.21 on peach-tint) |
 | `--color-sky-soft` → **`--color-peach-tint`** | #EAF2F9 | **#F9E9DB** | ink on it 9.6 |
 | **`--color-peach`** (new) | — | **#F2C39B** | decorative fills/strokes; ink on it 7.1; on dark 6.8 ✓ |
 | `--color-care-blue` | #5A8BB8 | unchanged | fills only (unchanged rule) |

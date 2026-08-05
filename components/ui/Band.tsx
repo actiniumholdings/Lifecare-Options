@@ -16,7 +16,7 @@ export function Band({
   className?: string;
 }) {
   return (
-    <section className={`bg-sky-soft px-4 py-16 md:px-8 md:py-20 ${className}`}>
+    <section className={`bg-peach-tint px-4 py-16 md:px-8 md:py-20 ${className}`}>
       <Container className={photoSrc ? "grid items-center gap-8 md:grid-cols-2" : undefined}>
         <div>
           {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}

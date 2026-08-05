@@ -67,7 +67,7 @@ export function RpmContent() {
 
       {/* 3. Who it helps — dark, 4 cards */}
       <Section tone="dark" id="who-it-helps">
-        <Eyebrow className="!text-sky-soft">{t("who.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-peach-tint">{t("who.eyebrow")}</Eyebrow>
         <h2 className="mt-3 max-w-2xl text-white">{t("who.title")}</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {whoCards.map(({ titleKey, bodyKey }) => (

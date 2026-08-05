@@ -30,20 +30,20 @@ export function Footer() {
               surrounding Harris &amp; Fort Bend communities since{" "}
               {siteConfig.foundedYear}.
             </p>
-            <p className="text-xs font-medium uppercase tracking-widest text-blue-light">
+            <p className="text-xs font-medium uppercase tracking-widest text-peach">
               Serving Harris &amp; Fort Bend Counties
             </p>
           </div>
 
           {/* Column 2: Contact */}
           <div className="space-y-5">
-            <h3 className="text-xs font-semibold uppercase tracking-widest text-blue-light">
+            <h3 className="text-xs font-semibold uppercase tracking-widest text-peach">
               Contact
             </h3>
             <div>
               <Link
                 href={siteConfig.phoneHref}
-                className="rounded-sm font-display text-2xl font-semibold tabular-nums text-white outline-none transition-colors hover:text-blue-light focus-visible:ring-2 focus-visible:ring-blue-light focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+                className="rounded-sm font-display text-2xl font-semibold tabular-nums text-white outline-none transition-colors hover:text-peach focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
               >
                 {siteConfig.phone}
               </Link>
@@ -60,7 +60,7 @@ export function Footer() {
               <div className="text-white/60">Fax: {siteConfig.fax}</div>
             </address>
             <div>
-              <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-blue-light">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-peach">
                 {tf("hours")}
               </p>
               <ul className="space-y-0.5 text-sm text-white/80">
@@ -77,7 +77,7 @@ export function Footer() {
           {/* Column 3: Quick links + accreditation */}
           <div className="space-y-6">
             <div>
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-blue-light">
+              <h3 className="mb-4 text-xs font-semibold uppercase tracking-widest text-peach">
                 Quick Links
               </h3>
               <nav aria-label="Footer navigation">
@@ -86,7 +86,7 @@ export function Footer() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="rounded-sm text-sm text-white/70 outline-none transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-blue-light focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+                        className="rounded-sm text-sm text-white/70 outline-none transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
                       >
                         {item.label}
                       </Link>
@@ -95,7 +95,7 @@ export function Footer() {
                   <li>
                     <Link
                       href="/refer"
-                      className="rounded-sm text-sm font-medium text-blue-light outline-none transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-blue-light focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+                      className="rounded-sm text-sm font-medium text-peach outline-none transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
                     >
                       {tn("refer")}
                     </Link>
@@ -104,7 +104,7 @@ export function Footer() {
               </nav>
             </div>
             <div className="space-y-1 text-sm text-white/70">
-              <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-blue-light">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-widest text-peach">
                 {tf("accreditation")}
               </p>
               <p>{tf("medicareCertified")}</p>
@@ -127,7 +127,7 @@ export function Footer() {
             <div className="flex flex-wrap items-center gap-4 text-xs text-white/60">
               <Link
                 href="/accessibility"
-                className="rounded-sm outline-none transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-blue-light focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+                className="rounded-sm outline-none transition-colors hover:text-white focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
               >
                 Accessibility
               </Link>

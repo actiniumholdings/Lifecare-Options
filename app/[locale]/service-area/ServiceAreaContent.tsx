@@ -72,14 +72,14 @@ export function ServiceAreaContent() {
 
       {/* 4. Map — dark */}
       <Section tone="dark">
-        <Eyebrow className="!text-sky-soft">{t("map.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-peach-tint">{t("map.eyebrow")}</Eyebrow>
         <div className="mt-8 grid gap-10 md:grid-cols-2 md:items-start">
           <ServiceMap />
           <div className="flex flex-col justify-center">
             <p className="text-lg font-semibold text-white">{t("map.callout")}</p>
             <a
               href={siteConfig.phoneHref}
-              className="mt-3 text-sky-soft hover:underline"
+              className="mt-3 text-peach-tint hover:underline"
             >
               {siteConfig.phone}
             </a>

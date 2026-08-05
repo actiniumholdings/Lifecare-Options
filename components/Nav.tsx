@@ -218,7 +218,7 @@ export function Nav() {
         <Logo size="md" />
 
         {/* Desktop nav + actions */}
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-7 lg:flex">
           <nav aria-label="Primary" className="flex items-center gap-6">
             {links.map((item) =>
               item.children ? (
@@ -254,7 +254,7 @@ export function Nav() {
           onClick={() => setOpen((o) => !o)}
           aria-label={open ? tc("closeMenu") : tc("openMenu")}
           aria-expanded={open}
-          className="flex h-11 w-11 items-center justify-center rounded-[var(--radius)] border border-navy/15 text-navy outline-none transition-colors hover:bg-navy/[0.04] focus-visible:ring-2 focus-visible:ring-blue-deep focus-visible:ring-offset-2 focus-visible:ring-offset-canvas md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-[var(--radius)] border border-navy/15 text-navy outline-none transition-colors hover:bg-navy/[0.04] focus-visible:ring-2 focus-visible:ring-blue-deep focus-visible:ring-offset-2 focus-visible:ring-offset-canvas lg:hidden"
         >
           {open ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -262,7 +262,7 @@ export function Nav() {
 
       {/* Mobile menu panel (inline dropdown — avoids the fixed-in-backdrop clip). */}
       {open && (
-        <div className="border-t border-navy/10 bg-canvas md:hidden">
+        <div className="border-t border-navy/10 bg-canvas lg:hidden">
           <Container className="flex flex-col py-4">
             <nav aria-label="Mobile" className="flex flex-col">
               {links.map((item) => (

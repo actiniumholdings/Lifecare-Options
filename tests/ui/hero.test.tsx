@@ -31,7 +31,7 @@ describe("Hero", () => {
     const section = container.querySelector("section")!;
     // Full-bleed photographic hero on navy (mirrors Central's interior hero).
     expect(section.className).toContain("bg-navy-deep");
-    expect(section.className).not.toContain("bg-sky-soft");
+    expect(section.className).not.toContain("bg-peach-tint");
     expect(section.className).not.toContain("mist");
   });
 

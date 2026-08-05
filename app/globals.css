@@ -1,28 +1,35 @@
 @import "tailwindcss";
 
 @theme {
-  /* Central's palette — Lifecare blue accent replaces Central's gold. */
-  --color-navy: #0D2B49;
-  --color-navy-deep: #081D33;
-  --color-canvas: #FBFAF7;
+  /* "Lifecare Warm" palette (spec 2026-08-05) — warm cream/peach world around
+     the Lifecare blue. Token NAMES keep their structural roles; "navy" is now
+     a warm ink-indigo, not Central's cold navy. */
+  --color-navy: #2E3A50; /* ink: headings/body + dark bands (white on it 10.9:1) */
+  --color-navy-deep: #253048; /* deepest band variant (hero/footer depth) */
+  --color-canvas: #FBF5EE; /* warm cream page background */
   --color-card: #FFFFFF;
-  --color-slate: #5A6B7B;
+  --color-slate: #5A6882; /* secondary text — 4.7:1 on peach-tint, 5.2 canvas, 5.6 card ✓ (never on raw peach: 3.5) */
 
   /* Accent — the Lifecare logo's blue. AA discipline:
-     care-blue  = light-value POP (decorative fills, hairlines, icon tiles) — NEVER small text
-     blue-deep  = accent TEXT on light (6.4:1 on ivory) + signature CTA fill w/ white text (6.7:1)
-     blue-light = accent TEXT on dark navy (5.6:1 on navy) */
+     care-blue  = light-value POP (decorative fills, icon tiles) — NEVER small text
+     blue-deep  = accent TEXT on light (6.2:1 on cream) + signature CTA fill w/ white text (6.7:1)
+     blue-light = DEMOTED to large-text/decorative on dark only (4.24:1 on new
+                  dark) — peach carries small accent text on dark sections. */
   --color-care-blue: #5A8BB8;
   --color-blue-deep: #2F5F8A;
   --color-blue-light: #7AA6CF;
 
-  /* Alternating light-section background (spec §5 Color). */
-  --color-sky-soft: #EAF2F9;
+  /* Warm pair (the brand-splitting move vs Central's gold):
+     peach       = decorative fills/strokes/tiles; accent TEXT on dark (6.8:1 ✓);
+                   never small text on light (ink on it 7.1:1 is fine for fills w/ ink text)
+     peach-tint  = alternating light-section background (ink on it 9.6:1) */
+  --color-peach: #F2C39B;
+  --color-peach-tint: #F9E9DB;
 
-  --radius: 8px;
+  --radius: 16px;
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  --font-display: var(--font-young-serif);
+  --font-sans: var(--font-nunito-sans);
 }
 
 /* Guard against horizontal overflow from full-bleed photos / decorative glows.

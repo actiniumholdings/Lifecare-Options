@@ -33,11 +33,15 @@ type ButtonAsLink = BaseProps & {
 
 type ButtonProps = ButtonAsButton | ButtonAsLink;
 
+/* Pills (spec 2026-08-05): soft-warm signature. Secondary carries a 2px peach
+   ring instead of a gray hairline; shadows are warm-tinted with real offset. */
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
-  primary: "bg-blue-deep text-white hover:bg-navy rounded-xl",
+  primary:
+    "bg-blue-deep text-white hover:bg-navy rounded-full shadow-[0_2px_6px_rgba(94,64,32,0.06),0_14px_32px_-14px_rgba(94,64,32,0.28)]",
   secondary:
-    "border border-navy/25 bg-white text-navy hover:border-blue-deep hover:text-blue-deep rounded-xl",
-  onDark: "bg-white text-navy hover:bg-blue-light hover:text-navy-deep rounded-xl",
+    "bg-white text-blue-deep ring-2 ring-inset ring-peach hover:ring-blue-deep rounded-full",
+  onDark:
+    "bg-peach text-navy hover:bg-peach-tint rounded-full",
   tertiary:
     "bg-transparent text-blue-deep hover:text-navy underline-offset-4 hover:underline",
 };

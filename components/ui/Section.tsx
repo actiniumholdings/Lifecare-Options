@@ -42,7 +42,7 @@ export function Section({
   const toneClasses = isDark
     ? "bg-navy text-white"
     : tone === "sky"
-      ? "bg-sky-soft text-navy"
+      ? "bg-peach-tint text-navy"
       : "bg-canvas text-navy";
 
   const classes = ["py-20 sm:py-28 lg:py-32", toneClasses, className]

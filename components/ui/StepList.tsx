@@ -22,7 +22,7 @@ export function StepList({
           <span
             className={`flex h-11 w-11 items-center justify-center rounded-full border-2 font-display text-lg font-semibold ${
               dark
-                ? "border-blue-light/60 text-blue-light"
+                ? "border-peach/60 text-peach"
                 : "border-blue-deep/40 text-blue-deep"
             }`}
           >

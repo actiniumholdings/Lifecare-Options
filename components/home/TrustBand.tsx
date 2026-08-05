@@ -118,7 +118,7 @@ export function TrustBand() {
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
           {/* Left: license + service-area framing */}
           <div className="max-w-md">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-blue-light">
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-peach">
               Licensed by the State of Texas
             </p>
             <p className="mt-3 font-display text-2xl font-semibold leading-snug text-white sm:text-3xl">

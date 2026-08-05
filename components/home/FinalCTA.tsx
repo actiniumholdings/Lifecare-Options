@@ -51,7 +51,7 @@ export function FinalCTA() {
               </span>
               <a
                 href={siteConfig.phoneHref}
-                className="mt-1 font-display text-3xl font-semibold tabular-nums text-white transition-colors hover:text-blue-light"
+                className="mt-1 font-display text-3xl font-semibold tabular-nums text-white transition-colors hover:text-peach"
               >
                 {siteConfig.phone}
               </a>

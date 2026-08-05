@@ -8,7 +8,7 @@ import { useReducedMotionSafe } from "@/lib/use-reduced-motion-safe";
 
 /**
  * Thin announcement band above the Nav. Navy surface gives architectural
- * contrast against the navy/sky-soft palette below (and bookends with the
+ * contrast against the navy/peach-tint palette below (and bookends with the
  * navy footer). Single short message — keep the copy tight. Not sticky.
  */
 export function AnnouncementBar() {
@@ -19,7 +19,7 @@ export function AnnouncementBar() {
     <motion.div
       role="region"
       aria-label="Announcement"
-      className="bg-navy text-white"
+      className="bg-navy text-peach"
       initial={reduced ? { y: 0 } : { y: -4 }}
       animate={{ y: 0 }}
       transition={{ ...easeOut, duration: 0.4 }}
@@ -28,7 +28,7 @@ export function AnnouncementBar() {
         <Heartbeat
           size={18}
           weight="duotone"
-          className="text-white shrink-0"
+          className="text-peach shrink-0"
           aria-hidden
         />
         <span className="font-medium">
