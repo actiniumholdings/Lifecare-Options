@@ -159,7 +159,7 @@ export function CareersContent() {
         </h2>
         <p className="mt-3 max-w-2xl text-slate">{t("apply.body")}</p>
         <div className="mt-10">
-          <LeadForm />
+          <LeadForm defaultTab="employment" />
         </div>
       </Section>
 

@@ -34,7 +34,7 @@ export function FinalCTA() {
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/75">
               Refer a patient in minutes, or reach out and we&rsquo;ll walk you
-              through every option — with {siteConfig.onCall} whenever you need us.
+              through every option, with {siteConfig.onCall} whenever you need us.
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">

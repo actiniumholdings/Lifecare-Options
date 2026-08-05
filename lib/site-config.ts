@@ -25,7 +25,7 @@ export const siteConfig = {
   serviceArea: {
     counties: [
       { name: "Harris County", color: "#5a8bb8" },
-      { name: "Fort Bend County", color: "#0f2b47" },
+      { name: "Fort Bend County", color: "#2e3a50" },
     ],
     cities: [
       "Katy",

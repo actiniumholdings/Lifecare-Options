@@ -28,8 +28,9 @@ export function ServiceAreaContent() {
         photoAlt={t("hero.photoAlt")}
       />
 
-      {/* 2. Counties strip — light */}
-      <Section tone="light">
+      {/* 2. Counties strip — light. Tightened: this strip is three lines tall,
+          so full Section padding left a void between it and the cities grid. */}
+      <Section tone="light" className="!pb-0">
         <Eyebrow>{t("counties.eyebrow")}</Eyebrow>
         <h2 className="mt-4 text-2xl font-semibold text-navy sm:text-3xl">
           {t("counties.title")}
@@ -49,7 +50,7 @@ export function ServiceAreaContent() {
       </Section>
 
       {/* 3. Cities grid — light */}
-      <Section tone="light">
+      <Section tone="light" className="!pt-12">
         <Eyebrow>{t("cities.eyebrow")}</Eyebrow>
         <h2 className="mt-4 text-2xl font-semibold text-navy sm:text-3xl">
           {t("cities.title")}

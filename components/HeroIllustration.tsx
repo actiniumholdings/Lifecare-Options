@@ -18,7 +18,7 @@ export function HeroIllustration({ className }: HeroIllustrationProps) {
   return (
     <Image
       src="/images/hero-sketch.jpg"
-      alt="A pencil-sketch illustration of a caregiver seated beside an elderly woman on a couch, the caregiver's hand resting gently on her shoulder. Behind them, a sunlit window, a lamp, and potted plants."
+      alt="A pencil-sketch illustration of a caregiver seated beside an elderly woman on a couch, the caregiver’s hand resting gently on her shoulder. Behind them, a sunlit window, a lamp, and potted plants."
       width={SKETCH_W}
       height={SKETCH_H}
       priority
