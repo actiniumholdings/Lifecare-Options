@@ -9,7 +9,7 @@ export interface FadeUpProps {
   className?: string;
   /** Stagger delay (seconds) when used as a standalone manual sequence. */
   delay?: number;
-  /** Travel distance in px before settling (default 24). */
+  /** Travel distance in px before settling (default 12 — soft rise, spec 2026-08-05). */
   distance?: number;
   /** Render element (default "div"). */
   as?: "div" | "section" | "li" | "article" | "span";
@@ -39,7 +39,7 @@ export function FadeUp({
   children,
   className,
   delay = 0,
-  distance = 24,
+  distance = 12,
   as = "div",
 }: FadeUpProps) {
   const reduced = useReducedMotion();

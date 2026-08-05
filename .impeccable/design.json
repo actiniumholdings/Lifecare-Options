@@ -1,0 +1,148 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-05T00:00:00Z",
+  "title": "Design System: Lifecare Options",
+  "extensions": {
+    "colorMeta": {
+      "navy": { "role": "neutral", "displayName": "Warm Ink", "canonical": "#2E3A50", "tonalRamp": ["oklch(15% 0.045 262)", "oklch(26% 0.045 262)", "oklch(38% 0.045 262)", "oklch(49% 0.045 262)", "oklch(60% 0.045 262)", "oklch(72% 0.04 262)", "oklch(84% 0.03 262)", "oklch(95% 0.015 262)"] },
+      "navy-deep": { "role": "neutral", "displayName": "Deep Ink", "canonical": "#253048", "tonalRamp": ["oklch(15% 0.05 262)", "oklch(24% 0.05 262)", "oklch(35% 0.05 262)", "oklch(47% 0.05 262)", "oklch(59% 0.045 262)", "oklch(71% 0.04 262)", "oklch(83% 0.03 262)", "oklch(95% 0.015 262)"] },
+      "canvas": { "role": "neutral", "displayName": "Cream Canvas", "canonical": "#FBF5EE", "tonalRamp": ["oklch(15% 0.02 80)", "oklch(27% 0.02 80)", "oklch(39% 0.02 80)", "oklch(51% 0.02 80)", "oklch(63% 0.02 80)", "oklch(75% 0.02 80)", "oklch(87% 0.02 80)", "oklch(97% 0.012 80)"] },
+      "card": { "role": "neutral", "displayName": "Card White", "canonical": "#FFFFFF", "tonalRamp": ["oklch(15% 0 0)", "oklch(27% 0 0)", "oklch(39% 0 0)", "oklch(51% 0 0)", "oklch(63% 0 0)", "oklch(75% 0 0)", "oklch(87% 0 0)", "oklch(100% 0 0)"] },
+      "slate": { "role": "neutral", "displayName": "Dusk Slate", "canonical": "#5A6882", "tonalRamp": ["oklch(15% 0.035 265)", "oklch(26% 0.035 265)", "oklch(38% 0.035 265)", "oklch(50% 0.035 265)", "oklch(61% 0.035 265)", "oklch(73% 0.03 265)", "oklch(84% 0.02 265)", "oklch(95% 0.01 265)"] },
+      "blue-deep": { "role": "primary", "displayName": "Lifecare Blue Deep", "canonical": "#2F5F8A", "tonalRamp": ["oklch(15% 0.07 250)", "oklch(26% 0.08 250)", "oklch(37% 0.09 250)", "oklch(48% 0.09 250)", "oklch(59% 0.09 250)", "oklch(71% 0.07 250)", "oklch(83% 0.05 250)", "oklch(95% 0.02 250)"] },
+      "care-blue": { "role": "primary", "displayName": "Care Blue", "canonical": "#5A8BB8", "tonalRamp": ["oklch(15% 0.06 255)", "oklch(26% 0.07 255)", "oklch(38% 0.08 255)", "oklch(50% 0.08 255)", "oklch(62% 0.08 255)", "oklch(74% 0.06 255)", "oklch(85% 0.04 255)", "oklch(95% 0.02 255)"] },
+      "blue-light": { "role": "primary", "displayName": "Sky Blue Light", "canonical": "#7AA6CF", "tonalRamp": ["oklch(15% 0.05 250)", "oklch(27% 0.06 250)", "oklch(39% 0.07 250)", "oklch(51% 0.07 250)", "oklch(63% 0.07 250)", "oklch(75% 0.06 250)", "oklch(86% 0.04 250)", "oklch(95% 0.02 250)"] },
+      "peach": { "role": "secondary", "displayName": "Peach", "canonical": "#F2C39B", "tonalRamp": ["oklch(15% 0.04 65)", "oklch(27% 0.05 65)", "oklch(39% 0.06 65)", "oklch(51% 0.07 65)", "oklch(63% 0.07 65)", "oklch(75% 0.07 65)", "oklch(85% 0.07 65)", "oklch(95% 0.03 65)"] },
+      "peach-tint": { "role": "secondary", "displayName": "Peach Tint", "canonical": "#F9E9DB", "tonalRamp": ["oklch(15% 0.02 70)", "oklch(27% 0.025 70)", "oklch(39% 0.03 70)", "oklch(51% 0.03 70)", "oklch(63% 0.03 70)", "oklch(75% 0.03 70)", "oklch(87% 0.03 70)", "oklch(95% 0.02 70)"] },
+      "border": { "role": "neutral", "displayName": "Warm Hairline", "canonical": "#e9dccb", "tonalRamp": ["oklch(15% 0.02 85)", "oklch(27% 0.025 85)", "oklch(39% 0.03 85)", "oklch(51% 0.03 85)", "oklch(63% 0.03 85)", "oklch(75% 0.03 85)", "oklch(89% 0.03 85)", "oklch(96% 0.015 85)"] },
+      "surface-warm": { "role": "neutral", "displayName": "Warm Well", "canonical": "#f6ede2", "tonalRamp": ["oklch(15% 0.015 80)", "oklch(27% 0.02 80)", "oklch(39% 0.02 80)", "oklch(51% 0.02 80)", "oklch(63% 0.02 80)", "oklch(75% 0.02 80)", "oklch(87% 0.02 80)", "oklch(96% 0.015 80)"] },
+      "alert": { "role": "tertiary", "displayName": "Brick Alert", "canonical": "#a93a2f", "tonalRamp": ["oklch(15% 0.08 30)", "oklch(26% 0.1 30)", "oklch(37% 0.12 30)", "oklch(48% 0.13 30)", "oklch(59% 0.12 30)", "oklch(71% 0.09 30)", "oklch(83% 0.06 30)", "oklch(95% 0.02 30)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display XL", "purpose": "Hero-scale Young Serif statements. Single 400 weight; hierarchy by size only." },
+      "headline": { "displayName": "Display", "purpose": "Section titles (Section primitive h2)." },
+      "title": { "displayName": "Title", "purpose": "Card headings (PillarCard h3)." },
+      "body": { "displayName": "Body", "purpose": "Default Nunito Sans copy; intros step to 1.125rem relaxed, max ~58-65ch." },
+      "label": { "displayName": "Label / Eyebrow", "purpose": "Uppercase tracked labels, always Nunito Sans 700-800." },
+      "caption": { "displayName": "Caption", "purpose": "Payer hints and fine print." }
+    },
+    "shadows": [
+      { "name": "button-lift", "value": "0 2px 6px rgba(94,64,32,0.06), 0 14px 32px -14px rgba(94,64,32,0.28)", "purpose": "Primary pill CTA. Warm brown tint, real offset and blur." },
+      { "name": "card-rest", "value": "0 2px 4px rgba(46,58,80,0.04), 0 16px 36px -16px rgba(46,58,80,0.14)", "purpose": "Card at rest (ink-derived tint via rgb(from var(--color-navy))); PillarCard uses the same geometry in rgba(94,64,32,...)." },
+      { "name": "card-hover", "value": "0 2px 4px rgba(46,58,80,0.05), 0 18px 40px -16px rgba(46,58,80,0.22)", "purpose": "Card hover, paired with a 4px translate-y lift over 300ms ease-out." },
+      { "name": "photo-anchor", "value": "0 30px 70px -28px rgba(94,64,32,0.4)", "purpose": "Hero photograph grounding shadow." },
+      { "name": "floating-chrome", "value": "0 12px 32px -12px rgba(8,29,51,0.25)", "purpose": "Nav dropdown panel; scrolled header uses 0 1px 20px -8px of the same tint." }
+    ],
+    "motion": [
+      { "name": "fade-up", "value": "opacity 0->1, translateY 12px->0, 0.6s cubic-bezier(0.22, 1, 0.36, 1), once, viewport margin -10%", "purpose": "Default scroll entrance (FadeUp). Renders static under prefers-reduced-motion." },
+      { "name": "stagger-children", "value": "0.08s", "purpose": "Cascade interval for FadeUp groups inside Stagger." },
+      { "name": "stagger-words", "value": "0.1s", "purpose": "Per-word interval for StaggerWords headlines." },
+      { "name": "quick-tap", "value": "scale 0.97, 0.15s ease-out", "purpose": "Button whileTap (skipped on tertiary text links)." },
+      { "name": "soft-spring", "value": "spring, stiffness 120, damping 18", "purpose": "Springy settles." },
+      { "name": "ease-out", "value": "0.5s cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Generic settle easing." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "lg", "value": "1024px (desktop nav switch; container gutters widen)" },
+      { "name": "container", "value": "1200px max-width, gutters 24/32/48px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Signature CTA: Lifecare Blue Deep pill with white text and a warm lift shadow.",
+      "html": "<button class=\"ds-btn-primary\">Refer a Patient</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #2F5F8A; color: #FFFFFF; font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.875rem; padding: 10px 20px; border: none; border-radius: 9999px; box-shadow: 0 2px 6px rgba(94,64,32,0.06), 0 14px 32px -14px rgba(94,64,32,0.28); cursor: pointer; transition: background-color 0.2s, transform 0.15s ease-out; } .ds-btn-primary:hover { background: #2E3A50; } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:focus-visible { outline: 2px solid #2F5F8A; outline-offset: 2px; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "White pill with a 2px inset peach ring instead of a gray hairline; ring turns blue-deep on hover.",
+      "html": "<button class=\"ds-btn-secondary\">Call (281) 646-9546</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 6px; background: #FFFFFF; color: #2F5F8A; font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.875rem; padding: 10px 20px; border: none; border-radius: 9999px; box-shadow: inset 0 0 0 2px #F2C39B; cursor: pointer; transition: box-shadow 0.2s, transform 0.15s ease-out; } .ds-btn-secondary:hover { box-shadow: inset 0 0 0 2px #2F5F8A; } .ds-btn-secondary:active { transform: scale(0.97); } .ds-btn-secondary:focus-visible { outline: 2px solid #2F5F8A; outline-offset: 2px; }"
+    },
+    {
+      "name": "On-Dark Button",
+      "kind": "button",
+      "refersTo": "button-on-dark",
+      "description": "Peach pill with ink text for CTAs on dark ink bands; hover lightens to peach-tint.",
+      "html": "<div class=\"ds-dark-band\"><button class=\"ds-btn-ondark\">Contact Us</button></div>",
+      "css": ".ds-dark-band { background: #2E3A50; padding: 24px; border-radius: 16px; display: inline-block; } .ds-btn-ondark { display: inline-flex; align-items: center; justify-content: center; background: #F2C39B; color: #2E3A50; font-family: 'Nunito Sans', sans-serif; font-weight: 600; font-size: 0.875rem; padding: 10px 20px; border: none; border-radius: 9999px; cursor: pointer; transition: background-color 0.2s, transform 0.15s ease-out; } .ds-btn-ondark:hover { background: #F9E9DB; } .ds-btn-ondark:active { transform: scale(0.97); } .ds-btn-ondark:focus-visible { outline: 2px solid #F9E9DB; outline-offset: 2px; }"
+    },
+    {
+      "name": "Eyebrow",
+      "kind": "chip",
+      "refersTo": "badge-pill",
+      "description": "Uppercase tracked label led by the signature 24x4px rounded peach stroke; blue-deep on light, peach on dark.",
+      "html": "<span class=\"ds-eyebrow\"><span class=\"ds-eyebrow-mark\"></span>Our Services</span>",
+      "css": ".ds-eyebrow { display: inline-flex; align-items: center; gap: 10px; font-family: 'Nunito Sans', sans-serif; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.14em; color: #2F5F8A; } .ds-eyebrow-mark { display: inline-block; width: 24px; height: 4px; border-radius: 9999px; background: #F2C39B; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "White workhorse surface on cream: 16px radius, hairline border, soft ink shadow, gentle hover lift.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Skilled Home Health</h3><p class=\"ds-card-body\">Nursing, therapy, and aide services coordinated with your physician, delivered at home.</p></div>",
+      "css": ".ds-card { background: #FFFFFF; border: 1px solid rgba(46,58,80,0.1); border-radius: 16px; padding: 32px; box-shadow: 0 2px 4px rgba(46,58,80,0.04), 0 16px 36px -16px rgba(46,58,80,0.14); transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out; max-width: 380px; } .ds-card:hover { transform: translateY(-4px); border-color: rgba(46,58,80,0.15); box-shadow: 0 2px 4px rgba(46,58,80,0.05), 0 18px 40px -16px rgba(46,58,80,0.22); } .ds-card-title { font-family: 'Young Serif', serif; font-weight: 400; font-size: 1.75rem; line-height: 1.2; letter-spacing: -0.01em; color: #2E3A50; margin: 0 0 12px; } .ds-card-body { font-family: 'Nunito Sans', sans-serif; font-size: 1rem; line-height: 1.6; color: #5A6882; margin: 0; }"
+    },
+    {
+      "name": "Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "8px-radius field in a translucent warm well; focus swaps to an ink border and opaque fill, no glow.",
+      "html": "<input class=\"ds-input\" type=\"text\" placeholder=\"Your name\" />",
+      "css": ".ds-input { width: 100%; max-width: 320px; border-radius: 8px; border: 1px solid #e9dccb; background: rgba(246,237,226,0.6); padding: 12px 16px; font-family: 'Nunito Sans', sans-serif; font-size: 1rem; color: #2E3A50; } .ds-input::placeholder { color: rgba(90,104,130,0.6); } .ds-input:focus { outline: none; border-color: #2E3A50; background: #f6ede2; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "description": "Ink link at 80% opacity with a 1px blue-deep underline growing from the left on hover/focus.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">Service Area<span class=\"ds-nav-underline\"></span></a>",
+      "css": ".ds-nav-link { position: relative; display: inline-block; padding: 4px; font-family: 'Nunito Sans', sans-serif; font-size: 0.95rem; font-weight: 600; color: rgba(46,58,80,0.8); text-decoration: none; transition: color 0.2s; } .ds-nav-link:hover, .ds-nav-link:focus-visible { color: #2E3A50; } .ds-nav-underline { position: absolute; left: 4px; right: 4px; bottom: 2px; height: 1px; background: #2F5F8A; transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease-out; } .ds-nav-link:hover .ds-nav-underline, .ds-nav-link:focus-visible .ds-nav-underline { transform: scaleX(1); } .ds-nav-link:focus-visible { outline: 2px solid #2F5F8A; outline-offset: 2px; border-radius: 2px; }"
+    },
+    {
+      "name": "Badge Pill",
+      "kind": "chip",
+      "refersTo": "badge-pill",
+      "description": "Peach-tint credential pill with bold 13px ink text (accreditation and license badges in the hero).",
+      "html": "<span class=\"ds-badge\">CHAP Accredited</span>",
+      "css": ".ds-badge { display: inline-block; background: #F9E9DB; color: #2E3A50; font-family: 'Nunito Sans', sans-serif; font-size: 13px; font-weight: 700; padding: 6px 14px; border-radius: 9999px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Warm Front Door",
+    "overview": "Lifecare Options is a Medicare-certified home health agency in Katy, TX, and the site's visual world is built for a family arriving mid-crisis: it should feel like knocking on the door of a competent, kind household, not entering an institution. Everything sits on a warm cream canvas washed with peach, the Lifecare blue carries the actions, and a single-weight editorial serif (Young Serif) speaks in a calm, rounded voice. Density is generous and unhurried: big soft sections, pill-shaped controls, photographs with warm shadows, gentle 12px fade-up motion.\n\nThe system is deliberately a sibling, not a twin. It shares an identical layout and content skeleton with Central Home Health (centraloftexas.com) and refuses Central's skin at every layer: Central's cold navy, gold accents, and Fraunces display face are confirmed anti-references. The direction contract in app/[locale]/layout.tsx states it as \"family-warm where Central is institutional-editorial. Same bones, different soul.\"\n\nAccessibility is not aspirational here; WCAG AA is enforced programmatically by scripts/contrast-audit.mjs, which drives headless Chrome against every rendered route and reads browser-computed colors. Every color-pairing rule is backed by an audited ratio.",
+    "keyCharacteristics": [
+      "Warm cream canvas (#FBF5EE) with peach strokes and fills; white cards float on it",
+      "One serif, one weight: Young Serif 400, hierarchy by size only",
+      "Pill buttons, 16px base radius, warm brown-tinted shadows with real offset and blur",
+      "Lifecare blue reserved for actions and accent text; peach carries accent text on dark bands",
+      "Soft, brief motion (12px rise, 0.6s, ease-out), fully disabled under prefers-reduced-motion"
+    ],
+    "rules": [
+      { "name": "The Slate Constraint Rule", "body": "Dusk Slate on peach-tint (4.7:1) is the binding contrast pair in the whole palette. Never lighten slate and never darken peach-tint; either move breaks AA, and the audit script will catch it.", "section": "colors" },
+      { "name": "The Peach Placement Rule", "body": "Peach is decorative on light and textual only on dark. On cream or white it may be a stroke, ring, or fill (with ink text on top); it is never itself small text on a light background.", "section": "colors" },
+      { "name": "The Sister-Site Rule", "body": "Never re-import Central's cold navy, gold, or Fraunces. Layout may match Central exactly; skin must never.", "section": "colors" },
+      { "name": "The Size-Only Hierarchy Rule", "body": "Young Serif ships exactly one weight (400). Hierarchy comes from SIZE, never from weight. Never add font-semibold or font-bold to display-face text; font-synthesis-weight: none on h1-h4 and .font-display guarantees the browser cannot fake a bold, so the class would silently do nothing.", "section": "typography" },
+      { "name": "The Warm Shadow Rule", "body": "Shadows are brown- or ink-tinted, never neutral gray or pure black, and always carry a visible offset plus blur. A shadow that looks like a gray halo is off-brand.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do build pages as Section bands alternating canvas, peach-tint, and dark ink tones with 80 to 128px vertical padding.",
+      "Do use blue-deep for accent text and CTAs on light, and peach for accent text and CTAs on dark. Those are the only two accent-text colors.",
+      "Do keep every button a full pill and every card at 16px radius with a warm-tinted offset shadow.",
+      "Do lead section headers with the Eyebrow and its 24x4px rounded peach stroke.",
+      "Do run scripts/contrast-audit.mjs against the running site after any color or text-size change; AA is enforced, not suggested.",
+      "Do honor prefers-reduced-motion by rendering final state with no transform (FadeUp already does; new motion must too)."
+    ],
+    "donts": [
+      "Don't put font-semibold or font-bold on Young Serif text; the single 400 weight plus the font-synthesis guard means size is the only hierarchy tool.",
+      "Don't set peach as small text on light backgrounds, slate on raw peach, or care-blue as text anywhere; blue-light is large or decorative on dark only.",
+      "Don't re-import Central's cold navy, gold, or Fraunces, and don't diverge from Central's layout skeleton either; the brands split on skin, not structure.",
+      "Don't use neutral gray or black shadows, square corners, or rectangular buttons.",
+      "Don't invent testimonials, payer-name marketing claims, or a second phone number; honest states are part of the visual voice (empty is empty)."
+    ]
+  }
+}

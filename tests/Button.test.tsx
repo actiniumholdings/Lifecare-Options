@@ -11,19 +11,22 @@ describe("Button", () => {
     expect(btn.className).toMatch(/bg-blue-deep/);
   });
 
-  it("secondary variant is an outlined button, not amber", () => {
+  it("secondary variant is a peach-ring pill (Lifecare Warm), not amber", () => {
     render(<Button variant="secondary">Call</Button>);
     const btn = screen.getByRole("button", { name: "Call" });
-    expect(btn.className).toContain("border");
+    expect(btn.className).toContain("ring-peach");
     expect(btn.className).toContain("bg-white");
+    expect(btn.className).toContain("rounded-full");
     expect(btn.className).not.toContain("amber");
   });
 
-  it("onDark variant renders an inverted white button for navy bands", () => {
+  it("onDark variant renders a peach pill with ink text for dark bands", () => {
+    // ink (#2E3A50) on peach (#F2C39B) = 7.1:1 ✓; hover peach-tint = 9.6:1 ✓
     render(<Button variant="onDark">Refer a Patient</Button>);
     const btn = screen.getByRole("button", { name: "Refer a Patient" });
-    expect(btn.className).toContain("bg-white");
+    expect(btn.className).toContain("bg-peach");
     expect(btn.className).toContain("text-navy");
+    expect(btn.className).toContain("rounded-full");
   });
 
   it("renders as an <a> when href is provided", () => {

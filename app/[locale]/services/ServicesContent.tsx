@@ -65,13 +65,13 @@ export function ServicesContent() {
       >
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
           <div>
-            <h3 className="font-display text-title font-semibold text-navy">
+            <h3 className="font-display text-title text-navy">
               {t("explainer.skilled.title")}
             </h3>
             <p className="mt-3 leading-relaxed text-slate">{t("explainer.skilled.body")}</p>
           </div>
           <div>
-            <h3 className="font-display text-title font-semibold text-navy">
+            <h3 className="font-display text-title text-navy">
               {t("explainer.attendant.title")}
             </h3>
             <p className="mt-3 leading-relaxed text-slate">{t("explainer.attendant.body")}</p>

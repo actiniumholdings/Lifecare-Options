@@ -42,7 +42,7 @@ export function Section({
   const toneClasses = isDark
     ? "bg-navy text-white"
     : tone === "sky"
-      ? "bg-sky-soft text-navy"
+      ? "bg-peach-tint text-navy"
       : "bg-canvas text-navy";
 
   const classes = ["py-20 sm:py-28 lg:py-32", toneClasses, className]
@@ -60,7 +60,7 @@ export function Section({
             {eyebrow && <Eyebrow tone={isDark ? "dark" : "light"}>{eyebrow}</Eyebrow>}
             {title && (
               <h2
-                className={`font-display text-display font-semibold text-balance ${
+                className={`font-display text-display text-balance ${
                   isDark ? "text-white" : "text-navy"
                 } ${centered ? "max-w-3xl" : "max-w-2xl"} ${align}`}
               >

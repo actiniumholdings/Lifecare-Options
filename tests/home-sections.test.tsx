@@ -13,11 +13,11 @@ function renderFinalCTA() {
 }
 
 describe("FinalCTA (flagship, navy band)", () => {
-  it("FinalCTA primary CTA uses the onDark (white-fill) variant on the navy band", () => {
+  it("FinalCTA primary CTA uses the onDark (peach-pill) variant on the dark band", () => {
     renderFinalCTA();
     const refer = screen.getByRole("link", { name: /refer a patient/i });
-    // onDark = inverted white button, legible on navy
-    expect(refer.className).toContain("bg-white");
+    // onDark = peach pill with ink text (7.1:1 ✓), the Lifecare Warm signature
+    expect(refer.className).toContain("bg-peach");
     expect(refer.className).toContain("text-navy");
   });
 

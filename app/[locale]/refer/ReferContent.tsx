@@ -103,7 +103,7 @@ export function ReferContent() {
 
       {/* 4. What happens next — dark */}
       <Section tone="dark">
-        <Eyebrow className="!text-sky-soft">{t("next.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-peach-tint">{t("next.eyebrow")}</Eyebrow>
         <h2 className="mt-4 max-w-2xl text-white">{t("next.title")}</h2>
         <ol
           className="mt-10 space-y-5"
@@ -113,7 +113,7 @@ export function ReferContent() {
             <li key={i} className="flex gap-4 items-start">
               <span
                 aria-hidden
-                className="flex-shrink-0 w-7 h-7 rounded-full bg-white/10 text-sky-soft text-sm font-bold flex items-center justify-center"
+                className="flex-shrink-0 w-7 h-7 rounded-full bg-white/10 text-peach-tint text-sm font-bold flex items-center justify-center"
               >
                 {i + 1}
               </span>

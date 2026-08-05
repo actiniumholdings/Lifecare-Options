@@ -64,7 +64,7 @@ export function AboutContent() {
             <p className="text-xs font-semibold uppercase tracking-widest text-blue-deep">
               {t("story.missionLabel")}
             </p>
-            <blockquote className="mt-4 font-display text-xl leading-snug text-navy sm:text-2xl font-semibold">
+            <blockquote className="mt-4 font-display text-xl leading-snug text-navy sm:text-2xl ">
               &ldquo;{t("story.mission")}&rdquo;
             </blockquote>
           </Card>
@@ -76,7 +76,7 @@ export function AboutContent() {
 
       {/* 4. Values / Commitments — dark, 4 cards */}
       <Section tone="dark">
-        <Eyebrow className="!text-sky-soft">{t("values.eyebrow")}</Eyebrow>
+        <Eyebrow className="!text-peach-tint">{t("values.eyebrow")}</Eyebrow>
         <h2 className="mt-4 max-w-2xl text-white">{t("values.title")}</h2>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {valueCards.map(({ titleKey, bodyKey }) => (

@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/site-config";
 
 /**
  * Flagship hero. A bespoke layout (NOT the Section primitive) so it can own the
- * single page <h1> — a small brand kicker plus a confident Fraunces statement.
+ * single page <h1> — a small brand kicker plus a confident Young Serif statement.
  * Editorial split: copy + CTAs on the left, a warm caregiver photograph on the
  * right. Mirrors Central's home hero, in Lifecare's identity.
  */
@@ -28,7 +28,7 @@ export function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.05}>
-            <h1 className="mt-6 font-display font-semibold tracking-tight text-navy">
+            <h1 className="mt-6 font-display tracking-tight text-navy">
               <span className="block text-sm font-semibold uppercase tracking-[0.16em] text-blue-deep sm:text-[0.95rem]">
                 {siteConfig.name}
               </span>
@@ -60,23 +60,23 @@ export function Hero() {
           </FadeUp>
 
           <FadeUp delay={0.2}>
-            <p className="mt-6 text-sm text-slate">
-              {siteConfig.accreditation}
+            {/* Badge pills per the approved comp (finish-review F6). */}
+            <div className="mt-6 flex flex-wrap gap-2.5">
+              <span className="rounded-full bg-peach-tint px-3.5 py-1.5 text-[13px] font-bold text-navy">
+                {siteConfig.accreditation}
+              </span>
               {siteConfig.stateLicense && (
-                <>
-                  <span className="mx-2 text-navy/20" aria-hidden="true">
-                    |
-                  </span>
-                  Texas License Number&nbsp;{siteConfig.stateLicense}
-                </>
+                <span className="rounded-full bg-peach-tint px-3.5 py-1.5 text-[13px] font-bold text-navy">
+                  Texas License No.&nbsp;{siteConfig.stateLicense}
+                </span>
               )}
-            </p>
+            </div>
           </FadeUp>
         </div>
 
         {/* Right: hero photograph. */}
         <FadeUp delay={0.1} className="relative">
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius)] shadow-[0_30px_80px_-30px_rgba(8,29,51,0.55)] ring-1 ring-navy/10">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[var(--radius)] shadow-[0_30px_70px_-28px_rgba(94,64,32,0.4)]">
             <Image
               src="/images/hero-care.jpg"
               alt="A Lifecare Options caregiver sharing a warm moment with an older client at home"
@@ -90,14 +90,9 @@ export function Hero() {
               aria-hidden="true"
               className="absolute inset-0 bg-gradient-to-t from-navy-deep/75 via-navy-deep/10 to-transparent"
             />
-            {/* Blue hairline frame accent */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-5 rounded-[var(--radius)] border border-care-blue/30"
-            />
             {/* Caption chip — reads as an intentional composition. */}
             <div className="absolute inset-x-6 bottom-6 rounded-[var(--radius)] border border-white/10 bg-white/[0.06] px-5 py-4 backdrop-blur-sm">
-              <p className="font-display text-lg font-semibold leading-snug text-white">
+              <p className="font-display text-lg leading-snug text-white">
                 Care that comes to you
               </p>
               <p className="mt-1 text-sm leading-relaxed text-white/70">
@@ -106,11 +101,6 @@ export function Hero() {
               </p>
             </div>
           </div>
-          {/* Floating blue accent dot for editorial polish */}
-          <span
-            aria-hidden="true"
-            className="absolute -left-3 top-10 hidden h-16 w-1 rounded-full bg-care-blue lg:block"
-          />
         </FadeUp>
       </Container>
     </section>

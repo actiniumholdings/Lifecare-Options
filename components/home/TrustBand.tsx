@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/lib/site-config";
-import { BrandMotif } from "./BrandMotif";
 
 export interface StatPlan {
   prefix: string;
@@ -65,7 +65,7 @@ export function CountStat({
 
   return (
     <div className="flex flex-col gap-2">
-      <span className="font-display text-5xl font-semibold leading-none tracking-tight text-care-blue whitespace-nowrap sm:text-6xl">
+      <span className="font-display text-5xl leading-none tracking-tight text-peach whitespace-nowrap sm:text-6xl">
         {plan ? `${plan.prefix}${animate ? count : plan.target}${plan.suffix}` : value}
         {plan?.tail && (
           <motion.span
@@ -108,20 +108,27 @@ export function TrustBand() {
 
   return (
     <section className="relative overflow-hidden bg-navy text-white">
-      <BrandMotif
-        opacity={0.05}
-        className="absolute -right-24 -top-24 h-[480px] w-[480px]"
-      />
+      {/* Faded photographic backdrop (replaces the old logo watermark). */}
+      <div aria-hidden="true" className="absolute inset-0">
+        <Image
+          src="/images/coordinator.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.14]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/55 to-transparent" />
+      </div>
       {/* Top blue hairline rule */}
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-care-blue/40" />
       <Container className="relative py-16 sm:py-20">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
           {/* Left: license + service-area framing */}
           <div className="max-w-md">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-blue-light">
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-peach">
               Licensed by the State of Texas
             </p>
-            <p className="mt-3 font-display text-2xl font-semibold leading-snug text-white sm:text-3xl">
+            <p className="mt-3 font-display text-2xl leading-snug text-white sm:text-3xl">
               Trusted, accountable care across Katy &amp; West Houston
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/65">

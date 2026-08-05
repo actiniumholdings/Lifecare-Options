@@ -1,8 +1,8 @@
+import Image from "next/image";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Stagger } from "@/components/motion/Stagger";
-import { BrandMotif } from "./BrandMotif";
 
 function Icon({ path }: { path: string }) {
   return (
@@ -56,15 +56,22 @@ const REASONS: { title: string; body: string; icon: string }[] = [
 export function WhyLifecare() {
   return (
     <section className="relative overflow-hidden bg-navy-deep text-white">
-      <BrandMotif
-        opacity={0.04}
-        className="absolute -left-32 bottom-0 h-[520px] w-[520px]"
-      />
+      {/* Faded photographic backdrop (replaces the old logo watermark). */}
+      <div aria-hidden="true" className="absolute inset-0">
+        <Image
+          src="/images/attendant-daily.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.12]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep/50 via-transparent to-navy-deep/60" />
+      </div>
       <Container className="relative py-20 sm:py-28 lg:py-32">
         <FadeUp>
           <header className="max-w-2xl">
             <Eyebrow tone="dark">Why Lifecare</Eyebrow>
-            <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 font-display text-3xl leading-[1.1] tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
               Premium care, without the runaround
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-white/75">
@@ -84,7 +91,7 @@ export function WhyLifecare() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] border border-care-blue/25 bg-care-blue/[0.08]">
                   <Icon path={r.icon} />
                 </span>
-                <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-white">
+                <h3 className="mt-5 font-display text-lg leading-snug text-white">
                   {r.title}
                 </h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-white/70">

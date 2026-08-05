@@ -82,7 +82,7 @@ export function Hero({
       <Container className="relative z-10 pb-16 pt-12 sm:pb-20 lg:py-28">
         <div className="max-w-xl">
           <Eyebrow tone="dark">{eyebrow}</Eyebrow>
-          <h1 className="mt-5 font-display text-display-xl font-semibold text-balance text-white">
+          <h1 className="mt-5 font-display text-display-xl text-balance text-white">
             {headline}
           </h1>
           {intro && (
