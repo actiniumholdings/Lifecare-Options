@@ -14,8 +14,8 @@ export const siteConfig = {
     zip: "77450",
   },
   hours: [
-    { days: "Mon–Thu", time: "8:00 AM – 5:00 PM" },
-    { days: "Fri", time: "8:00 AM – 4:00 PM" },
+    { days: "Mon-Thu", time: "8:00 AM to 5:00 PM" },
+    { days: "Fri", time: "8:00 AM to 4:00 PM" },
   ],
   onCall: "24/7 on-call nursing",
   foundedYear: 2012,

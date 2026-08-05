@@ -52,7 +52,7 @@ export function medicalBusinessJsonLd(): Record<string, unknown> {
         "@type": "Service",
         name: "Skilled Home Health",
         description:
-          "Licensed clinicians bring hospital-grade skill into the home — nursing, therapy, and medical social work coordinated with your physician.",
+          "Licensed clinicians bring hospital-grade skill into the home: nursing, therapy, and medical social work coordinated with your physician.",
         url: `${SITE_URL}/services/skilled`,
       },
       {
