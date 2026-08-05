@@ -44,7 +44,7 @@ export function ServiceAreaTeaser() {
               <FadeUp as="span" key={city} distance={12}>
                 <Link
                   href="/service-area"
-                  className="inline-flex items-center rounded-full border border-navy/15 bg-card px-4 py-2 text-sm font-medium text-navy shadow-[0_1px_2px_rgba(13,43,73,0.04)] transition-colors hover:border-care-blue/50 hover:text-blue-deep"
+                  className="inline-flex items-center rounded-full border border-navy/15 bg-card px-4 py-2 text-sm font-medium text-navy shadow-[0_1px_2px_rgba(13,43,73,0.04)] transition-colors hover:border-peach hover:text-blue-deep"
                 >
                   {city}
                 </Link>

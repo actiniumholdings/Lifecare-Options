@@ -24,7 +24,7 @@ export function FinalCTA() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-navy/55 via-transparent to-navy/65" />
       </div>
-      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-care-blue/40" />
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-cream/25" />
       <Container className="relative py-20 text-center sm:py-28">
         <FadeUp>
           <div className="mx-auto flex max-w-2xl flex-col items-center">

@@ -16,7 +16,7 @@ function Icon({ path }: { path: string }) {
       strokeLinecap="round"
       strokeLinejoin="round"
       aria-hidden="true"
-      className="text-care-blue"
+      className="text-cream"
     >
       {path.split("||").map((d, i) => (
         <path key={i} d={d} />
@@ -87,8 +87,8 @@ export function WhyLifecare() {
         >
           {REASONS.map((r) => (
             <FadeUp as="article" key={r.title} className="h-full">
-              <div className="group flex h-full flex-col rounded-[var(--radius)] border border-white/10 bg-white/[0.04] p-7 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-1 hover:border-care-blue/30 hover:bg-white/[0.06]">
-                <span className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] border border-care-blue/25 bg-care-blue/[0.08]">
+              <div className="group flex h-full flex-col rounded-[var(--radius)] border border-white/10 bg-white/[0.04] p-7 transition-[transform,background-color,border-color] duration-300 hover:-translate-y-1 hover:border-cream/45 hover:bg-white/[0.06]">
+                <span className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] border border-cream/30 bg-cream/[0.08]">
                   <Icon path={r.icon} />
                 </span>
                 <h3 className="mt-5 font-display text-lg leading-snug text-white">

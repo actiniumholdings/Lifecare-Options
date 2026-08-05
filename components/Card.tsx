@@ -8,7 +8,7 @@ type CardProps = {
 };
 
 const VARIANT: Record<NonNullable<CardProps["variant"]>, string> = {
-  "care-blue": "bg-white border border-care-blue/20",
+  "care-blue": "bg-white border border-peach/60",
   white: "bg-white border border-border",
 };
 

@@ -14,7 +14,7 @@ export interface CardProps {
 export function Card({ accent = "none", className, children }: CardProps) {
   const accentRule =
     accent === "blue"
-      ? "before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:rounded-t-[var(--radius)] before:bg-care-blue before:content-['']"
+      ? "before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:rounded-t-[var(--radius)] before:bg-peach before:content-['']"
       : accent === "navy"
         ? "before:absolute before:inset-x-0 before:top-0 before:h-[3px] before:rounded-t-[var(--radius)] before:bg-navy before:content-['']"
         : "";

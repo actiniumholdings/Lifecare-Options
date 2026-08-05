@@ -19,6 +19,11 @@
   --color-blue-deep: #2F5F8A;
   --color-blue-light: #7AA6CF;
 
+  /* Cream as an ACCENT (Clint, 2026-08-05): on-dark accent text, icons, and
+     hairlines use cream rather than blue. Same value as canvas — the alias
+     exists so on-dark utilities read as text-cream, never text-canvas. */
+  --color-cream: #fbf5ee;
+
   /* Warm pair (the brand-splitting move vs Central's gold):
      peach       = decorative fills/strokes/tiles; accent TEXT on dark (6.8:1 ✓);
                    never small text on light (ink on it 7.1:1 is fine for fills w/ ink text)

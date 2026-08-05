@@ -46,7 +46,7 @@ export function PhotoBand({
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-t from-navy-deep/85 via-navy-deep/25 to-navy-deep/5"
       />
-      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-care-blue/40" />
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-cream/25" />
       {(eyebrow || headline) && (
         <Container className="relative py-10 sm:py-12">
           <div
