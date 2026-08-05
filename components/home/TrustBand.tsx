@@ -65,7 +65,7 @@ export function CountStat({
 
   return (
     <div className="flex flex-col gap-2">
-      <span className="font-display text-5xl leading-none tracking-tight text-care-blue whitespace-nowrap sm:text-6xl">
+      <span className="font-display text-5xl leading-none tracking-tight text-peach whitespace-nowrap sm:text-6xl">
         {plan ? `${plan.prefix}${animate ? count : plan.target}${plan.suffix}` : value}
         {plan?.tail && (
           <motion.span
