@@ -61,7 +61,7 @@ export function ServiceAreaContent() {
           {siteConfig.serviceArea.cities.map((city) => (
             <li
               key={city}
-              className="rounded-full border border-care-blue/30 bg-care-blue/10 px-4 py-1.5 text-sm font-medium text-navy"
+              className="rounded-full border border-peach bg-peach/25 px-4 py-1.5 text-sm font-medium text-navy"
             >
               {city}
             </li>

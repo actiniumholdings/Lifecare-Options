@@ -18,7 +18,7 @@ export function Hero() {
       {/* Soft radial wash behind the hero for depth (not a flat field). */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0 [background:radial-gradient(120%_90%_at_85%_-10%,rgba(90,139,184,0.14),transparent_55%),radial-gradient(90%_70%_at_-10%_110%,rgba(13,43,73,0.06),transparent_60%)]"
+        className="pointer-events-none absolute inset-0 [background:radial-gradient(120%_90%_at_85%_-10%,rgba(242,195,155,0.20),transparent_55%),radial-gradient(90%_70%_at_-10%_110%,rgba(13,43,73,0.06),transparent_60%)]"
       />
       <Container className="relative grid items-center gap-12 py-20 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:py-32">
         {/* Left: copy + CTAs */}

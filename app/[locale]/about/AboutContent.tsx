@@ -60,7 +60,7 @@ export function AboutContent() {
           </div>
 
           {/* Right — mission card */}
-          <Card variant="care-blue" className="border-care-blue/20">
+          <Card variant="care-blue" className="border-peach/60">
             <p className="text-xs font-semibold uppercase tracking-widest text-blue-deep">
               {t("story.missionLabel")}
             </p>

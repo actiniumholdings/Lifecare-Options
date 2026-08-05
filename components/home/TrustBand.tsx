@@ -65,7 +65,7 @@ export function CountStat({
 
   return (
     <div className="flex flex-col gap-2">
-      <span className="font-display text-5xl leading-none tracking-tight text-peach whitespace-nowrap sm:text-6xl">
+      <span className="font-display text-6xl leading-none tracking-tight text-peach whitespace-nowrap sm:text-7xl">
         {plan ? `${plan.prefix}${animate ? count : plan.target}${plan.suffix}` : value}
         {plan?.tail && (
           <motion.span
@@ -82,7 +82,7 @@ export function CountStat({
           </motion.span>
         )}
       </span>
-      <span className="font-sans text-sm font-medium uppercase tracking-[0.08em] text-white/70">
+      <span className="font-sans text-sm font-medium uppercase tracking-[0.08em] text-white/85">
         {label}
       </span>
     </div>
@@ -120,12 +120,12 @@ export function TrustBand() {
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/55 to-transparent" />
       </div>
       {/* Top blue hairline rule */}
-      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-care-blue/40" />
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-cream/25" />
       <Container className="relative py-16 sm:py-20">
         <div className="flex flex-col gap-10 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
           {/* Left: license + service-area framing */}
           <div className="max-w-md">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-peach">
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-cream">
               Licensed by the State of Texas
             </p>
             <p className="mt-3 font-display text-2xl leading-snug text-white sm:text-3xl">
