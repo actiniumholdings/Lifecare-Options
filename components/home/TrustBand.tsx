@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, useInView, useReducedMotion } from "motion/react";
 import { Container } from "@/components/ui/Container";
 import { siteConfig } from "@/lib/site-config";
-import { BrandMotif } from "./BrandMotif";
 
 export interface StatPlan {
   prefix: string;
@@ -108,10 +108,17 @@ export function TrustBand() {
 
   return (
     <section className="relative overflow-hidden bg-navy text-white">
-      <BrandMotif
-        opacity={0.05}
-        className="absolute -right-24 -top-24 h-[480px] w-[480px]"
-      />
+      {/* Faded photographic backdrop (replaces the old logo watermark). */}
+      <div aria-hidden="true" className="absolute inset-0">
+        <Image
+          src="/images/coordinator.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover opacity-[0.14]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/55 to-transparent" />
+      </div>
       {/* Top blue hairline rule */}
       <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-care-blue/40" />
       <Container className="relative py-16 sm:py-20">

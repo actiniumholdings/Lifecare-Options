@@ -37,7 +37,7 @@ export default function HomePage() {
         alt="A Lifecare Options therapist supporting an older client during an in-home visit"
         eyebrow="Dignity in Every Visit"
         headline="The small moments are the care. We're there for them."
-        objectPosition="center"
+        objectPosition="50% 18%"
         align="center"
       />
       <ServiceAreaTeaser />
