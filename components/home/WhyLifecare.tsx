@@ -64,7 +64,7 @@ export function WhyLifecare() {
         <FadeUp>
           <header className="max-w-2xl">
             <Eyebrow tone="dark">Why Lifecare</Eyebrow>
-            <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 font-display text-3xl leading-[1.1] tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
               Premium care, without the runaround
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-white/75">
@@ -84,7 +84,7 @@ export function WhyLifecare() {
                 <span className="flex h-12 w-12 items-center justify-center rounded-[var(--radius)] border border-care-blue/25 bg-care-blue/[0.08]">
                   <Icon path={r.icon} />
                 </span>
-                <h3 className="mt-5 font-display text-lg font-semibold leading-snug text-white">
+                <h3 className="mt-5 font-display text-lg leading-snug text-white">
                   {r.title}
                 </h3>
                 <p className="mt-3 text-[0.95rem] leading-relaxed text-white/70">

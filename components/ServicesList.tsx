@@ -56,7 +56,7 @@ export function ServicesList() {
                   <IconComponent size={24} weight="duotone" />
                 </div>
                 <div>
-                  <div className="font-display text-lg font-semibold text-navy">
+                  <div className="font-display text-lg text-navy">
                     {service.name}
                   </div>
                   <p className="mt-1 text-sm text-slate">{service.description}</p>

@@ -43,7 +43,7 @@ export function Footer() {
             <div>
               <Link
                 href={siteConfig.phoneHref}
-                className="rounded-sm font-display text-2xl font-semibold tabular-nums text-white outline-none transition-colors hover:text-peach focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
+                className="rounded-sm font-display text-2xl tabular-nums text-white outline-none transition-colors hover:text-peach focus-visible:ring-2 focus-visible:ring-peach focus-visible:ring-offset-2 focus-visible:ring-offset-navy-deep"
               >
                 {siteConfig.phone}
               </Link>

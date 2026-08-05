@@ -22,7 +22,7 @@ export function ServiceAreaTeaser() {
             <span aria-hidden="true" className="mr-2 inline-block h-px w-6 align-middle bg-current opacity-60" />
             Where We Serve
           </p>
-          <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-balance text-navy sm:text-4xl">
+          <h2 className="mt-5 font-display text-3xl leading-[1.1] tracking-tight text-balance text-navy sm:text-4xl">
             Across Katy &amp; West Houston
           </h2>
           <p className="mt-5 max-w-[52ch] text-lg leading-relaxed text-slate">

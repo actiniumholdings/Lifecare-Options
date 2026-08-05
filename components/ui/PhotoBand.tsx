@@ -49,7 +49,7 @@ export function PhotoBand({
           <div className="max-w-2xl">
             {eyebrow && <Eyebrow tone="dark">{eyebrow}</Eyebrow>}
             {headline && (
-              <p className="mt-4 font-display text-2xl font-semibold leading-snug text-balance text-white sm:text-3xl">
+              <p className="mt-4 font-display text-2xl leading-snug text-balance text-white sm:text-3xl">
                 {headline}
               </p>
             )}

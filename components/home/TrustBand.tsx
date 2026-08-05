@@ -65,7 +65,7 @@ export function CountStat({
 
   return (
     <div className="flex flex-col gap-2">
-      <span className="font-display text-5xl font-semibold leading-none tracking-tight text-care-blue whitespace-nowrap sm:text-6xl">
+      <span className="font-display text-5xl leading-none tracking-tight text-care-blue whitespace-nowrap sm:text-6xl">
         {plan ? `${plan.prefix}${animate ? count : plan.target}${plan.suffix}` : value}
         {plan?.tail && (
           <motion.span
@@ -121,7 +121,7 @@ export function TrustBand() {
             <p className="font-sans text-xs font-semibold uppercase tracking-[0.18em] text-peach">
               Licensed by the State of Texas
             </p>
-            <p className="mt-3 font-display text-2xl font-semibold leading-snug text-white sm:text-3xl">
+            <p className="mt-3 font-display text-2xl leading-snug text-white sm:text-3xl">
               Trusted, accountable care across Katy &amp; West Houston
             </p>
             <p className="mt-3 text-sm leading-relaxed text-white/65">

@@ -60,7 +60,7 @@ export function Section({
             {eyebrow && <Eyebrow tone={isDark ? "dark" : "light"}>{eyebrow}</Eyebrow>}
             {title && (
               <h2
-                className={`font-display text-display font-semibold text-balance ${
+                className={`font-display text-display text-balance ${
                   isDark ? "text-white" : "text-navy"
                 } ${centered ? "max-w-3xl" : "max-w-2xl"} ${align}`}
               >

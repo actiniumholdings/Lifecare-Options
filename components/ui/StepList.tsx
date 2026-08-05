@@ -20,7 +20,7 @@ export function StepList({
       {steps.map((step, i) => (
         <li key={step.title} className="relative">
           <span
-            className={`flex h-11 w-11 items-center justify-center rounded-full border-2 font-display text-lg font-semibold ${
+            className={`flex h-11 w-11 items-center justify-center rounded-full border-2 font-display text-lg ${
               dark
                 ? "border-peach/60 text-peach"
                 : "border-blue-deep/40 text-blue-deep"
@@ -29,7 +29,7 @@ export function StepList({
             {i + 1}
           </span>
           <h3
-            className={`mt-4 font-display text-xl font-semibold ${
+            className={`mt-4 font-display text-xl ${
               dark ? "text-white" : "text-navy"
             }`}
           >

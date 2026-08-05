@@ -18,12 +18,12 @@ export function CtaBand({
       {(primary || secondary) && (
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           {primary && (
-            <Button href={primary.href} size="lg">
+            <Button href={primary.href} variant="onDark" size="lg">
               {primary.label}
             </Button>
           )}
           {secondary && (
-            <Button href={secondary.href} variant="secondary" size="lg" className="!bg-transparent !border-white/60 !text-white hover:!bg-white/10">
+            <Button href={secondary.href} variant="secondary" size="lg" className="!bg-transparent !text-white hover:!bg-white/10">
               {secondary.label}
             </Button>
           )}

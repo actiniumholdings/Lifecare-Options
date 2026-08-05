@@ -22,7 +22,7 @@ export function FinalCTA() {
         <FadeUp>
           <div className="mx-auto flex max-w-2xl flex-col items-center">
             <Eyebrow tone="dark">Ready When You Are</Eyebrow>
-            <h2 className="mt-5 font-display text-3xl font-semibold leading-[1.1] tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-5 font-display text-3xl leading-[1.1] tracking-tight text-balance text-white sm:text-4xl lg:text-5xl">
               Let&rsquo;s bring trusted care home
             </h2>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/75">
@@ -51,7 +51,7 @@ export function FinalCTA() {
               </span>
               <a
                 href={siteConfig.phoneHref}
-                className="mt-1 font-display text-3xl font-semibold tabular-nums text-white transition-colors hover:text-peach"
+                className="mt-1 font-display text-3xl tabular-nums text-white transition-colors hover:text-peach"
               >
                 {siteConfig.phone}
               </a>

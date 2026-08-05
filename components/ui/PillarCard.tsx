@@ -27,9 +27,9 @@ export function PillarCard({
   cta,
 }: PillarCardProps) {
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-navy/10 border-t-4 border-t-blue-deep bg-card p-8 shadow-sm transition-shadow hover:shadow-lg">
+    <article className="flex h-full flex-col rounded-2xl bg-card p-8 shadow-[0_2px_4px_rgba(94,64,32,0.04),0_16px_36px_-16px_rgba(94,64,32,0.14)] transition-shadow hover:shadow-[0_3px_8px_rgba(94,64,32,0.06),0_26px_52px_-20px_rgba(94,64,32,0.2)]">
       <Eyebrow>{eyebrow}</Eyebrow>
-      <h3 className="mt-3 font-display text-title font-semibold text-navy">{title}</h3>
+      <h3 className="mt-3 font-display text-title text-navy">{title}</h3>
       <p className="mt-3 leading-relaxed text-slate">{description}</p>
       <ul className="mt-6 space-y-2.5">
         {services.map((service) => (

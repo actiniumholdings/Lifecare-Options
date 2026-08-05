@@ -26,10 +26,27 @@
   --color-peach: #F2C39B;
   --color-peach-tint: #F9E9DB;
 
+  /* Structural surfaces + states (finish-review F2: these were referenced by
+     LeadForm/Card/Careers but undefined after the Central-token migration). */
+  --color-border: #e9dccb; /* warm hairline on cream/card — decorative only */
+  --color-surface-warm: #f6ede2; /* tab tracks / quiet warm wells */
+  --color-alert: #a93a2f; /* error text — 5.8:1 on cream, 6.3:1 on card ✓ */
+
   --radius: 16px;
 
   --font-display: var(--font-young-serif);
   --font-sans: var(--font-nunito-sans);
+}
+
+/* Young Serif ships exactly one weight (400). Never let the browser fake a
+   bold: font-semibold/bold on display-face text falls back to the true 400
+   instead of a synthesized fattening (finish-review F1). */
+h1,
+h2,
+h3,
+h4,
+.font-display {
+  font-synthesis-weight: none;
 }
 
 /* Guard against horizontal overflow from full-bleed photos / decorative glows.
