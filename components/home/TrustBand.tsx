@@ -144,7 +144,7 @@ export function TrustBand() {
           {/* Right: animated stats */}
           <motion.div
             ref={ref}
-            className="grid grid-cols-2 gap-x-12 gap-y-8 sm:grid-cols-4 lg:gap-x-16"
+            className="grid grid-cols-2 gap-x-12 gap-y-8 sm:flex sm:gap-x-14 lg:gap-x-16"
           >
             {stats.map((s) => (
               <CountStat key={s.label} {...s} inView={inView} />
