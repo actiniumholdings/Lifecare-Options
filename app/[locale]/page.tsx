@@ -34,10 +34,10 @@ export default function HomePage() {
       <WhyLifecare />
       <PhotoBand
         src="/images/dignity-visit.jpg"
-        alt="An older woman watering the potted geraniums on her back porch while her Lifecare Options attendant sits nearby"
+        alt="An older woman watering the geraniums on her covered patio while her Lifecare Options attendant sits nearby"
         eyebrow="Dignity in Every Visit"
         headline="You set the routine. We fit into it."
-        objectPosition="50% 23%"
+        objectPosition="50% 41%"
         align="center"
       />
       <ServiceAreaTeaser />
