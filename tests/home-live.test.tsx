@@ -41,10 +41,11 @@ function renderHome() {
       <WhyLifecare />
       <PhotoBand
         src="/images/dignity-visit.jpg"
-        alt="A Lifecare Options therapist supporting an older client during an in-home visit"
+        alt="An older woman watering the potted geraniums on her back porch while her Lifecare Options attendant sits nearby"
         eyebrow="Dignity in Every Visit"
-        headline="The small moments are the care. We're there for them."
-        objectPosition="center"
+        headline="You set the routine. We fit into it."
+        objectPosition="50% 23%"
+        align="center"
       />
       <ServiceAreaTeaser />
       <CareersTeaser />
