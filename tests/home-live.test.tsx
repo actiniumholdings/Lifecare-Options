@@ -40,7 +40,7 @@ function renderHome() {
       <HowItWorks />
       <WhyLifecare />
       <PhotoBand
-        src="/images/therapy.jpg"
+        src="/images/dignity-visit.jpg"
         alt="A Lifecare Options therapist supporting an older client during an in-home visit"
         eyebrow="Dignity in Every Visit"
         headline="The small moments are the care. We're there for them."

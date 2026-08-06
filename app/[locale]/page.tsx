@@ -33,11 +33,11 @@ export default function HomePage() {
       <HowItWorks />
       <WhyLifecare />
       <PhotoBand
-        src="/images/therapy.jpg"
-        alt="A Lifecare Options therapist supporting an older client during an in-home visit"
+        src="/images/dignity-visit.jpg"
+        alt="A Lifecare Options caregiver kneeling beside her client’s armchair as the two laugh together at home"
         eyebrow="Dignity in Every Visit"
         headline="The small moments are the care. We’re there for them."
-        objectPosition="50% 18%"
+        objectPosition="50% 30%"
         align="center"
       />
       <ServiceAreaTeaser />
