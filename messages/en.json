@@ -215,7 +215,7 @@
       "headline": "Caring for Katy families since 2012.",
       "intro": "Lifecare Options is a locally owned home health company based in Katy, TX. Since 2012 we have brought two kinds of care into the home: Medicare-certified skilled nursing and therapy for clinical recovery, and Provider Attendant Services for everyday help with daily living.",
       "primary": "Request info",
-      "photoAlt": "A nurse checking an older adult’s blood pressure at home."
+      "photoAlt": "An older man checking his own blood pressure at home with a connected monitor."
     },
     "story": {
       "eyebrow": "Our Story",
@@ -299,7 +299,7 @@
       "headline": "Care for people, close to home.",
       "intro": "RN · LVN · Home Health Aide",
       "primary": "Apply now",
-      "photoAlt": "A therapist helping an older man walk with a walker at home."
+      "photoAlt": "A therapist helping an older woman walk with a walker at home."
     },
     "nav": {
       "ariaLabel": "Jump to a hiring track",
@@ -464,7 +464,7 @@
       "headline": "Daily check-ins, without leaving home.",
       "intro": "Connected home devices track your vital signs every day. A nurse reviews the data and can respond quickly if something changes.",
       "primary": "Request info",
-      "photoAlt": "A nurse checking an older adult’s vital signs at home."
+      "photoAlt": "An older man reviewing his daily vital-sign readings at home."
     },
     "advantages": {
       "eyebrow": "The Advantages",
@@ -558,7 +558,7 @@
       "intro": "Medicare-certified skilled nursing, therapy, and personal care across Katy, Fort Bend, and Harris counties since 2012.",
       "ctaCall": "Call {phone}",
       "ctaRequest": "Request info",
-      "photoAlt": "A home-health nurse sitting with a smiling older woman in a sunlit living room.",
+      "photoAlt": "A home-health nurse sitting with an older woman in her living room, listening as she talks.",
       "badge1": "Serving Katy since 2012",
       "badge2": "24/7 on-call nursing"
     },
